@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Égypte Éternelle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --or: #c8973a;
+      --or-clair: #e8bf6a;
+      --or-profond: #8b6420;
+      --sable: #f2e8c9;
+      --sable-fonce: #d4c49a;
+      --noir-nil: #1a1208;
+      --brun-papyrus: #6b4f2a;
+      --rouge-carnelian: #8b2e1a;
+      --bleu-lapis: #1a3a5c;
+      --bleu-clair: #4a7fa8;
+      --turquoise: #2a8b7a;
+      --violet: #2a1050;
+      --violet-clair: #7a50b8;
+      --blanc-ivoire: #fbf5e6;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--noir-nil);
+      color: var(--sable);
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: calc(18px + 0.2rem);
+      line-height: 1.8;
+    }
+
+    /* === PAGE CONTACT === */
+    .contact-hero {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(200, 151, 58, 0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 35%, rgba(26, 58, 92, 0.25) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 35%, rgba(42, 16, 80, 0.2) 0%, transparent 50%),
+        linear-gradient(180deg, #080604 0%, #0e0b06 20%, #1a1208 55%, #251a08 100%);
+    }
+    .contact-overlay {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 2rem;
+      max-width: 800px;
+    }
+    .contact-subtitle {
+      font-family: "Cinzel Decorative", serif;
+      font-size: clamp(1.1rem, calc(2.5vw + 0.2rem), 1.8rem);
+      font-weight: 400;
+      color: var(--or);
+      letter-spacing: 0.25em;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    .contact-title {
+      font-family: "Cinzel Decorative", serif;
+      font-size: clamp(2.5rem, calc(5vw + 0.5rem), 4.5rem);
+      font-weight: 900;
+      color: var(--or-clair);
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 120px rgba(200, 151, 58, 0.5), 0 0 40px rgba(200, 151, 58, 0.25);
+    }
+    .contact-tagline {
+      font-family: "EB Garamond", serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, calc(1.8vw + 0.2rem), 1.4rem);
+      color: var(--sable-fonce);
+      line-height: 1.6;
+      margin-top: 1.5rem;
+    }
+    .contact-hieroglyphs {
+      font-size: 1.8rem;
+      letter-spacing: 0.5em;
+      color: var(--or);
+      opacity: 0.5;
+      margin: 1.5rem auto;
+    }
+    .contact-divider {
+      width: 180px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--or), transparent);
+      margin: 1rem auto 2rem;
+
+    /* Contact Section */
+    .contact-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, var(--noir-nil) 0%, #2d1f0e 100%);
+    }
+    .contact-cards {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+    .contact-card {
+      background: rgba(200, 151, 58, 0.04);
+      border: 1px solid rgba(200, 151, 58, 0.15);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(200, 151, 58, 0.4);
+    }
+    .contact-card-icon {
+      font-size: 3rem;
+      color: var(--or-clair);
+      margin-bottom: 1.2rem;
+    }
+    .contact-card-title {
+      font-family: "Cinzel Decorative", serif;
+      font-size: 1.4rem;
+      color: var(--or-clair);
+      margin-bottom: 0.8rem;
+    }
+    .contact-card-desc {
+      color: var(--sable-fonce);
+      margin-bottom: 1rem;
+    }
+    .contact-card-detail {
+      color: var(--sable);
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: rgba(200, 151, 58, 0.03);
+      border: 1px solid rgba(200, 151, 58, 0.15);
+      border-radius: 4px;
+      color: var(--sable);
+      font-family: "EB Garamond", serif;
+      font-size: 1rem;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--sable-fonce);
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--or);
+    }
+    .contact-btn,
+    .contact-submit {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--or) 0%, var(--or-clair) 100%);
+      color: var(--noir-nil);
+      font-family: "Cinzel", serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .contact-btn:hover,
+    .contact-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 151, 58, 0.3);
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(200, 151, 58, 0.05);
+      border: 1px solid rgba(200, 151, 58, 0.2);
+      border-radius: 50%;
+      color: var(--or-clair);
+      font-family: "Cinzel", serif;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .social-link:hover {
+      background: var(--or);
+      color: var(--noir-nil);
+      transform: translateY(-3px);
+    }
+    .contact-cta {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1208 0%, #3d2a14 100%);
+      border-top: 1px solid rgba(200, 151, 58, 0.1);
+    }
+    .contact-cta-title {
+      font-family: "Cinzel Decorative", serif;
+      font-size: 2.2rem;
+      color: var(--or-clair);
+      margin-bottom: 1rem;
+    }
+    .contact-cta-desc {
+      font-size: 1.1rem;
+      color: var(--sable-fonce);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .cta-primary {
+      background: linear-gradient(90deg, var(--or) 0%, var(--or-clair) 100%);
+      color: var(--noir-nil);
+      font-family: "Cinzel", serif;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 4px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 151, 58, 0.3);
+    }
+    .cta-secondary {
+      background: transparent;
+      color: var(--or-clair);
+      font-family: "Cinzel", serif;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border: 1px solid var(--or);
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .cta-secondary:hover {
+      background: rgba(200, 151, 58, 0.1);
+    }
+
+    .footer {
+      background: #0a0703;
+      border-top: 1px solid rgba(200, 151, 58, 0.15);
+      padding: 3rem 2rem 1.5rem;
+    }
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-brand h3 {
+      font-family: "Cinzel Decorative", serif;
+      color: var(--or-clair);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer-brand p {
+      color: var(--sable-fonce);
+    }
+    .footer-links h4,
+    .footer-contact h4 {
+      font-family: "Cinzel", serif;
+      color: var(--or);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .footer-links ul { list-style: none; }
+    .footer-links a {
+      color: var(--sable-fonce);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--or-clair); }
+    .footer-contact p { color: var(--sable-fonce); }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(200, 151, 58, 0.1);
+    }
+    .footer-bottom p {
+      color: var(--sable-fonce);
+      font-size: 0.9rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .contact-cards { grid-template-columns: 1fr; }
+      .contact-cta-actions { flex-direction: column; align-items: center; }
+      .header { padding: 0.8rem 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html"><img src="https://i.postimg.cc/y6L613gM/logo.png" alt="Égypte Éternelle"></a>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#guide-interactif">Le Guide</a></li>
+          <li><a href="index.html#guide-interactif">Nos Thématiques</a></li>
+          <li><a href="egypte-a-contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="contact-overlay">
+      <p class="contact-subtitle">Votre voyage commence ici</p>
+      <h1 class="contact-title">Nous Contacter</h1>
+      <div class="contact-divider"></div>
+      <p class="contact-hieroglyphs">𓊹 𓈖 𓏺 𓈎 𓊖</p>
+      <p class="contact-tagline">Posez-nous vos questions, égyptologues et passionnés vous répondent</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-cards">
+
+      <div class="contact-card">
+        <div class="contact-card-icon">&#9993;</div>
+        <h2 class="contact-card-title">Par Email</h2>
+        <p class="contact-card-desc">Écrivez-nous directement, nous répondons sous 48h</p>
+        <p class="contact-card-detail">contact@egypte-eternelle.com</p>
+        <a href="mailto:contact@egypte-eternelle.com" class="contact-btn">Envoyer un email</a>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">&#9997;</div>
+        <h2 class="contact-card-title">Formulaire de Contact</h2>
+        <p class="contact-card-desc">Remplissez le formulaire ci-dessous</p>
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Votre nom" required>
+          <input type="email" name="email" placeholder="Votre email" required>
+          <select name="sujet" required>
+            <option value="">Sujet de votre message</option>
+            <option value="question">Question sur l'Égypte antique</option>
+            <option value="partenariat">Proposition de partenariat</option>
+            <option value="correction">Signaler un problème</option>
+            <option value="autre">Autre</option>
+          </select>
+          <textarea name="message" placeholder="Votre message..." rows="4" required></textarea>
+          <button type="submit" class="contact-submit">Envoyer le message</button>
+        </form>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-card-icon">&#128279;</div>
+        <h2 class="contact-card-title">Suivez-nous</h2>
+        <p class="contact-card-desc">Restez connecté avec la communauté Égypte Éternelle</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">F</a>
+          <a href="#" class="social-link" aria-label="Twitter">T</a>
+          <a href="#" class="social-link" aria-label="Instagram">I</a>
+          <a href="#" class="social-link" aria-label="YouTube">Y</a>
+        </div>
+        <p class="contact-card-detail">Rejoignez +10 000 passionnés</p>
+      </div>
+
+    </div>
+  </section>
+
+          </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Quel est le délai de réponse ?</h3>
+                    <p>Nous répondons généralement sous 24-48 heures ouvrées. Pour les questions urgentes, privilégiez le formulaire de contact.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Proposez-vous des visites guidées en Égypte ?</h3>
+                    <p>Oui ! Nous organisons des voyages guidés sur les sites archéologiques majeurs. Consultez notre section thématique pour plus d'informations.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Le contenu est-il vérifié par des égyptologues ?</h3>
+                    <p>Absolument. Tous nos articles sont révisés par des spécialistes et basés sur des sources académiques reconnues.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Comment signaler une erreur sur le site ?</h3>
+                    <p>Utilisez le formulaire de contact en sélectionnant le sujet "Signaler un problème". Nous corrigerons l'erreur rapidement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="contact-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="https://i.postimg.cc/y6L6l3gM/logo.png" alt="Égypte Éternelle" class="footer-logo">
+                <p>Partagez la passion de l'Égypte antique avec notre communauté mondiale d'égyptologues et d'explorateurs.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#guide-interactif">Le Guide</a></li>
+                    <li><a href="index.html#guide-interactif">Nos Thématiques</a></li>
+                    <li><a href="egypte-a-contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>contact@egypte-eternelle.com</p>
+                <p>Paris, France</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Égypte Éternelle. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+    }
+    }
