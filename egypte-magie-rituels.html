@@ -1,0 +1,3368 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magie, Rituels & La Douat — Égypte Éternelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #e8bf6a;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --brun-papyrus: #6b4f2a;
+        --rouge: #8b2e1a;
+        --rouge-clair: #c04030;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+        --turquoise: #2a8b7a;
+        --violet: #2a1050;
+        --violet-clair: #7a50b8;
+        --violet-doux: #a87ed4;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      /* ═══ HERO ═══ */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 20% 30%,
+            rgba(42, 16, 80, 0.35) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 30%,
+            rgba(26, 58, 92, 0.2) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 60%,
+            rgba(122, 80, 184, 0.08) 0%,
+            transparent 45%
+          ),
+          linear-gradient(
+            180deg,
+            #030208 0%,
+            #080514 25%,
+            #120e08 55%,
+            #1a1208 100%
+          );
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          60deg,
+          rgba(122, 80, 184, 0.015) 0px,
+          rgba(122, 80, 184, 0.015) 1px,
+          transparent 1px,
+          transparent 45px
+        );
+      }
+
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 65%;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        border-radius: 50%;
+        animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        opacity: 0;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: var(--op, 0.7);
+        }
+      }
+
+      .hero-scene {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1200px;
+        opacity: 0.11;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero Image Adjustment */
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0.25;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-background img {
+        width: 90vw;
+        height: 85vh;
+        object-fit: cover;
+        filter: sepia(30%) contrast(110%);
+      
+        border-radius: 12px;
+      }
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.5rem;
+        animation: fadeUp 1.4s 0.2s ease both;
+      }
+      .hero-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(2.4rem, calc(6.5vw + 0.2rem), 6rem);
+        font-weight: 900;
+        line-height: 1.05;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 120px rgba(122, 80, 184, 0.3),
+          0 0 60px rgba(200, 151, 58, 0.3),
+          0 2px 4px rgba(0, 0, 0, 0.9);
+        margin-bottom: 0.5rem;
+        animation: fadeUp 1.4s 0.4s ease both;
+      }
+      .hero-title span {
+        display: block;
+        font-size: 0.4em;
+        color: var(--sable-fonce);
+        letter-spacing: 0.14em;
+        font-weight: 400;
+      }
+      .hero-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.2rem, calc(2vw + 0.2rem), 1.5rem);
+        color: var(--sable-fonce);
+        max-width: 680px;
+        margin: 1.5rem auto 2.5rem;
+        animation: fadeUp 1.4s 0.6s ease both;
+      }
+      .hero-divider {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 0 auto;
+        animation: fadeUp 1.4s 0.8s ease both;
+      }
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.4em;
+        color: var(--or);
+        opacity: 0.7;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+      .scroll-hint::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--or), transparent);
+      }
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ═══ NAV ═══ */
+      nav.main-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        background: rgba(12, 8, 20, 0.97);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 0 2rem;
+      }
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .nav-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.2rem;
+        color: var(--or);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.4rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-family: "Cinzel", serif;
+        font-size: 0.87rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--or-clair);
+      }
+
+      /* ═══ LAYOUT ═══ */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ═══ STATS BAND ═══ */
+      .intro-band {
+        background: linear-gradient(
+          135deg,
+          #0c0818 0%,
+          #14100a 50%,
+          #0a0814 100%
+        );
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr 2px 1fr 2px 1fr;
+        gap: 1.5rem;
+        align-items: start;
+      }
+      .intro-stat {
+        text-align: center;
+        padding: 0.8rem;
+      }
+      .stat-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 3rem;
+        color: var(--or);
+        line-height: 1;
+        display: block;
+      }
+      .stat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        margin-top: 0.5rem;
+      }
+      .intro-divider-v {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--or),
+          transparent
+        );
+        align-self: stretch;
+        min-height: 70px;
+      }
+
+      /* ═══ TOC ═══ */
+      .toc-section {
+        background: linear-gradient(135deg, #0e0b18 0%, #161010 100%);
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .toc-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.55em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.5rem;
+      }
+      .toc-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.7rem, calc(3vw + 0.2rem), 2.4rem);
+        color: var(--or-clair);
+        margin-bottom: 2.5rem;
+      }
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 0.4rem 2.5rem;
+      }
+      .toc-era {
+        margin-bottom: 1.8rem;
+      }
+      .toc-era-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--or);
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        margin-bottom: 0.6rem;
+      }
+      .toc-link {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        padding: 0.3rem 0.5rem;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        transition: all 0.2s;
+        border-radius: 0 2px 2px 0;
+      }
+      .toc-link:hover {
+        border-left-color: var(--or);
+        background: rgba(200, 151, 58, 0.04);
+        padding-left: 1rem;
+      }
+      .toc-glyph {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        opacity: 0.75;
+      }
+      .toc-name {
+        font-family: "EB Garamond", serif;
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+      }
+      .toc-type {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        color: var(--or);
+        opacity: 0.5;
+        margin-left: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      /* ═══ CATEGORY HEADER ═══ */
+      .cat-header {
+        background: linear-gradient(
+          135deg,
+          #06040e 0%,
+          #100c08 50%,
+          #06040e 100%
+        );
+        padding: 4rem 0 3rem;
+        border-top: 1px solid rgba(200, 151, 58, 0.2);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .cat-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(122, 80, 184, 0.015) 0px,
+          rgba(122, 80, 184, 0.015) 1px,
+          transparent 1px,
+          transparent 22px
+        );
+      }
+      .cat-header-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+      }
+      .cat-glyph {
+        font-size: 5.7rem;
+        color: rgba(200, 151, 58, 0.07);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .cat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+      .cat-name {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.7rem, calc(3.5vw + 0.2rem), 2.9rem);
+        color: var(--or-clair);
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+      }
+      .cat-desc {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.2rem;
+      }
+
+      /* ═══ SECTION MARKER ═══ */
+      .section-marker {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .marker-glyph {
+        font-size: 3.7rem;
+        color: rgba(200, 151, 58, 0.1);
+        flex-shrink: 0;
+        line-height: 1;
+      }
+      .marker-text {
+        flex: 1;
+      }
+      .marker-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+      .marker-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.5rem, calc(3vw + 0.2rem), 2.2rem);
+        color: var(--or-clair);
+        line-height: 1.2;
+      }
+
+      /* ═══ ARTICLE SECTIONS ═══ */
+      .article-section {
+        padding: 5.5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.08);
+        position: relative;
+      }
+      .article-section:nth-child(even) {
+        background: rgba(122, 80, 184, 0.012);
+      }
+
+      .hiero-deco {
+        position: absolute;
+        right: 2rem;
+        top: 4rem;
+        font-size: 3.7rem;
+        opacity: 0.05;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.5rem;
+        color: var(--or);
+        user-select: none;
+        font-family: serif;
+      }
+
+      /* ═══ SUBJECT CARD ═══ */
+      .subject-card {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: linear-gradient(
+          135deg,
+          rgba(14, 10, 24, 0.9),
+          rgba(26, 18, 8, 0.88)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.18);
+        border-left: 4px solid var(--or);
+        position: relative;
+        overflow: hidden;
+      }
+      .subject-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 140px;
+        height: 140px;
+        background: radial-gradient(
+          circle at bottom right,
+          rgba(122, 80, 184, 0.07),
+          transparent 70%
+        );
+      }
+      .subject-icon {
+        font-size: 3.7rem;
+        flex-shrink: 0;
+        width: 78px;
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(122, 80, 184, 0.07);
+        border: 1px solid rgba(200, 151, 58, 0.15);
+        border-radius: 2px;
+      }
+      .subject-meta {
+        flex: 1;
+      }
+      .subject-name {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.3rem, calc(2.5vw + 0.2rem), 1.75rem);
+        color: var(--or-clair);
+        margin-bottom: 0.25rem;
+      }
+      .subject-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        color: var(--sable-fonce);
+        opacity: 0.8;
+        margin-bottom: 0.7rem;
+      }
+      .subject-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.7rem;
+        border: 1px solid rgba(200, 151, 58, 0.25);
+        color: var(--or);
+      }
+      .tag-blue {
+        border-color: rgba(74, 127, 168, 0.3);
+        color: var(--bleu-clair);
+      }
+      .tag-green {
+        border-color: rgba(42, 139, 122, 0.3);
+        color: var(--turquoise);
+      }
+      .tag-violet {
+        border-color: rgba(122, 80, 184, 0.35);
+        color: var(--violet-doux);
+      }
+      .tag-red {
+        border-color: rgba(192, 64, 48, 0.3);
+        color: #d4826a;
+      }
+
+      /* ═══ TEXT ═══ */
+      .article-section p {
+        margin-bottom: 1.5rem;
+        color: var(--sable);
+      }
+      .article-section h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.25rem;
+        color: var(--or-clair);
+        letter-spacing: 0.12em;
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+      strong {
+        color: var(--or-clair);
+        font-weight: 600;
+      }
+      .internal-link {
+        color: var(--or-clair);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--or);
+        transition: all 0.2s;
+        font-style: italic;
+      }
+      .internal-link:hover {
+        color: var(--or);
+        border-bottom-style: solid;
+      }
+
+      /* ═══ PULL QUOTE ═══ */
+      .pull-quote {
+        border-left: 3px solid var(--or);
+        padding: 1.5rem 2rem;
+        margin: 3rem 0;
+        background: rgba(200, 151, 58, 0.04);
+        position: relative;
+      }
+      .pull-quote::before {
+        content: "❝";
+        position: absolute;
+        top: -1rem;
+        left: 1.5rem;
+        font-size: 3.2rem;
+        color: var(--or);
+        opacity: 0.4;
+        line-height: 1;
+      }
+      .pull-quote p {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: var(--or-clair);
+        line-height: 1.7;
+      }
+      .pull-quote cite {
+        display: block;
+        margin-top: 0.8rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+        color: var(--sable-fonce);
+        font-style: normal;
+      }
+
+      /* ═══ INFO BOXES ═══ */
+      .info-box {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 58, 92, 0.15),
+          rgba(26, 58, 92, 0.05)
+        );
+        border: 1px solid rgba(74, 127, 168, 0.25);
+        border-left: 3px solid var(--bleu-clair);
+        padding: 1.5rem 2rem;
+        margin: 2.5rem 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .info-box-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--bleu-clair);
+        margin-bottom: 0.8rem;
+      }
+      .info-box p {
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+      .ib-or {
+        background: linear-gradient(
+          135deg,
+          rgba(200, 151, 58, 0.08),
+          rgba(200, 151, 58, 0.02)
+        );
+        border-color: rgba(200, 151, 58, 0.3);
+        border-left-color: var(--or);
+      }
+      .ib-or .info-box-title {
+        color: var(--or);
+      }
+      .ib-violet {
+        background: linear-gradient(
+          135deg,
+          rgba(122, 80, 184, 0.12),
+          rgba(122, 80, 184, 0.02)
+        );
+        border-color: rgba(122, 80, 184, 0.28);
+        border-left-color: var(--violet-clair);
+      }
+      .ib-violet .info-box-title {
+        color: var(--violet-doux);
+      }
+      .ib-green {
+        background: linear-gradient(
+          135deg,
+          rgba(42, 139, 122, 0.12),
+          rgba(42, 139, 122, 0.02)
+        );
+        border-color: rgba(42, 139, 122, 0.25);
+        border-left-color: var(--turquoise);
+      }
+      .ib-green .info-box-title {
+        color: var(--turquoise);
+      }
+      .ib-red {
+        background: linear-gradient(
+          135deg,
+          rgba(139, 46, 26, 0.14),
+          rgba(139, 46, 26, 0.02)
+        );
+        border-color: rgba(192, 64, 48, 0.3);
+        border-left-color: var(--rouge-clair);
+      }
+      .ib-red .info-box-title {
+        color: #d4826a;
+      }
+
+      /* ═══ DUAT MAP ═══ */
+      .duat-map {
+        margin: 3rem 0;
+        background: linear-gradient(
+          180deg,
+          rgba(6, 4, 14, 0.95),
+          rgba(14, 10, 8, 0.9)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 2.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .duat-map::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 50% 0%,
+          rgba(200, 151, 58, 0.05),
+          transparent 60%
+        );
+      }
+      .duat-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      .duat-hours {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.8rem;
+        position: relative;
+        z-index: 1;
+      }
+      .duat-hour {
+        background: rgba(122, 80, 184, 0.08);
+        border: 1px solid rgba(200, 151, 58, 0.1);
+        padding: 1rem 0.8rem;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: default;
+      }
+      .duat-hour:hover {
+        background: rgba(122, 80, 184, 0.18);
+        border-color: rgba(200, 151, 58, 0.3);
+        transform: scale(1.03);
+      }
+      .duat-hour-num {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+      .duat-hour-name {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        color: var(--or-clair);
+        letter-spacing: 0.08em;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .duat-hour-desc {
+        font-size: 0.95rem;
+        color: var(--sable-fonce);
+        line-height: 1.45;
+      }
+      .duat-hour.midnight {
+        border-color: rgba(200, 151, 58, 0.5);
+        background: rgba(200, 151, 58, 0.07);
+      }
+      .duat-hour.midnight .duat-hour-num {
+        color: var(--or-clair);
+      }
+
+      /* ═══ RITUAL STEPS ═══ */
+      .ritual-flow {
+        margin: 3rem 0;
+        position: relative;
+        padding-left: 2.5rem;
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+      }
+      .ritual-step {
+        margin-bottom: 2.2rem;
+        position: relative;
+      }
+      .ritual-step::before {
+        content: "";
+        position: absolute;
+        left: -3.1rem;
+        top: 0.35rem;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--or);
+        box-shadow: 0 0 12px rgba(200, 151, 58, 0.4);
+      }
+      .ritual-step-num {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 0.9rem;
+        color: var(--or);
+        opacity: 0.7;
+        display: block;
+        margin-bottom: 0.2rem;
+        letter-spacing: 0.2em;
+      }
+      .ritual-step-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.1rem;
+        color: var(--or-clair);
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+      }
+      .ritual-step p {
+        font-size: 1.13rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+
+      /* ═══ TWO-COL ═══ */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+      .col-card {
+        background: linear-gradient(
+          145deg,
+          rgba(14, 10, 24, 0.8),
+          rgba(26, 18, 8, 0.85)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.12);
+        border-top: 3px solid var(--or-profond);
+        padding: 1.5rem;
+        transition: all 0.3s;
+      }
+      .col-card:hover {
+        border-top-color: var(--or-clair);
+        transform: translateY(-3px);
+      }
+      .col-card-icon {
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+        display: block;
+      }
+      .col-card-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        color: var(--or-clair);
+        letter-spacing: 0.1em;
+        margin-bottom: 0.6rem;
+      }
+      .col-card p {
+        font-size: 1.08rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+        line-height: 1.65;
+      }
+
+      /* ═══ THREE-COL ═══ */
+      .three-col {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        margin: 2.5rem 0;
+      }
+
+      /* ═══ DATA TABLE ═══ */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        font-size: 1.08rem;
+      }
+      .data-table th {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--or);
+        text-align: left;
+        padding: 0.8rem 1rem;
+        border-bottom: 2px solid rgba(200, 151, 58, 0.3);
+      }
+      .data-table td {
+        padding: 0.65rem 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        color: var(--sable);
+        vertical-align: top;
+      }
+      .data-table tr:hover td {
+        background: rgba(200, 151, 58, 0.03);
+      }
+
+      /* ═══ SPELL BLOCK ═══ */
+      .spell-block {
+        background: linear-gradient(
+          135deg,
+          rgba(10, 6, 20, 0.95),
+          rgba(20, 14, 8, 0.9)
+        );
+        border: 1px solid rgba(122, 80, 184, 0.25);
+        border-left: 3px solid var(--violet-clair);
+        padding: 2rem 2.5rem;
+        margin: 3rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .spell-block::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(
+          circle at top right,
+          rgba(122, 80, 184, 0.1),
+          transparent 70%
+        );
+      }
+      .spell-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: var(--violet-doux);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .spell-text {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 1.3rem;
+        color: var(--or-clair);
+        line-height: 1.8;
+        margin-bottom: 0.8rem;
+      }
+      .spell-source {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
+        color: var(--sable-fonce);
+      }
+
+      /* ═══ SOUL COMPONENTS ═══ */
+      .soul-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 1.2rem;
+        margin: 2.5rem 0;
+      }
+      .soul-card {
+        background: linear-gradient(
+          145deg,
+          rgba(10, 6, 20, 0.85),
+          rgba(20, 14, 8, 0.9)
+        );
+        border: 1px solid rgba(122, 80, 184, 0.18);
+        border-top: 3px solid rgba(122, 80, 184, 0.4);
+        padding: 1.4rem;
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .soul-card:hover {
+        border-top-color: var(--violet-doux);
+        transform: translateY(-3px);
+      }
+      .soul-icon {
+        font-size: 2.7rem;
+        display: block;
+        margin-bottom: 0.7rem;
+      }
+      .soul-name {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        color: var(--or-clair);
+        letter-spacing: 0.08em;
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+      .soul-eg {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 0.98rem;
+        color: var(--violet-doux);
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      .soul-desc {
+        font-size: 1rem;
+        color: var(--sable-fonce);
+        line-height: 1.5;
+      }
+
+      /* ═══ BAND QUOTE ═══ */
+      .band-quote {
+        background: linear-gradient(135deg, #04020e 0%, #100804 100%);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .band-quote::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(122, 80, 184, 0.018) 0px,
+          rgba(122, 80, 184, 0.018) 1px,
+          transparent 1px,
+          transparent 20px
+        );
+      }
+      .band-quote blockquote {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.25rem, calc(2.4vw + 0.2rem), 1.85rem);
+        color: var(--or-clair);
+        max-width: 860px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.55;
+      }
+      .band-quote footer {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        color: var(--sable-fonce);
+        text-transform: uppercase;
+      }
+
+      /* ═══ BIBLIOGRAPHY ═══ */
+      .bibliography {
+        background: linear-gradient(
+          180deg,
+          rgba(26, 18, 8, 0) 0%,
+          rgba(10, 6, 18, 0.8) 100%
+        );
+        padding: 5rem 0;
+      }
+      .bib-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+      .bib-list {
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+      }
+      .bib-item {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+        padding: 0.5rem 0 0.5rem 1.2rem;
+        transition: border-color 0.2s;
+      }
+      .bib-item:hover {
+        border-left-color: var(--or);
+      }
+      .bib-item strong {
+        color: var(--sable);
+        font-style: italic;
+      }
+
+      /* ═══ FOOTER ═══ */
+      footer {
+        background: #06040e;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+      .footer-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.15rem;
+      }
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      .footer-nav a:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 700px) {
+        .intro-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .intro-divider-v {
+          display: none;
+        }
+        nav.main-nav .nav-links {
+          display: none;
+        }
+        .hiero-deco {
+          display: none;
+        }
+        .subject-card {
+          flex-direction: column;
+        }
+        .two-col,
+        .three-col {
+          grid-template-columns: 1fr;
+        }
+        .cat-glyph {
+          font-size: 3.2rem;
+        }
+        .duat-hours {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .soul-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════ HERO ══════════════ -->
+    <section class="hero" id="accueil">
+      <div class="hero-background">
+        <img
+          src="images/images/ankh.jpg"
+          alt="L'Ankh sacré, clé de vie et de magie"
+          loading="eager"
+        />
+      </div>
+      <div class="stars" id="stars"></div>
+
+      <svg
+        class="hero-scene"
+        viewBox="0 0 1200 280"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Underworld water -->
+        <path
+          d="M0 220 Q150 205 300 220 Q450 235 600 220 Q750 205 900 220 Q1050 235 1200 220"
+          fill="none"
+          stroke="rgba(74,127,168,0.15)"
+          stroke-width="1.5"
+        />
+        <path
+          d="M0 235 Q150 220 300 235 Q450 250 600 235 Q750 220 900 235 Q1050 250 1200 235"
+          fill="none"
+          stroke="rgba(74,127,168,0.1)"
+          stroke-width="1"
+        />
+        <!-- Solar barque -->
+        <path
+          d="M430 180 Q600 160 770 180 Q760 195 600 200 Q440 195 430 180Z"
+          fill="rgba(200,151,58,0.04)"
+          stroke="rgba(200,151,58,0.25)"
+          stroke-width="1.2"
+        />
+        <path
+          d="M430 180 Q600 175 770 180"
+          fill="none"
+          stroke="rgba(200,151,58,0.18)"
+          stroke-width="1"
+        />
+        <!-- Mast -->
+        <line
+          x1="600"
+          y1="200"
+          x2="600"
+          y2="148"
+          stroke="rgba(200,151,58,0.2)"
+          stroke-width="1.2"
+        />
+        <!-- Sun disc on barque -->
+        <circle
+          cx="600"
+          cy="135"
+          r="18"
+          fill="rgba(200,151,58,0.04)"
+          stroke="rgba(200,151,58,0.3)"
+          stroke-width="1.2"
+        />
+        <circle cx="600" cy="135" r="12" fill="rgba(200,151,58,0.06)" />
+        <!-- Oars -->
+        <g stroke="rgba(200,151,58,0.15)" stroke-width="1">
+          <line x1="480" y1="185" x2="460" y2="208" />
+          <line x1="510" y1="190" x2="492" y2="214" />
+          <line x1="690" y1="185" x2="710" y2="208" />
+          <line x1="660" y1="190" x2="678" y2="214" />
+        </g>
+        <!-- Apophis serpent -->
+        <path
+          d="M50 260 Q200 240 350 260 Q500 280 650 258 Q800 238 950 258 Q1100 278 1150 265"
+          fill="none"
+          stroke="rgba(139,46,26,0.25)"
+          stroke-width="3.5"
+        />
+        <!-- Small head -->
+        <ellipse
+          cx="80"
+          cy="255"
+          rx="18"
+          ry="10"
+          fill="rgba(139,46,26,0.08)"
+          stroke="rgba(139,46,26,0.2)"
+          stroke-width="1"
+        />
+        <!-- Gates -->
+        <g stroke="rgba(200,151,58,0.18)" stroke-width="1.2" fill="none">
+          <rect x="160" y="195" width="30" height="45" rx="1" />
+          <line x1="175" y1="195" x2="175" y2="240" />
+          <rect x="1010" y="195" width="30" height="45" rx="1" />
+          <line x1="1025" y1="195" x2="1025" y2="240" />
+        </g>
+        <!-- Stars / souls -->
+        <g fill="rgba(200,151,58,0.3)">
+          <circle cx="100" cy="40" r="2" />
+          <circle cx="250" cy="25" r="1.5" />
+          <circle cx="400" cy="50" r="2" />
+          <circle cx="550" cy="30" r="1.5" />
+          <circle cx="700" cy="45" r="2" />
+          <circle cx="850" cy="20" r="1.5" />
+          <circle cx="1000" cy="40" r="2" />
+          <circle cx="1100" cy="28" r="1.5" />
+        </g>
+        <!-- Jackal Anubis silhouette -->
+        <g
+          fill="rgba(200,151,58,0.07)"
+          stroke="rgba(200,151,58,0.18)"
+          stroke-width="1"
+        >
+          <path
+            d="M280 230 Q275 215 280 200 Q290 185 300 188 Q310 185 315 195 Q320 185 330 190 Q325 200 325 215 Q325 230 310 235 Z"
+          />
+        </g>
+        <!-- Ground -->
+        <line
+          x1="0"
+          y1="248"
+          x2="1200"
+          y2="248"
+          stroke="rgba(200,151,58,0.08)"
+          stroke-width="1"
+        />
+      </svg>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Égypte Éternelle · Dossier Thématique</p>
+        <h1 class="hero-title">
+          Magie, Rituels<br />&amp; La Douat
+          <span
+            >Les ténèbres sacrées, les formules de résurrection et le voyage de
+            l'âme</span
+          >
+        </h1>
+        <p class="hero-subtitle">
+          Plongée dans l'univers intérieur de l'Égypte ancienne — la magie comme
+          science divine, les rituels qui maintiennent l'ordre cosmique, et la
+          géographie mystérieuse du monde des morts
+        </p>
+        <div class="hero-divider"></div>
+      </div>
+      <div class="scroll-hint">Défiler</div>
+    </section>
+
+    <!-- ══════════════ NAV ══════════════ -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">𓂀 Égypte Éternelle</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#toc">Table des matières</a></li>
+          <li><a href="#heka">Héka & Magie</a></li>
+          <li><a href="#duat">La Douat</a></li>
+          <li><a href="#ame">L'Âme égyptienne</a></li>
+          <li><a href="#rituels">Rituels divins</a></li>
+          <li><a href="#funeraire">Rites funéraires</a></li>
+          <li><a href="#magie-quotidienne">Magie quotidienne</a></li>
+          <li><a href="#bibliographie">Sources</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ══════════════ STATS ══════════════ -->
+    <div class="intro-band">
+      <div class="container-wide">
+        <div class="intro-grid">
+          <div class="intro-stat">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Heures du monde souterrain</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Composantes de l'âme</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">42</span>
+            <span class="stat-label">Juges divins du Jugement</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">70</span>
+            <span class="stat-label">Jours de momification</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ TABLE OF CONTENTS ══════════════ -->
+    <section class="toc-section" id="toc">
+      <div class="container">
+        <p class="toc-header">𓂀 Navigation</p>
+        <h2 class="toc-title">Table des matières</h2>
+        <div class="toc-grid">
+          <div class="toc-era">
+            <p class="toc-era-title">Héka — La Magie Sacrée</p>
+            <a href="#heka-concept" class="toc-link"
+              ><span class="toc-glyph">𓎛</span
+              ><span class="toc-name">Héka — La force magique primordiale</span
+              ><span class="toc-type">Concept</span></a
+            >
+            <a href="#magie-parole" class="toc-link"
+              ><span class="toc-glyph">𓂋</span
+              ><span class="toc-name">Le pouvoir du Nom et de la Parole</span
+              ><span class="toc-type">Logomachie</span></a
+            >
+            <a href="#praticiens" class="toc-link"
+              ><span class="toc-glyph">𓀀</span
+              ><span class="toc-name">Les praticiens de la magie</span
+              ><span class="toc-type">Acteurs</span></a
+            >
+            <a href="#magie-quotidienne" class="toc-link"
+              ><span class="toc-glyph">𓆣</span
+              ><span class="toc-name"
+                >Magie quotidienne — protection et guérison</span
+              ><span class="toc-type">Pratique</span></a
+            >
+            <a href="#magie-noire" class="toc-link"
+              ><span class="toc-glyph">𓃱</span
+              ><span class="toc-name"
+                >La magie offensive et les envoûtements</span
+              ><span class="toc-type">Magie noire</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">La Douat — Géographie de l'Au-delà</p>
+            <a href="#duat-description" class="toc-link"
+              ><span class="toc-glyph">𓆣</span
+              ><span class="toc-name"
+                >La Douat — Anatomie du monde souterrain</span
+              ><span class="toc-type">Géographie</span></a
+            >
+            <a href="#amdouat" class="toc-link"
+              ><span class="toc-glyph">𓇳</span
+              ><span class="toc-name"
+                >L'Amdouat — Les douze heures de la nuit</span
+              ><span class="toc-type">Texte royal</span></a
+            >
+            <a href="#livre-portes" class="toc-link"
+              ><span class="toc-glyph">𓌀</span
+              ><span class="toc-name">Le Livre des Portes</span
+              ><span class="toc-type">Nouvel Empire</span></a
+            >
+            <a href="#champ-roseaux" class="toc-link"
+              ><span class="toc-glyph">𓇾</span
+              ><span class="toc-name">Le Champ des Roseaux — Le Paradis</span
+              ><span class="toc-type">Au-delà</span></a
+            >
+            <a href="#jugement" class="toc-link"
+              ><span class="toc-glyph">𓁹</span
+              ><span class="toc-name"
+                >Le Jugement de l'Âme — La Pesée du cœur</span
+              ><span class="toc-type">Eschatologie</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">L'Âme Égyptienne</p>
+            <a href="#cinq-ames" class="toc-link"
+              ><span class="toc-glyph">𓅃</span
+              ><span class="toc-name">Les cinq composantes de l'être</span
+              ><span class="toc-type">Ka · Ba · Akh</span></a
+            >
+            <a href="#ba-voyage" class="toc-link"
+              ><span class="toc-glyph">𓅃</span
+              ><span class="toc-name">Le voyage du Ba dans la Douat</span
+              ><span class="toc-type">Âme-oiseau</span></a
+            >
+            <a href="#akh" class="toc-link"
+              ><span class="toc-glyph">𓄿</span
+              ><span class="toc-name">L'Akh — L'esprit transfiguré</span
+              ><span class="toc-type">Transfiguration</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Rituels du Temple & Divins</p>
+            <a href="#rituel-temple" class="toc-link"
+              ><span class="toc-glyph">𓊹</span
+              ><span class="toc-name">Le rituel journalier du temple</span
+              ><span class="toc-type">Culte divin</span></a
+            >
+            <a href="#rituel-ouverture-bouche" class="toc-link"
+              ><span class="toc-glyph">𓀭</span
+              ><span class="toc-name">L'Ouverture de la Bouche</span
+              ><span class="toc-type">Rituel funéraire</span></a
+            >
+            <a href="#fetes" class="toc-link"
+              ><span class="toc-glyph">𓇋</span
+              ><span class="toc-name">Les grandes fêtes rituelles</span
+              ><span class="toc-type">Calendrier sacré</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Rituels Funéraires & Protection</p>
+            <a href="#momification-rituel" class="toc-link"
+              ><span class="toc-glyph">𓀭</span
+              ><span class="toc-name">La momification — rituel complet</span
+              ><span class="toc-type">Funéraire</span></a
+            >
+            <a href="#formules-protection" class="toc-link"
+              ><span class="toc-glyph">𓎛</span
+              ><span class="toc-name">Formules de protection dans la Douat</span
+              ><span class="toc-type">Magie funéraire</span></a
+            >
+            <a href="#incantations-apophis" class="toc-link"
+              ><span class="toc-glyph">𓆙</span
+              ><span class="toc-name">Les rites contre Apophis</span
+              ><span class="toc-type">Apotropaïque</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CAT 1 : HÉKA — LA MAGIE
+══════════════════════════════════════ -->
+    <div class="cat-header" id="heka">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓎛</span>
+        <div>
+          <p class="cat-label">Première partie · La force invisible</p>
+          <h2 class="cat-name">Héka — La Magie Sacrée</h2>
+          <p class="cat-desc">
+            La magie n'est pas une illusion en Égypte — c'est la science des
+            forces cosmiques invisibles, aussi réelle que la lumière du soleil.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEKA CONCEPT -->
+    <section class="article-section" id="heka-concept">
+      <div class="hiero-deco">𓎛𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓎛</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Héka · Force primordiale</p>
+            <h2 class="marker-title">
+              Héka — La magie comme énergie fondatrice de l'univers
+            </h2>
+          </div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">𓎛</div>
+          <div class="subject-meta">
+            <h3 class="subject-name">Héka (ḥkȝ)</h3>
+            <p class="subject-subtitle">
+              Force magique primordiale · Dieu personnifié · Outil du pharaon et
+              des prêtres
+            </p>
+            <div class="subject-tags">
+              <span class="tag">Force cosmique</span>
+              <span class="tag tag-violet">Textes des Pyramides</span>
+              <span class="tag tag-green"
+                >~2350 av. J.-C. — 400 apr. J.-C.</span
+              >
+              <span class="tag">Personnifié en dieu · sceptre héqa</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          <em>Héka</em> — traduit conventionnellement par « magie » — est l'un
+          des concepts les plus profonds et les plus mal compris de la
+          civilisation égyptienne. Ce n'est pas le tour de passe-passe du
+          prestidigitateur, ni la superstition du primitif : c'est une
+          <strong>force cosmique réelle</strong>, aussi objective que le vent ou
+          la lumière, qui imprègne l'univers depuis avant la création et que les
+          êtres éduqués peuvent mobiliser, diriger et amplifier.
+        </p>
+
+        <p>
+          Dans les <em>Textes des Sarcophages</em> (Formule 261), Héka se décrit
+          lui-même en des termes d'une arrogance cosmique saisissante :
+          <em
+            >« Je suis Héka. J'étais avant le Ciel et la Terre. J'étais avant
+            les dieux. Je suis ce qui précède tout. »</em
+          >
+          Cette antériorité radicale est essentielle : Héka n'est pas un don des
+          dieux aux hommes, c'est la substance même dont les dieux sont faits.
+          Quand Atoum crée l'univers à Héliopolis, c'est par Héka qu'il le fait.
+          Quand Ptah nomme les choses à Memphis, c'est Héka qui donne à la
+          parole son pouvoir de réalisation.
+        </p>
+
+        <p>
+          Héka est aussi <strong>personnifié en divinité</strong> — un dieu
+          mineur de l'entourage solaire, représenté sous forme humaine tenant
+          deux serpents entrelacés (préfiguration du caducée grec). Il monte
+          dans la barque de Rê pour protéger le voyage nocturne, et assiste au
+          jugement des morts dans la Salle des Deux Vérités. Son rôle n'est
+          jamais central mais toujours présent — il est la magie au service de
+          l'ordre cosmique, l'outil invisible que les dieux utilisent à chaque
+          instant.
+        </p>
+
+        <h3>Les deux principes de la magie égyptienne</h3>
+        <p>
+          Toute pratique magique égyptienne repose sur deux axiomes fondamentaux
+          qui structurent la pensée rituelle depuis l'Ancien Empire jusqu'à la
+          période romaine :
+        </p>
+
+        <div class="two-col">
+          <div class="col-card">
+            <span class="col-card-icon">𓂋</span>
+            <h3 class="col-card-title">Le pouvoir du Nom (Ren)</h3>
+            <p>
+              Connaître le vrai nom secret d'un être ou d'une force, c'est
+              détenir un pouvoir absolu sur cet être. Le nom (<em>ren</em>)
+              n'est pas une étiquette arbitraire — c'est la nature essentielle
+              de la chose. Prononcer le nom juste dans les circonstances
+              rituelles appropriées, c'est convoquer la réalité désignée. C'est
+              pourquoi les pharaons cachaient leurs noms réels et pourquoi
+              effacer un nom dans un temple était l'acte de destruction le plus
+              radical qu'on pût imaginer.
+            </p>
+          </div>
+          <div class="col-card">
+            <span class="col-card-icon">𓆣</span>
+            <h3 class="col-card-title">Le principe de similitude (Similia)</h3>
+            <p>
+              Agir sur l'image ou la représentation d'une chose, c'est agir sur
+              la chose elle-même. Ce principe — que l'anthropologue James George
+              Frazer appellera plus tard « magie sympathique » — explique toutes
+              les pratiques de figurines ennemies percées d'épingles, de
+              représentations d'animaux venimeux dans les tombes, d'images
+              rituelles brisées et brûlées. Il explique aussi pourquoi
+              représenter le mort en train de festoyer sur la paroi de sa tombe
+              lui garantit réellement de festoyer dans l'au-delà.
+            </p>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>
+            Héka, c'est la langue de Ptah, le cœur d'Atoum, le souffle de Chou —
+            la puissance qui fait que les dieux sont des dieux. Les hommes qui
+            le maîtrisent touchent à la substance même du divin.
+          </p>
+          <cite
+            >— Ritner, R.K.,
+            <em>The Mechanics of Ancient Egyptian Magical Practice</em>,
+            Chicago, 1993</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- POUVOIR DE LA PAROLE -->
+    <section class="article-section" id="magie-parole">
+      <div class="hiero-deco">𓂋𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓂋</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Héka · Logomachie sacrée</p>
+            <h2 class="marker-title">
+              Le Pouvoir du Nom et de la Parole — La réalité créée par le
+              langage
+            </h2>
+          </div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">𓂋</div>
+          <div class="subject-meta">
+            <h3 class="subject-name">Le Ren et les Medu Netjer</h3>
+            <p class="subject-subtitle">
+              « Les paroles divines » — Hiéroglyphes comme écriture magique
+              vivante
+            </p>
+            <div class="subject-tags">
+              <span class="tag">Nom · Parole</span>
+              <span class="tag tag-violet">Hiéroglyphes</span>
+              <span class="tag tag-green">Textes de toute période</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Les hiéroglyphes égyptiens ne sont pas une simple écriture phonétique
+          : ils sont des <strong>paroles divines</strong> (<em>medu netjer</em
+          >), inventées par <a class="internal-link" href="#">Thot</a>, chaque
+          signe étant une image vivante portant en elle la nature de la chose
+          représentée. Un hiéroglyphe de serpent dans une tombe est un vrai
+          serpent potentiellement dangereux — c'est pourquoi certains signes
+          représentant des animaux venimeux étaient délibérément mutilés dans
+          les inscriptions funéraires (tête coupée, corps percé) pour les
+          neutraliser avant qu'ils ne s'animent.
+        </p>
+
+        <p>
+          Cette conception fait de tout acte d'écriture un acte magique. Graver
+          le nom d'un dieu sur une amulette, c'est convoquer sa présence.
+          Réciter une formule avec la prononciation exacte requise, c'est
+          déclencher une réaction cosmique réelle. Les prêtres portaient des
+          masques de dieux lors des rites non pour se déguiser, mais pour
+          <strong>devenir temporairement</strong> le dieu qu'ils incarnaient —
+          permettant à la parole divine de résonner avec une puissance
+          authentique.
+        </p>
+
+        <p>
+          Le récit d'<strong>Isis et du Nom Secret de Rê</strong> est la
+          démonstration narrative la plus célèbre de ce principe : Isis fabrique
+          un serpent avec de la terre et la salive de Rê, le pose sur son
+          chemin. Mordu, Rê souffre d'une douleur mystérieuse qu'aucun dieu ne
+          peut soigner. Isis propose de l'aider mais exige en échange son
+          <em>ren</em> secret — le nom véritable qui le constitue dans son
+          essence la plus profonde. Rê cède, lui murmure son nom au creux de
+          l'oreille, et
+          <strong
+            >lui transfère ainsi une parcelle de sa puissance cosmique</strong
+          >. C'est pourquoi Isis devient la magicienne suprême, plus puissante
+          que tous les autres dieux.
+        </p>
+
+        <div class="spell-block">
+          <span class="spell-label"
+            >𓂋 Formule de protection — Papyrus magique de Leyde</span
+          >
+          <p class="spell-text">
+            « Je suis Thot, le grand, le seigneur des paroles divines. Que
+            l'ennemi tombe ! Que le mal recule ! Je prononce le nom juste dans
+            l'heure juste — et la force du Nom s'abat sur celui qui me nuit
+            comme la foudre tombe du ciel sans merci. »
+          </p>
+          <span class="spell-source"
+            >Papyrus de Leyde I 343 + 345, époque ramesside, ~1250 av.
+            J.-C.</span
+          >
+        </div>
+
+        <div class="info-box ib-violet">
+          <p class="info-box-title">𓂋 Les cinq noms du pharaon</p>
+          <p>
+            Le protocole royal du pharaon comprend cinq noms officiels, chacun
+            encadré par un titre différent et révélant une facette de sa nature
+            divine. Parmi eux, le <em>nom de Nésout-Bity</em> (« Celui du jonc
+            et de l'abeille ») et le <em>nom de Sa-Rê</em> (« Fils de Rê ») sont
+            inscrits dans des cartouches pour les protéger. Le vrai nom intime
+            du pharaon n'est jamais prononcé en public — seuls les prêtres de
+            rang supérieur y ont accès lors des rites de couronnement et de
+            jubilé.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRATICIENS -->
+    <section class="article-section" id="praticiens">
+      <div class="hiero-deco">𓀀𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓀀</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Héka · Spécialistes du sacré</p>
+            <h2 class="marker-title">
+              Les Praticiens de la Magie — Prêtres, scribes et magiciens
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          La magie n'est pas une pratique clandestine ou marginale en Égypte :
+          elle est institutionnalisée, enseignée et exercée par des spécialistes
+          reconnus rattachés aux grands temples. Ces praticiens forment une
+          hiérarchie complexe dont les compétences couvrent à la fois le rituel
+          religieux, la médecine, l'astronomie et l'exorcisme.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Titre</th>
+              <th>Traduction</th>
+              <th>Rôle</th>
+              <th>Formation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hery-heb</strong></td>
+              <td>Porteur du livre rituel</td>
+              <td>
+                Récite les formules lors des rituels funéraires et des
+                cérémonies temples. Premier officiant de tous les rites majeurs.
+              </td>
+              <td>Maison de Vie (Per-Ankh)</td>
+            </tr>
+            <tr>
+              <td><strong>Sau</strong></td>
+              <td>Celui qui protège (gardien)</td>
+              <td>
+                Spécialiste des amulettes, des formules de protection
+                personnelle. Consulté pour la naissance, les maladies, les
+                cauchemars.
+              </td>
+              <td>Apprentissage auprès d'un maître</td>
+            </tr>
+            <tr>
+              <td><strong>Khery-hebet</strong></td>
+              <td>Maître des paroles sacrées</td>
+              <td>
+                Exorciste et guérisseur. Récite les formules médicales-magiques.
+                Lie la médecine physique à l'intervention divine.
+              </td>
+              <td>Per-Ankh · corpus médicaux</td>
+            </tr>
+            <tr>
+              <td><strong>Wab-Sekhmet</strong></td>
+              <td>Prêtre pur de Sekhmet</td>
+              <td>
+                Médecin-prêtre spécialisé dans les maladies envoyées par
+                Sekhmet. Gère les épidémies et les maladies chroniques.
+              </td>
+              <td>Temple de Memphis · Sekhmet</td>
+            </tr>
+            <tr>
+              <td><strong>Imy-is</strong></td>
+              <td>Celui qui est dans la chambre</td>
+              <td>
+                Prêtre funéraire assurant l'entretien rituel quotidien des morts
+                dans la tombe — offrandes, récitations.
+              </td>
+              <td>Famille du défunt · contrat</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Tous ces praticiens sont formés à la
+          <strong>Maison de Vie</strong> (<em>Per-Ankh</em>), institution
+          rattachée aux grands temples qui conserve les papyrus sacrés, enseigne
+          l'écriture, les rites, la médecine, l'astronomie et la magie. C'est le
+          scriptorium sacré de l'Égypte — l'endroit où les textes magiques sont
+          copiés, transmis et actualisés de génération en génération. Les Grecs
+          l'appelleront plus tard <em>scriptorium sacerdotale</em> et en feront
+          la source légendaire de toute sagesse ésotérique.
+        </p>
+
+        <div class="info-box ib-or">
+          <p class="info-box-title">
+            𓀀 Le magicien dans les contes — Papyrus Westcar
+          </p>
+          <p>
+            Le <em>Papyrus Westcar</em> (copie du Moyen Empire d'un original
+            plus ancien) contient plusieurs contes mettant en scène des
+            magiciens royaux réalisant des prodiges. Le sage Djadjaemankh
+            reforme un lac en deux pour retrouver une boucle d'oreille tombée au
+            fond. Djédi, vieillard de 110 ans, peut rattacher une tête coupée
+            sur un corps vivant et connaît le nombre des chambres secrètes du
+            sanctuaire de Thot. Ces récits décrivent un idéal du magicien savant
+            — à la fois technicien du surnaturel et sage philosophe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAGIE QUOTIDIENNE -->
+    <section class="article-section" id="magie-quotidienne">
+      <div class="hiero-deco">𓆣𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓆣</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Héka · Vie ordinaire</p>
+            <h2 class="marker-title">
+              La Magie Quotidienne — Protéger, guérir et prospérer par le rite
+            </h2>
+          </div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">𓆣</div>
+          <div class="subject-meta">
+            <h3 class="subject-name">Magie apotropaïque et thérapeutique</h3>
+            <p class="subject-subtitle">
+              La magie comme médecine — soigner les corps, éloigner les démons,
+              protéger les maisons
+            </p>
+            <div class="subject-tags">
+              <span class="tag">Quotidien</span>
+              <span class="tag tag-green">Naissance · maladie · voyage</span>
+              <span class="tag tag-violet">Papyrus médico-magiques</span>
+              <span class="tag">Tous niveaux sociaux</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          La magie quotidienne est omniprésente dans la vie égyptienne, du
+          palais royal à la chaumière du paysan. Elle n'est ni l'apanage des
+          élites ni l'expression d'une ignorance populaire : c'est une
+          <strong>technologie du quotidien</strong> accessible à tous, adaptée à
+          chaque situation de la vie humaine — naissance, maladie, voyage,
+          amour, récoltes, protection contre les animaux dangereux.
+        </p>
+
+        <h3>La protection à la naissance</h3>
+        <p>
+          La naissance est le moment de plus grande vulnérabilité dans la vie
+          d'un Égyptien — pour la mère et pour l'enfant. Des rituels magiques
+          spécifiques entourent chaque accouchement. La déesse
+          <a class="internal-link" href="#">Taweret</a> (hippopotame femelle
+          debout) et le dieu nain <strong>Bès</strong> (à tête de lion
+          grotesque, langue tirée) sont les protecteurs par excellence des
+          naissances : leurs statuettes sont placées dans les chambres des
+          femmes enceintes, leurs images peintes sur les murs. Des formules
+          récitées à voix haute pendant le travail invoquent Isis et Nephtys
+          comme sages-femmes divines — car c'est bien Isis qui accoucha d'Horus
+          dans les marais, seule, en fuite devant Seth. Les
+          <strong>baguettes magiques</strong> en ivoire d'hippopotame —
+          courbées, couvertes de représentations d'animaux gardiens — étaient
+          posées en cercle protecteur autour du lit de la parturiente.
+        </p>
+
+        <h3>Les formules contre les scorpions et les serpents</h3>
+        <p>
+          Le désert, les marécages et les champs d'Égypte grouillent de
+          scorpions et de serpents venimeux. La médecine égyptienne dispose de
+          traitements physiques réels (Papyrus Edwin Smith, Papyrus Ebers), mais
+          <strong
+            >chaque traitement physique est doublé d'une formule magique</strong
+          >
+          qui l'active. Le principe est explicite dans les papyrus médicaux : la
+          plante ou le minéral soignant est identifié à une substance divine, et
+          la récitation de la formule invoque la puissance du dieu correspondant
+          pour amplifier l'effet pharmacologique. La guérison est à la fois
+          chimique et divine — une séparation que les Égyptiens ne feraient
+          jamais.
+        </p>
+
+        <p>
+          Un corpus entier de formules — les
+          <strong>textes de Metternich</strong> (stèle de Cippi d'Horus) —
+          traitent des morsures et piqûres venimeuses. La stèle de Cippi
+          représente l'enfant Horus debout sur des crocodiles, tenant dans ses
+          mains des serpents, des scorpions et d'autres bêtes maléfiques. Verser
+          de l'eau sur cette stèle, réciter la formule gravée, puis faire boire
+          cette eau au blessé était considéré comme le remède le plus efficace
+          contre les envenimements.
+        </p>
+
+        <div class="spell-block">
+          <span class="spell-label"
+            >𓆣 Formule contre la morsure de serpent — Papyrus d'Ebers §103</span
+          >
+          <p class="spell-text">
+            « Recule, tu dont la morsure est la mort ! Recule, toi qui rampes
+            sur ton ventre ! Isis a trouvé le serpent — elle a dit la formule
+            juste — et le venin s'est retiré comme l'eau se retire à la saison
+            sèche. »
+          </p>
+          <span class="spell-source"
+            >Papyrus Ebers, formule de récitation thérapeutique, ~1550 av.
+            J.-C.</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- MAGIE NOIRE -->
+    <section class="article-section" id="magie-noire">
+      <div class="hiero-deco">𓃱𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓃱</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Héka · Face sombre</p>
+            <h2 class="marker-title">
+              La Magie Offensive — Envoûtements, textes d'exécration et
+              vengeance rituelle
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          Si la magie protectrice et thérapeutique est valorisée, les textes
+          égyptiens témoignent abondamment d'une
+          <strong>magie offensive</strong> — utilisée pour nuire aux ennemis,
+          capturer l'amour d'une personne, ou maudire des rivaux. La distinction
+          entre magie « blanche » et « noire » n'existe pas comme telle en
+          Égypte : la même force d'Héka peut être orientée dans un sens ou dans
+          l'autre selon l'intention du praticien.
+        </p>
+
+        <p>
+          Les <strong>Textes d'Exécration</strong> sont l'exemple le plus
+          officiel de magie offensive : des listes d'ennemis — princes nubiens,
+          chefs libyens, asiatiques rebelles, mais aussi Égyptiens déloyaux —
+          inscrits sur des figurines en argile ou des bols en céramique, puis
+          rituellement brisés ou enterrés dans des nécropoles. Ces textes, dont
+          les plus importants datent du Moyen Empire (~2000 av. J.-C.), ne sont
+          pas des pratiques clandestines : ils sont commandés par le pharaon
+          lui-même et exécutés par des prêtres officiels. La destruction
+          rituelle de l'image de l'ennemi est une déclaration de guerre cosmique
+          — affaiblir le <em>ba</em> de l'adversaire avant même que les armées
+          s'affrontent.
+        </p>
+
+        <p>
+          À un niveau plus intime, les papyrus amoureux et les figurines
+          d'envoûtement documentent une magie populaire intense. La
+          <strong>figurine d'envoûtement</strong> — petite statuette de cire
+          représentant une personne, parfois percée d'aiguilles, bras liés dans
+          le dos — vise à lier la volonté d'une personne pour la forcer à aimer,
+          obéir ou souffrir. Des procès pour magie malfaisante sont documentés à
+          Deir el-Médineh, et le <em>Procès du Harem</em> sous Ramsès III accuse
+          des comploteurs d'avoir utilisé des formules magiques contre le roi.
+        </p>
+
+        <div class="info-box ib-red">
+          <p class="info-box-title">
+            𓃱 Les textes d'amour — Papyrus Chester Beatty I
+          </p>
+          <p>
+            Le <em>Papyrus Chester Beatty I</em> (Nouvel Empire) contient à la
+            fois le conte d'Horus et Seth et des textes d'amour d'une subtilité
+            et d'une sensualité saisissantes — véritables poèmes lyriques. Mais
+            d'autres papyrus moins littéraires contiennent des formules
+            destinées à forcer un amour : « Fais que X ne mange pas, ne boive
+            pas, ne dorme pas, ne rie pas, ne jouisse de rien jusqu'à ce qu'elle
+            vienne à moi. » Cette magie coercitive de l'amour est documentée
+            dans toutes les cultures antiques ; en Égypte, elle est intégrée
+            dans le même corpus que la magie protectrice, sans séparation
+            catégorielle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ BAND QUOTE ══════════════ -->
+    <div class="band-quote">
+      <blockquote>
+        « Je connais ce chemin obscur, je connais les gardiens des portes, je
+        connais leur nom secret. Ouvrez-vous, portes du ciel — je passe dans la
+        lumière. »
+      </blockquote>
+      <footer>— Livre des Morts, Chapitre 130, ~1500 av. J.-C.</footer>
+    </div>
+
+    <!-- ══════════════════════════════════════
+     CAT 2 : LA DOUAT
+══════════════════════════════════════ -->
+    <div class="cat-header" id="duat">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓆣</span>
+        <div>
+          <p class="cat-label">Deuxième partie · Le monde des morts</p>
+          <h2 class="cat-name">La Douat — Géographie de l'Au-delà</h2>
+          <p class="cat-desc">
+            Le monde souterrain égyptien n'est pas un enfer — c'est un univers
+            parallèle complexe, dangereux et lumineux, que l'âme doit traverser
+            pour atteindre l'éternité.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DUAT DESCRIPTION -->
+    <section class="article-section" id="duat-description">
+      <div class="hiero-deco">𓆣𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓆣</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">La Douat · Géographie mystique</p>
+            <h2 class="marker-title">
+              La Douat — Anatomie complète du monde souterrain
+            </h2>
+          </div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">𓆣</div>
+          <div class="subject-meta">
+            <h3 class="subject-name">La Douat (Dwȝt)</h3>
+            <p class="subject-subtitle">
+              « Ce qui est dans l'au-delà » — Monde parallèle traversé par le
+              soleil chaque nuit
+            </p>
+            <div class="subject-tags">
+              <span class="tag">Monde souterrain</span>
+              <span class="tag tag-violet">Réel et cartographiable</span>
+              <span class="tag tag-green">12 heures · 12 cavernes</span>
+              <span class="tag">Amdouat · Livre des Portes</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          La Douat est l'un des concepts les plus originaux et les plus riches
+          de toute la pensée religieuse mondiale. Ce n'est pas l'enfer du
+          monothéisme occidental (un lieu de punition), ni l'Hadès grec (un
+          séjour gris et fade) — c'est un
+          <strong>univers vivant et actif</strong>, peuplé de dieux, de morts,
+          de démons et de forces cosmiques, traversé chaque nuit par le soleil
+          en voyage de résurrection.
+        </p>
+
+        <p>
+          Contrairement à ce que le mot « souterrain » pourrait suggérer, la
+          Douat n'est pas strictement localisée <em>sous</em> la terre. Les
+          textes la placent alternativement à l'ouest (direction de la mort et
+          du coucher du soleil), dans le ventre de Nout (la déesse céleste),
+          dans les profondeurs du Nil, et dans un espace mystique parallèle à
+          l'univers visible. Cette polysémie géographique est délibérée : la
+          Douat est partout et nulle part, accessible depuis le monde des
+          vivants par des passages rituels spécifiques.
+        </p>
+
+        <h3>Les douze cavernes horaires</h3>
+        <p>
+          La structure fondamentale de la Douat est celle de
+          <strong>douze régions</strong> successives correspondant aux douze
+          heures de la nuit — chacune séparée de la suivante par une porte
+          gardée par un serpent ou un dieu à tête d'animal. Chaque heure a son
+          nom propre, ses habitants spécifiques, ses dangers particuliers et ses
+          rituels de passage. Le soleil Rê doit traverser les douze
+          successivement, transformant progressivement son énergie épuisée du
+          coucher en énergie régénérée de l'aurore.
+        </p>
+
+        <div class="duat-map">
+          <p class="duat-title">
+            𓆣 Les douze heures de la Douat — D'après l'Amdouat
+          </p>
+          <div class="duat-hours">
+            <div class="duat-hour">
+              <span class="duat-hour-num">I</span>
+              <span class="duat-hour-name">Ouernet</span>
+              <p class="duat-hour-desc">
+                Entrée dans la Douat. Rê est accueilli par les dieux et les âmes
+                des bienheureux. Région des eaux. Barque solaire reçoit ses
+                passagers nocturnes.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">II</span>
+              <span class="duat-hour-name">Ouernes</span>
+              <p class="duat-hour-desc">
+                Champs fertiles des morts. Osiris règne sur ses défunts. Les
+                âmes recueillent une récolte éternelle de blé et d'orge divins.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">III</span>
+              <span class="duat-hour-name">Neret</span>
+              <p class="duat-hour-desc">
+                Caverne des sables. Danger des serpents hostiles. Les dieux de
+                la barque récitent les formules de passage. Région de
+                transformations.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">IV</span>
+              <span class="duat-hour-name">Ankh-ès</span>
+              <p class="duat-hour-desc">
+                La région des morts bienheureux reçoit la lumière de Rê. Les
+                âmes s'éveillent brièvement, s'allongent pour recevoir le
+                souffle divin.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">V</span>
+              <span class="duat-hour-name">Âat</span>
+              <p class="duat-hour-desc">
+                Approche du tombeau d'Osiris. Dieux et déesses gardiens.
+                Formules complexes de passage. Rê commence à sentir son énergie
+                renaître.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">VI</span>
+              <span class="duat-hour-name">Meskhen</span>
+              <p
+                class="duat-hour-desc"
+                style="color: var(--or-clair); font-weight: 500"
+              >
+                MINUIT COSMIQUE — Rê fusionne avec le corps d'Osiris couché.
+                Mort et soleil s'unissent. Maximum de puissance et de
+                vulnérabilité simultanées.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">VII</span>
+              <span class="duat-hour-name">Théphet</span>
+              <p class="duat-hour-desc">
+                Apophis le grand serpent attaque. Seth brandit sa lance. Combat
+                cosmique entre ordre et chaos. La barque est en danger mortel.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">VIII</span>
+              <span class="duat-hour-name">Nebou</span>
+              <p class="duat-hour-desc">
+                Jugement et punition. Les damnés reçoivent leurs châtiments. Lac
+                de feu. Les ennemis de Rê et d'Osiris sont consumés pour
+                l'éternité.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">IX</span>
+              <span class="duat-hour-name">Bakhau</span>
+              <p class="duat-hour-desc">
+                Approche de la renaissance. Les étoiles circumpolaires tournent.
+                Les dieux tirent la barque vers l'est. L'énergie solaire se
+                régénère activement.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">X</span>
+              <span class="duat-hour-name">Metch</span>
+              <p class="duat-hour-desc">
+                Les eaux de la régénération. Nout attend à l'est pour recevoir
+                son fils. La barque pénètre dans le corps céleste. Renaissance
+                imminente.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">XI</span>
+              <span class="duat-hour-name">Rerou</span>
+              <p class="duat-hour-desc">
+                Le scarabée Khépri prend la place de Rê vieillard.
+                Transformation finale du coucher en aurore. Les dieux de la nuit
+                saluent l'approche de l'aube.
+              </p>
+            </div>
+            <div class="duat-hour">
+              <span class="duat-hour-num">XII</span>
+              <span class="duat-hour-name">Khépri</span>
+              <p class="duat-hour-desc">
+                La barque passe dans le corps du serpent et ressort par la
+                bouche du serpent géant : c'est l'aube. Rê renaît à l'est sous
+                la forme de Khépri. Victoire.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box ib-violet">
+          <p class="info-box-title">𓆣 La Douat dans les tombes royales</p>
+          <p>
+            Les parois des tombes royales de la Vallée des Rois ne sont pas
+            décorées au hasard — elles sont une <em>carte</em> de la Douat,
+            orientée selon les heures du voyage solaire. L'axe de la tombe suit
+            la trajectoire de Rê dans le monde souterrain. En pénétrant dans la
+            tombe du pharaon, le visiteur rituel <em>entre</em> dans la Douat.
+            Les textes et images sur les murs servent à la fois de guide au roi
+            défunt pour négocier son voyage et de barrière magique contre les
+            forces hostiles. La tombe est à la fois monument funéraire, texte
+            liturgique et machine cosmique.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- JUGEMENT DE L'AME -->
+    <section class="article-section" id="jugement">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓁹</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">La Douat · Eschatologie</p>
+            <h2 class="marker-title">
+              Le Jugement de l'Âme — La Salle des Deux Vérités et la Pesée du
+              cœur
+            </h2>
+          </div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">𓁹</div>
+          <div class="subject-meta">
+            <h3 class="subject-name">La Pesée du Cœur (Ibu)</h3>
+            <p class="subject-subtitle">
+              Jugement moral devant Osiris — Le moment le plus redouté et le
+              plus espéré de l'au-delà
+            </p>
+            <div class="subject-tags">
+              <span class="tag">Jugement · Éthique</span>
+              <span class="tag tag-violet">Livre des Morts, Ch. 125</span>
+              <span class="tag tag-green">Maât · Osiris · Thot · Anubis</span>
+              <span class="tag">42 juges assesseurs</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Au cœur de la sixième heure de la Douat — au moment du minuit cosmique
+          où Rê fusionne avec le corps d'Osiris — se tient la
+          <strong>Salle des Deux Vérités</strong> (<em>Maât khrou</em>), le
+          tribunal le plus redoutable de l'univers. C'est ici que chaque âme
+          défunte, après avoir parcouru les premières heures de la Douat, doit
+          prouver qu'elle a vécu selon les principes de
+          <a class="internal-link" href="#">Maât</a> — la vérité, la justice et
+          l'ordre cosmique.
+        </p>
+
+        <h3>La cérémonie du Jugement — Protocole divin</h3>
+        <div class="ritual-flow">
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte I</span>
+            <p class="ritual-step-title">L'entrée dans la Salle</p>
+            <p>
+              Le défunt, guidé par <a class="internal-link" href="#">Anubis</a>,
+              pénètre dans la Salle des Deux Vérités. Il est habillé de blanc,
+              pur rituellement. 42 juges assesseurs siègent en deux rangées,
+              chacun responsable d'un péché spécifique. Osiris trône au fond,
+              couronné, tenant le heqa et le nekhakha. Thot se tient prêt avec
+              son calame et son tableau.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte II</span>
+            <p class="ritual-step-title">
+              La Confession Négative — Chapitre 125
+            </p>
+            <p>
+              Le défunt s'adresse d'abord aux 42 juges en récitant la
+              <em>Confession Négative</em> — une liste de 42 péchés dont il
+              affirme solennellement s'être abstenu. Chaque affirmation est
+              adressée à un juge nommé : « Ô Destructeur-de-flammes venu
+              d'Héliopolis, je n'ai pas volé. Ô Mangeur d'ombres venu de la
+              caverne, je n'ai pas tué. Ô Porteur de couteau venu d'Abydos, je
+              n'ai pas menti… » Cette liste couvre des péchés moraux (mensonge,
+              meurtre, vol), religieux (profanation des temples, non-respect des
+              offrandes) et sociaux (oppression des faibles, injustice dans les
+              mesures).
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte III</span>
+            <p class="ritual-step-title">La Pesée du Cœur</p>
+            <p>
+              Anubis place le cœur du défunt (<em>ib</em>) sur le plateau gauche
+              d'une grande balance. Sur le plateau droit, il pose la plume de
+              Maât — la plume d'autruche symbolisant la vérité absolue. Si le
+              cœur est pur, il est aussi léger que la plume et les deux plateaux
+              s'équilibrent parfaitement. Si le cœur est alourdi par des fautes
+              non expiées, le plateau penche.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte IV</span>
+            <p class="ritual-step-title">Le verdict de Thot</p>
+            <p>
+              Thot, scribe divin, observe scrupuleusement l'équilibre de la
+              balance et note le résultat sur son tableau. Il annonce le verdict
+              à Osiris et à l'assemblée des dieux. Sa parole est définitive et
+              sans appel — lui seul dispose de l'autorité d'inventorier les
+              vérités cosmiques.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte V · Verdict favorable</span>
+            <p class="ritual-step-title">L'accueil dans l'éternité</p>
+            <p>
+              Si le cœur est juste, Horus présente le défunt à Osiris en
+              l'introduisant dans le Champ des Roseaux. Le défunt est déclaré
+              <em>maâ-khérou</em> — « juste de voix » ou « vainqueur de la
+              justice » — et rejoint la communauté des bienheureux. Il peut
+              désormais prendre n'importe quelle forme, voyager librement dans
+              la Douat, et revivre éternellement.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte V · Verdict défavorable</span>
+            <p class="ritual-step-title">La dévoration par Ammout</p>
+            <p>
+              Si le cœur est alourdi, la chimère <strong>Ammout</strong> — corps
+              d'hippopotame, tête de crocodile, arrière-train de lion — surgit
+              et dévore le cœur. Cette <em>seconde mort</em> est la seule
+              véritablement définitive : l'âme qui n'a plus de cœur ne peut être
+              reconstituée, ne peut être ressuscitée. Elle n'existe plus, nulle
+              part, pour l'éternité.
+            </p>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>
+            La Pesée du cœur est l'invention la plus originale de la pensée
+            morale de l'Antiquité : un jugement universel, post-mortem, fondé
+            non sur la dévotion mais sur l'éthique. Le critère n'est pas « as-tu
+            prié ? » mais « as-tu été juste ? »
+          </p>
+          <cite
+            >— Assmann, J.,
+            <em>Ma'at — Gerechtigkeit und Unsterblichkeit im alten Ägypten</em>,
+            Munich, 1990</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAMP DES ROSEAUX -->
+    <section class="article-section" id="champ-roseaux">
+      <div class="hiero-deco">𓇾𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓇾</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">La Douat · Paradis</p>
+            <h2 class="marker-title">
+              Le Champ des Roseaux — Aaru, le paradis fertile de l'éternité
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          Le <strong>Champ des Roseaux</strong> (<em>Sekhet-Aaru</em>) est le
+          paradis de l'Égypte ancienne — et c'est l'un des paradis les plus
+          concrets et les plus terreà-terre que l'imagination humaine ait
+          conçus. Point d'abstraction mystique ni de béatitude incorporelle :
+          l'<em>Aaru</em> est une Égypte parfaite, une vallée du Nil idéalisée
+          où les récoltes poussent sans sécheresse, où les banquets se
+          succèdent, où les défunts retrouvent leur famille et leurs amis, où
+          l'on joue au senet et où l'on navigue sur des canaux d'eau fraîche.
+        </p>
+
+        <p>
+          Le Chapitre 110 du <em>Livre des Morts</em> décrit l'<em>Aaru</em>
+          avec une précision géographique étonnante : plusieurs îles et canaux
+          successifs, chacun gardé, chacun accessible par des formules
+          spécifiques. Le défunt y arrive en barque, montre son papyrus du
+          <em>Livre des Morts</em> comme un laissez-passer aux gardiens, et est
+          admis dans cette terre de plénitude. Mais il doit aussi
+          <em>travailler</em> dans les champs de l'<em>Aaru</em> — c'est
+          précisément pour éviter cette obligation que l'on plaçait des
+          <a class="internal-link" href="#">ouchebtis</a> dans les tombes : ces
+          petites figurines répondent à la place du défunt quand les dieux
+          l'appellent pour les corvées agricoles.
+        </p>
+
+        <div class="info-box ib-green">
+          <p class="info-box-title">𓇾 L'éternité n'est pas la même pour tous</p>
+          <p>
+            Dans la conception égyptienne, l'au-delà n'est pas un état uniforme
+            : les défunts continuent d'avoir des identités, des histoires, des
+            hiérarchies. Les rois deviennent des dieux et naviguent avec Rê. Les
+            nobles habitent leurs tombes et reçoivent les offrandes de leurs
+            descendants. Les pauvres peuvent rejoindre l'<em>Aaru</em> s'ils ont
+            eu accès aux formules appropriées. Ceux qui n'ont pas de tombeau,
+            pas d'offrandes et pas de formules sont simplement oubliés — et
+            cette oubli est la vraie mort.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CAT 3 : L'ÂME ÉGYPTIENNE
+══════════════════════════════════════ -->
+    <div class="cat-header" id="ame">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓅃</span>
+        <div>
+          <p class="cat-label">Troisième partie · La personne divine</p>
+          <h2 class="cat-name">L'Âme Égyptienne</h2>
+          <p class="cat-desc">
+            Une conception de l'être humain d'une sophistication étonnante —
+            cinq composantes, chacune avec son destin propre après la mort.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CINQ AMES -->
+    <section class="article-section" id="cinq-ames">
+      <div class="hiero-deco">𓅃𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓅃</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Âme · Anthropologie sacrée</p>
+            <h2 class="marker-title">
+              Les Cinq Composantes de l'Être — Une anthropologie spirituelle
+              unique
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          La conception égyptienne de la personne humaine est d'une complexité
+          et d'une subtilité qui dépasse largement la dualité corps-âme
+          familière aux pensées occidentales. L'être humain est composé de
+          <strong>cinq éléments distincts</strong>, chacun possédant sa propre
+          nature, ses propres besoins et son propre destin post-mortem.
+          Comprendre cette anthropologie est la clé de toute la religion
+          funéraire égyptienne.
+        </p>
+
+        <div class="soul-grid">
+          <div class="soul-card">
+            <span class="soul-icon">🧍</span>
+            <span class="soul-name">Le Khat</span>
+            <span class="soul-eg">ẖt — Corps physique</span>
+            <p class="soul-desc">
+              Le corps physique — la seule composante visible et tangible. Doit
+              être préservé par la momification pour que les autres composantes
+              aient un support de retour. Sans Khat intact, la résurrection est
+              impossible.
+            </p>
+          </div>
+          <div class="soul-card">
+            <span class="soul-icon">👥</span>
+            <span class="soul-name">Le Ka</span>
+            <span class="soul-eg">kȝ — Double vital</span>
+            <p class="soul-desc">
+              L'énergie de vie transmise au moment de la naissance par le dieu
+              Khnoum qui modèle l'enfant et son double sur son tour de potier.
+              Représenté par deux bras levés. Le Ka survit dans la tombe et a
+              besoin des offrandes alimentaires pour subsister.
+            </p>
+          </div>
+          <div class="soul-card">
+            <span class="soul-icon">🦅</span>
+            <span class="soul-name">Le Ba</span>
+            <span class="soul-eg">bȝ — Âme individuelle</span>
+            <p class="soul-desc">
+              La personnalité unique de l'individu — ce qui le distingue de tous
+              les autres. Représenté sous forme d'oiseau à tête humaine. Quitte
+              le corps à la mort, voyage dans la Douat le jour, revient dans la
+              momie la nuit. Lien entre mort et vivants.
+            </p>
+          </div>
+          <div class="soul-card">
+            <span class="soul-icon">⭐</span>
+            <span class="soul-name">L'Akh</span>
+            <span class="soul-eg">ȝḫ — Esprit transfiguré</span>
+            <p class="soul-desc">
+              L'être ressuscité, transfiguré et rendu lumineux après le jugement
+              réussi. L'état final espéré — l'union parfaite du Ba et du Ka dans
+              la gloire divine. Les Akh sont les « étoiles lumineuses » du ciel
+              nocturne, les morts glorifiés.
+            </p>
+          </div>
+          <div class="soul-card">
+            <span class="soul-icon">📛</span>
+            <span class="soul-name">Le Ren</span>
+            <span class="soul-eg">rn — Le Nom</span>
+            <p class="soul-desc">
+              Le nom propre de l'individu — partie constitutive de son être, pas
+              simple étiquette. Aussi longtemps que le nom est prononcé, l'être
+              existe. Effacer le nom dans une tombe est un acte de destruction
+              radicale. Les temples récitent les noms des défunts pour les
+              maintenir en vie.
+            </p>
+          </div>
+          <div class="soul-card">
+            <span class="soul-icon">👤</span>
+            <span class="soul-name">Le Shet</span>
+            <span class="soul-eg">šwt — L'Ombre</span>
+            <p class="soul-desc">
+              L'ombre portée de la personne — composante parfois ajoutée à la
+              liste des cinq. Représente la présence invisible de l'être. Peut
+              voyager indépendamment du corps. Doit être protégée des tentatives
+              de capture ou de destruction par des forces hostiles.
+            </p>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>
+            La conception égyptienne de la personne humaine est la plus riche et
+            la plus nuancée de l'Antiquité. Elle refuse l'opposition simpliste
+            corps-âme et distribue l'identité humaine en plusieurs plans
+            d'existence simultanés, chacun requérant une attention rituelle
+            spécifique.
+          </p>
+          <cite
+            >— Taylor, J.H., <em>Death and the Afterlife in Ancient Egypt</em>,
+            British Museum Press, 2001</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- BA VOYAGE -->
+    <section class="article-section" id="ba-voyage">
+      <div class="hiero-deco">𓅃𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓅃</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Âme · L'oiseau-âme</p>
+            <h2 class="marker-title">
+              Le Voyage du Ba — L'oiseau-âme entre les mondes
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          Le <em>Ba</em> est la composante de l'être humain la plus difficile à
+          saisir pour une pensée moderne — ni « âme » au sens chrétien
+          (immatérielle, pure, transcendante) ni simple « personnalité »
+          psychologique. C'est plutôt le
+          <strong>pouvoir de manifestation individuelle</strong> — la capacité
+          de se révéler sous une forme reconnaissable, de se déplacer, d'agir et
+          d'être présent. Tout être doté d'une identité forte a un Ba : les
+          dieux ont des Ba, le soleil Rê a son Ba dans le bélier (Khnum), les
+          temples ont des Ba.
+        </p>
+
+        <p>
+          Représenté sous la forme d'un
+          <strong>oiseau à tête humaine</strong> (généralement un faucon à tête
+          d'homme), le Ba de l'individu quitte le corps au moment de la mort et
+          entreprend son propre voyage dans la Douat. La nuit, il retourne dans
+          la momie pour se « recharger » — c'est pourquoi le corps doit rester
+          intact : si la momie est détruite, le Ba n'a plus de refuge nocturne
+          et périt. Le jour, il peut quitter la tombe, visiter les vivants, se
+          transformer en toute forme désirée, voyager dans les régions de
+          lumière.
+        </p>
+
+        <p>
+          Cette liberté du Ba explique l'iconographie des tombes : la
+          <strong>porte-fausse</strong>, mur peint en forme de porte dans les
+          mastabas de l'Ancien Empire, est le passage par lequel le Ba sort
+          chaque jour pour profiter du soleil et reçoit les offrandes
+          alimentaires laissées par les descendants. Les serviteurs funéraires
+          qui continuent à apporter des offrandes des années après l'enterrement
+          ne nourrissent pas le mort physique — ils nourrissent son Ka, dont le
+          Ba a besoin pour voyager.
+        </p>
+
+        <div class="spell-block">
+          <span class="spell-label"
+            >𓅃 Chapitre 85 du Livre des Morts — Formule de transformation en
+            Ba</span
+          >
+          <p class="spell-text">
+            « Je suis le Ba vivant d'Osiris Ani, juste de voix. Je suis Rê en
+            son lever, je suis le soleil en son coucher. Je vole comme un faucon
+            vers la hauteur du ciel. Mon âme demeure en moi vivante. Je ne
+            mourrai pas une deuxième fois. »
+          </p>
+          <span class="spell-source"
+            >Papyrus Ani, ~1275 av. J.-C., British Museum EA 10470</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CAT 4 : RITUELS DU TEMPLE
+══════════════════════════════════════ -->
+    <div class="cat-header" id="rituels">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓊹</span>
+        <div>
+          <p class="cat-label">Quatrième partie · Le service divin</p>
+          <h2 class="cat-name">Rituels du Temple & Rites Divins</h2>
+          <p class="cat-desc">
+            Chaque jour, dans chaque temple d'Égypte, des prêtres accomplissent
+            les mêmes gestes depuis des millénaires pour maintenir l'ordre
+            cosmique.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RITUEL DU TEMPLE -->
+    <section class="article-section" id="rituel-temple">
+      <div class="hiero-deco">𓊹𓌀𓎛𓁹𓅓𓏏𓆣</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓊹</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Rituels du temple · Culte journalier</p>
+            <h2 class="marker-title">
+              Le Rituel Journalier du Temple — Réveiller, nourrir et coucher le
+              dieu
+            </h2>
+          </div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">𓊹</div>
+          <div class="subject-meta">
+            <h3 class="subject-name">Le Rituel d'Offrande Journalier</h3>
+            <p class="subject-subtitle">
+              Trois fois par jour dans chaque temple — maintenir la présence
+              divine et l'ordre cosmique
+            </p>
+            <div class="subject-tags">
+              <span class="tag">Rituel quotidien</span>
+              <span class="tag tag-violet">Nouvel Empire · Basse Époque</span>
+              <span class="tag tag-green">Tous les grands temples</span>
+              <span class="tag">Papyrus Berlin 3055 · 3014</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Au cœur de chaque grand temple d'Égypte trônait dans son naos
+          (<em>sanctuaire</em>) une statue divine en bois doré, en or ou en
+          granit peint — la <strong>résidence terrestre du dieu</strong>. Cette
+          statue n'était pas un symbole : c'était le corps physique dans lequel
+          le dieu choisissait de résider sur terre. Chaque jour, trois fois, le
+          prêtre officiant accomplit le <em>rituel de culte journalier</em> —
+          une séquence de gestes et de récitations précis pour éveiller,
+          purifier, nourrir, habiller et recoucher la statue divine.
+        </p>
+
+        <div class="ritual-flow">
+          <div class="ritual-step">
+            <span class="ritual-step-num">Aube</span>
+            <p class="ritual-step-title">L'éveil divin — Bris des sceaux</p>
+            <p>
+              Le grand prêtre se purifie dans le lac sacré du temple (ablutions
+              rituelles), se rase entièrement le corps, s'habille de lin blanc
+              pur. Il approche du naos en reculant sur ses pas pour effacer ses
+              traces (ne pas contaminer la présence divine). Il brise les sceaux
+              de cire sur les portes du naos et les ouvre pour la première fois
+              de la journée. À ce moment précis, une formule proclame l'éveil du
+              dieu.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Purification</span>
+            <p class="ritual-step-title">
+              Le bain et l'habillement de la statue
+            </p>
+            <p>
+              La statue est retirée de son socle, purifiée à l'encens et au
+              natron, aspergée d'eau, ointe d'huiles parfumées. Elle est
+              habillée de vêtements de lin frais (rouge, vert, blanc selon le
+              jour et la saison rituelle) et parée de ses bijoux et insignes
+              divins. Le tout accompagné de formules qui réactivent la présence
+              divine dans la statue — chaque geste est une invocation.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Offrandes</span>
+            <p class="ritual-step-title">Le repas divin</p>
+            <p>
+              Une table d'offrandes chargée de pains, de viandes, de bière, de
+              vin, de fleurs, d'encens et de tout ce que les dieux aiment est
+              présentée à la statue. La formule récitée « transfère »
+              magiquement l'essence des aliments au dieu — le dieu se nourrit de
+              l'essence (<em>ka</em>) des offrandes, pas de leur substance
+              physique. Ces offrandes seront ensuite redistribuées aux prêtres
+              (qui mangent ce que le dieu a « laissé ») puis aux ouvriers du
+              temple.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Retraite</span>
+            <p class="ritual-step-title">La fermeture du naos</p>
+            <p>
+              En fin de cérémonie, le prêtre replace la statue sur son socle,
+              referme les portes du naos, y appose de nouveaux sceaux. En
+              sortant, il balaie ses propres traces avec un balai rituel pour
+              que nulle trace humaine ne profane la présence divine. Ce cycle se
+              répète à midi et au coucher du soleil — maintenant l'univers en
+              ordre à chaque heure.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-box ib-or">
+          <p class="info-box-title">𓊹 Le temple comme machine cosmique</p>
+          <p>
+            Le temple égyptien n'est pas un lieu de rassemblement des fidèles —
+            c'est une usine cosmique qui maintient l'univers en fonctionnement.
+            Les fidèles ordinaires ne pénètrent jamais au-delà de la première
+            cour. Seuls les prêtres purifiés peuvent approcher la statue divine.
+            La masse du peuple se presse aux processions lors des grandes fêtes
+            où la statue est portée en barque à l'extérieur. L'intérieur du
+            temple est la maison du dieu — pas l'église de ses adorateurs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUVERTURE DE LA BOUCHE -->
+    <section class="article-section" id="rituel-ouverture-bouche">
+      <div class="hiero-deco">𓀭𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓀭</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Rituels funéraires · Cérémonie fondamentale
+            </p>
+            <h2 class="marker-title">
+              L'Ouverture de la Bouche — Réanimer la momie pour l'éternité
+            </h2>
+          </div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">𓀭</div>
+          <div class="subject-meta">
+            <h3 class="subject-name">
+              Le Rituel d'Ouverture de la Bouche (wpt-r)
+            </h3>
+            <p class="subject-subtitle">
+              Le rite funéraire le plus important — rendre à la momie ses sens
+              et sa capacité à agir
+            </p>
+            <div class="subject-tags">
+              <span class="tag">Rituel funéraire</span>
+              <span class="tag tag-violet"
+                >~2000 av. J.-C. — 200 apr. J.-C.</span
+              >
+              <span class="tag tag-green">75 actes rituels séquentiels</span>
+              <span class="tag">Adze · couteau en fer météoritique</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          L'Ouverture de la Bouche est le rituel funéraire le plus important de
+          toute la religion égyptienne — la cérémonie qui transforme une momie
+          inerte en être capable de voir, entendre, respirer, parler et agir
+          dans l'au-delà. Sans ce rituel, le mort est prisonnier de son bandage
+          de lin, incapable de recevoir les offrandes, incapable de se défendre
+          dans la Douat, incapable de prononcer les formules nécessaires à son
+          passage.
+        </p>
+
+        <p>
+          Le rituel comprend
+          <strong>75 actes séquentiels</strong> minutieusement codifiés dans les
+          papyrus funéraires du Nouvel Empire. L'instrument central est l'<em
+            >adze</em
+          >
+          — un outil de menuisier en fer météoritique en forme de T renversé —
+          avec lequel le prêtre officiant (portant le masque d'Anubis ou jouant
+          le rôle d'Horus) touche symboliquement les lèvres, les narines, les
+          yeux et les oreilles de la momie ou de sa statue funéraire. Ce geste
+          symbolique « ouvre » les sens et réactive les facultés perceptives du
+          défunt.
+        </p>
+
+        <p>
+          Le métal de l'adze est crucial : le
+          <strong>fer météoritique</strong> (<em>bja-en-pet</em>, « métal du
+          ciel ») était une substance divine tombée des étoiles, donc imprégnée
+          de l'énergie céleste. Son utilisation dans ce rite capital n'est pas
+          arbitraire — c'est la puissance des étoiles, associées aux morts
+          glorifiés (<em>Akh</em>), qui est ainsi transmise à la momie.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">
+            𓀭 L'Ouverture de la Bouche sur les statues
+          </p>
+          <p>
+            Le même rituel était pratiqué sur les
+            <strong>statues divines</strong> lors de leur inauguration dans un
+            temple, et sur les <strong>statues royales</strong> lors de leur
+            placement dans un sanctuaire. Toute statue nouvellement sculptée
+            n'était qu'un bloc de pierre ou de bois sans vie — le rituel
+            d'Ouverture de la Bouche la « vivifiait », permettant à la présence
+            divine ou royale de l'habiter réellement. C'est la même technologie
+            appliquée aux morts et aux statues : activer une forme inerte par la
+            parole et le geste rituels.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CAT 5 : RITES CONTRE APOPHIS
+══════════════════════════════════════ -->
+    <div class="cat-header" id="funeraire">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓆙</span>
+        <div>
+          <p class="cat-label">Cinquième partie · La guerre cosmique</p>
+          <h2 class="cat-name">
+            Rites contre Apophis & Formules de Protection
+          </h2>
+          <p class="cat-desc">
+            Chaque nuit, les prêtres luttent rituellement contre le chaos pour
+            garantir le lever du soleil — la plus urgente des obligations
+            religieuses.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- INCANTATIONS APOPHIS -->
+    <section class="article-section" id="incantations-apophis">
+      <div class="hiero-deco">𓆙𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓆙</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Rites cosmiques · Apotropaïque</p>
+            <h2 class="marker-title">
+              Les Rites contre Apophis — Le combat quotidien pour la lumière
+            </h2>
+          </div>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon">𓆙</div>
+          <div class="subject-meta">
+            <h3 class="subject-name">
+              Le Livre pour Repousser Apophis (<em>Rw nt drf Apophis</em>)
+            </h3>
+            <p class="subject-subtitle">
+              Rituel nocturne accompli dans les temples — garantir le lever
+              quotidien du soleil
+            </p>
+            <div class="subject-tags">
+              <span class="tag tag-red">Chaos · Apophis</span>
+              <span class="tag tag-violet">Papyrus Bremner-Rhind</span>
+              <span class="tag tag-green">~380 av. J.-C. · British Museum</span>
+              <span class="tag">Brûler · cracher · piétiner</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Le <em>Livre pour Repousser Apophis</em>, conservé notamment dans le
+          <strong>Papyrus Bremner-Rhind</strong> (British Museum, ~380 av.
+          J.-C.), décrit en détail le rituel nocturne accompli dans les temples
+          pour protéger la barque solaire lors de son voyage dans la Douat. Ce
+          n'est pas un texte ésotérique réservé à quelques initiés — c'est le
+          manuel opérationnel d'un rituel régulièrement exécuté, une nécessité
+          cosmique aussi concrète que déverrouiller les portes du temple au
+          matin.
+        </p>
+
+        <p>
+          Le rituel se déroule en plusieurs actes de destruction symbolique du
+          serpent <a class="internal-link" href="#">Apophis</a> :
+        </p>
+
+        <div class="ritual-flow">
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte I</span>
+            <p class="ritual-step-title">
+              Fabrication et inscription de la figurine
+            </p>
+            <p>
+              Le prêtre-magicien fabrique une figurine d'Apophis en
+              <strong>cire verte</strong> (couleur du venin et du danger) sur
+              laquelle il inscrit le nom du serpent en hiéroglyphes verts —
+              activer le nom sur la figurine, c'est activer la connection entre
+              la figurine et le serpent cosmique. La figurine peut aussi
+              représenter les ennemis du pharaon pour lier leur sort à celui
+              d'Apophis.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte II</span>
+            <p class="ritual-step-title">
+              Les insultes rituelles et la malédiction
+            </p>
+            <p>
+              Le prêtre récite une longue litanie d'insultes et de malédictions
+              contre Apophis, nommant chacune de ses formes et chacun de ses
+              aspects pour les annuler : « Ton âme est détruite, ton Ba est
+              anéanti, tu n'existes plus, tu es chassé, tu recules, tu es vaincu
+              ! » La puissance de ces mots, récités par un prêtre purifié dans
+              un espace sacré, atteint directement le serpent cosmique.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte III</span>
+            <p class="ritual-step-title">Bruler, cracher, piétiner</p>
+            <p>
+              La figurine de cire est jetée dans un brasier — détruite par le
+              feu sacré qui consume le chaos. Le prêtre
+              <strong>crache dessus</strong> (acte de mépris et de rejet
+              rituels), la <strong>piétine</strong> avec le pied gauche (associé
+              aux ennemis et aux forces sinistres), et frappe avec son couteau
+              rituel. Chaque geste physique a son équivalent cosmique :
+              affaiblir la figurine affaiblit Apophis dans la Douat.
+            </p>
+          </div>
+          <div class="ritual-step">
+            <span class="ritual-step-num">Acte IV</span>
+            <p class="ritual-step-title">La proclamation de victoire</p>
+            <p>
+              Une fois la figurine détruite, le prêtre proclame la victoire de
+              Rê : « Tu es tombé, Apophis ! Rê triomphe sur toi ! » Cette
+              proclamation anticipée — effectuée avant que l'aube ne confirme
+              effectivement la victoire — est elle-même un acte magique : parler
+              la victoire, c'est la rendre réelle. Au matin, quand le soleil se
+              lève, c'est la preuve que le rituel a fonctionné.
+            </p>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>
+            Quand les prêtres brûlent la figurine d'Apophis à minuit, ils ne
+            font pas de la théâtrale symbolique. Ils accomplissent une opération
+            cosmique réelle, aussi nécessaire que le battement du cœur l'est
+            pour la vie. Sans ce geste, Apophis mangerait le soleil.
+          </p>
+          <cite
+            >— Hornung, E.,
+            <em>The Ancient Egyptian Books of the Afterlife</em>, Cornell,
+            1999</cite
+          >
+        </div>
+
+        <div class="info-box ib-red">
+          <p class="info-box-title">
+            𓆙 Les éclipses — Apophis victorieux un instant
+          </p>
+          <p>
+            Les éclipses solaires étaient vécues par les Égyptiens comme des
+            moments de terreur absolue — l'instant fugace où Apophis avait
+            réussi à avaler le soleil. Le fait que l'éclipse s'arrête et que le
+            soleil reparaisse était la preuve que Seth et les dieux de la barque
+            avaient réussi à repousser le serpent. Ces événements déclenchaient
+            des rituels d'urgence dans tous les temples — intensification des
+            formules, brûlement de figurines, processions nocturnes — pour
+            soutenir le soleil dans son combat.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULES DE PROTECTION -->
+    <section class="article-section" id="formules-protection">
+      <div class="hiero-deco">𓎛𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓎛</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Magie funéraire · Formules navigantes</p>
+            <h2 class="marker-title">
+              Formules de Protection dans la Douat — Négocier le passage des
+              douze portes
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          Le voyage de l'âme dans la Douat n'est pas une promenade — c'est une
+          épreuve permanente parsemée de portes gardées, de créatures hostiles,
+          de lacs de feu et de tribunaux divins. Pour chaque danger, le
+          <em>Livre des Morts</em> fournit une formule spécifique — le
+          <strong>laissez-passer magique</strong> qui permet au défunt de passer
+          là où d'autres échouent.
+        </p>
+
+        <p>
+          Les formules les plus importantes du <em>Livre des Morts</em> sont les
+          <strong>chapitres de transformation</strong> (chapitres 76–88) : elles
+          permettent au défunt de se métamorphoser en faucon, en lotus, en
+          serpent, en héron, en scarabée — prenant des formes divines pour
+          traverser les régions les plus dangereuses. Le Chapitre 17 permet au
+          défunt de voyager librement en devenant Rê lui-même. Le Chapitre 64
+          est la formule universelle de « sortie du jour » — la
+          formule-maîtresse dont toutes les autres découlent.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Chapitre</th>
+              <th>Fonction</th>
+              <th>Danger neutralisé</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ch. 17</strong></td>
+              <td>Voyage libre — identification à Rê et Osiris</td>
+              <td>Blocage cosmique dans la Douat</td>
+            </tr>
+            <tr>
+              <td><strong>Ch. 30B</strong></td>
+              <td>Le cœur ne témoigne pas contre le défunt</td>
+              <td>Verdict défavorable lors de la Pesée</td>
+            </tr>
+            <tr>
+              <td><strong>Ch. 64</strong></td>
+              <td>Sortie de la tombe le jour — formule universelle</td>
+              <td>Enfermement dans la momie</td>
+            </tr>
+            <tr>
+              <td><strong>Ch. 72</strong></td>
+              <td>Sortie en plein jour</td>
+              <td>Blocage à l'entrée de la Douat</td>
+            </tr>
+            <tr>
+              <td><strong>Ch. 125</strong></td>
+              <td>Confession négative et jugement</td>
+              <td>Verdict défavorable · dévoration par Ammout</td>
+            </tr>
+            <tr>
+              <td><strong>Ch. 144–147</strong></td>
+              <td>Passage des sept portes et des douze pylônes</td>
+              <td>Gardiens refusant le passage</td>
+            </tr>
+            <tr>
+              <td><strong>Ch. 175</strong></td>
+              <td>Ne pas mourir une deuxième fois</td>
+              <td>Seconde mort définitive</td>
+            </tr>
+            <tr>
+              <td><strong>Ch. 186</strong></td>
+              <td>Offrande à Hathor — protection dans la Douat</td>
+              <td>Solitude et abandon dans l'au-delà</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box ib-violet">
+          <p class="info-box-title">
+            𓎛 Les formules comme technologie de résurrection
+          </p>
+          <p>
+            Les formules du Livre des Morts ne sont pas des prières qui
+            demandent quelque chose à un dieu — ce sont des
+            <em>opérations magiques</em> qui modifient l'état de la réalité par
+            la parole. Récitée correctement, avec la bonne prononciation, au bon
+            moment, par une personne rituellement pure, une formule
+            <em>produit</em> son effet aussi infailliblement que frapper une
+            pierre avec du silex produit une étincelle. C'est pourquoi les
+            copies les plus chères du Livre des Morts incluaient des vignettes
+            dessinées — les images activaient les formules même si le
+            propriétaire de la tombe était illettré.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ BIBLIOGRAPHIE ══════════════ -->
+    <section class="bibliography" id="bibliographie">
+      <div class="container">
+        <p class="bib-header">𓂀 Sources &amp; Lectures recommandées</p>
+        <ul class="bib-list">
+          <li class="bib-item">
+            <strong>Ritner, R.K.</strong> —
+            <em>The Mechanics of Ancient Egyptian Magical Practice</em>, Studies
+            in Ancient Oriental Civilization 54, Oriental Institute, Chicago,
+            1993. L'étude académique fondamentale et la plus complète sur le
+            fonctionnement de la magie (<em>héka</em>) — principes, praticiens,
+            textes et objets.
+          </li>
+          <li class="bib-item">
+            <strong>Hornung, E.</strong> —
+            <em>The Ancient Egyptian Books of the Afterlife</em>, Cornell
+            University Press, 1999 (trad. fr. <em>Les dieux de l'Égypte</em>).
+            Analyse complète des livres funéraires royaux : Amdouat, Livre des
+            Portes, Livre des Cavernes, Livre de la Terre et Livre de la Vache
+            Céleste.
+          </li>
+          <li class="bib-item">
+            <strong>Faulkner, R.O.</strong> —
+            <em>The Ancient Egyptian Book of the Dead</em>, British Museum
+            Press, 1985 (rééd. augmentée 1994). La traduction de référence du
+            Livre des Morts avec les vignettes du Papyrus Ani. Indispensable
+            pour les formules de protection.
+          </li>
+          <li class="bib-item">
+            <strong>Assmann, J.</strong> —
+            <em>Ma'at — Gerechtigkeit und Unsterblichkeit im alten Ägypten</em>,
+            C.H. Beck, Munich, 1990. Pour comprendre le jugement moral de l'âme
+            — la Pesée du cœur comme éthique cosmologique.
+          </li>
+          <li class="bib-item">
+            <strong>Taylor, J.H.</strong> —
+            <em>Death and the Afterlife in Ancient Egypt</em>, British Museum
+            Press, 2001. La synthèse la plus complète et la plus accessible sur
+            toute la culture funéraire égyptienne — des croyances aux pratiques,
+            des textes aux objets.
+          </li>
+          <li class="bib-item">
+            <strong>Pinch, G.</strong> — <em>Magic in Ancient Egypt</em>,
+            British Museum Press, 1994 (rééd. 2006). Étude accessible et
+            rigoureuse sur la magie quotidienne et rituelle — amulettes,
+            formules, figurines et praticiens.
+          </li>
+          <li class="bib-item">
+            <strong>Allen, J.P.</strong> —
+            <em>The Ancient Egyptian Pyramid Texts</em>, Society of Biblical
+            Literature, 2005. Les Textes des Pyramides en traduction complète et
+            commentée — le corpus magico-religieux le plus ancien du monde.
+          </li>
+          <li class="bib-item">
+            <strong>Lesko, L.H.</strong> —
+            <em>The Field of Hetep in Egyptian Coffin Texts</em>, JARCE, 1972 ;
+            et <em>Ancient Egyptian Cosmogonies and Cosmology</em>, in Religion
+            in Ancient Egypt, éd. Shafer, Cornell, 1991. Pour la géographie
+            détaillée du Champ des Roseaux et des cosmographies funéraires.
+          </li>
+          <li class="bib-item">
+            <strong>Goelet, O. &amp; Faulkner, R.O.</strong> —
+            <em
+              >The Egyptian Book of the Dead: The Book of Going Forth by Day</em
+            >, Chronicle Books, 1994 (éd. complète). Fac-similé couleur intégral
+            du Papyrus Ani — textes, vignettes et commentaires. La plus belle
+            édition accessible.
+          </li>
+          <li class="bib-item">
+            <strong>Quirke, S.</strong> —
+            <em
+              >Going out in Daylight — prt m hrw: The Ancient Egyptian Book of
+              the Dead</em
+            >, Golden House, 2013. Nouvelle traduction critique intégrale du
+            Livre des Morts, avec appareil philologique complet.
+          </li>
+          <li class="bib-item">
+            <strong>Meeks, D. &amp; Favard-Meeks, C.</strong> —
+            <em>La vie quotidienne des dieux égyptiens</em>, Hachette, 1993.
+            Comment les dieux vivaient, voyageaient, mangeaient et étaient
+            servis selon les Égyptiens — essentiel pour comprendre le rituel du
+            temple.
+          </li>
+          <li class="bib-item">
+            <strong>El-Aswad, E.S.</strong> —
+            <em
+              >Religion and Folk Cosmology: Scenarios of the Visible and
+              Invisible in Rural Egypt</em
+            >, Praeger, 2002. Pour la continuité des croyances magiques entre
+            l'Égypte ancienne et les pratiques populaires modernes — persistance
+            fascinante de la pensée d'Héka.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════ FOOTER ══════════════ -->
+    <footer>
+      <p class="footer-logo">𓂀 Égypte Éternelle</p>
+      <p class="footer-tagline">« Je suis hier et je connais demain. »</p>
+      <nav class="footer-nav">
+        <a href="#">Histoire</a>
+        <a href="#">Dieux &amp; Mythes</a>
+        <a href="#">Pyramides</a>
+        <a href="#">Vie quotidienne</a>
+        <a href="#">Dynasties</a>
+        <a href="#">Symboles</a>
+        <a href="#">Glossaire</a>
+      </nav>
+      <p
+        style="
+          font-size: 0.95rem;
+          opacity: 0.35;
+          font-family: &quot;Cinzel&quot;, serif;
+          letter-spacing: 0.2em;
+        "
+      >
+        DOSSIER THÉMATIQUE · ÉGYPTE ÉTERNELLE
+      </p>
+    </footer>
+
+    <script>
+      // Stars — mix of gold and blue-violet for a more mystical feel
+      const sc = document.getElementById("stars");
+      for (let i = 0; i < 140; i++) {
+        const s = document.createElement("div");
+        s.className = "star";
+        const sz = Math.random() * 2.5 + 0.5;
+        const isViolet = Math.random() > 0.7;
+        s.style.cssText = `
+      width:${sz}px;height:${sz}px;
+      left:${Math.random() * 100}%;top:${Math.random() * 100}%;
+      background:${isViolet ? "rgba(168,126,212,0.9)" : "rgba(232,191,106,0.9)"};
+      --dur:${Math.random() * 4 + 2}s;
+      --op:${Math.random() * 0.6 + 0.3};
+      animation-delay:${Math.random() * 6}s;
+    `;
+        sc.appendChild(s);
+      }
+
+      // Reveal animation
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }, i * 65);
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.07 },
+      );
+
+      document
+        .querySelectorAll(
+          ".subject-card,.pull-quote,.info-box,.col-card,.ritual-step,.spell-block,.soul-card,.duat-hour",
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(14px)";
+          el.style.transition = "opacity 0.55s ease,transform 0.55s ease";
+          obs.observe(el);
+        });
+
+      // TOC active link
+      const allSections = document.querySelectorAll("[id]");
+      const tocLinks = document.querySelectorAll(".toc-link");
+      window.addEventListener("scroll", () => {
+        let cur = "";
+        allSections.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 130) cur = s.id;
+        });
+        tocLinks.forEach((link) => {
+          const nm = link.querySelector(".toc-name");
+          link.style.borderLeftColor = "transparent";
+          if (nm) nm.style.color = "";
+          if (link.getAttribute("href") === "#" + cur) {
+            link.style.borderLeftColor = "var(--or)";
+            if (nm) nm.style.color = "var(--or-clair)";
+          }
+        });
+      });
+
+      // Duat hour hover glow
+      document.querySelectorAll(".duat-hour").forEach((h) => {
+        h.addEventListener("mouseenter", () => {
+          h.style.boxShadow = "0 0 20px rgba(200,151,58,0.15)";
+        });
+        h.addEventListener("mouseleave", () => {
+          h.style.boxShadow = "none";
+        });
+      });
+    </script>
+  </body>
+</html>
+
+

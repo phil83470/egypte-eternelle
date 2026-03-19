@@ -1,0 +1,3166 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mythes Cosmiques & Objets Sacrés — Égypte Éternelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #e8bf6a;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --brun-papyrus: #6b4f2a;
+        --rouge-carnelian: #8b2e1a;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+        --turquoise: #2a8b7a;
+        --violet: #4a1a7a;
+        --violet-clair: #8a60c0;
+        --blanc-ivoire: #fbf5e6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      /* ═══ HERO ═══ */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.2) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 15% 40%,
+            rgba(74, 26, 122, 0.14) 0%,
+            transparent 45%
+          ),
+          radial-gradient(
+            ellipse at 85% 40%,
+            rgba(26, 58, 92, 0.14) 0%,
+            transparent 45%
+          ),
+          linear-gradient(
+            180deg,
+            #04030a 0%,
+            #0e0b16 20%,
+            #1a1208 55%,
+            #231508 100%
+          );
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          75deg,
+          rgba(200, 151, 58, 0.01) 0px,
+          rgba(200, 151, 58, 0.01) 1px,
+          transparent 1px,
+          transparent 50px
+        );
+      }
+
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        background: var(--or-clair);
+        border-radius: 50%;
+        animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        opacity: 0;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: var(--op, 0.7);
+        }
+      }
+
+      /* Hero SVG scene */
+      .hero-scene {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1200px;
+        opacity: 0.12;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero Image Adjustment */
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0.2;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-background img {
+        width: 90vw;
+        height: 85vh;
+        object-fit: cover;
+        filter: sepia(40%) contrast(120%);
+      
+        border-radius: 12px;
+      }
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.5rem;
+        animation: fadeUp 1.4s 0.2s ease both;
+      }
+      .hero-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(2.4rem, calc(6.5vw + 0.2rem), 6rem);
+        font-weight: 900;
+        line-height: 1.05;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 100px rgba(200, 151, 58, 0.45),
+          0 2px 4px rgba(0, 0, 0, 0.9);
+        margin-bottom: 0.5rem;
+        animation: fadeUp 1.4s 0.4s ease both;
+      }
+      .hero-title span {
+        display: block;
+        font-size: 0.42em;
+        color: var(--sable-fonce);
+        letter-spacing: 0.14em;
+        font-weight: 400;
+      }
+      .hero-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.2rem, calc(2vw + 0.2rem), 1.5rem);
+        color: var(--sable-fonce);
+        max-width: 680px;
+        margin: 1.5rem auto 2.5rem;
+        animation: fadeUp 1.4s 0.6s ease both;
+      }
+      .hero-divider {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 0 auto;
+        animation: fadeUp 1.4s 0.8s ease both;
+      }
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.4em;
+        color: var(--or);
+        opacity: 0.7;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+      .scroll-hint::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--or), transparent);
+      }
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ═══ NAV ═══ */
+      nav.main-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        background: rgba(26, 18, 8, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 0 2rem;
+      }
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .nav-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.2rem;
+        color: var(--or);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.4rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-family: "Cinzel", serif;
+        font-size: 0.87rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--or-clair);
+      }
+
+      /* ═══ LAYOUT ═══ */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ═══ INTRO BAND ═══ */
+      .intro-band {
+        background: linear-gradient(
+          135deg,
+          #12100a 0%,
+          #1c180a 50%,
+          #1a1208 100%
+        );
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr 2px 1fr 2px 1fr;
+        gap: 1.5rem;
+        align-items: start;
+      }
+      .intro-stat {
+        text-align: center;
+        padding: 0.8rem;
+      }
+      .stat-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 3rem;
+        color: var(--or);
+        line-height: 1;
+        display: block;
+      }
+      .stat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        margin-top: 0.5rem;
+      }
+      .intro-divider-v {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--or),
+          transparent
+        );
+        align-self: stretch;
+        min-height: 70px;
+      }
+
+      /* ═══ TABLE OF CONTENTS ═══ */
+      .toc-section {
+        background: linear-gradient(135deg, #100e0a 0%, #181410 100%);
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .toc-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.55em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.5rem;
+      }
+      .toc-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.7rem, calc(3vw + 0.2rem), 2.4rem);
+        color: var(--or-clair);
+        margin-bottom: 2.5rem;
+      }
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+        gap: 0.4rem 2.5rem;
+      }
+      .toc-era {
+        margin-bottom: 1.8rem;
+      }
+      .toc-era-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--or);
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        margin-bottom: 0.6rem;
+      }
+      .toc-link {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        padding: 0.3rem 0.5rem;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        transition: all 0.2s;
+        border-radius: 0 2px 2px 0;
+      }
+      .toc-link:hover {
+        border-left-color: var(--or);
+        background: rgba(200, 151, 58, 0.04);
+        padding-left: 1rem;
+      }
+      .toc-glyph {
+        font-size: 1.35rem;
+        flex-shrink: 0;
+        opacity: 0.75;
+      }
+      .toc-name {
+        font-family: "EB Garamond", serif;
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+      }
+      .toc-type {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        color: var(--or);
+        opacity: 0.5;
+        margin-left: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      /* ═══ CATEGORY HEADER ═══ */
+      .cat-header {
+        background: linear-gradient(
+          135deg,
+          #08060e 0%,
+          #140e0a 50%,
+          #08060e 100%
+        );
+        padding: 4rem 0 3rem;
+        border-top: 1px solid rgba(200, 151, 58, 0.2);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .cat-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.012) 0px,
+          rgba(200, 151, 58, 0.012) 1px,
+          transparent 1px,
+          transparent 22px
+        );
+      }
+      .cat-header-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+      }
+      .cat-glyph {
+        font-size: 5.7rem;
+        color: rgba(200, 151, 58, 0.08);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .cat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+      .cat-name {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.7rem, calc(3.5vw + 0.2rem), 2.9rem);
+        color: var(--or-clair);
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+      }
+      .cat-desc {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.2rem;
+      }
+
+      /* ═══ SECTION MARKER ═══ */
+      .section-marker {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .marker-glyph {
+        font-size: 3.7rem;
+        color: rgba(200, 151, 58, 0.12);
+        flex-shrink: 0;
+        line-height: 1;
+      }
+      .marker-text {
+        flex: 1;
+      }
+      .marker-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+      .marker-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.5rem, calc(3vw + 0.2rem), 2.2rem);
+        color: var(--or-clair);
+        line-height: 1.2;
+      }
+
+      /* ═══ ARTICLE SECTION ═══ */
+      .article-section {
+        padding: 5.5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.08);
+        position: relative;
+      }
+      .article-section:nth-child(even) {
+        background: rgba(200, 151, 58, 0.013);
+      }
+
+      .hiero-deco {
+        position: absolute;
+        right: 2rem;
+        top: 4rem;
+        font-size: 3.7rem;
+        opacity: 0.055;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.5rem;
+        color: var(--or);
+        user-select: none;
+        font-family: serif;
+      }
+
+      /* ═══ OBJECT CARD ═══ */
+      .object-card {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: linear-gradient(
+          135deg,
+          rgba(18, 12, 28, 0.85),
+          rgba(26, 18, 8, 0.9)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.18);
+        border-left: 4px solid var(--or);
+        position: relative;
+        overflow: hidden;
+      }
+      .object-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(
+          circle at bottom right,
+          rgba(200, 151, 58, 0.05),
+          transparent 70%
+        );
+      }
+      .object-symbol {
+        font-size: 4.2rem;
+        flex-shrink: 0;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(200, 151, 58, 0.06);
+        border: 1px solid rgba(200, 151, 58, 0.15);
+        border-radius: 2px;
+      }
+      .object-meta {
+        flex: 1;
+      }
+      .object-name {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.3rem, calc(2.5vw + 0.2rem), 1.8rem);
+        color: var(--or-clair);
+        margin-bottom: 0.25rem;
+      }
+      .object-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        color: var(--sable-fonce);
+        opacity: 0.8;
+        margin-bottom: 0.7rem;
+      }
+      .object-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.7rem;
+        border: 1px solid rgba(200, 151, 58, 0.25);
+        color: var(--or);
+      }
+      .tag-blue {
+        border-color: rgba(74, 127, 168, 0.3);
+        color: var(--bleu-clair);
+      }
+      .tag-green {
+        border-color: rgba(42, 139, 122, 0.3);
+        color: var(--turquoise);
+      }
+      .tag-violet {
+        border-color: rgba(138, 96, 192, 0.3);
+        color: var(--violet-clair);
+      }
+      .tag-red {
+        border-color: rgba(180, 60, 40, 0.3);
+        color: #d4826a;
+      }
+
+      /* ═══ TEXT ═══ */
+      .article-section p {
+        margin-bottom: 1.5rem;
+        color: var(--sable);
+      }
+      .article-section h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.25rem;
+        color: var(--or-clair);
+        letter-spacing: 0.12em;
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+      strong {
+        color: var(--or-clair);
+        font-weight: 600;
+      }
+
+      .internal-link {
+        color: var(--or-clair);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--or);
+        transition: all 0.2s;
+        font-style: italic;
+      }
+      .internal-link:hover {
+        color: var(--or);
+        border-bottom-style: solid;
+      }
+
+      /* ═══ PULL QUOTE ═══ */
+      .pull-quote {
+        border-left: 3px solid var(--or);
+        padding: 1.5rem 2rem;
+        margin: 3rem 0;
+        background: rgba(200, 151, 58, 0.04);
+        position: relative;
+      }
+      .pull-quote::before {
+        content: "❝";
+        position: absolute;
+        top: -1rem;
+        left: 1.5rem;
+        font-size: 3.2rem;
+        color: var(--or);
+        opacity: 0.4;
+        line-height: 1;
+      }
+      .pull-quote p {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: var(--or-clair);
+        line-height: 1.7;
+      }
+      .pull-quote cite {
+        display: block;
+        margin-top: 0.8rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+        color: var(--sable-fonce);
+        font-style: normal;
+      }
+
+      /* ═══ INFO BOXES ═══ */
+      .info-box {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 58, 92, 0.15),
+          rgba(26, 58, 92, 0.05)
+        );
+        border: 1px solid rgba(74, 127, 168, 0.25);
+        border-left: 3px solid var(--bleu-clair);
+        padding: 1.5rem 2rem;
+        margin: 2.5rem 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .info-box-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--bleu-clair);
+        margin-bottom: 0.8rem;
+      }
+      .info-box p {
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+      .info-box-or {
+        background: linear-gradient(
+          135deg,
+          rgba(200, 151, 58, 0.08),
+          rgba(200, 151, 58, 0.02)
+        );
+        border-color: rgba(200, 151, 58, 0.3);
+        border-left-color: var(--or);
+      }
+      .info-box-or .info-box-title {
+        color: var(--or);
+      }
+      .info-box-violet {
+        background: linear-gradient(
+          135deg,
+          rgba(138, 96, 192, 0.1),
+          rgba(138, 96, 192, 0.02)
+        );
+        border-color: rgba(138, 96, 192, 0.25);
+        border-left-color: var(--violet-clair);
+      }
+      .info-box-violet .info-box-title {
+        color: var(--violet-clair);
+      }
+      .info-box-green {
+        background: linear-gradient(
+          135deg,
+          rgba(42, 139, 122, 0.1),
+          rgba(42, 139, 122, 0.02)
+        );
+        border-color: rgba(42, 139, 122, 0.25);
+        border-left-color: var(--turquoise);
+      }
+      .info-box-green .info-box-title {
+        color: var(--turquoise);
+      }
+      .info-box-red {
+        background: linear-gradient(
+          135deg,
+          rgba(139, 46, 26, 0.12),
+          rgba(139, 46, 26, 0.02)
+        );
+        border-color: rgba(139, 46, 26, 0.3);
+        border-left-color: #c04030;
+      }
+      .info-box-red .info-box-title {
+        color: #d4826a;
+      }
+
+      /* ═══ SYMBOL GRID ═══ */
+      .symbol-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.2rem;
+        margin: 2.5rem 0;
+      }
+      .symbol-card {
+        background: linear-gradient(
+          145deg,
+          rgba(18, 14, 26, 0.8),
+          rgba(26, 18, 8, 0.85)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.12);
+        border-top: 3px solid var(--or-profond);
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.3s;
+        cursor: default;
+      }
+      .symbol-card:hover {
+        border-top-color: var(--or-clair);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(200, 151, 58, 0.08);
+      }
+      .symbol-icon {
+        font-size: 3rem;
+        display: block;
+        margin-bottom: 0.8rem;
+      }
+      .symbol-name {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        color: var(--or-clair);
+        letter-spacing: 0.08em;
+        margin-bottom: 0.4rem;
+      }
+      .symbol-meaning {
+        font-size: 1.02rem;
+        color: var(--sable-fonce);
+        line-height: 1.5;
+      }
+
+      /* ═══ MYTH TIMELINE ═══ */
+      .myth-flow {
+        margin: 3rem 0;
+        position: relative;
+        padding-left: 2rem;
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+      }
+      .myth-step {
+        margin-bottom: 2rem;
+        position: relative;
+      }
+      .myth-step::before {
+        content: "";
+        position: absolute;
+        left: -2.6rem;
+        top: 0.4rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--or);
+        box-shadow: 0 0 10px rgba(200, 151, 58, 0.4);
+      }
+      .myth-step-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        color: var(--or-clair);
+        letter-spacing: 0.1em;
+        margin-bottom: 0.4rem;
+      }
+      .myth-step p {
+        font-size: 1.12rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+
+      /* ═══ DATA TABLE ═══ */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        font-size: 1.08rem;
+      }
+      .data-table th {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--or);
+        text-align: left;
+        padding: 0.8rem 1rem;
+        border-bottom: 2px solid rgba(200, 151, 58, 0.3);
+      }
+      .data-table td {
+        padding: 0.65rem 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        color: var(--sable);
+        vertical-align: top;
+      }
+      .data-table tr:hover td {
+        background: rgba(200, 151, 58, 0.03);
+      }
+
+      /* ═══ TWO-COL CARDS ═══ */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+      .col-card {
+        background: linear-gradient(
+          145deg,
+          rgba(18, 12, 28, 0.7),
+          rgba(26, 18, 8, 0.85)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.12);
+        border-top: 3px solid var(--or-profond);
+        padding: 1.5rem;
+        transition: all 0.3s;
+      }
+      .col-card:hover {
+        border-top-color: var(--or-clair);
+        transform: translateY(-3px);
+      }
+      .col-card-icon {
+        font-size: 2rem;
+        margin-bottom: 0.6rem;
+        display: block;
+      }
+      .col-card-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        color: var(--or-clair);
+        letter-spacing: 0.1em;
+        margin-bottom: 0.6rem;
+      }
+      .col-card p {
+        font-size: 1.08rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+        line-height: 1.65;
+      }
+
+      /* ═══ BAND QUOTE ═══ */
+      .band-quote {
+        background: linear-gradient(135deg, #060410 0%, #180a04 100%);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .band-quote::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.015) 0px,
+          rgba(200, 151, 58, 0.015) 1px,
+          transparent 1px,
+          transparent 20px
+        );
+      }
+      .band-quote blockquote {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.3rem, calc(2.5vw + 0.2rem), 1.85rem);
+        color: var(--or-clair);
+        max-width: 860px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.55;
+      }
+      .band-quote footer {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        color: var(--sable-fonce);
+        text-transform: uppercase;
+      }
+
+      /* ═══ BIBLIOGRAPHY ═══ */
+      .bibliography {
+        background: linear-gradient(
+          180deg,
+          rgba(26, 18, 8, 0) 0%,
+          rgba(15, 10, 3, 0.8) 100%
+        );
+        padding: 5rem 0;
+      }
+      .bib-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+      .bib-list {
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+      }
+      .bib-item {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+        padding: 0.5rem 0 0.5rem 1.2rem;
+        transition: border-color 0.2s;
+      }
+      .bib-item:hover {
+        border-left-color: var(--or);
+      }
+      .bib-item strong {
+        color: var(--sable);
+        font-style: italic;
+      }
+
+      /* ═══ FOOTER ═══ */
+      footer {
+        background: #0a0804;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+      .footer-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.15rem;
+      }
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      .footer-nav a:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 700px) {
+        .intro-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .intro-divider-v {
+          display: none;
+        }
+        nav.main-nav .nav-links {
+          display: none;
+        }
+        .hiero-deco {
+          display: none;
+        }
+        .object-card {
+          flex-direction: column;
+        }
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .cat-glyph {
+          font-size: 3.2rem;
+        }
+        .symbol-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════════ HERO ══════════════════ -->
+    <section class="hero" id="accueil">
+      <div class="hero-background">
+        <img
+          src="images/images/fond-egypte.jpg"
+          alt="Hiéroglyphes sacrés et mystères de l'Égypte"
+          loading="eager"
+        />
+      </div>
+      <div class="stars" id="stars"></div>
+
+      <svg
+        class="hero-scene"
+        viewBox="0 0 1200 260"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Aten disk -->
+        <circle
+          cx="600"
+          cy="80"
+          r="55"
+          fill="none"
+          stroke="rgba(200,151,58,0.35)"
+          stroke-width="1.5"
+        />
+        <circle cx="600" cy="80" r="42" fill="rgba(200,151,58,0.04)" />
+        <!-- Aten rays with hands -->
+        <g stroke="rgba(200,151,58,0.22)" stroke-width="1.2">
+          <line x1="600" y1="18" x2="600" y2="2" />
+          <line x1="639" y1="29" x2="650" y2="16" />
+          <line x1="658" y1="65" x2="674" y2="57" />
+          <line x1="655" y1="107" x2="670" y2="117" />
+          <line x1="561" y1="29" x2="550" y2="16" />
+          <line x1="542" y1="65" x2="526" y2="57" />
+          <line x1="545" y1="107" x2="530" y2="117" />
+          <line x1="600" y1="142" x2="600" y2="158" />
+        </g>
+        <!-- Ankh symbols scattered -->
+        <g fill="none" stroke="rgba(200,151,58,0.28)" stroke-width="1.4">
+          <circle cx="150" cy="150" r="16" />
+          <line x1="150" y1="166" x2="150" y2="200" />
+          <line x1="130" y1="180" x2="170" y2="180" />
+          <circle cx="1050" cy="145" r="16" />
+          <line x1="1050" y1="161" x2="1050" y2="195" />
+          <line x1="1030" y1="175" x2="1070" y2="175" />
+        </g>
+        <!-- Was sceptre -->
+        <g stroke="rgba(200,151,58,0.2)" stroke-width="1.5" fill="none">
+          <path d="M300 100 Q295 120 300 200" />
+          <path d="M295 105 Q285 95 295 90 Q305 85 300 100" />
+          <line x1="296" y1="200" x2="304" y2="200" />
+        </g>
+        <!-- Djed pillar -->
+        <g stroke="rgba(200,151,58,0.22)" stroke-width="1.5" fill="none">
+          <rect x="880" y="120" width="28" height="75" rx="2" />
+          <line x1="874" y1="132" x2="914" y2="132" />
+          <line x1="874" y1="145" x2="914" y2="145" />
+          <line x1="874" y1="158" x2="914" y2="158" />
+          <line x1="880" y1="170" x2="908" y2="170" />
+        </g>
+        <!-- Lotus -->
+        <g stroke="rgba(200,151,58,0.18)" stroke-width="1.2" fill="none">
+          <path d="M440 240 Q440 210 440 200" />
+          <ellipse cx="440" cy="195" rx="10" ry="14" />
+          <path d="M428 205 Q420 190 428 183" />
+          <path d="M452 205 Q460 190 452 183" />
+        </g>
+        <!-- Feather of Maat -->
+        <g stroke="rgba(200,151,58,0.2)" stroke-width="1.2" fill="none">
+          <line x1="760" y1="240" x2="760" y2="200" />
+          <path d="M760 200 Q745 185 755 175 Q760 172 760 200" />
+          <path d="M760 200 Q775 185 765 175 Q760 172 760 200" />
+        </g>
+        <!-- Scarab -->
+        <g
+          stroke="rgba(200,151,58,0.25)"
+          stroke-width="1.2"
+          fill="rgba(200,151,58,0.03)"
+        >
+          <ellipse cx="200" cy="220" rx="20" ry="14" />
+          <line x1="190" y1="214" x2="178" y2="207" />
+          <line x1="185" y1="220" x2="170" y2="220" />
+          <line x1="190" y1="226" x2="178" y2="233" />
+          <line x1="210" y1="214" x2="222" y2="207" />
+          <line x1="215" y1="220" x2="230" y2="220" />
+          <line x1="210" y1="226" x2="222" y2="233" />
+        </g>
+        <!-- Ground line -->
+        <line
+          x1="0"
+          y1="248"
+          x2="1200"
+          y2="248"
+          stroke="rgba(200,151,58,0.1)"
+          stroke-width="1"
+        />
+      </svg>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Égypte Éternelle · Dossier Thématique</p>
+        <h1 class="hero-title">
+          Mythes Cosmiques<br />&amp; Objets Sacrés
+          <span
+            >Les récits fondateurs et les symboles qui ont fait l'éternité</span
+          >
+        </h1>
+        <p class="hero-subtitle">
+          Des grands mythes de la création aux amulettes portées par les vivants
+          et les morts — les objets, les récits et les symboles au cœur de la
+          civilisation pharaonique
+        </p>
+        <div class="hero-divider"></div>
+      </div>
+      <div class="scroll-hint">Défiler</div>
+    </section>
+
+    <!-- ══════════════════ NAV ══════════════════ -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="#accueil" class="nav-logo">𓂀 Égypte Éternelle</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#toc">Table des matières</a></li>
+          <li><a href="#mythes">Mythes cosmiques</a></li>
+          <li><a href="#amulettes">Amulettes</a></li>
+          <li><a href="#sceptres">Sceptres & insignes</a></li>
+          <li><a href="#textes">Textes sacrés</a></li>
+          <li><a href="#rites">Rites & magie</a></li>
+          <li><a href="#bibliographie">Sources</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ══════════════════ STATS ══════════════════ -->
+    <div class="intro-band">
+      <div class="container-wide">
+        <div class="intro-grid">
+          <div class="intro-stat">
+            <span class="stat-number">700+</span>
+            <span class="stat-label">Types d'amulettes répertoriés</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">189</span>
+            <span class="stat-label">Chapitres du Livre des Morts</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Grands mythes cosmogoniques</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">42</span>
+            <span class="stat-label">Confessions du jugement des morts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════ TABLE OF CONTENTS ══════════════════ -->
+    <section class="toc-section" id="toc">
+      <div class="container">
+        <p class="toc-header">𓂀 Navigation</p>
+        <h2 class="toc-title">Table des matières</h2>
+        <div class="toc-grid">
+          <div class="toc-era">
+            <p class="toc-era-title">Les Grands Mythes Cosmiques</p>
+            <a href="#mythe-creation" class="toc-link"
+              ><span class="toc-glyph">𓇳</span
+              ><span class="toc-name">La Création du monde</span
+              ><span class="toc-type">Cosmogonie</span></a
+            >
+            <a href="#mythe-oeil-re" class="toc-link"
+              ><span class="toc-glyph">𓂀</span
+              ><span class="toc-name">L'Œil de Rê — La déesse lointaine</span
+              ><span class="toc-type">Mythe solaire</span></a
+            >
+            <a href="#mythe-osiris" class="toc-link"
+              ><span class="toc-glyph">𓁹</span
+              ><span class="toc-name"
+                >Le Meurtre et la résurrection d'Osiris</span
+              ><span class="toc-type">Cycle osirien</span></a
+            >
+            <a href="#mythe-voyage-solaire" class="toc-link"
+              ><span class="toc-glyph">𓆣</span
+              ><span class="toc-name">Le Voyage nocturne du soleil</span
+              ><span class="toc-type">Amdouat</span></a
+            >
+            <a href="#mythe-horus-seth" class="toc-link"
+              ><span class="toc-glyph">𓅃</span
+              ><span class="toc-name">Le Procès d'Horus contre Seth</span
+              ><span class="toc-type">Mythologie royale</span></a
+            >
+            <a href="#mythe-destruction" class="toc-link"
+              ><span class="toc-glyph">𓃠</span
+              ><span class="toc-name">La Destruction de l'Humanité</span
+              ><span class="toc-type">Mythe eschatologique</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Amulettes & Symboles Sacrés</p>
+            <a href="#ankh" class="toc-link"
+              ><span class="toc-glyph">☥</span
+              ><span class="toc-name">L'Ânkh — Clé de vie</span
+              ><span class="toc-type">Amulette</span></a
+            >
+            <a href="#scarabee" class="toc-link"
+              ><span class="toc-glyph">𓆣</span
+              ><span class="toc-name">Le Scarabée sacré</span
+              ><span class="toc-type">Amulette</span></a
+            >
+            <a href="#oudjat" class="toc-link"
+              ><span class="toc-glyph">𓂀</span
+              ><span class="toc-name">L'Oudjat — Œil d'Horus</span
+              ><span class="toc-type">Amulette</span></a
+            >
+            <a href="#djed" class="toc-link"
+              ><span class="toc-glyph">𓊽</span
+              ><span class="toc-name">Le Pilier Djed</span
+              ><span class="toc-type">Symbole</span></a
+            >
+            <a href="#tiet" class="toc-link"
+              ><span class="toc-glyph">𓋹</span
+              ><span class="toc-name">Le Tyet — Nœud d'Isis</span
+              ><span class="toc-type">Amulette</span></a
+            >
+            <a href="#lotus" class="toc-link"
+              ><span class="toc-glyph">𓆸</span
+              ><span class="toc-name">Le Lotus bleu — Fleur de renaissance</span
+              ><span class="toc-type">Symbole</span></a
+            >
+            <a href="#uraeus" class="toc-link"
+              ><span class="toc-glyph">𓆙</span
+              ><span class="toc-name">L'Uræus — Le cobra royal</span
+              ><span class="toc-type">Insigne royal</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Sceptres, Couronnes & Insignes Royaux</p>
+            <a href="#sceptres-royaux" class="toc-link"
+              ><span class="toc-glyph">𓌀</span
+              ><span class="toc-name">Le Heqa, le Nekhakha, le Was</span
+              ><span class="toc-type">Sceptres</span></a
+            >
+            <a href="#couronnes" class="toc-link"
+              ><span class="toc-glyph">𓋹</span
+              ><span class="toc-name">Les Couronnes pharaoniques</span
+              ><span class="toc-type">Couronnes</span></a
+            >
+            <a href="#cartouche" class="toc-link"
+              ><span class="toc-glyph">𓇳</span
+              ><span class="toc-name">Le Cartouche royal</span
+              ><span class="toc-type">Hiéroglyphe</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Textes Sacrés & Livres Funéraires</p>
+            <a href="#textes-pyramides" class="toc-link"
+              ><span class="toc-glyph">𓇋</span
+              ><span class="toc-name">Les Textes des Pyramides</span
+              ><span class="toc-type">~2350 av. J.-C.</span></a
+            >
+            <a href="#textes-sarcophages" class="toc-link"
+              ><span class="toc-glyph">𓌀</span
+              ><span class="toc-name">Les Textes des Sarcophages</span
+              ><span class="toc-type">~2055 av. J.-C.</span></a
+            >
+            <a href="#livre-morts" class="toc-link"
+              ><span class="toc-glyph">𓁹</span
+              ><span class="toc-name">Le Livre des Morts</span
+              ><span class="toc-type">~1550 av. J.-C.</span></a
+            >
+            <a href="#amdouat" class="toc-link"
+              ><span class="toc-glyph">𓆣</span
+              ><span class="toc-name"
+                >L'Amdouat — Livre du monde souterrain</span
+              ><span class="toc-type">Nouvel Empire</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Magie, Rituels & Pratiques Sacrées</p>
+            <a href="#heka" class="toc-link"
+              ><span class="toc-glyph">𓎛</span
+              ><span class="toc-name">Héka — La magie divine</span
+              ><span class="toc-type">Concept</span></a
+            >
+            <a href="#momification" class="toc-link"
+              ><span class="toc-glyph">𓀭</span
+              ><span class="toc-name">La Momification — Vaincre la mort</span
+              ><span class="toc-type">Rituel</span></a
+            >
+            <a href="#canopes" class="toc-link"
+              ><span class="toc-glyph">𓇾</span
+              ><span class="toc-name"
+                >Les Vases canopes & les quatre fils d'Horus</span
+              ><span class="toc-type">Funéraire</span></a
+            >
+            <a href="#ushabtis" class="toc-link"
+              ><span class="toc-glyph">𓀀</span
+              ><span class="toc-name"
+                >Les Ouchebtis — Serviteurs de l'éternité</span
+              ><span class="toc-type">Funéraire</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     CAT 1 : MYTHES COSMIQUES
+══════════════════════════════════════════ -->
+    <div class="cat-header" id="mythes">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓇳</span>
+        <div>
+          <p class="cat-label">Première partie · Récits fondateurs</p>
+          <h2 class="cat-name">Les Grands Mythes Cosmiques</h2>
+          <p class="cat-desc">
+            Les récits qui expliquent l'origine du monde, le pouvoir des dieux
+            et le destin de l'âme humaine.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MYTHE CREATION -->
+    <section class="article-section" id="mythe-creation">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓇳</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Mythes cosmiques · Cosmogonie</p>
+            <h2 class="marker-title">
+              La Création du Monde — Quatre visions de l'origine
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓇳</div>
+          <div class="object-meta">
+            <h3 class="object-name">La Cosmogonie égyptienne</h3>
+            <p class="object-subtitle">
+              L'origine du monde selon les quatre grandes écoles théologiques
+            </p>
+            <div class="object-tags">
+              <span class="tag">Mythe fondateur</span>
+              <span class="tag tag-violet">~3000 av. J.-C.</span>
+              <span class="tag tag-green"
+                >Héliopolis · Memphis · Hermopolis · Thèbes</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Contrairement aux civilisations monothéistes qui ont une seule
+          cosmogonie canonique, l'Égypte ancienne en a entretenu
+          <strong>quatre simultanément</strong>, sans les unifier ni les
+          hiérarchiser. Ces récits de la création — théologies d'Héliopolis, de
+          Memphis, d'Hermopolis et de Thèbes — ne sont pas contradictoires aux
+          yeux des Égyptiens : ils sont des approches complémentaires d'un
+          mystère inépuisable.
+        </p>
+
+        <h3>Avant le commencement : le Noun</h3>
+        <p>
+          Toutes les cosmogonies s'accordent sur un point : avant la création
+          existait le <strong>Noun</strong> — l'océan primordial infini, obscur,
+          immobile et silencieux. Le Noun n'est pas le néant : il est la
+          <em>potentialité</em> absolue, l'énergie brute non différenciée qui
+          contient tout sans être encore rien. Il n'y a ni haut ni bas, ni jour
+          ni nuit, ni dieu ni homme. Il y a seulement l'eau sombre et l'attente
+          du premier instant.
+        </p>
+
+        <div class="myth-flow">
+          <div class="myth-step">
+            <p class="myth-step-title">Héliopolis — La création par Atoum</p>
+            <p>
+              Le dieu Atoum surgit spontanément du Noun et se hisse sur la
+              <em>colline primordiale</em> (<em>benben</em>). Seul, il engendre
+              Chou (l'air) et Tefnout (l'humidité) par masturbation ou par
+              crachement. De ces deux enfants naissent Geb (la terre) et Nout
+              (le ciel), séparés par Chou qui s'interpose entre eux — formant
+              ainsi la structure tripartite de l'univers. Les quatre enfants de
+              Geb et Nout (Osiris, Isis, Seth, Nephtys) achèvent l'Ennéade des
+              neuf dieux primordiaux.
+            </p>
+          </div>
+          <div class="myth-step">
+            <p class="myth-step-title">
+              Memphis — La création par la Parole de Ptah
+            </p>
+            <p>
+              Le <em>Texte memphite</em> (Stèle de Chabaka, VIIe siècle av.
+              J.-C., mais copie d'un original de l'Ancien Empire) propose une
+              cosmogonie d'une modernité philosophique saisissante : Ptah crée
+              l'univers par la pensée (<em>sia</em>, le cœur qui conçoit) et la
+              parole (<em>hu</em>, la langue qui prononce). Il suffit à Ptah de
+              concevoir et de nommer pour que les choses existent. Cette
+              théologie du logos créateur préfigure le prologue de l'Évangile de
+              Jean avec une troublante précision.
+            </p>
+          </div>
+          <div class="myth-step">
+            <p class="myth-step-title">
+              Hermopolis — La création par l'Ogdoade
+            </p>
+            <p>
+              Huit dieux primordiaux (l'Ogdoade : quatre couples mâle-femelle
+              représentant l'eau, l'obscurité, l'infini et l'invisibilité)
+              agitent le Noun jusqu'à ce qu'un lotus surgisse de ses eaux. De ce
+              lotus naît le soleil enfant, et de ses premiers rayons jaillit la
+              vie. Version plus poétique et plus collective : ce n'est pas un
+              dieu unique qui crée, mais la coopération de forces élémentaires
+              en équilibre.
+            </p>
+          </div>
+          <div class="myth-step">
+            <p class="myth-step-title">
+              Thèbes — Amon le Caché, créateur invisible
+            </p>
+            <p>
+              Amon, « le Caché », est le vent invisible qui parcourt le Noun
+              avant la création. Son souffle anime tout ce qui existe. Il se
+              révèle sous la forme du soleil au premier matin, mais sa nature
+              reste fondamentalement cachée — même aux autres dieux. Cette
+              théologie insiste sur le mystère irréductible de l'origine : le
+              dieu qui crée ne peut jamais être pleinement connu.
+            </p>
+          </div>
+        </div>
+
+        <div class="pull-quote">
+          <p>
+            Il n'y avait pas encore les deux terres, pas de sol, pas de serpent,
+            pas de peur. J'ai tout fait venir à l'existence lorsque j'étais
+            encore seul dans l'eau, engourdi, avant que je n'aie trouvé où me
+            tenir.
+          </p>
+          <cite
+            >— Atoum s'adressant au Noun, Textes des Sarcophages, Formule 76,
+            ~2000 av. J.-C.</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- MYTHE OEIL DE RE -->
+    <section class="article-section" id="mythe-oeil-re">
+      <div class="hiero-deco">𓂀𓊃𓐍𓌀𓎛𓏤𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓂀</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Mythes cosmiques · Mythe solaire</p>
+            <h2 class="marker-title">
+              L'Œil de Rê — La déesse lointaine et le retour de la lumière
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓂀</div>
+          <div class="object-meta">
+            <h3 class="object-name">Le Mythe de l'Œil de Rê</h3>
+            <p class="object-subtitle">
+              La séparation, la colère, l'apaisement et le retour de la lumière
+            </p>
+            <div class="object-tags">
+              <span class="tag">Mythe solaire</span>
+              <span class="tag tag-violet">Déesse lointaine</span>
+              <span class="tag tag-green"
+                >Textes des Pyramides · Texte de Bousiris</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          L'œil de Rê est l'un des mythes les plus répandus et les plus
+          complexes de la religion égyptienne — un récit qui articule la menace
+          de l'obscurité, la puissance féminine incontrôlable et la nécessité de
+          l'apaisement rituel. L'œil est à la fois un organe solaire (la lumière
+          que Rê projette sur le monde) et une divinité autonome — généralement
+          féminine — capable d'agir indépendamment de son propriétaire.
+        </p>
+
+        <p>
+          Dans la version principale du mythe,
+          <strong>Rê envoie son œil chercher ses deux premiers enfants</strong>,
+          Chou et Tefnout, partis explorer l'obscurité du Noun. L'œil revient
+          mais trouve à sa place un œil de remplacement que Rê s'est fait
+          fabriquer entre-temps. Furieuse, l'œil originale pleure de rage — et
+          de ses larmes naquirent les premiers hommes (<em>rmt</em>, « les
+          larmes », joue sur l'homophonie en égyptien). Rê console son œil et le
+          place sur son front sous la forme du <strong>cobra uræus</strong>,
+          insigne royal par excellence.
+        </p>
+
+        <p>
+          Dans une autre version (le mythe de la déesse lointaine), l'œil
+          s'enfuit volontairement en <strong>Nubie</strong> sous la forme d'une
+          lionne furieuse (<a href="#sekhmet" class="internal-link">Sekhmet</a>
+          ou Tefnout). Sans son œil, Rê s'affaiblit et le monde perd sa lumière.
+          Les dieux envoient <a href="#thot" class="internal-link">Thot</a> ou
+          <a href="#shou-tefnout" class="internal-link">Chou</a> pour la
+          ramener, par des paroles douces, des danses et de la musique. La
+          déesse se métamorphose progressivement de lionne en chatte puis en
+          femme apaisée — et la lumière revient au monde.
+        </p>
+
+        <div class="info-box info-box-or">
+          <p class="info-box-title">𓂀 Résonance astronomique</p>
+          <p>
+            Ce mythe a probablement une dimension astronomique : le « départ »
+            de l'œil de Rê pourrait représenter les éclipses solaires, ou les
+            périodes où l'étoile Sirius (associée à Isis) disparaît de l'horizon
+            pendant soixante-dix jours avant de reparaître à la saison de la
+            crue nilotique. Le retour de l'œil coïnciderait avec ce lever
+            héliaque de Sirius — événement fondamental du calendrier égyptien.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOYAGE SOLAIRE -->
+    <section class="article-section" id="mythe-voyage-solaire">
+      <div class="hiero-deco">𓆣𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓆣</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Mythes cosmiques · Monde souterrain</p>
+            <h2 class="marker-title">
+              Le Voyage Nocturne du Soleil — La Douat, douze heures de mort et
+              de renaissance
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓆣</div>
+          <div class="object-meta">
+            <h3 class="object-name">L'Amdouat — Ce qui est dans l'au-delà</h3>
+            <p class="object-subtitle">
+              Le périple de Rê à travers les douze heures du monde souterrain
+            </p>
+            <div class="object-tags">
+              <span class="tag">Amdouat</span>
+              <span class="tag tag-violet">~1500 av. J.-C.</span>
+              <span class="tag tag-green">Vallée des Rois</span>
+              <span class="tag">Texte funéraire royal</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Chaque soir, le soleil <strong>disparaît à l'ouest</strong> et
+          embarque pour un voyage de douze heures dans le monde souterrain
+          (<em>Douat</em>) — un univers parallèle peuplé de dieux, de morts, de
+          démons et de gardiens. Ce voyage n'est pas métaphorique aux yeux des
+          Égyptiens : c'est un périple réel, documenté heure par heure dans les
+          grands textes funéraires du Nouvel Empire que les Modernes ont appelé
+          collectivement <strong>les Livres du monde souterrain</strong>.
+        </p>
+
+        <p>
+          L'<em>Amdouat</em> (<em>imj-dwȝt</em>, « Ce qui est dans l'au-delà »)
+          est le plus ancien de ces textes : gravé dans les tombes royales
+          depuis Thoutmôsis Ier (~1500 av. J.-C.), il décrit les douze heures du
+          voyage solaire avec une précision cartographique saisissante, chaque
+          heure correspondant à une région différente du monde souterrain, avec
+          ses habitants, ses dangers et ses rituels de passage.
+        </p>
+
+        <h3>Les douze heures du monde souterrain</h3>
+        <p>
+          La <strong>première heure</strong> voit Rê entrer dans la Douat à bord
+          de sa barque nocturne, accueilli par les dieux et les âmes
+          bienheuereuses. Les heures suivantes l'emmènent à travers des portes
+          gardées par des serpents cracheurs de feu, des lacs de feu, des salles
+          de jugement. À la <strong>sixième heure</strong> — minuit cosmique —
+          Rê fusionne momentanément avec le corps d'<a
+            href="#osiris"
+            class="internal-link"
+            >Osiris</a
+          >
+          couché dans son caveau : la rencontre du soleil et de la mort, instant
+          de mort et de renaissance simultanées, moment de puissance maximale et
+          de vulnérabilité absolue. À la <strong>douzième heure</strong>, le
+          scarabée <a href="#khepri" class="internal-link">Khépri</a> propulse
+          la barque à travers le corps du serpent Apophis vaincu, et le soleil
+          renaît à l'est.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Les morts dans la Douat entendent la voix de Rê passer dans la nuit
+            et s'éveillent un bref instant. Puis il passe, et ils retombent dans
+            leur sommeil. Mais ce bref éveil leur donne force pour l'éternité.
+          </p>
+          <cite
+            >— D'après l'Amdouat, heure IV, tombe de Thoutmôsis III (KV34),
+            ~1450 av. J.-C.</cite
+          >
+        </div>
+
+        <div class="info-box">
+          <p class="info-box-title">𓆣 La Douat — Géographie de l'au-delà</p>
+          <p>
+            La Douat n'est pas localisée sous la terre : elle est un espace
+            mystique parallèle, accessible à l'ouest (direction de la mort, du
+            coucher du soleil) mais aussi dans le ciel étoilé (les étoiles sont
+            les âmes des morts) et dans les profondeurs du Nil. Sa géographie
+            change selon les textes et les époques, mais certains éléments sont
+            constants : les douze cavernes horaires, le lac de feu, les gardiens
+            à têtes d'animaux, la salle du jugement d'Osiris.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MYTHE DESTRUCTION HUMANITE -->
+    <section class="article-section" id="mythe-destruction">
+      <div class="hiero-deco">𓃠𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓃠</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Mythes cosmiques · Eschatologie</p>
+            <h2 class="marker-title">
+              La Destruction de l'Humanité — La colère de Rê et l'ivresse
+              d'Hathor
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓃠</div>
+          <div class="object-meta">
+            <h3 class="object-name">Le Livre de la Vache Céleste</h3>
+            <p class="object-subtitle">
+              Quand les hommes se rebellèrent contre Rê et furent presque
+              anéantis
+            </p>
+            <div class="object-tags">
+              <span class="tag tag-red">Eschatologie</span>
+              <span class="tag tag-violet">Nouvel Empire</span>
+              <span class="tag tag-green"
+                >Tombe de Séti Ier · Ramsès II · III · VI</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Le <em>Livre de la Vache Céleste</em>, texte du Nouvel Empire gravé
+          dans plusieurs tombes royales de la Vallée des Rois, raconte le seul
+          mythe égyptien qui s'apparente à un déluge ou une apocalypse : la
+          punition quasi-totale de l'humanité pour avoir comploté contre le dieu
+          solaire vieillissant.
+        </p>
+
+        <p>
+          Selon ce récit, au temps où
+          <strong>Rê régnait encore sur la terre</strong> parmi les hommes, les
+          humains commencèrent à se moquer de lui en voyant son corps vieillir —
+          ses os devenaient d'argent, sa chair d'or, ses cheveux de
+          lapis-lazuli. Il convoqua le tribunal divin et décida d'envoyer son
+          œil sous la forme d'<a href="#hathor" class="internal-link"
+            >Hathor-Sekhmet</a
+          >
+          pour châtier les rebelles. La déesse lionne commença un massacre qui
+          menaçait d'anéantir toute l'espèce humaine. Rê, pris de pitié, décida
+          d'arrêter la tuerie — mais Sekhmet était en proie à une frénésie
+          meurtrière incontrôlable.
+        </p>
+
+        <p>
+          Le stratagème imaginé par les dieux est d'une saveur unique dans toute
+          la mythologie mondiale : ils
+          <strong>teignirent 7 000 jarres de bière en rouge</strong> avec de
+          l'ocre, pour qu'elles ressemblent à du sang, et les déversèrent dans
+          les champs au matin. Sekhmet, croyant voir du sang, but frénétiquement
+          jusqu'à l'ivresse complète — et se rendormit, se réveillant sous la
+          forme douce d'Hathor. Le genre humain fut sauvé.
+        </p>
+
+        <div class="info-box info-box-violet">
+          <p class="info-box-title">𓃠 La retraite de Rê dans le ciel</p>
+          <p>
+            Après cet épisode, Rê, épuisé et dégoûté de gouverner les hommes, se
+            retira dans le ciel en montant sur le dos de la déesse Nout
+            transformée en vache céleste. Les étoiles que l'on voit la nuit sont
+            les dieux qui suivirent Rê dans son ascension. Les hommes restèrent
+            seuls sur terre — et c'est depuis lors qu'ils meurent, qu'ils
+            combattent et que la vie est difficile. Ce mythe explique non
+            seulement la retraite de Rê, mais aussi la condition humaine dans sa
+            mortalité et sa violence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ BAND QUOTE ══════════════════ -->
+    <div class="band-quote">
+      <blockquote>
+        « Je suis le Noun, le plus ancien, père des dieux. Je suis le grand dieu
+        qui s'est formé lui-même, qui a créé son propre nom. »
+      </blockquote>
+      <footer>
+        — Atoum dans les Textes des Pyramides, Utterance 486, ~2300 av. J.-C.
+      </footer>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+     CAT 2 : AMULETTES & SYMBOLES
+══════════════════════════════════════════ -->
+    <div class="cat-header" id="amulettes">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">☥</span>
+        <div>
+          <p class="cat-label">Deuxième partie · Objets de puissance</p>
+          <h2 class="cat-name">Amulettes & Symboles Sacrés</h2>
+          <p class="cat-desc">
+            Les objets qui canalisent les forces divines — portés par les
+            vivants, déposés avec les morts, gravés sur les temples.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANKH -->
+    <section class="article-section" id="ankh">
+      <div class="hiero-deco">𓋹𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">☥</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Amulettes · Symbole universel</p>
+            <h2 class="marker-title">
+              L'Ânkh — La Clé de Vie, symbole de l'éternité
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">☥</div>
+          <div class="object-meta">
+            <h3 class="object-name">L'Ânkh (ˁnḫ)</h3>
+            <p class="object-subtitle">
+              « La Vie » · Symbole le plus fondamental de la religion égyptienne
+            </p>
+            <div class="object-tags">
+              <span class="tag">Vie · Immortalité</span>
+              <span class="tag tag-violet">~3000 av. J.-C.</span>
+              <span class="tag tag-green">Omniprésent</span>
+              <span class="tag">Matériaux : or, faïence, bois, ivoire</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          L'ânkh est le symbole le plus reconnaissable de l'Égypte ancienne — et
+          l'un des plus beaux mystères iconographiques de l'Antiquité. Ce signe
+          en forme de croix surmontée d'une boucle ovale représente le concept
+          même de <strong>vie</strong> (<em>ˁnḫ</em> en égyptien), mais aussi
+          l'immortalité, le souffle vital, l'union du ciel et de la terre, du
+          masculin et du féminin. Son origine formelle reste discutée par les
+          égyptologues : sandale vue de profil ? Nœud de ceinture ? Bouclier ?
+          Organes reproducteurs stylisés ? Chaque théorie a ses partisans,
+          aucune n'est définitivement établie.
+        </p>
+
+        <p>
+          Dans les représentations monumentales,
+          <strong>les dieux tiennent l'ânkh à la main</strong> comme un sceptre
+          — parfois le portant aux narines du pharaon ou d'un défunt pour leur
+          insuffler le souffle de vie divine. Cette scène de
+          <em>vivification</em> apparaît dans des milliers de reliefs de temples
+          et de tombes. Les dieux offrent l'ânkh, les pharaons le reçoivent —
+          transaction éternelle entre le monde divin et le monde humain.
+        </p>
+
+        <p>
+          L'ânkh figure parmi les
+          <strong>amulettes funéraires les plus répandues</strong> : des
+          milliers d'exemplaires en faïence turquoise, en or, en cornaline, en
+          lapis-lazuli ont été retrouvés dans les tombes, glissés dans les
+          bandelettes des momies pour leur assurer la vie éternelle. Sa forme
+          influencera le <em>crux ansata</em> des chrétiens coptes d'Égypte qui
+          l'adoptèrent au IVe siècle, y voyant une préfiguration de la croix —
+          symbiose iconographique qui assura sa survie dans la tradition
+          visuelle jusqu'à nos jours.
+        </p>
+
+        <div class="info-box info-box-or">
+          <p class="info-box-title">☥ L'ânkh et les Coptes</p>
+          <p>
+            Lorsque le christianisme se répandit en Égypte au IIe-IIIe siècle
+            apr. J.-C., les chrétiens égyptiens (Coptes) adoptèrent l'ânkh comme
+            symbole de la résurrection et de la vie éternelle — y ajoutant une
+            signification christologique. Cette adoption n'était pas une rupture
+            mais une continuité : la même promesse d'immortalité, reformulée
+            dans un nouveau langage. Le <em>crux ansata</em> copte (croix en
+            anse) est directement issu de l'ânkh pharaonique.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCARABEE -->
+    <section class="article-section" id="scarabee">
+      <div class="hiero-deco">𓆣𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓆣</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Amulettes · Insecte sacré</p>
+            <h2 class="marker-title">
+              Le Scarabée Sacré — De la bouse au soleil levant
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓆣</div>
+          <div class="object-meta">
+            <h3 class="object-name">Le Scarabée (Ḫprr)</h3>
+            <p class="object-subtitle">
+              Animal sacré de Khépri · Symbole universel de renaissance et de
+              protection
+            </p>
+            <div class="object-tags">
+              <span class="tag">Renaissance · Protection</span>
+              <span class="tag tag-violet">~3000 av. J.-C.</span>
+              <span class="tag tag-green">Faïence · stéatite · or · lapis</span>
+              <span class="tag">Millions d'exemplaires connus</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Le <em>Scarabaeus sacer</em> — le bousier sacré — est l'insecte le
+          plus important de toute l'histoire des religions. Son comportement
+          obsédait les Égyptiens : le bousier male roule une boule de fumier
+          (contenant ses œufs) sur le sol en la poussant vers l'est, puis
+          l'enterre. Trente jours plus tard, des larves en sortent spontanément,
+          sans que les Égyptiens puissent percevoir d'accouplement préalable.
+          <strong
+            >La vie surgissant de la matière morte, l'être naissant du
+            néant</strong
+          >
+          — métaphore parfaite de la création et de la résurrection.
+        </p>
+
+        <p>
+          Le dieu
+          <a href="#khepri" class="internal-link"><strong>Khépri</strong></a
+          >, manifestation matinale du soleil, est représenté comme un scarabée
+          ou un homme à tête de scarabée. Il roule la boule du soleil — comme le
+          bousier roule sa boule — de l'est vers le zénith chaque matin. Le nom
+          Khépri vient du verbe <em>kheper</em> (exister, se transformer), et le
+          hieroglyphe du scarabée <strong>𓆣</strong> sert lui-même à écrire le
+          mot « être, devenir, transformer ».
+        </p>
+
+        <h3>La production à grande échelle</h3>
+        <p>
+          Les scarabées-amulettes sont de loin les
+          <strong>objets les plus produits de toute l'Égypte ancienne</strong>.
+          On en a retrouvé des millions, de toutes tailles, dans pratiquement
+          toutes les tombes et tous les niveaux sociaux. Les plus humbles sont
+          en faïence (quartz fritté recouvert d'un émail bleu-vert) et valaient
+          quelques denrées. Les plus précieux sont en or massif, en lapis-lazuli
+          d'Afghanistan, en cornaline d'Arabie, en améthyste de Nubie. La face
+          plate du scarabée porte généralement une inscription : un nom propre,
+          un nom royal, une formule magique ou un vœu de protection.
+        </p>
+
+        <p>
+          Le <strong>scarabée-cœur</strong> mérite une mention à part : ce grand
+          scarabée en pierre dure (stéatite noire, basalte) était placé sur la
+          poitrine de la momie à la hauteur du cœur. Il portait gravée la
+          formule magique du Chapitre 30 du <em>Livre des Morts</em> : « Ô mon
+          cœur de ma mère, ô mon cœur de mes différentes formes, ne te dresse
+          pas contre moi comme témoin, ne t'oppose pas à moi devant le tribunal…
+          » — prière touchante pour que le cœur ne révèle pas les péchés de son
+          propriétaire lors du jugement.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Le scarabée est la condensation de toute la théologie égyptienne en
+            un seul objet : la mort, la renaissance, la transformation, le
+            soleil, la protection — tout cela dans un insecte de quelques
+            centimètres qui pousse une boule dans la poussière.
+          </p>
+          <cite
+            >— Meskell, L., <em>Object Worlds in Ancient Egypt</em>, Berg,
+            2004</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- OUDJAT -->
+    <section class="article-section" id="oudjat">
+      <div class="hiero-deco">𓂀𓊃𓐍𓌀𓎛𓏤𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓂀</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Amulettes · Œil protecteur</p>
+            <h2 class="marker-title">
+              L'Oudjat — L'Œil sain d'Horus, symbole de guérison et de plénitude
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓂀</div>
+          <div class="object-meta">
+            <h3 class="object-name">L'Oudjat (wḏȝt)</h3>
+            <p class="object-subtitle">
+              « L'Œil sain, intact » · Amulette de protection et de guérison par
+              excellence
+            </p>
+            <div class="object-tags">
+              <span class="tag">Protection · Guérison</span>
+              <span class="tag tag-violet">~2500 av. J.-C.</span>
+              <span class="tag tag-green">Faïence · or · bois peint</span>
+              <span class="tag">Œil d'Horus restauré par Thot</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          L'oudjat est la représentation de l'œil gauche d'<a
+            href="#horus"
+            class="internal-link"
+            >Horus</a
+          >
+          — celui qui fut arraché et brisé par
+          <a href="#seth" class="internal-link">Seth</a> lors de leur combat
+          pour le trône d'Égypte, puis restauré dans son intégrité par
+          <a href="#thot" class="internal-link">Thot</a> grâce à la magie. Son
+          nom même signifie « l'intègre, le sain, le complet » — opposé à l'œil
+          blessé et fragmenté. Cette histoire fait de l'oudjat le symbole par
+          excellence de la
+          <strong>guérison, de la restauration et de la protection</strong>
+          contre toute force maléfique.
+        </p>
+
+        <p>
+          L'oudjat est dessiné avec une précision remarquable : l'œil humain
+          stylisé est complété par deux éléments caractéristiques — la
+          <em>marque faciale du faucon</em> (trait vertical sous l'œil) et la
+          <em>spirale de sourcil</em>. Ces éléments lui confèrent une tension
+          entre le naturalisme et l'abstraction géométrique particulièrement
+          saisissante. Sa forme a traversé les millénaires : on retrouve
+          l'oudjat sur les proues des
+          <strong>bateaux de pêche méditerranéens</strong> jusqu'au XXe siècle —
+          en Italie, en Grèce, en Tunisie — protection héritée sans solution de
+          continuité depuis les bateaux nilotiques de l'Égypte ancienne.
+        </p>
+
+        <h3>L'oudjat et les fractions mathématiques</h3>
+        <p>
+          L'oudjat possède une dimension mathématique fascinante : chacune des
+          parties de l'œil dessiné correspond à une
+          <strong>fraction hiéroglyphique</strong> spécifique — 1/2, 1/4, 1/8,
+          1/16, 1/32, 1/64. L'ensemble additionné donne 63/64 — pas tout à fait
+          1. La 64e partie manquante était, dit-on, complétée par
+          <a href="#thot" class="internal-link">Thot</a> magiquement. Ce système
+          de fractions binaires apparaît dans le <em>Papyrus Rhind</em> (le plus
+          ancien manuel de mathématiques connu) et servait à mesurer les
+          capacités des récipients à grain.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓂀 L'oudjat et la pharmacie</p>
+          <p>
+            Les prescriptions médicales égyptiennes utilisaient les fractions de
+            l'oudjat pour mesurer les doses de médicaments. Chaque composante
+            dessinée de l'œil représentait une fraction de
+            <em>heqat</em> (mesure de capacité). Ainsi, la médecine égyptienne
+            liait l'acte médical au symbole de la guérison divine — soigner
+            était un acte à la fois pratique et rituel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DJED -->
+    <section class="article-section" id="djed">
+      <div class="hiero-deco">𓊽𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓊽</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Symboles sacrés · Stabilité divine</p>
+            <h2 class="marker-title">
+              Le Pilier Djed — La colonne vertébrale d'Osiris, symbole de
+              stabilité éternelle
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓊽</div>
+          <div class="object-meta">
+            <h3 class="object-name">Le Djed (Ḏd)</h3>
+            <p class="object-subtitle">
+              « Stabilité » · Colonne vertébrale d'Osiris, symbole de
+              résurrection et de permanence
+            </p>
+            <div class="object-tags">
+              <span class="tag">Stabilité · Résurrection</span>
+              <span class="tag tag-violet">~3000 av. J.-C.</span>
+              <span class="tag tag-green">Busiris · Memphis · funéraire</span>
+              <span class="tag">Faïence · or · bois doré</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Le djed est l'un des plus anciens symboles d'Égypte — présent dès la
+          période prédynastique — et l'un des plus riches en significations. Sa
+          forme, sorte de pilier strié de bandes horizontales surmontées de
+          quatre anneaux superposés, a été interprétée de plusieurs façons par
+          les Égyptiens eux-mêmes :
+          <strong>colonne vertébrale d'Osiris</strong> (interprétation
+          mythologique dominante), faisceau de gerbes de blé liées ensemble
+          (interprétation agricole, renvoyant à la fertilité), ou tronc de cèdre
+          dont on aurait taillé les branches (interprétation rituelle liée à
+          Busiris).
+        </p>
+
+        <p>
+          La cérémonie du <strong>Relèvement du Djed</strong> (<em
+            >seked djed</em
+          >) était l'un des rites royaux les plus importants d'Égypte : lors de
+          la fête de Sokar (fête funéraire thébaine du mois de Khoiak), le
+          pharaon relevait rituellement un grand pilier djed couché — geste
+          symbolisant la résurrection d'Osiris, debout et triomphant de la mort.
+          Ce rite royal affirmait que le cycle de vie-mort-résurrection
+          continuait sous la protection du roi.
+        </p>
+
+        <p>
+          Le djed figure parmi les
+          <strong
+            >amulettes funéraires du Chapitre 155 du Livre des Morts</strong
+          >
+          : placé sur la gorge de la momie (parfois en or), il lui garantissait
+          la stabilité et la résurrection. La formule qui l'accompagne dit : «
+          Tu te lèves, ô Osiris ! Tu as ta colonne vertébrale, ô Osiris au cœur
+          las ! »
+        </p>
+
+        <div class="two-col">
+          <div class="col-card">
+            <span class="col-card-icon">𓊽</span>
+            <h3 class="col-card-title">Djed et Tyet — Le couple sacré</h3>
+            <p>
+              Le djed et le <a href="#tiet" class="internal-link">tyet</a> (nœud
+              d'Isis) sont toujours associés — l'un masculin (Osiris,
+              stabilité), l'autre féminin (Isis, protection). Leur combinaison
+              dans les ornements funéraires garantit à la fois la résurrection
+              et la protection magique.
+            </p>
+          </div>
+          <div class="col-card">
+            <span class="col-card-icon">𓌀</span>
+            <h3 class="col-card-title">Ptah et le sceptre djed</h3>
+            <p>
+              Le sceptre composite de
+              <a href="#ptah" class="internal-link">Ptah</a> intègre le djed
+              comme élément central, associé à l'ânkh et au sceptre was — triade
+              des concepts divins de stabilité, vie et puissance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOTUS -->
+    <section class="article-section" id="lotus">
+      <div class="hiero-deco">𓆸𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓆸</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Symboles sacrés · Flore divine</p>
+            <h2 class="marker-title">
+              Le Lotus Bleu — Fleur de l'aube, naissance du dieu solaire
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓆸</div>
+          <div class="object-meta">
+            <h3 class="object-name">Le Lotus bleu (sšn)</h3>
+            <p class="object-subtitle">
+              <em>Nymphaea caerulea</em> — Fleur de renaissance, de création et
+              de beauté divine
+            </p>
+            <div class="object-tags">
+              <span class="tag">Renaissance · Création</span>
+              <span class="tag tag-violet">Cosmogonie d'Hermopolis</span>
+              <span class="tag tag-green">Partout dans l'iconographie</span>
+              <span class="tag">Lotus bleu · lotus blanc · lotus rose</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Le lotus est l'une des plantes les plus sacrées d'Égypte — et sa
+          signification cosmique est directement liée à un comportement
+          botanique que les Égyptiens observaient avec fascination : le
+          <em>Nymphaea caerulea</em> (lotus bleu du Nil) s'ouvre précisément au
+          lever du soleil et se referme le soir pour s'enfoncer sous l'eau.
+          Chaque matin, il émerge de l'eau sombre, épanouit ses pétales et
+          dégage un <strong>parfum enivrant</strong> — métaphore parfaite du
+          soleil renaissant des eaux du Noun.
+        </p>
+
+        <p>
+          Dans la cosmogonie d'Hermopolis, c'est précisément d'un
+          <strong>lotus surgissant du Noun</strong> que naît le soleil enfant
+          lors du premier matin de la création. Cette image est représentée des
+          milliers de fois : un lotus ouvert d'où émerge le buste ou le visage
+          d'un enfant au crâne rasé, une boucle de cheveux sur le côté — le dieu
+          solaire <em>Nefertoum</em>, ou le jeune Horus, ou le soleil lui-même
+          dans sa forme d'enfant divin.
+        </p>
+
+        <p>
+          Le lotus bleu avait également des propriétés
+          <strong>pharmacologiques réelles</strong> : la
+          <em>Nymphaea caerulea</em> contient des alcaloïdes psychoactifs
+          (nuciférine, aporphine) aux effets légèrement narcotiques et
+          euphorisants. Les scènes de banquets représentent souvent des convives
+          tenant une fleur de lotus aux narines ou la trempant dans du vin —
+          pratique rituelle et peut-être psychoactive qui renforçait
+          l'expérience mystique et la joie des fêtes religieuses.
+        </p>
+
+        <div class="info-box info-box-green">
+          <p class="info-box-title">
+            𓆸 Le papyrus — Compagnon végétal du lotus
+          </p>
+          <p>
+            Le papyrus (<em>mehet</em>) est l'autre plante sacrée fondamentale
+            d'Égypte : emblème de la Basse Égypte (comme le lotus l'est pour la
+            Haute Égypte), il représente la vitalité du Nil, la fertilité des
+            marais et la fraîcheur de l'eau. Les colonnes à chapiteaux en forme
+            de papyrus ou de lotus qui structurent les grandes salles hypostyles
+            de Karnak et Louxor transforment littéralement les temples en forêts
+            végétales sacrées — une cosmogonie architecturale.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- URAEUS -->
+    <section class="article-section" id="uraeus">
+      <div class="hiero-deco">𓆙𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓆙</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Insignes royaux · Cobra sacré</p>
+            <h2 class="marker-title">
+              L'Uræus — Le cobra dressé, gardien de la couronne pharaonique
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓆙</div>
+          <div class="object-meta">
+            <h3 class="object-name">L'Uræus (jˁrt)</h3>
+            <p class="object-subtitle">
+              Cobra royal dressé, projection de l'œil de Rê — protecteur du
+              pharaon
+            </p>
+            <div class="object-tags">
+              <span class="tag">Royauté · Protection</span>
+              <span class="tag tag-violet">~3100 av. J.-C.</span>
+              <span class="tag tag-green"
+                >Couronnes · fronts royaux · sarcophages</span
+              >
+              <span class="tag">Déesse Ouadjet de Bouto</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          L'uræus — du grec <em>ouraios</em>, transcription de l'égyptien
+          <em>iaret</em> (« celle qui se dresse ») — est le cobra royal dressé
+          qui orne le front du pharaon sur toutes les couronnes, les masques
+          funéraires, les statues et les représentations royales. Ce cobra
+          craché de feu est la déesse <strong>Ouadjet</strong> (déesse serpent
+          de Bouto, en Basse Égypte) dans sa fonction protectrice — ou l'<strong
+            >œil de Rê</strong
+          >
+          transformé en serpent cracheur de flammes, prêt à détruire tout ennemi
+          qui oserait menacer le roi.
+        </p>
+
+        <p>
+          La signification de l'uræus est transparente dans sa symbolique : le
+          pharaon qui porte ce cobra sur son front
+          <strong>dispose du pouvoir de destruction divine</strong>. Ses ennemis
+          seront consumés par le feu de l'œil solaire — cobra dont le venin, la
+          morsure et le crachat de venin sont autant de métaphores des rayons du
+          soleil ardent. L'uræus n'est pas seulement un ornement : c'est une
+          arme divine portée en permanence par le roi.
+        </p>
+
+        <div class="info-box info-box-red">
+          <p class="info-box-title">𓆙 Le Double Uræus et le vautour</p>
+          <p>
+            Certaines couronnes portent un <em>double uræus</em> : Ouadjet
+            (cobra de Basse Égypte) et Nékhebet (vautour de Haute Égypte) côte à
+            côte — symbole de la souveraineté sur les Deux Terres unifiées.
+            Cette paire apparaît dès Narmer et constitue l'un des symboles de
+            royauté les plus persistants de toute l'histoire égyptienne.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     CAT 3 : SCEPTRES & COURONNES
+══════════════════════════════════════════ -->
+    <div class="cat-header" id="sceptres">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓌀</span>
+        <div>
+          <p class="cat-label">Troisième partie · Insignes du pouvoir</p>
+          <h2 class="cat-name">Sceptres, Couronnes & Insignes Royaux</h2>
+          <p class="cat-desc">
+            Les objets qui font le pharaon — chacun porteur d'une théologie du
+            pouvoir divine et terrestre.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCEPTRES -->
+    <section class="article-section" id="sceptres-royaux">
+      <div class="hiero-deco">𓌀𓎛𓇋𓐍𓆑𓀭𓏤</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓌀</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Insignes royaux · Sceptres divins</p>
+            <h2 class="marker-title">
+              Les Sceptres Sacrés — Heqa, Nekhakha, Was et Sekhem
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          Les sceptres égyptiens ne sont pas de simples bâtons de cérémonie : ce
+          sont des <strong>objets théologiques chargés de sens</strong>, chacun
+          porteur d'un concept divin spécifique, hérités des dieux et transmis
+          au pharaon comme marques visibles de sa nature divine.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Sceptre</th>
+              <th>Forme</th>
+              <th>Signification</th>
+              <th>Porteur principal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Heqa (ḥqȝ)</strong></td>
+              <td>Crosse recourbée</td>
+              <td>
+                « Gouverner » — pouvoir pastoral, autorité du berger sur son
+                troupeau humain. Le pharaon est le berger de l'Égypte.
+              </td>
+              <td>Pharaon · Osiris momie</td>
+            </tr>
+            <tr>
+              <td><strong>Nekhakha (nḫḫ)</strong></td>
+              <td>Flagellum à trois branches</td>
+              <td>
+                Puissance coercitive, fécondité (battre le grain), commandement
+                absolu. Toujours tenu avec le heqa, ils forment la paire royale.
+              </td>
+              <td>Pharaon · Osiris · Min</td>
+            </tr>
+            <tr>
+              <td><strong>Was (wȝs)</strong></td>
+              <td>Long bâton à tête d'animal (Seth ?) et pied bifurqué</td>
+              <td>
+                « Puissance, domination, prospérité » — sceptre des grandes
+                divinités mâles. Symbole de pouvoir divin par excellence.
+              </td>
+              <td>Dieux mâles · pharaon debout</td>
+            </tr>
+            <tr>
+              <td><strong>Sekhem (sḫm)</strong></td>
+              <td>Long sceptre-palette à tête aplatie</td>
+              <td>
+                « Puissance sacrée » — lié au pouvoir divin brut, à la déesse
+                Sekhmet. Utilisé dans les rites de purification et les
+                célébrations royales.
+              </td>
+              <td>Prêtres · pharaon rituel</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="info-box info-box-or">
+          <p class="info-box-title">𓌀 La crosse et le fléau dans la mort</p>
+          <p>
+            Le heqa et le nekhakha sont les attributs caractéristiques d'Osiris
+            dans son rôle de roi des morts : représenté comme une momie, bras
+            croisés sur la poitrine tenant les deux sceptres, le dieu mort et
+            ressuscité incarne la royauté permanente qui transcende la mort.
+            Chaque pharaon mort devient Osiris et reçoit les mêmes attributs. La
+            momie de Toutankhamon était elle-même représentée dans cette
+            position sur son masque d'or.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURONNES -->
+    <section class="article-section" id="couronnes">
+      <div class="hiero-deco">𓋹𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓋹</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Insignes royaux · Couronnes sacrées</p>
+            <h2 class="marker-title">
+              Les Couronnes Pharaoniques — Chaque couronne, une théologie
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          Aucune couronne physique du pharaon n'a survécu jusqu'à nous —
+          peut-être étaient-elles en matières périssables (tissu, cuir,
+          végétaux), peut-être refondues, peut-être enterrées dans des tombes
+          encore inviolées. Mais leurs représentations sont omniprésentes dans
+          l'art égyptien, et chacune porte une signification précise.
+        </p>
+
+        <div class="symbol-grid">
+          <div class="symbol-card">
+            <span class="symbol-icon">⬜</span>
+            <div class="symbol-name">Couronne Blanche (Hedjet)</div>
+            <div class="symbol-meaning">
+              Haute Égypte. Forme bulbeuse allongée. Déesse Nékhebet (vautour).
+              Porte l'uræus.
+            </div>
+          </div>
+          <div class="symbol-card">
+            <span class="symbol-icon">🟥</span>
+            <div class="symbol-name">Couronne Rouge (Decheret)</div>
+            <div class="symbol-meaning">
+              Basse Égypte. Forme tabulaire à spirale. Déesse Ouadjet (cobra).
+              Structure caractéristique en spirale.
+            </div>
+          </div>
+          <div class="symbol-card">
+            <span class="symbol-icon">⬛</span>
+            <div class="symbol-name">Couronne Double (Pschent)</div>
+            <div class="symbol-meaning">
+              Les Deux Terres unifiées. Combinaison de la blanche et de la
+              rouge. Symbole ultime de la royauté unifiée.
+            </div>
+          </div>
+          <div class="symbol-card">
+            <span class="symbol-icon">🔵</span>
+            <div class="symbol-name">Couronne Bleue (Khépresh)</div>
+            <div class="symbol-meaning">
+              Couronne de guerre du Nouvel Empire. Bleue, couverte de rondelles.
+              Portée en campagne militaire.
+            </div>
+          </div>
+          <div class="symbol-card">
+            <span class="symbol-icon">⚪</span>
+            <div class="symbol-name">Couronne Atef</div>
+            <div class="symbol-meaning">
+              Couronne funéraire d'Osiris. Couronne blanche flanquée de deux
+              plumes d'autruche. Portée lors des fêtes osiiriennes.
+            </div>
+          </div>
+          <div class="symbol-card">
+            <span class="symbol-icon">🟡</span>
+            <div class="symbol-name">Double Plume (Shuti)</div>
+            <div class="symbol-meaning">
+              Deux hautes plumes d'autruche. Attribut d'Amon, de Min, de Montou.
+              Associée à la royauté sacrée de Thèbes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTOUCHE -->
+    <section class="article-section" id="cartouche">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓇳</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Insignes royaux · Hiéroglyphe</p>
+            <h2 class="marker-title">
+              Le Cartouche Royal — La corde qui protège le nom du pharaon pour
+              l'éternité
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓇳</div>
+          <div class="object-meta">
+            <h3 class="object-name">Le Cartouche (Chenet / Chenou)</h3>
+            <p class="object-subtitle">
+              <em>šnw</em> — Boucle de corde ovale encerclant les deux noms
+              principaux du pharaon
+            </p>
+            <div class="object-tags">
+              <span class="tag">Nom royal · Protection</span>
+              <span class="tag tag-violet">~2600 av. J.-C. · Snéfrou</span>
+              <span class="tag tag-green"
+                >Pierres · papyrus · bijoux · tombes</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Le cartouche est la signature graphique du pharaon — l'ovale allongé
+          formé d'une corde nouée qui encercle ses deux noms principaux (le nom
+          de Nebty et le nom de Sa-Rê). Son nom égyptien, <em>shenou</em>,
+          dérive du verbe <em>sheni</em> (« encercler ») — et c'est précisément
+          sa fonction : la corde noée symbolise
+          <strong>tout ce qu'encercle le soleil</strong>, c'est-à-dire l'univers
+          entier. Le pharaon dont le nom est inscrit dans un cartouche règne sur
+          tout le cosmos.
+        </p>
+
+        <p>
+          La dimension protectrice est aussi cruciale : enfermer le nom dans un
+          ovale fermé le protège contre toute altération ou destruction magique.
+          Dans la pensée égyptienne,
+          <strong>détruire le nom d'un être, c'est l'anéantir</strong> — c'est
+          pourquoi les cartouches d'Akhénaton, d'Hatchepsout et de Toutankhamon
+          furent martelés dans les temples après leur mort. Le cartouche est le
+          dernier rempart contre l'effacement.
+        </p>
+
+        <p>
+          C'est un cartouche qui permit à
+          <strong>Jean-François Champollion</strong> de déchiffrer les
+          hiéroglyphes en 1822 : il identifia les cartouches de Ptolémée et
+          Cléopâtre sur la Pierre de Rosette et d'autres obélisques, en
+          reconnaissant que les ovales encerclaient des noms royaux à déchiffrer
+          phonétiquement. Cette intuition fut le verrou qui ouvrit toute
+          l'écriture égyptienne.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     CAT 4 : TEXTES SACRÉS
+══════════════════════════════════════════ -->
+    <div class="cat-header" id="textes">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓁹</span>
+        <div>
+          <p class="cat-label">Quatrième partie · Paroles divines</p>
+          <h2 class="cat-name">Textes Sacrés & Livres Funéraires</h2>
+          <p class="cat-desc">
+            Trois millénaires de formules magiques — des pyramides de l'Ancien
+            Empire aux papyrus du Nouvel Empire.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEXTES DES PYRAMIDES -->
+    <section class="article-section" id="textes-pyramides">
+      <div class="hiero-deco">𓇋𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓇋</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Textes sacrés · Le plus ancien corpus religieux
+            </p>
+            <h2 class="marker-title">
+              Les Textes des Pyramides — Les plus vieilles paroles religieuses
+              de l'humanité
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓇋</div>
+          <div class="object-meta">
+            <h3 class="object-name">Les Textes des Pyramides (Mdw Ntr)</h3>
+            <p class="object-subtitle">
+              Le corpus religieux le plus ancien au monde — ~2350 av. J.-C. sous
+              Ounas
+            </p>
+            <div class="object-tags">
+              <span class="tag">~2350 av. J.-C.</span>
+              <span class="tag tag-violet">Saqqarah · VIe Dyn.</span>
+              <span class="tag tag-green">Parois des chambres funéraires</span>
+              <span class="tag">228 formules (Ounas) à 759 (Pépi II)</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Les Textes des Pyramides sont le
+          <strong>corpus religieux écrit le plus ancien de l'humanité</strong> —
+          les premières grandes collections de textes sacrés jamais gravées.
+          Apparus sur les parois des chambres funéraires royales à partir du
+          règne d'<strong>Ounas</strong> (Ve Dyn., ~2350 av. J.-C.) à Saqqarah,
+          ils représentent pourtant une compilation de textes beaucoup plus
+          anciens, certains peut-être antérieurs à l'écriture elle-même.
+        </p>
+
+        <p>
+          Ces textes sont des
+          <strong>formules magiques destinées au roi défunt</strong> : formules
+          d'ascension céleste (permettant au pharaon de rejoindre les étoiles
+          circumpolaires, les dieux ou le soleil), formules d'identification (le
+          mort devient Osiris, devient Rê, devient l'étoile), formules de
+          protection contre les serpents et les forces hostiles, formules
+          rituelles de purification, d'offrande et de réanimation. Ils sont
+          gravés en hiéroglyphes peints de vert (couleur de la renaissance) sur
+          fond blanc, couvrant les murs et plafonds des petites chambres
+          souterraines.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Lève-toi, Ounas ! Tu n'es pas parti mort, tu es parti vivant.
+            Assieds-toi sur le trône d'Osiris, ton sceptre de commandement dans
+            ta main, pour donner des ordres aux vivants.
+          </p>
+          <cite
+            >— Textes des Pyramides, Utterance 412, pyramide d'Ounas, ~2350 av.
+            J.-C.</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVRE DES MORTS -->
+    <section class="article-section" id="livre-morts">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓁹</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Textes sacrés · Guide de l'au-delà</p>
+            <h2 class="marker-title">
+              Le Livre des Morts — Le guide universel du voyage vers l'éternité
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓁹</div>
+          <div class="object-meta">
+            <h3 class="object-name">Le Livre des Morts (Rw Nw Prt M Hrw)</h3>
+            <p class="object-subtitle">
+              « Le Livre du Sortir du Jour » — ~1550 av. J.-C. à 50 apr. J.-C.
+            </p>
+            <div class="object-tags">
+              <span class="tag">~1550 av. J.-C.</span>
+              <span class="tag tag-violet">Papyrus illustrés</span>
+              <span class="tag tag-green">Tout niveau social</span>
+              <span class="tag">189 chapitres canoniques</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Son nom égyptien est <em>Rw Nw Prt M Hrw</em> — « Les Formules du
+          Sortir du Jour » — et il décrit exactement son contenu : un ensemble
+          de formules magiques permettant à l'âme défunte de
+          <strong>sortir de la tombe le jour</strong>, de naviguer dans le monde
+          souterrain, de passer les portes gardées par des créatures
+          monstrueuses, de se présenter devant le tribunal d'Osiris et
+          d'atteindre le Champ des Roseaux, paradis de l'éternité.
+        </p>
+
+        <p>
+          Contrairement aux Textes des Pyramides (réservés aux rois) et aux
+          Textes des Sarcophages (réservés aux nobles), le
+          <em>Livre des Morts</em> était disponible à
+          <strong>quiconque pouvait se le payer</strong>. Les papyrus étaient
+          produits en série par des ateliers de scribes, avec des blancs laissés
+          pour le nom du défunt — personnalisation minimale d'un produit
+          standardisé. Les plus luxueux, comme le <em>Papyrus Ani</em> (conservé
+          au British Museum), mesurent plusieurs mètres de long et sont
+          richement illustrés de vignettes en couleurs.
+        </p>
+
+        <h3>Le Chapitre 125 — La Confession Négative</h3>
+        <p>
+          Au cœur du Livre des Morts, le Chapitre 125 décrit la scène du
+          <strong>Jugement de l'âme</strong> avec une précision théâtrale
+          saisissante. Le défunt, mené par Anubis dans la Salle des Deux
+          Vérités, récite d'abord la <em>confession négative</em> : une liste de
+          42 péchés dont il affirme être innocent, chacun devant l'un des 42
+          juges assesseurs siégeant dans la salle. « Je n'ai pas commis de
+          péché… Je n'ai pas volé… Je n'ai pas tué… Je n'ai pas fait pleurer… Je
+          n'ai pas pollué les eaux… Je n'ai pas fabriqué de faux poids… » Puis
+          son cœur est pesé contre la plume de Maât. Si le verdict est
+          favorable, Thot le note et Osiris accorde l'accès au paradis.
+        </p>
+
+        <div class="info-box info-box-violet">
+          <p class="info-box-title">𓁹 La démocratisation de l'au-delà</p>
+          <p>
+            L'évolution des textes funéraires sur deux millénaires illustre une
+            démocratisation progressive de l'espoir en l'immortalité : réservée
+            au seul pharaon à l'Ancien Empire (Textes des Pyramides), puis aux
+            nobles (Textes des Sarcophages au Moyen Empire), la promesse de
+            résurrection devint accessible à tous au Nouvel Empire grâce au
+            Livre des Morts — à condition d'en acheter une copie. Ce processus
+            est l'un des plus remarquables de l'histoire religieuse humaine.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+     CAT 5 : MAGIE & RITUELS
+══════════════════════════════════════════ -->
+    <div class="cat-header" id="rites">
+      <div class="cat-header-inner">
+        <span class="cat-glyph">𓎛</span>
+        <div>
+          <p class="cat-label">Cinquième partie · Pratiques sacrées</p>
+          <h2 class="cat-name">Magie, Rituels & Objets Funéraires</h2>
+          <p class="cat-desc">
+            La magie égyptienne n'est pas de la superstition — c'est une
+            technologie divine au service des vivants et des morts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEKA -->
+    <section class="article-section" id="heka">
+      <div class="hiero-deco">𓎛𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓎛</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Magie & rituels · Force primordiale</p>
+            <h2 class="marker-title">
+              Héka — La Magie divine, force cosmique primordiale
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓎛</div>
+          <div class="object-meta">
+            <h3 class="object-name">Héka (ḥkȝ)</h3>
+            <p class="object-subtitle">
+              « La Magie » — Force cosmique préexistante aux dieux, transmise
+              aux humains
+            </p>
+            <div class="object-tags">
+              <span class="tag">Magie divine</span>
+              <span class="tag tag-violet">Force primordiale</span>
+              <span class="tag tag-green"
+                >Textes des Pyramides · Coffin Texts · Livre des Morts</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          La magie (<em>héka</em>) n'est pas en Égypte une pratique marginale ou
+          suspecte — c'est une <strong>force cosmique fondamentale</strong>,
+          aussi réelle et aussi nécessaire que la gravité ou la lumière. Héka
+          est même personnifiée en un dieu mineur qui assiste Rê sur sa barque
+          solaire. Selon les Textes des Pyramides, Héka existait avant les dieux
+          eux-mêmes — c'est la puissance par laquelle Atoum créa l'univers, la
+          force que Ptah exerça en concevant le monde dans son cœur.
+        </p>
+
+        <p>
+          La magie égyptienne est fondée sur deux principes : le
+          <strong>pouvoir du nom</strong> (connaître le vrai nom d'un être ou
+          d'une force, c'est en avoir le contrôle) et le
+          <strong>pouvoir de la similitude</strong> (agir sur l'image ou la
+          représentation d'une chose, c'est agir sur la chose elle-même). Ces
+          deux principes expliquent toutes les pratiques magiques documentées :
+          figurines ennemies percées d'épingles, formules récitées sur des
+          nœuds, représentations d'animaux venimeux dans les tombes, amulettes
+          portant les noms des dieux protecteurs.
+        </p>
+
+        <p>
+          Les <strong>prêtres-magiciens</strong> (<em>hery-heb</em>, porteurs du
+          livre de fête) étaient des spécialistes formés à l'École de la Maison
+          de Vie (<em>Per-Ankh</em>) — institution rattachée aux grands temples,
+          conservant les textes sacrés et formant les officiants. La frontière
+          entre médecine et magie était inexistante : un traitement médical
+          efficace fonctionnait parce que la formule magique qui l'accompagnait
+          activait la puissance divine des plantes et des minéraux.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            La magie égyptienne n'est pas de la pensée magique — c'est une
+            vision du monde dans laquelle le langage, les images et les symboles
+            participent activement à la réalité qu'ils décrivent. C'est une
+            linguistique cosmologique.
+          </p>
+          <cite
+            >— Ritner, R.K.,
+            <em>The Mechanics of Ancient Egyptian Magical Practice</em>, SAOC
+            54, 1993</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMIFICATION -->
+    <section class="article-section" id="momification">
+      <div class="hiero-deco">𓀭𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓀭</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Rituels funéraires · Technique divine</p>
+            <h2 class="marker-title">
+              La Momification — Vaincre la mort par la préservation du corps
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓀭</div>
+          <div class="object-meta">
+            <h3 class="object-name">La Momification (wt)</h3>
+            <p class="object-subtitle">
+              Soixante-dix jours de rituel funéraire pour garantir la
+              résurrection éternelle
+            </p>
+            <div class="object-tags">
+              <span class="tag">Rituel funéraire</span>
+              <span class="tag tag-violet"
+                >~2600 av. J.-C. — 400 apr. J.-C.</span
+              >
+              <span class="tag tag-green">Anubis · Iset · Nephtys</span>
+              <span class="tag">70 jours · natron · résines · bandelettes</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          La momification est l'une des contributions les plus originales de la
+          civilisation égyptienne à l'histoire humaine — et l'une des procédures
+          médicales et rituelles les plus sophistiquées de l'Antiquité. Elle
+          repose sur un postulat théologique fondamental : pour que l'âme
+          (<em>ba</em>) puisse revenir habiter le corps après le jugement et
+          obtenir la résurrection, le corps physique doit être
+          <strong>préservé intact</strong> — ou du moins reconnaissable — pour
+          l'éternité.
+        </p>
+
+        <p>
+          Le processus dure exactement <strong>soixante-dix jours</strong> —
+          nombre qui correspond à la période de disparition de l'étoile Sirius
+          sous l'horizon (avant son lever héliaque annonçant la crue du Nil), et
+          donc à la mort et renaissance cosmique. Il commence par l'extraction
+          des viscères (foie, poumons, estomac, intestins) conservés dans les
+          vases canopes ; le cerveau est extrait par une spatule métallique
+          introduite par la narine gauche (les Égyptiens n'avaient aucune idée
+          de sa fonction cognitive — ils pensaient que la pensée siégeait dans
+          le cœur). Le corps est ensuite déshydraté dans le
+          <strong>natron</strong> (sel naturel de carbonate de sodium) pendant
+          quarante jours, puis oint de résines aromatiques (cèdre, myrrhe, baies
+          de genévrier), bourré de lin et de sciure, et enfin soigneusement
+          bandé en plusieurs couches de lin fin.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">
+            𓀭 Les cinq composantes de l'être — La complexité de l'âme égyptienne
+          </p>
+          <p>
+            La conception égyptienne de la personne humaine est d'une
+            sophistication remarquable — bien plus complexe que le simple couple
+            corps/âme des pensées occidentales. L'être humain est composé de :
+            le <strong>Khat</strong> (corps physique), le
+            <strong>Ka</strong> (double vital, énergie de vie transmise à la
+            naissance), le <strong>Ba</strong> (âme individuelle, souvent
+            représentée en oiseau à tête humaine), l'<strong>Akh</strong>
+            (esprit transfiguré de l'être ressuscité), et le
+            <strong>Ren</strong> (le nom, qui doit être prononcé pour que l'être
+            continue d'exister). La momification préserve le Khat, les offrandes
+            nourrissent le Ka, les formules activent le Ba et le Ren.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CANOPES & OUSHEBTIS -->
+    <section class="article-section" id="canopes">
+      <div class="hiero-deco">𓇾𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-glyph">𓇾</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Objets funéraires · Les fils d'Horus</p>
+            <h2 class="marker-title">
+              Vases Canopes & Ouchebtis — Les gardiens silencieux des tombes
+            </h2>
+          </div>
+        </div>
+
+        <div class="object-card">
+          <div class="object-symbol">𓇾</div>
+          <div class="object-meta">
+            <h3 class="object-name">Les Vases Canopes & les Ouchebtis</h3>
+            <p class="object-subtitle">
+              Les quatre fils d'Horus gardiens des viscères · Les serviteurs de
+              l'éternité
+            </p>
+            <div class="object-tags">
+              <span class="tag">Funéraire · Viscères</span>
+              <span class="tag tag-violet">~2600 av. J.-C.</span>
+              <span class="tag tag-green">Calcite · faïence · bois</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Les <strong>vases canopes</strong> sont les quatre récipients qui
+          conservent les viscères extraits lors de la momification — foie,
+          poumons, estomac, intestins. Leurs couvercles représentent les têtes
+          des <strong>quatre fils d'Horus</strong>, divinités protectrices des
+          organes :
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Fils d'Horus</th>
+              <th>Tête</th>
+              <th>Organe protégé</th>
+              <th>Déesse tutélaire</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amset</strong></td>
+              <td>Homme</td>
+              <td>Foie</td>
+              <td>Isis</td>
+            </tr>
+            <tr>
+              <td><strong>Hâpy</strong></td>
+              <td>Babouin</td>
+              <td>Poumons</td>
+              <td>Nephtys</td>
+            </tr>
+            <tr>
+              <td><strong>Douamoutef</strong></td>
+              <td>Chacal</td>
+              <td>Estomac</td>
+              <td>Neith</td>
+            </tr>
+            <tr>
+              <td><strong>Qébehsénouf</strong></td>
+              <td>Faucon</td>
+              <td>Intestins</td>
+              <td>Selkis</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          Les <strong>ouchebtis</strong> (ou chaouabtis, ou ouchebtis selon les
+          périodes) sont de petites figurines funéraires en forme de momie — en
+          faïence, bois ou calcaire — déposées par centaines dans les tombes.
+          Leur nom signifie « le répondant » — car leur fonction est de répondre
+          à la place du défunt lorsque les dieux l'appelleront pour effectuer
+          des corvées agricoles dans l'au-delà. La formule gravée sur chaque
+          ouchebti dit : « Ô ouchebti, si on m'appelle pour des travaux dans le
+          Champ des Roseaux… tu diras : Me voici ! » Des tombes royales du
+          Nouvel Empire contenaient jusqu'à <strong>401 ouchebtis</strong> — un
+          pour chaque jour de l'année plus un contremaître pour chaque groupe de
+          dix travailleurs.
+        </p>
+
+        <div class="info-box info-box-green">
+          <p class="info-box-title">𓇾 Le mobilier funéraire complet</p>
+          <p>
+            Une tombe égyptienne bien équipée contenait tout ce dont le défunt
+            aurait besoin pour l'éternité : nourriture et boisson (offrandes
+            réelles ou représentées), meubles, vêtements, outils, bijoux,
+            instruments de musique, jeux (senet), statuettes de serviteurs,
+            modèles de bateaux, papyrus du Livre des Morts, stèles, et les vases
+            canopes et ouchebtis. La tombe est littéralement une maison équipée
+            pour l'éternité — une continuité parfaite de la vie terrestre dans
+            la vie post-mortem.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════ BIBLIOGRAPHIE ══════════════════ -->
+    <section class="bibliography" id="bibliographie">
+      <div class="container">
+        <p class="bib-header">𓂀 Sources &amp; Lectures recommandées</p>
+        <ul class="bib-list">
+          <li class="bib-item">
+            <strong>Hornung, E.</strong> —
+            <em>La grande histoire de l'Égypte ancienne</em>, Rocher, 1999 ; et
+            <em>Conceptions of God in Ancient Egypt</em>, Cornell University
+            Press, 1982. Pour les mythes cosmogoniques et la théologie des
+            dieux.
+          </li>
+          <li class="bib-item">
+            <strong>Faulkner, R.O.</strong> —
+            <em>The Ancient Egyptian Book of the Dead</em>, British Museum
+            Press, 1985 (éd. augmentée 1994). La traduction de référence du
+            Livre des Morts, illustrée par les vignettes du Papyrus Ani.
+          </li>
+          <li class="bib-item">
+            <strong>Allen, J.P.</strong> —
+            <em>The Ancient Egyptian Pyramid Texts</em>, Society of Biblical
+            Literature, 2005. Traduction commentée des Textes des Pyramides,
+            corpus le plus ancien de la littérature religieuse mondiale.
+          </li>
+          <li class="bib-item">
+            <strong>Wilkinson, R.H.</strong> —
+            <em>Symbol and Magic in Egyptian Art</em>, Thames & Hudson, 1994.
+            L'étude de référence sur les symboles de l'art égyptien, leur
+            signification théologique et leurs usages pratiques.
+          </li>
+          <li class="bib-item">
+            <strong>Andrews, C.</strong> — <em>Amulets of Ancient Egypt</em>,
+            British Museum Press, 1994. Catalogue exhaustif des amulettes
+            égyptiennes avec descriptions, matériaux, périodes et significations
+            rituelles.
+          </li>
+          <li class="bib-item">
+            <strong>Ritner, R.K.</strong> —
+            <em>The Mechanics of Ancient Egyptian Magical Practice</em>, SAOC
+            54, Oriental Institute, Chicago, 1993. L'étude scientifique
+            fondamentale sur le fonctionnement de la magie (<em>héka</em>) dans
+            l'Égypte ancienne.
+          </li>
+          <li class="bib-item">
+            <strong>Hornung, E.</strong> —
+            <em>The Ancient Egyptian Books of the Afterlife</em>, Cornell
+            University Press, 1999. Analyse complète des livres funéraires
+            royaux (Amdouat, Livre des Portes, Livre de la Vache Céleste) avec
+            traductions et commentaires.
+          </li>
+          <li class="bib-item">
+            <strong>Ziegler, C.</strong> — <em>Les pharaons</em>, Flammarion /
+            Réunion des Musées Nationaux, 2002. Catalogue d'exposition qui
+            détaille les insignes royaux (couronnes, sceptres, cartouches) avec
+            exemples archéologiques.
+          </li>
+          <li class="bib-item">
+            <strong>Taylor, J.H.</strong> —
+            <em>Death and the Afterlife in Ancient Egypt</em>, British Museum
+            Press, 2001. Synthèse magistrale sur toutes les pratiques funéraires
+            — momification, mobilier, vases canopes, ouchebtis et conceptions de
+            l'au-delà.
+          </li>
+          <li class="bib-item">
+            <strong>Pinch, G.</strong> — <em>Magic in Ancient Egypt</em>,
+            British Museum Press, 1994. Étude accessible et rigoureuse sur la
+            magie quotidienne et rituelle en Égypte — amulettes, formules,
+            figurines d'envoûtement et pratiques apotropaïques.
+          </li>
+          <li class="bib-item">
+            <strong>Quirke, S.</strong> — <em>Ancient Egyptian Religion</em>,
+            British Museum Press, 1992. Introduction synthétique à la pensée
+            religieuse égyptienne — mythes, rituels et conception du divin —
+            idéale pour la vulgarisation.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════════ FOOTER ══════════════════ -->
+    <footer>
+      <p class="footer-logo">𓂀 Égypte Éternelle</p>
+      <p class="footer-tagline">« Je suis hier et je connais demain. »</p>
+      <nav class="footer-nav">
+        <a href="#">Histoire</a>
+        <a href="#">Dieux &amp; Mythes</a>
+        <a href="#">Pyramides</a>
+        <a href="#">Vie quotidienne</a>
+        <a href="#">Dynasties</a>
+        <a href="#">Glossaire</a>
+      </nav>
+      <p
+        style="
+          font-size: 0.95rem;
+          opacity: 0.35;
+          font-family: &quot;Cinzel&quot;, serif;
+          letter-spacing: 0.2em;
+        "
+      >
+        DOSSIER THÉMATIQUE · ÉGYPTE ÉTERNELLE
+      </p>
+    </footer>
+
+    <script>
+      // Stars
+      const sc = document.getElementById("stars");
+      for (let i = 0; i < 130; i++) {
+        const s = document.createElement("div");
+        s.className = "star";
+        const sz = Math.random() * 2.5 + 0.5;
+        s.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random() * 100}%;top:${Math.random() * 100}%;--dur:${Math.random() * 4 + 2}s;--op:${Math.random() * 0.6 + 0.3};animation-delay:${Math.random() * 6}s;`;
+        sc.appendChild(s);
+      }
+
+      // Reveal animation
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }, i * 70);
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+
+      document
+        .querySelectorAll(
+          ".object-card,.pull-quote,.info-box,.symbol-card,.col-card,.myth-step",
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(14px)";
+          el.style.transition = "opacity 0.55s ease,transform 0.55s ease";
+          obs.observe(el);
+        });
+
+      // TOC active highlight on scroll
+      const allSections = document.querySelectorAll("[id]");
+      const tocLinks = document.querySelectorAll(".toc-link");
+      window.addEventListener("scroll", () => {
+        let cur = "";
+        allSections.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 130) cur = s.id;
+        });
+        tocLinks.forEach((link) => {
+          const nm = link.querySelector(".toc-name");
+          link.style.borderLeftColor = "transparent";
+          if (nm) nm.style.color = "";
+          if (link.getAttribute("href") === "#" + cur) {
+            link.style.borderLeftColor = "var(--or)";
+            if (nm) nm.style.color = "var(--or-clair)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+

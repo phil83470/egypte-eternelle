@@ -1,0 +1,2051 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modes de Vie & Société — Égypte Éternelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #e8bf6a;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --brun-papyrus: #6b4f2a;
+        --rouge-carnelian: #8b2e1a;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+        --turquoise: #2a8b7a;
+        --vert-nil: #2a5c3a;
+        --blanc-ivoire: #fbf5e6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at 30% 100%,
+            rgba(42, 92, 58, 0.18) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 70% 100%,
+            rgba(200, 151, 58, 0.14) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 0%,
+            rgba(26, 58, 92, 0.35) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            180deg,
+            #0d0b06 0%,
+            #1a1208 40%,
+            #1e1a0a 80%,
+            #2a200c 100%
+          );
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(
+            circle at 15% 75%,
+            rgba(42, 139, 122, 0.05) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 85% 25%,
+            rgba(26, 58, 92, 0.08) 0%,
+            transparent 40%
+          );
+      }
+
+      /* Nil wave decoration */
+      .hero-nil {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 180px;
+        opacity: 0.12;
+      }
+
+      /* Silhouettes de vie quotidienne */
+      .hero-scene {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1000px;
+        opacity: 0.13;
+      }
+
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 55%;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        background: var(--or-clair);
+        border-radius: 50%;
+        animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        opacity: 0;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: var(--op, 0.7);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero Image Adjustment */
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0.25;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-background img {
+        width: 90vw;
+        height: 85vh;
+        object-fit: cover;
+        filter: sepia(30%) contrast(110%);
+      
+        border-radius: 12px;
+      }
+
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.5rem;
+        animation: fadeUp 1.4s 0.2s ease both;
+      }
+
+      .hero-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(2.6rem, calc(7vw + 0.2rem), 6.4rem);
+        font-weight: 900;
+        line-height: 1.05;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 80px rgba(200, 151, 58, 0.35),
+          0 2px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 0.5rem;
+        animation: fadeUp 1.4s 0.4s ease both;
+      }
+
+      .hero-title span {
+        display: block;
+        font-size: 0.42em;
+        color: var(--sable-fonce);
+        letter-spacing: 0.12em;
+        font-weight: 400;
+      }
+
+      .hero-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.2rem, calc(2vw + 0.2rem), 1.5rem);
+        color: var(--sable-fonce);
+        max-width: 620px;
+        margin: 1.5rem auto 2.5rem;
+        animation: fadeUp 1.4s 0.6s ease both;
+      }
+
+      .hero-divider {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 0 auto 2rem;
+        animation: fadeUp 1.4s 0.8s ease both;
+      }
+
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.4em;
+        color: var(--or);
+        opacity: 0.7;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+      .scroll-hint::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--or), transparent);
+      }
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ─── NAV ─── */
+      nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        background: rgba(26, 18, 8, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 0 2rem;
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+
+      .nav-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.2rem;
+        color: var(--or);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-family: "Cinzel", serif;
+        font-size: 0.92rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--or-clair);
+      }
+
+      /* ─── LAYOUT ─── */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ─── INTRO BAND ─── */
+      .intro-band {
+        background: linear-gradient(
+          135deg,
+          #1f160a 0%,
+          #1a1e0a 50%,
+          #1a1208 100%
+        );
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr 2px 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .intro-stat {
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .stat-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 3.2rem;
+        color: var(--or);
+        line-height: 1;
+        display: block;
+      }
+
+      .stat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        margin-top: 0.5rem;
+      }
+
+      .intro-divider-v {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--or),
+          transparent
+        );
+        align-self: stretch;
+        min-height: 80px;
+      }
+
+      /* ─── SECTION MARKER ─── */
+      .section-marker {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .marker-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 5.2rem;
+        line-height: 1;
+        color: rgba(200, 151, 58, 0.12);
+        font-weight: 900;
+        flex-shrink: 0;
+      }
+
+      .marker-text {
+        flex: 1;
+      }
+
+      .marker-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+
+      .marker-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.6rem, calc(3vw + 0.2rem), 2.4rem);
+        color: var(--or-clair);
+        line-height: 1.2;
+      }
+
+      /* ─── ARTICLE SECTIONS ─── */
+      .article-section {
+        padding: 6rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        position: relative;
+      }
+
+      .article-section:nth-child(even) {
+        background: rgba(200, 151, 58, 0.02);
+      }
+
+      .hiero-deco {
+        position: absolute;
+        right: 2rem;
+        top: 4rem;
+        font-size: 4.2rem;
+        opacity: 0.06;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.5rem;
+        color: var(--or);
+        user-select: none;
+        font-family: serif;
+      }
+
+      /* ─── PULL QUOTE ─── */
+      .pull-quote {
+        border-left: 3px solid var(--or);
+        padding: 1.5rem 2rem;
+        margin: 3rem 0;
+        background: rgba(200, 151, 58, 0.04);
+        position: relative;
+      }
+
+      .pull-quote::before {
+        content: "❝";
+        position: absolute;
+        top: -1rem;
+        left: 1.5rem;
+        font-size: 3.2rem;
+        color: var(--or);
+        opacity: 0.4;
+        line-height: 1;
+      }
+
+      .pull-quote p {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: var(--or-clair);
+        line-height: 1.7;
+      }
+
+      .pull-quote cite {
+        display: block;
+        margin-top: 0.8rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+        color: var(--sable-fonce);
+        font-style: normal;
+      }
+
+      /* ─── PARAGRAPHS ─── */
+      .article-section p {
+        margin-bottom: 1.5rem;
+        color: var(--sable);
+      }
+
+      .article-section h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.3rem;
+        color: var(--or-clair);
+        letter-spacing: 0.12em;
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+
+      /* ─── INTERNAL LINK ─── */
+      .internal-link {
+        color: var(--or-clair);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--or);
+        transition: all 0.2s;
+        font-style: italic;
+      }
+      .internal-link:hover {
+        color: var(--or);
+        border-bottom-style: solid;
+      }
+
+      /* ─── INFO BOX ─── */
+      .info-box {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 58, 92, 0.15),
+          rgba(26, 58, 92, 0.05)
+        );
+        border: 1px solid rgba(74, 127, 168, 0.25);
+        border-left: 3px solid var(--bleu-clair);
+        padding: 1.5rem 2rem;
+        margin: 2.5rem 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .info-box-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--bleu-clair);
+        margin-bottom: 0.8rem;
+      }
+
+      .info-box p {
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+
+      /* ─── INFO BOX VERT (variante) ─── */
+      .info-box-green {
+        background: linear-gradient(
+          135deg,
+          rgba(42, 92, 58, 0.15),
+          rgba(42, 92, 58, 0.04)
+        );
+        border: 1px solid rgba(42, 139, 122, 0.25);
+        border-left: 3px solid var(--turquoise);
+      }
+      .info-box-green .info-box-title {
+        color: var(--turquoise);
+      }
+
+      /* ─── INFO BOX ROUGE ─── */
+      .info-box-red {
+        background: linear-gradient(
+          135deg,
+          rgba(139, 46, 26, 0.12),
+          rgba(139, 46, 26, 0.04)
+        );
+        border: 1px solid rgba(139, 46, 26, 0.25);
+        border-left: 3px solid #c44a2a;
+      }
+      .info-box-red .info-box-title {
+        color: #e06040;
+      }
+
+      /* ─── PYRAMID HIERARCHY ─── */
+      .hierarchy {
+        margin: 3rem 0;
+        position: relative;
+      }
+
+      .hierarchy-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .hier-level {
+        display: flex;
+        align-items: stretch;
+        margin-bottom: 3px;
+        position: relative;
+      }
+
+      .hier-bar {
+        background: linear-gradient(90deg, var(--or-profond), var(--or));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 1.5rem;
+        margin: 0 auto;
+        position: relative;
+        clip-path: polygon(4% 0%, 96% 0%, 100% 100%, 0% 100%);
+        transition: filter 0.3s;
+        cursor: default;
+      }
+
+      .hier-bar:hover {
+        filter: brightness(1.2);
+      }
+
+      .hier-level:nth-child(1) .hier-bar {
+        width: 30%;
+        background: linear-gradient(90deg, #8b6420, #c8973a);
+      }
+      .hier-level:nth-child(2) .hier-bar {
+        width: 46%;
+        background: linear-gradient(90deg, #7a5618, #b8873a);
+      }
+      .hier-level:nth-child(3) .hier-bar {
+        width: 60%;
+        background: linear-gradient(90deg, #6b4f20, #a87830);
+      }
+      .hier-level:nth-child(4) .hier-bar {
+        width: 74%;
+        background: linear-gradient(90deg, #5a4018, #987030);
+      }
+      .hier-level:nth-child(5) .hier-bar {
+        width: 88%;
+        background: linear-gradient(90deg, #4a3010, #886828);
+      }
+      .hier-level:nth-child(6) .hier-bar {
+        width: 100%;
+        background: linear-gradient(90deg, #3a2008, #786020);
+      }
+
+      .hier-name {
+        font-family: "Cinzel", serif;
+        font-size: 0.98rem;
+        color: var(--sable);
+        letter-spacing: 0.15em;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .hier-desc {
+        font-family: "EB Garamond", serif;
+        font-size: 1rem;
+        color: rgba(242, 232, 201, 0.65);
+        text-align: center;
+        margin-left: 0.8rem;
+        font-style: italic;
+        white-space: nowrap;
+      }
+
+      /* ─── TWO-COL GRID ─── */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2.5rem 0;
+      }
+
+      .col-card {
+        background: linear-gradient(
+          145deg,
+          rgba(42, 30, 10, 0.7),
+          rgba(26, 18, 8, 0.85)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.12);
+        padding: 1.8rem;
+        border-top: 3px solid var(--or-profond);
+        transition:
+          border-top-color 0.3s,
+          transform 0.3s;
+      }
+
+      .col-card:hover {
+        border-top-color: var(--or-clair);
+        transform: translateY(-3px);
+      }
+
+      .col-card-icon {
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+        display: block;
+      }
+
+      .col-card-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.1rem;
+        color: var(--or-clair);
+        letter-spacing: 0.1em;
+        margin-bottom: 0.8rem;
+      }
+
+      .col-card p {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+        line-height: 1.7;
+      }
+
+      /* ─── DATA TABLE ─── */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        font-size: 1.1rem;
+      }
+
+      .data-table th {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--or);
+        text-align: left;
+        padding: 0.8rem 1rem;
+        border-bottom: 2px solid rgba(200, 151, 58, 0.3);
+      }
+
+      .data-table td {
+        padding: 0.7rem 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        color: var(--sable);
+        vertical-align: top;
+      }
+
+      .data-table tr:hover td {
+        background: rgba(200, 151, 58, 0.04);
+      }
+
+      /* ─── FOOD LIST ─── */
+      .food-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 2.5rem 0;
+      }
+
+      .food-item {
+        background: rgba(42, 30, 10, 0.6);
+        border: 1px solid rgba(200, 151, 58, 0.1);
+        padding: 1rem 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+      }
+
+      .food-item:hover {
+        border-color: rgba(200, 151, 58, 0.35);
+        background: rgba(42, 30, 10, 0.9);
+      }
+
+      .food-emoji {
+        font-size: 1.7rem;
+        flex-shrink: 0;
+      }
+
+      .food-name {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        color: var(--or-clair);
+        letter-spacing: 0.1em;
+      }
+
+      .food-note {
+        font-size: 0.98rem;
+        color: var(--sable-fonce);
+        font-style: italic;
+        margin-top: 0.15rem;
+      }
+
+      /* ─── BAND QUOTE ─── */
+      .band-quote {
+        background: linear-gradient(135deg, #0a1a10 0%, #1a0d08 100%);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .band-quote::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.015) 0px,
+          rgba(200, 151, 58, 0.015) 1px,
+          transparent 1px,
+          transparent 20px
+        );
+      }
+
+      .band-quote blockquote {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.3rem, calc(2.8vw + 0.2rem), 2rem);
+        color: var(--or-clair);
+        max-width: 820px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.5;
+      }
+
+      .band-quote footer {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        color: var(--sable-fonce);
+        text-transform: uppercase;
+      }
+
+      /* ─── BIBLIOGRAPHIE ─── */
+      .bibliography {
+        background: linear-gradient(
+          180deg,
+          rgba(26, 18, 8, 0) 0%,
+          rgba(15, 10, 3, 0.8) 100%
+        );
+        padding: 5rem 0;
+      }
+
+      .bib-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+
+      .bib-list {
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .bib-item {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+        padding: 0.5rem 0 0.5rem 1.2rem;
+        transition: border-color 0.2s;
+      }
+      .bib-item:hover {
+        border-left-color: var(--or);
+      }
+      .bib-item strong {
+        color: var(--sable);
+        font-style: italic;
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: #0a0804;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+
+      .footer-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.15rem;
+      }
+
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      .footer-nav a:hover {
+        opacity: 1;
+      }
+
+      /* ─── UTILS ─── */
+      strong {
+        color: var(--or-clair);
+        font-weight: 600;
+      }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 700px) {
+        .intro-grid {
+          grid-template-columns: 1fr;
+        }
+        .intro-divider-v {
+          display: none;
+        }
+        .nav-links {
+          display: none;
+        }
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .hiero-deco {
+          display: none;
+        }
+        .hier-desc {
+          display: none;
+        }
+        .hier-name {
+          font-size: 0.85rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ════════════ HERO ════════════ -->
+    <section class="hero" id="accueil">
+      <div class="hero-background">
+        <img
+          src="images/images/papyruse.jpg"
+          alt="Papyrus ancien relatant la vie quotidienne en Égypte"
+          loading="eager"
+        />
+      </div>
+      <div class="stars" id="stars"></div>
+
+      <!-- Silhouette scène quotidienne Nil -->
+      <svg
+        class="hero-scene"
+        viewBox="0 0 1000 240"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Nil ondulé -->
+        <path
+          d="M0 200 Q100 185 200 200 Q300 215 400 200 Q500 185 600 200 Q700 215 800 200 Q900 185 1000 200 L1000 240 L0 240 Z"
+          fill="rgba(42,92,122,0.5)"
+        />
+        <!-- Silhouettes palmiers -->
+        <line
+          x1="80"
+          y1="200"
+          x2="80"
+          y2="100"
+          stroke="rgba(200,151,58,0.6)"
+          stroke-width="4"
+        />
+        <ellipse
+          cx="80"
+          cy="95"
+          rx="22"
+          ry="35"
+          fill="rgba(42,92,58,0.5)"
+          transform="rotate(-15,80,95)"
+        />
+        <ellipse
+          cx="80"
+          cy="95"
+          rx="18"
+          ry="30"
+          fill="rgba(42,92,58,0.4)"
+          transform="rotate(20,80,95)"
+        />
+        <line
+          x1="920"
+          y1="200"
+          x2="920"
+          y2="95"
+          stroke="rgba(200,151,58,0.6)"
+          stroke-width="4"
+        />
+        <ellipse
+          cx="920"
+          cy="90"
+          rx="22"
+          ry="35"
+          fill="rgba(42,92,58,0.5)"
+          transform="rotate(10,920,90)"
+        />
+        <ellipse
+          cx="920"
+          cy="90"
+          rx="18"
+          ry="30"
+          fill="rgba(42,92,58,0.4)"
+          transform="rotate(-20,920,90)"
+        />
+        <!-- Barque sur le Nil -->
+        <path
+          d="M430 195 Q500 180 570 195 L560 205 Q500 192 440 205 Z"
+          fill="rgba(139,100,32,0.5)"
+        />
+        <line
+          x1="500"
+          y1="185"
+          x2="500"
+          y2="155"
+          stroke="rgba(200,151,58,0.5)"
+          stroke-width="2"
+        />
+        <path
+          d="M470 155 L500 155 L530 175 L470 175 Z"
+          fill="rgba(200,151,58,0.35)"
+        />
+        <!-- Silhouettes humaines -->
+        <circle cx="200" cy="175" r="8" fill="rgba(200,151,58,0.4)" />
+        <line
+          x1="200"
+          y1="183"
+          x2="200"
+          y2="200"
+          stroke="rgba(200,151,58,0.4)"
+          stroke-width="3"
+        />
+        <line
+          x1="200"
+          y1="190"
+          x2="188"
+          y2="198"
+          stroke="rgba(200,151,58,0.4)"
+          stroke-width="2"
+        />
+        <line
+          x1="200"
+          y1="190"
+          x2="212"
+          y2="198"
+          stroke="rgba(200,151,58,0.4)"
+          stroke-width="2"
+        />
+        <circle cx="780" cy="172" r="8" fill="rgba(200,151,58,0.4)" />
+        <line
+          x1="780"
+          y1="180"
+          x2="780"
+          y2="200"
+          stroke="rgba(200,151,58,0.4)"
+          stroke-width="3"
+        />
+        <!-- Champs -->
+        <rect
+          x="250"
+          y="185"
+          width="120"
+          height="15"
+          fill="rgba(42,92,58,0.3)"
+          rx="2"
+        />
+        <rect
+          x="630"
+          y="185"
+          width="100"
+          height="15"
+          fill="rgba(42,92,58,0.3)"
+          rx="2"
+        />
+        <!-- Horizon line -->
+        <line
+          x1="0"
+          y1="200"
+          x2="1000"
+          y2="200"
+          stroke="rgba(200,151,58,0.2)"
+          stroke-width="1.5"
+        />
+      </svg>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Égypte Éternelle · Dossier Thématique</p>
+        <h1 class="hero-title">
+          Modes de Vie & Société
+          <span>Du paysan au pharaon</span>
+        </h1>
+        <p class="hero-subtitle">
+          Portrait d'une civilisation vivante — famille, hiérarchies,
+          nourriture, fêtes et justice dans l'Égypte des pharaons
+        </p>
+        <div class="hero-divider"></div>
+      </div>
+
+      <div class="scroll-hint">Défiler</div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════ -->
+    <nav>
+      <div class="nav-inner">
+        <a href="#accueil" class="nav-logo">𓂀 Égypte Éternelle</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#hierarchie">Hiérarchie</a></li>
+          <li><a href="#famille">Famille</a></li>
+          <li><a href="#quotidien">Quotidien</a></li>
+          <li><a href="#alimentation">Alimentation</a></li>
+          <li><a href="#fetes">Fêtes</a></li>
+          <li><a href="#justice">Justice</a></li>
+          <li><a href="#bibliographie">Sources</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+     INTRO STATS
+═══════════════════════════════════════════ -->
+    <div class="intro-band">
+      <div class="container-wide">
+        <div class="intro-grid">
+          <div class="intro-stat">
+            <span class="stat-number">3 M</span>
+            <span class="stat-label"
+              >Habitants à l'apogée du Nouvel Empire</span
+            >
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">90 %</span>
+            <span class="stat-label">De paysans dans la population</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">365</span>
+            <span class="stat-label"
+              >Jours de calendrier civil, dont ~60 fêtes</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 1 — HIÉRARCHIE SOCIALE
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="hierarchie">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">01</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Structure sociale · Ordre cosmique</p>
+            <h2 class="marker-title">Une société ordonnée par les dieux</h2>
+          </div>
+        </div>
+
+        <p>
+          La société égyptienne antique n'est pas une pyramide sociale au sens
+          moderne — elle est un <strong>ordre cosmique incarné</strong>. Chaque
+          individu y occupe une place fixée dès la naissance, justifiée non par
+          la fortune ou la force, mais par la volonté divine et le concept de
+          <a href="#maat" class="internal-link">Maât</a> — la justice,
+          l'harmonie et la vérité qui gouvernent l'univers depuis le premier
+          matin du monde. Briser cet ordre, c'est menacer l'équilibre du cosmos
+          lui-même.
+        </p>
+
+        <p>
+          Au sommet absolu trône le <strong>pharaon</strong>, fils de
+          <a href="#re" class="internal-link">Rê</a> et incarnation vivante d'<a
+            href="#horus"
+            class="internal-link"
+            >Horus</a
+          >, dieu faucon du ciel. Sa personne est sacrée, son regard peut guérir
+          ou maudire, et sa mort le transforme en
+          <a href="#osiris" class="internal-link">Osiris</a> — dieu des morts et
+          de la renaissance éternelle. Il n'est pas un monarque au sens
+          occidental : il est le <em>pivot</em> entre le monde des hommes et
+          celui des dieux, garant de la crue du Nil, de la fertilité des champs
+          et de la victoire militaire.
+        </p>
+
+        <div class="hierarchy">
+          <p class="hierarchy-title">𓂀 La hiérarchie sociale égyptienne</p>
+          <div class="hier-level">
+            <div class="hier-bar">
+              <span class="hier-name">Pharaon</span>
+              <span class="hier-desc"
+                >— Fils des dieux, maître de l'univers</span
+              >
+            </div>
+          </div>
+          <div class="hier-level">
+            <div class="hier-bar">
+              <span class="hier-name">Vizir · Grande Épouse Royale</span>
+              <span class="hier-desc">— Premier ministre & reine</span>
+            </div>
+          </div>
+          <div class="hier-level">
+            <div class="hier-bar">
+              <span class="hier-name"
+                >Prêtres · Hauts Fonctionnaires · Généraux</span
+              >
+              <span class="hier-desc">— Élite religieuse et civile</span>
+            </div>
+          </div>
+          <div class="hier-level">
+            <div class="hier-bar">
+              <span class="hier-name"
+                >Scribes · Artisans qualifiés · Médecins</span
+              >
+              <span class="hier-desc">— Classe lettrée et technique</span>
+            </div>
+          </div>
+          <div class="hier-level">
+            <div class="hier-bar">
+              <span class="hier-name">Marchands · Artisans · Soldats</span>
+              <span class="hier-desc">— Classe intermédiaire</span>
+            </div>
+          </div>
+          <div class="hier-level">
+            <div class="hier-bar">
+              <span class="hier-name"
+                >Paysans · Serviteurs · Prisonniers de guerre</span
+              >
+              <span class="hier-desc">— Socle de la société</span>
+            </div>
+          </div>
+        </div>
+
+        <h3>Le vizir : premier serviteur du pharaon</h3>
+
+        <p>
+          En dessous du pharaon, le <strong>vizir</strong> (tjaty en égyptien
+          ancien) est le pivot de l'administration. Il cumule les fonctions de
+          premier ministre, de grand juge, de contrôleur du trésor et de
+          superviseur des travaux publics. Le célèbre <strong>Rekhmirê</strong>,
+          vizir sous Thoutmôsis III et Aménophis II, a fait graver dans sa tombe
+          thébaine l'intégralité de son serment d'investiture — document unique
+          qui nous révèle la conception égyptienne de la justice administrative
+          :
+          <em
+            >« Toute pétition sera traitée selon sa mérite, que le pétitionnaire
+            soit pauvre ou puissant. »</em
+          >
+        </p>
+
+        <h3>Le scribe : épine dorsale de la civilisation</h3>
+
+        <p>
+          Dans une société où moins de 5 % de la population sait lire et écrire,
+          le <strong>scribe</strong> est un personnage essentiel. Il enregistre
+          les impôts, rédige les contrats, consigne les lois et copie les textes
+          sacrés. L'apprentissage de l'écriture commence dès l'enfance dans des
+          « maisons de vie » (per-ankh) attachées aux temples. La
+          <strong>Satire des métiers</strong>, texte pédagogique du Moyen
+          Empire, détaille avec ironie tous les métiers épuisants pour mieux
+          glorifier la condition du scribe — assis à l'ombre, propre et
+          respecté, tandis que le forgeron « pue comme le crabe ».
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Deviens scribe ! Tes membres seront lisses, tes mains douces. Tu
+            sortiras vêtu de blanc, salué et honoré, tandis que le laboureur
+            rentre noir de terre.
+          </p>
+          <cite
+            >— La Satire des métiers, Papyrus Lansing, Nouvel Empire (~1300 av.
+            J.-C.)</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 2 — FAMILLE & FEMMES
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="famille">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">02</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Famille & Femmes · Une place singulière
+            </p>
+            <h2 class="marker-title">La famille, cellule du monde</h2>
+          </div>
+        </div>
+
+        <p>
+          La famille (le <em>per</em> — littéralement « la maison ») est l'unité
+          fondamentale de la société égyptienne. Elle réunit sous un même toit
+          les parents, les enfants, parfois les grands-parents, les serviteurs
+          et les animaux domestiques. Les maisons égyptiennes, construites en
+          briques de boue séchée au soleil, s'articulent autour d'une pièce
+          principale servant à la fois de salle commune, de cuisine et d'espace
+          de travail.
+        </p>
+
+        <h3>La condition féminine : une exception dans le monde antique</h3>
+
+        <p>
+          L'Égypte ancienne est l'une des sociétés du monde antique où les
+          femmes jouissent du
+          <strong>statut juridique le plus proche de l'égalité</strong>. Elles
+          peuvent posséder des biens, hériter, divorcer, témoigner en justice et
+          gérer des entreprises commerciales — droits que les femmes grecques ou
+          romaines n'auront pas pendant des siècles. Les papyrus d'<strong
+            >Eléphantine</strong
+          >
+          et de <strong>Deir el-Médineh</strong> témoignent abondamment de
+          femmes signant des contrats d'achat, louant des terres et intentant
+          des procès.
+        </p>
+
+        <div class="two-col">
+          <div class="col-card">
+            <span class="col-card-icon">𓀀</span>
+            <h3 class="col-card-title">Droits des femmes</h3>
+            <p>
+              Propriété, héritage, divorce, témoignage en justice. La femme
+              mariée conservait ses biens propres. Le contrat de mariage
+              stipulait une compensation pour elle en cas de répudiation
+              injustifiée.
+            </p>
+          </div>
+          <div class="col-card">
+            <span class="col-card-icon">𓁹</span>
+            <h3 class="col-card-title">Rôles et professions</h3>
+            <p>
+              Musicienne, prêtresse, tisserande, sage-femme, directrice de
+              domaine. De rares femmes atteignirent les plus hautes fonctions :
+              <a href="#hatchepsout" class="internal-link">Hatchepsout</a> régna
+              comme pharaon, <strong>Néfertiti</strong> exerça peut-être une
+              co-régence.
+            </p>
+          </div>
+          <div class="col-card">
+            <span class="col-card-icon">𓆣</span>
+            <h3 class="col-card-title">Le mariage</h3>
+            <p>
+              Le mariage est avant tout un acte contractuel civil, sans
+              cérémonie religieuse obligatoire. Un homme pouvait avoir plusieurs
+              épouses, mais la grande épouse (hemet weret) avait seule le statut
+              d'épouse légitime.
+            </p>
+          </div>
+          <div class="col-card">
+            <span class="col-card-icon">𓇳</span>
+            <h3 class="col-card-title">La maternité</h3>
+            <p>
+              Enfanter était un acte sacré, associé à
+              <a href="#isis" class="internal-link">Isis</a>, mère divine par
+              excellence. Les femmes accouchaient accroupies sur des briques
+              d'accouchement rituelles, assistées de sages-femmes et protégées
+              par des amulettes de
+              <a href="#taweret" class="internal-link">Taweret</a> et Bès.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-box info-box-green">
+          <p class="info-box-title">𓁹 Les femmes de Deir el-Médineh</p>
+          <p>
+            Le village d'artisans de Deir el-Médineh, fouillé exhaustivement, a
+            livré des centaines de papyrus et d'ostraca (éclats de calcaire
+            servant de supports d'écriture) montrant des femmes négociant du
+            grain, louant leurs services de pleureuses et intentant des procès
+            pour dettes. Un corpus exceptionnel pour saisir la réalité vécue des
+            Égyptiennes ordinaires.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 3 — VIE QUOTIDIENNE
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="quotidien">
+      <div class="hiero-deco">𓌀𓎛𓇋𓐍𓏤𓃀𓆱</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">03</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Vie quotidienne · Des gestes d'hier</p>
+            <h2 class="marker-title">
+              Le quotidien des Égyptiens, entre Nil et désert
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          La vie quotidienne de l'Égyptien ordinaire est profondément rythmée
+          par deux réalités naturelles : <strong>le Nil</strong> et le
+          <strong>soleil</strong>. La crue annuelle du fleuve — qui dépose le
+          limon fertile, le <em>kemet</em>, « la terre noire » qui donne son nom
+          à l'Égypte — détermine le calendrier agricole, lui-même calqué sur le
+          calendrier religieux. Il n'y a pas de séparation entre nature,
+          religion et économie : tout est un tissu continu.
+        </p>
+
+        <h3>L'habitat : du village à la villa</h3>
+
+        <p>
+          La grande majorité des Égyptiens vivent dans des
+          <strong>maisons de briques crues</strong> — mélange de limon du Nil,
+          de paille hachée et de sable séché au soleil. Ces maisons sont
+          fraîches en été grâce à l'épaisseur des murs et à l'orientation des
+          ouvertures. La terrasse sert de chambre en été, de séchoir, d'espace
+          de jeux pour les enfants. Les élites habitent de vastes demeures à
+          colonnes, aux sols peints de motifs végétaux, entourées de jardins
+          soigneusement irrigués plantés de figuiers, de sycomores et de lotus.
+        </p>
+
+        <p>
+          Les fouilles de <strong>Kahoun</strong> (ville ouvrière du Moyen
+          Empire, vers 1890 av. J.-C.) ont révélé un urbanisme planifié : rues
+          perpendiculaires, quartiers ségrégués selon la hiérarchie sociale,
+          fosses d'aisances, canaux d'irrigation. La ville égyptienne n'est pas
+          un organisme spontané — elle est une projection du cosmos ordonné.
+        </p>
+
+        <h3>Vêtements, beauté et parure</h3>
+
+        <p>
+          Le lin est la fibre royale de l'Égypte : cultivé en abondance sur les
+          rives du Nil, il sert à confectionner les vêtements de toutes les
+          classes sociales. Les paysans portent un simple pagne de lin écru ;
+          les élites arborent des robes plissées d'une finesse textile
+          remarquable — les archéologues ont retrouvé des tissus de lin dont la
+          densité de fil rivalise avec nos meilleures soieries modernes.
+        </p>
+
+        <p>
+          La <strong>beauté corporelle</strong> est une préoccupation partagée
+          par hommes et femmes. Le khôl noir (à base de galène ou de malachite)
+          souligne les yeux pour protéger du soleil ardent autant que du mauvais
+          œil. Les huiles parfumées (myrrhe, encens, graisses animales aux
+          essences florales) hydratent la peau et signalent le rang social. Les
+          perruques en cheveux humains ou en fibres végétales sont un marqueur
+          de statut : plus elles sont élaborées, plus leur porteur est élevé
+          dans la hiérarchie.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Les Égyptiens sont les seuls peuples de la terre à avoir fait de la
+            propreté corporelle et de l'embellissement non pas un luxe, mais une
+            obligation religieuse et sociale quotidienne.
+          </p>
+          <cite
+            >— Joann Fletcher, <em>The Story of Egypt</em>, Hodder & Stoughton,
+            2015</cite
+          >
+        </div>
+
+        <h3>La médecine : entre science et magie</h3>
+
+        <p>
+          Les Égyptiens possèdent une médecine d'une sophistication remarquable
+          pour leur époque. Le <strong>Papyrus Edwin Smith</strong> (~1550 av.
+          J.-C., mais copie d'un texte plus ancien) décrit 48 cas chirurgicaux
+          avec une démarche quasi clinique : observation, diagnostic, pronostic,
+          traitement. Il distingue les fractures, les luxations et les plaies
+          avec une précision anatomique étonnante. En parallèle, le
+          <strong>Papyrus Ebers</strong> recense plus de 700 formules médicales
+          mêlant plantes médicinales, graisses animales, minéraux et
+          incantations magiques — car en Égypte, le corps et l'âme ne se
+          soignent pas séparément.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓂀 Les animaux de compagnie</p>
+          <p>
+            Les Égyptiens adoraient les animaux domestiques : chats, chiens,
+            singes, ibis, gazelles. Le chat (Miou) était particulièrement
+            vénéré, associé à la déesse
+            <a href="#bastet" class="internal-link">Bastet</a>. Tuer un chat,
+            même accidentellement, pouvait être puni de mort. Des cimetières
+            entiers d'animaux momifiés — ibis, chats, crocodiles, faucons —
+            témoignent du soin immense accordé aux animaux sacrés.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     BAND QUOTE
+═══════════════════════════════════════════ -->
+    <div class="band-quote">
+      <blockquote>
+        « Vis donc heureux et sans fatigue. Ne travaille que selon tes forces et
+        ne gaspille pas ta jeunesse. »
+      </blockquote>
+      <footer>
+        — Maximes de Ptahhotep, vizir sous Djedkarê-Isési, ~2400 av. J.-C.
+      </footer>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 4 — ALIMENTATION
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="alimentation">
+      <div class="hiero-deco">𓃀𓆱𓇾𓏤𓌀𓎛𓇋</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">04</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Alimentation · Le festin du Nil</p>
+            <h2 class="marker-title">Ce que mangeaient les Égyptiens</h2>
+          </div>
+        </div>
+
+        <p>
+          L'alimentation égyptienne est l'une des mieux documentées du monde
+          antique, grâce à une triple source : les
+          <strong>fresques funéraires</strong> représentant les offrandes et les
+          banquets, les
+          <strong>analyses chimiques des résidus organiques</strong> retrouvés
+          dans les amphores et les jarres funéraires, et les
+          <strong>restes botaniques et faunistiques</strong> issus des fouilles
+          de villages et de dépotoirs. L'image qui en ressort est celle d'une
+          alimentation riche, diversifiée pour les élites, suffisante et
+          répétitive pour les paysans.
+        </p>
+
+        <div class="food-grid">
+          <div class="food-item">
+            <span class="food-emoji">🌾</span>
+            <div>
+              <p class="food-name">Épeautre & Orge</p>
+              <p class="food-note">Base du pain et de la bière</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🍞</span>
+            <div>
+              <p class="food-name">Pain (ta)</p>
+              <p class="food-note">+40 variétés recensées</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🍺</span>
+            <div>
+              <p class="food-name">Bière (henqet)</p>
+              <p class="food-note">Boisson nationale, légère</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🐟</span>
+            <div>
+              <p class="food-name">Poisson du Nil</p>
+              <p class="food-note">Tilapia, perche, séché ou grillé</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🧅</span>
+            <div>
+              <p class="food-name">Oignons & Ail</p>
+              <p class="food-note">Médicinaux et alimentaires</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🫘</span>
+            <div>
+              <p class="food-name">Légumineuses</p>
+              <p class="food-note">Lentilles, fèves, pois chiches</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🫒</span>
+            <div>
+              <p class="food-name">Huile de sésame</p>
+              <p class="food-note">Cuisson et lampes</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🍯</span>
+            <div>
+              <p class="food-name">Miel</p>
+              <p class="food-note">Édulcorant royal, médicament</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🍇</span>
+            <div>
+              <p class="food-name">Vin (irep)</p>
+              <p class="food-note">Élite du delta, importé</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🥩</span>
+            <div>
+              <p class="food-name">Viande (bœuf, canard)</p>
+              <p class="food-note">Réservée aux festins et élites</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🌿</span>
+            <div>
+              <p class="food-name">Herbes aromatiques</p>
+              <p class="food-note">Cumin, coriandre, fenugrec</p>
+            </div>
+          </div>
+          <div class="food-item">
+            <span class="food-emoji">🌰</span>
+            <div>
+              <p class="food-name">Figues & Dattes</p>
+              <p class="food-note">Sucreries du quotidien</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>La bière : boisson nationale</h3>
+
+        <p>
+          La <strong>bière d'épeautre</strong> (henqet) est à l'Égypte ce que le
+          vin est à la Grèce — une boisson quotidienne, nutritive, partiellement
+          alcoolisée (entre 3 et 8° selon les analyses modernes), consommée par
+          tous, des ouvriers de Gizeh aux prêtres de Karnak. Les papyrus de
+          Merer mentionnent des rations quotidiennes de pain et de bière
+          distribuées aux travailleurs des pyramides. Elle était préparée à base
+          de pain d'épeautre fermenté dans l'eau, filtrée et parfumée à la
+          grenade ou au miel. Sa valeur calorique était suffisamment élevée pour
+          en faire un aliment à part entière.
+        </p>
+
+        <h3>Les inégalités à table</h3>
+
+        <p>
+          Comme dans toute société stratifiée, l'alimentation reflète et
+          reproduit les hiérarchies sociales. Les
+          <strong>analyses ostéologiques</strong> des squelettes retrouvés dans
+          les cimetières de Gizeh montrent clairement deux populations : les
+          ouvriers, bien nourris en protéines animales (bœuf, mouton) selon les
+          attentes — en partie grâce aux rations fournies par l'État —, et les
+          paysans ordinaires, dont les ossements révèlent des carences en
+          vitamine D, des fractures de fatigue et une usure dentaire intense
+          liée à la consommation de pain riche en sable de mouture.
+        </p>
+
+        <div class="info-box info-box-red">
+          <p class="info-box-title">𓃀 Tabous alimentaires</p>
+          <p>
+            Certains aliments étaient rituellement interdits selon les régions
+            et les dieux honorés : le porc était tabou pour les prêtres d'<a
+              href="#osiris"
+              class="internal-link"
+              >Osiris</a
+            >, la perche du Nil (oxyrynque) était sacrée à Oxyrhynchos et ne
+            pouvait être consommée dans cette ville. L'ail était banni des
+            enceintes de certains temples. Ces interdits variaient selon les
+            nomes (provinces) et les périodes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 5 — FÊTES ET LOISIRS
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="fetes">
+      <div class="hiero-deco">𓊹𓌀𓎛𓁹𓅓𓏏𓆑</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">05</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Fêtes & Loisirs · La joie sous le soleil
+            </p>
+            <h2 class="marker-title">
+              Festins, musique et jeux : les Égyptiens s'amusaient
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          L'image d'une Égypte austère et morbide, obsédée par la mort, est l'un
+          des plus grands malentendus de l'histoire. Les fresques funéraires
+          représentent certes l'au-delà, mais elles peignent un paradis qui
+          ressemble trait pour trait à la vie terrestre idéale : banquets,
+          musiques, jeux, jardins, chasse dans les marais. Les Égyptiens
+          célébraient la vie avec une intensité qui surprend encore les
+          chercheurs modernes.
+        </p>
+
+        <h3>Le calendrier des fêtes</h3>
+
+        <p>
+          Le calendrier civil égyptien de 365 jours — divisé en trois saisons de
+          quatre mois (l'inondation, la germination, la sécheresse) — était
+          ponctué d'environ <strong>60 fêtes religieuses</strong> majeures.
+          Parmi elles :
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Fête</th>
+              <th>Divinité</th>
+              <th>Durée</th>
+              <th>Signification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fête d'Opet</strong></td>
+              <td><a href="#amon" class="internal-link">Amon-Rê</a></td>
+              <td>11 à 27 jours</td>
+              <td>Renouvellement de la royauté divine à Louxor</td>
+            </tr>
+            <tr>
+              <td>Fête de la Belle Fête de la Vallée</td>
+              <td><a href="#amon" class="internal-link">Amon</a></td>
+              <td>2 jours</td>
+              <td>Procession vers les tombes, communion avec les ancêtres</td>
+            </tr>
+            <tr>
+              <td>Fête de Sekhmet</td>
+              <td><a href="#sekhmet" class="internal-link">Sekhmet</a></td>
+              <td>1 jour</td>
+              <td>Apaisement de la déesse, protection contre les épidémies</td>
+            </tr>
+            <tr>
+              <td>Wepet-Renpet</td>
+              <td>Tous les dieux</td>
+              <td>5 jours épagomènes</td>
+              <td>Nouvel An, anniversaire des cinq grands dieux</td>
+            </tr>
+            <tr>
+              <td>Fête de Sokar</td>
+              <td><a href="#osiris" class="internal-link">Osiris/Sokar</a></td>
+              <td>6 jours</td>
+              <td>Mystères de la résurrection, défilé des barques sacrées</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Musique, danse et banquets</h3>
+
+        <p>
+          Les banquets des élites sont des événements sociaux codifiés : les
+          invités reçoivent des cônes de graisse parfumée à poser sur leurs
+          perruques (ils fondaient lentement en répandant leur parfum), des
+          colliers de fleurs de lotus, et sont servis par des servantes en robes
+          translucides. La musique y est omniprésente : harpe, luth, double
+          hautbois, sistres, tambourins. Les fresques de Thèbes montrent des
+          ensembles féminins jouant et chantant avec une virtuosité évidente.
+        </p>
+
+        <p>
+          Le <strong>jeu du senet</strong> — plateau de 30 cases sur lequel deux
+          joueurs s'affrontent avec des pions et des dés-bâtons — est le jeu de
+          société le plus ancien et le plus répandu. On en a retrouvé dans des
+          tombes royales (Toutankhamon en possédait plusieurs jeux
+          magnifiquement décorés) comme dans les huttes des paysans. Il acquit
+          avec le temps une dimension spirituelle : jouer au senet contre un
+          adversaire invisible symbolisait le voyage de l'âme dans l'au-delà.
+        </p>
+
+        <div class="info-box info-box-green">
+          <p class="info-box-title">𓊹 La Belle Fête de la Vallée</p>
+          <p>
+            Cette fête thébaine unique permettait aux familles de passer une
+            nuit entière dans le tombeau de leurs ancêtres, mangeant, buvant et
+            chantant en leur compagnie. La frontière entre vivants et morts
+            s'effaçait le temps d'une nuit — conception radicalement différente
+            de la mort comme tabou, et qui révèle la sérénité profonde des
+            Égyptiens face à la finitude.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 6 — JUSTICE & LOI
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="justice">
+      <div class="hiero-deco">𓂀𓊃𓐍𓌀𓎛𓏤𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">06</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Justice & Loi · L'ordre de Maât</p>
+            <h2 class="marker-title">
+              Juger selon Maât : droit et justice en Égypte
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          En Égypte ancienne, la justice n'est pas séparée de la cosmologie.
+          <a href="#maat" class="internal-link"><strong>Maât</strong></a> —
+          déesse à la plume d'autruche, concept d'ordre cosmique, de vérité et
+          de justice — est le fondement de toute organisation sociale et
+          juridique. Rendre la justice, c'est restaurer Maât là où l'injustice a
+          troublé l'harmonie du monde. Le pharaon est le
+          <em>garant suprême de Maât</em> : il en est à la fois le dépositaire
+          et l'exécuteur.
+        </p>
+
+        <h3>Les tribunaux : du village à la capitale</h3>
+
+        <p>
+          Le système judiciaire s'organise en échelons. Au niveau local, les
+          <strong>kenbet</strong> (tribunaux locaux) gèrent les litiges courants
+          : disputes de voisinage, contrats non respectés, vols mineurs. Les
+          archives de <strong>Deir el-Médineh</strong> (le village des artisans
+          de la Vallée des Rois) sont une source exceptionnelle : elles montrent
+          un système judiciaire local réellement fonctionnel, où les plaignants
+          — y compris des femmes — comparaissent, présentent leurs témoins et
+          obtiennent des sentences. Pour les affaires graves (meurtre, trahison,
+          violations des tombes royales), les tribunaux royaux ou le grand vizir
+          lui-même rendaient la justice.
+        </p>
+
+        <h3>Les Grandes Grèves de Deir el-Médineh</h3>
+
+        <p>
+          En l'an 29 du règne de <strong>Ramsès III</strong> (~1170 av. J.-C.),
+          les ouvriers de Deir el-Médineh cessent le travail et marchent vers
+          les temples funéraires royaux — première grève documentée de
+          l'histoire. La raison : leurs rations de grain n'ont pas été
+          distribuées depuis plusieurs mois. Les papyrus retrouvés consignent
+          leurs revendications précises et la négociation qui s'ensuivit. Ce
+          document montre une société où même les plus humbles avaient
+          conscience de leurs droits et des obligations de l'État envers eux.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            J'ai faim, j'ai faim, j'ai faim. Il y a déjà dix-huit jours que nous
+            avons passé ce mois sans recevoir nos rations.
+          </p>
+          <cite
+            >— Papyrus de la grève de Deir el-Médineh, an 29 de Ramsès III,
+            ~1170 av. J.-C.</cite
+          >
+        </div>
+
+        <h3>Les peines et punitions</h3>
+
+        <p>
+          Le système pénal égyptien prévoit une gamme de sanctions allant de
+          l'amende à la mutilation, en passant par les coups de bâton
+          (bastonnade) et les travaux forcés dans les mines de Nubie ou de
+          Sinaï. La peine de mort est réservée aux crimes les plus graves :
+          meurtre, trahison, profanation des tombes royales. La pendaison et
+          l'empalement sont attestés. Le
+          <strong>Procès de la Conspiration du Harem</strong>, sous Ramsès III,
+          illustre ce processus : une vingtaine de conspirateurs jugés pour
+          tentative de meurtre du pharaon se voient condamner à mort ou
+          autorisés à se suicider pour préserver l'honneur de leurs familles.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓂀 Le jugement de l'âme</p>
+          <p>
+            La justice ultime était celle de l'au-delà. Après la mort, l'âme du
+            défunt comparaissait devant le tribunal d'Osiris dans la Salle des
+            Deux Vérités. Son cœur était pesé sur une balance contre la plume de
+            <a href="#maat" class="internal-link">Maât</a>. Si le cœur était
+            plus lourd que la plume — alourdi par les fautes commises — la
+            créature Ammout le dévorait et l'âme disparaissait pour toujours. Ce
+            jugement moral touchait tous les Égyptiens, du paysan au pharaon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     BIBLIOGRAPHIE
+═══════════════════════════════════════════ -->
+    <section class="bibliography" id="bibliographie">
+      <div class="container">
+        <p class="bib-header">𓂀 Sources &amp; Lectures recommandées</p>
+        <ul class="bib-list">
+          <li class="bib-item">
+            <strong>Tyldesley, J.</strong> —
+            <em>Daughters of Isis: Women of Ancient Egypt</em>, Penguin Books,
+            1994. Référence incontournable sur le statut et la vie des femmes
+            égyptiennes à toutes les époques.
+          </li>
+          <li class="bib-item">
+            <strong>Janssen, R. &amp; J.</strong> —
+            <em>Growing Up in Ancient Egypt</em>, Rubicon Press, 1990. Étude
+            minutieuse de l'enfance, de l'éducation et de la vie familiale à
+            travers les sources archéologiques et textuelles.
+          </li>
+          <li class="bib-item">
+            <strong>Brewer, D. &amp; Teeter, E.</strong> —
+            <em>Egypt and the Egyptians</em>, Cambridge University Press, 2007
+            (2e éd.). Panorama encyclopédique de la société, de l'économie et de
+            la vie quotidienne.
+          </li>
+          <li class="bib-item">
+            <strong>Kemp, B.</strong> —
+            <em>Ancient Egypt: Anatomy of a Civilization</em>, Routledge, 2006.
+            Analyse approfondie des structures sociales, économiques et
+            idéologiques par l'un des meilleurs archéologues du site d'Amarna.
+          </li>
+          <li class="bib-item">
+            <strong>Manniche, L.</strong> —
+            <em>Music and Musicians in Ancient Egypt</em>, British Museum Press,
+            1991. Étude complète des pratiques musicales, des instruments et des
+            contextes festifs égyptiens.
+          </li>
+          <li class="bib-item">
+            <strong>Ikram, S.</strong> —
+            <em>Divine Creatures: Animal Mummies in Ancient Egypt</em>, American
+            University in Cairo Press, 2005. Sur le rapport des Égyptiens aux
+            animaux, domestiques et sacrés.
+          </li>
+          <li class="bib-item">
+            <strong>McDowell, A.G.</strong> —
+            <em>Village Life in Ancient Egypt: Laundry Lists and Love Songs</em
+            >, Oxford University Press, 1999. Les archives de Deir el-Médineh
+            décodées — droit, amour, conflits et quotidien des ouvriers royaux.
+          </li>
+          <li class="bib-item">
+            <strong>Nunn, J.F.</strong> — <em>Ancient Egyptian Medicine</em>,
+            British Museum Press, 1996. Analyse médicale et historique des
+            papyrus médicaux, des pratiques chirurgicales et des remèdes
+            égyptiens.
+          </li>
+          <li class="bib-item">
+            <strong>Samuel, D.</strong> — <em>Brewing and Baking</em>, in
+            <em>Ancient Egyptian Materials and Technology</em>, Cambridge
+            University Press, 2000. Analyse archéobotanique des pratiques de
+            brassage et de boulangerie en Égypte ancienne.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+    <footer>
+      <p class="footer-logo">𓂀 Égypte Éternelle</p>
+      <p class="footer-tagline">« Vis donc heureux et sans fatigue. »</p>
+      <nav class="footer-nav">
+        <a href="#">Histoire</a>
+        <a href="#">Dieux &amp; Mythes</a>
+        <a href="#">Pyramides</a>
+        <a href="#">Vie quotidienne</a>
+        <a href="#">Hiéroglyphes</a>
+        <a href="#">Glossaire</a>
+      </nav>
+      <p
+        style="
+          font-size: 0.95rem;
+          opacity: 0.35;
+          font-family: &quot;Cinzel&quot;, serif;
+          letter-spacing: 0.2em;
+        "
+      >
+        DOSSIER THÉMATIQUE · ÉGYPTE ÉTERNELLE
+      </p>
+    </footer>
+
+    <script>
+      // Stars
+      const starsContainer = document.getElementById("stars");
+      for (let i = 0; i < 110; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        const size = Math.random() * 2.5 + 0.5;
+        star.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random() * 100}%; top:${Math.random() * 100}%;
+      --dur:${Math.random() * 4 + 2}s; --op:${Math.random() * 0.6 + 0.3};
+      animation-delay:${Math.random() * 5}s;
+    `;
+        starsContainer.appendChild(star);
+      }
+
+      // Scroll reveal — two-col cards
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }, i * 100);
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(".col-card, .food-item, .hier-level")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(16px)";
+          el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          revealObserver.observe(el);
+        });
+
+      // Hierarchy levels staggered reveal
+      const hierObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            document.querySelectorAll(".hier-level").forEach((el, i) => {
+              setTimeout(() => {
+                el.style.opacity = "1";
+                el.style.transform = "translateY(0)";
+              }, i * 120);
+            });
+            hierObserver.disconnect();
+          }
+        },
+        { threshold: 0.2 },
+      );
+
+      const hierarchy = document.querySelector(".hierarchy");
+      if (hierarchy) hierObserver.observe(hierarchy);
+
+      // Pull quotes reveal
+      const pqObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateX(0)";
+              pqObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+
+      document.querySelectorAll(".pull-quote").forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateX(-12px)";
+        el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        pqObserver.observe(el);
+      });
+    </script>
+  </body>
+</html>
+
+

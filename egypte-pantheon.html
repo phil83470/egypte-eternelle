@@ -1,0 +1,3071 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Panthéon Divin — Égypte Éternelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #23c1ff;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --brun-papyrus: #6b4f2a;
+        --rouge-carnelian: #8b2e1a;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+        --turquoise: #2a8b7a;
+        --violet-myste: #3a1a5c;
+        --blanc-ivoire: #fbf5e6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.22) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 20% 30%,
+            rgba(58, 26, 92, 0.18) 0%,
+            transparent 45%
+          ),
+          radial-gradient(
+            ellipse at 80% 30%,
+            rgba(26, 58, 92, 0.18) 0%,
+            transparent 45%
+          ),
+          linear-gradient(
+            180deg,
+            #050408 0%,
+            #0e0a14 25%,
+            #1a1208 60%,
+            #201608 100%
+          );
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          60deg,
+          rgba(200, 151, 58, 0.01) 0px,
+          rgba(200, 151, 58, 0.01) 1px,
+          transparent 1px,
+          transparent 40px
+        );
+      }
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        background: var(--or-clair);
+        border-radius: 50%;
+        animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        opacity: 0;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: var(--op, 0.7);
+        }
+      }
+
+      /* Celestial arc SVG */
+      .hero-arc {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1100px;
+        opacity: 0.13;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero Image Adjustment */
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0.3;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-background img {
+        width: 90vw;
+        height: 85vh;
+        object-fit: cover;
+        filter: sepia(30%) contrast(110%);
+      
+        border-radius: 12px;
+      }
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.5rem;
+        animation: fadeUp 1.4s 0.2s ease both;
+      }
+      .hero-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(2.6rem, calc(7vw + 0.2rem), 6.2rem);
+        font-weight: 900;
+        line-height: 1.05;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 100px rgba(200, 151, 58, 0.5),
+          0 2px 4px rgba(0, 0, 0, 0.9);
+        margin-bottom: 0.5rem;
+        animation: fadeUp 1.4s 0.4s ease both;
+      }
+      .hero-title span {
+        display: block;
+        font-size: 0.4em;
+        color: var(--sable-fonce);
+        letter-spacing: 0.14em;
+        font-weight: 400;
+      }
+      .hero-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.2rem, calc(2vw + 0.2rem), 1.5rem);
+        color: var(--sable-fonce);
+        max-width: 650px;
+        margin: 1.5rem auto 2.5rem;
+        animation: fadeUp 1.4s 0.6s ease both;
+      }
+      .hero-divider {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 0 auto 2rem;
+        animation: fadeUp 1.4s 0.8s ease both;
+      }
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.4em;
+        color: var(--or);
+        opacity: 0.7;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+      .scroll-hint::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--or), transparent);
+      }
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ─── NAV ─── */
+      nav.main-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        background: rgba(26, 18, 8, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 0 2rem;
+      }
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .nav-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.2rem;
+        color: var(--or);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.4rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-family: "Cinzel", serif;
+        font-size: 0.87rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--or-clair);
+      }
+
+      /* ─── LAYOUT ─── */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ─── INTRO BAND ─── */
+      .intro-band {
+        background: linear-gradient(
+          135deg,
+          #14100a 0%,
+          #1e1a0a 50%,
+          #1a1208 100%
+        );
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr 2px 1fr 2px 1fr;
+        gap: 1.5rem;
+        align-items: start;
+      }
+      .intro-stat {
+        text-align: center;
+        padding: 0.8rem;
+      }
+      .stat-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 3rem;
+        color: var(--or);
+        line-height: 1;
+        display: block;
+      }
+      .stat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        margin-top: 0.5rem;
+      }
+      .intro-divider-v {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--or),
+          transparent
+        );
+        align-self: stretch;
+        min-height: 70px;
+      }
+
+      /* ─── TABLE OF CONTENTS ─── */
+      .toc-section {
+        background: linear-gradient(135deg, #120e0a 0%, #1a1410 100%);
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .toc-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.55em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.5rem;
+      }
+      .toc-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.7rem, calc(3vw + 0.2rem), 2.4rem);
+        color: var(--or-clair);
+        margin-bottom: 2.5rem;
+      }
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 0.4rem 2rem;
+      }
+      .toc-era {
+        margin-bottom: 1.8rem;
+      }
+      .toc-era-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--or);
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        margin-bottom: 0.6rem;
+      }
+      .toc-link {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        padding: 0.3rem 0.5rem;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        transition: all 0.2s;
+        border-radius: 0 2px 2px 0;
+      }
+      .toc-link:hover {
+        border-left-color: var(--or);
+        background: rgba(200, 151, 58, 0.04);
+        padding-left: 1rem;
+      }
+      .toc-glyph {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        opacity: 0.7;
+      }
+      .toc-name {
+        font-family: "EB Garamond", serif;
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+      }
+      .toc-role {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        color: var(--or);
+        opacity: 0.5;
+        margin-left: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      /* ─── SPHERE HEADER (domain separator) ─── */
+      .sphere-header {
+        background: linear-gradient(
+          135deg,
+          #0a0810 0%,
+          #14100a 50%,
+          #0a0810 100%
+        );
+        padding: 4rem 0 3rem;
+        border-top: 1px solid rgba(200, 151, 58, 0.18);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.18);
+        position: relative;
+        overflow: hidden;
+      }
+      .sphere-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.012) 0px,
+          rgba(200, 151, 58, 0.012) 1px,
+          transparent 1px,
+          transparent 25px
+        );
+      }
+      .sphere-header-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .sphere-glyph {
+        font-size: 5.2rem;
+        color: rgba(200, 151, 58, 0.1);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .sphere-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+      .sphere-name {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.7rem, calc(3.5vw + 0.2rem), 2.8rem);
+        color: var(--or-clair);
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+      }
+      .sphere-desc {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.2rem;
+      }
+
+      /* ─── SECTION MARKER ─── */
+      .section-marker {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .marker-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 4.7rem;
+        line-height: 1;
+        color: rgba(200, 151, 58, 0.1);
+        font-weight: 900;
+        flex-shrink: 0;
+      }
+      .marker-text {
+        flex: 1;
+      }
+      .marker-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+      .marker-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.5rem, calc(3vw + 0.2rem), 2.2rem);
+        color: var(--or-clair);
+        line-height: 1.2;
+      }
+
+      /* ─── ARTICLE SECTIONS ─── */
+      .article-section {
+        padding: 5.5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.08);
+        position: relative;
+      }
+      .article-section:nth-child(even) {
+        background: rgba(200, 151, 58, 0.015);
+      }
+
+      .hiero-deco {
+        position: absolute;
+        right: 2rem;
+        top: 4rem;
+        font-size: 3.7rem;
+        opacity: 0.055;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.5rem;
+        color: var(--or);
+        user-select: none;
+        font-family: serif;
+      }
+
+      /* ─── GOD CARD ─── */
+      .god-card {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: linear-gradient(
+          135deg,
+          rgba(20, 14, 30, 0.85),
+          rgba(26, 18, 8, 0.9)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.18);
+        border-left: 4px solid var(--or);
+        position: relative;
+        overflow: hidden;
+      }
+      .god-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background: radial-gradient(
+          circle at top right,
+          rgba(200, 151, 58, 0.06),
+          transparent 70%
+        );
+      }
+      .god-glyph {
+        font-size: 3.4rem;
+        flex-shrink: 0;
+        width: 72px;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(200, 151, 58, 0.06);
+        border: 1px solid rgba(200, 151, 58, 0.15);
+        border-radius: 2px;
+      }
+      .god-meta {
+        flex: 1;
+      }
+      .god-name {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.3rem, calc(2.5vw + 0.2rem), 1.8rem);
+        color: var(--or-clair);
+        margin-bottom: 0.25rem;
+      }
+      .god-epithet {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        color: var(--sable-fonce);
+        opacity: 0.8;
+        margin-bottom: 0.7rem;
+      }
+      .god-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.7rem;
+        border: 1px solid rgba(200, 151, 58, 0.25);
+        color: var(--or);
+      }
+      .tag-blue {
+        border-color: rgba(74, 127, 168, 0.3);
+        color: var(--bleu-clair);
+      }
+      .tag-green {
+        border-color: rgba(42, 139, 122, 0.3);
+        color: var(--turquoise);
+      }
+      .tag-violet {
+        border-color: rgba(100, 60, 160, 0.35);
+        color: #a87ed4;
+      }
+      .tag-red {
+        border-color: rgba(180, 60, 40, 0.3);
+        color: #d4826a;
+      }
+
+      /* ─── PARAGRAPHS ─── */
+      .article-section p {
+        margin-bottom: 1.5rem;
+        color: var(--sable);
+      }
+      .article-section h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.25rem;
+        color: var(--or-clair);
+        letter-spacing: 0.12em;
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+
+      /* ─── INTERNAL LINK ─── */
+      .internal-link {
+        color: var(--or-clair);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--or);
+        transition: all 0.2s;
+        font-style: italic;
+      }
+      .internal-link:hover {
+        color: var(--or);
+        border-bottom-style: solid;
+      }
+
+      /* ─── PULL QUOTE ─── */
+      .pull-quote {
+        border-left: 3px solid var(--or);
+        padding: 1.5rem 2rem;
+        margin: 3rem 0;
+        background: rgba(200, 151, 58, 0.04);
+        position: relative;
+      }
+      .pull-quote::before {
+        content: "❝";
+        position: absolute;
+        top: -1rem;
+        left: 1.5rem;
+        font-size: 3.2rem;
+        color: var(--or);
+        opacity: 0.4;
+        line-height: 1;
+      }
+      .pull-quote p {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: var(--or-clair);
+        line-height: 1.7;
+      }
+      .pull-quote cite {
+        display: block;
+        margin-top: 0.8rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+        color: var(--sable-fonce);
+        font-style: normal;
+      }
+
+      /* ─── INFO BOXES ─── */
+      .info-box {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 58, 92, 0.15),
+          rgba(26, 58, 92, 0.05)
+        );
+        border: 1px solid rgba(74, 127, 168, 0.25);
+        border-left: 3px solid var(--bleu-clair);
+        padding: 1.5rem 2rem;
+        margin: 2.5rem 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .info-box-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--bleu-clair);
+        margin-bottom: 0.8rem;
+      }
+      .info-box p {
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+      .info-box-or {
+        background: linear-gradient(
+          135deg,
+          rgba(200, 151, 58, 0.08),
+          rgba(200, 151, 58, 0.02)
+        );
+        border-color: rgba(200, 151, 58, 0.3);
+        border-left-color: var(--or);
+      }
+      .info-box-or .info-box-title {
+        color: var(--or);
+      }
+      .info-box-violet {
+        background: linear-gradient(
+          135deg,
+          rgba(100, 60, 160, 0.12),
+          rgba(100, 60, 160, 0.03)
+        );
+        border-color: rgba(100, 60, 160, 0.25);
+        border-left-color: #8060c0;
+      }
+      .info-box-violet .info-box-title {
+        color: #a87ed4;
+      }
+      .info-box-green {
+        background: linear-gradient(
+          135deg,
+          rgba(42, 139, 122, 0.12),
+          rgba(42, 139, 122, 0.03)
+        );
+        border-color: rgba(42, 139, 122, 0.25);
+        border-left-color: var(--turquoise);
+      }
+      .info-box-green .info-box-title {
+        color: var(--turquoise);
+      }
+
+      /* ─── MYTH TIMELINE ─── */
+      .myth-flow {
+        margin: 3rem 0;
+        position: relative;
+        padding-left: 2rem;
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+      }
+      .myth-step {
+        margin-bottom: 2rem;
+        position: relative;
+      }
+      .myth-step::before {
+        content: "";
+        position: absolute;
+        left: -2.6rem;
+        top: 0.4rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--or);
+        box-shadow: 0 0 10px rgba(200, 151, 58, 0.4);
+      }
+      .myth-step-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        color: var(--or-clair);
+        letter-spacing: 0.1em;
+        margin-bottom: 0.4rem;
+      }
+      .myth-step p {
+        font-size: 1.12rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+
+      /* ─── DATA TABLE ─── */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        font-size: 1.08rem;
+      }
+      .data-table th {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--or);
+        text-align: left;
+        padding: 0.8rem 1rem;
+        border-bottom: 2px solid rgba(200, 151, 58, 0.3);
+      }
+      .data-table td {
+        padding: 0.65rem 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        color: var(--sable);
+        vertical-align: top;
+      }
+      .data-table tr:hover td {
+        background: rgba(200, 151, 58, 0.03);
+      }
+
+      /* ─── TWO-COL ─── */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin: 2.5rem 0;
+      }
+      .col-card {
+        background: linear-gradient(
+          145deg,
+          rgba(20, 14, 30, 0.7),
+          rgba(26, 18, 8, 0.85)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.12);
+        padding: 1.6rem;
+        border-top: 3px solid var(--or-profond);
+        transition:
+          border-top-color 0.3s,
+          transform 0.3s;
+      }
+      .col-card:hover {
+        border-top-color: var(--or-clair);
+        transform: translateY(-3px);
+      }
+      .col-card-icon {
+        font-size: 2rem;
+        margin-bottom: 0.7rem;
+        display: block;
+      }
+      .col-card-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.05rem;
+        color: var(--or-clair);
+        letter-spacing: 0.1em;
+        margin-bottom: 0.7rem;
+      }
+      .col-card p {
+        font-size: 1.08rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+        line-height: 1.7;
+      }
+
+      /* ─── BAND QUOTE ─── */
+      .band-quote {
+        background: linear-gradient(135deg, #060410 0%, #1a0808 100%);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .band-quote::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.015) 0px,
+          rgba(200, 151, 58, 0.015) 1px,
+          transparent 1px,
+          transparent 20px
+        );
+      }
+      .band-quote blockquote {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.3rem, calc(2.5vw + 0.2rem), 1.9rem);
+        color: var(--or-clair);
+        max-width: 840px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.5;
+      }
+      .band-quote footer {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        color: var(--sable-fonce);
+        text-transform: uppercase;
+      }
+
+      /* ─── BIBLIOGRAPHY ─── */
+      .bibliography {
+        background: linear-gradient(
+          180deg,
+          rgba(26, 18, 8, 0) 0%,
+          rgba(15, 10, 3, 0.8) 100%
+        );
+        padding: 5rem 0;
+      }
+      .bib-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+      .bib-list {
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+      }
+      .bib-item {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+        padding: 0.5rem 0 0.5rem 1.2rem;
+        transition: border-color 0.2s;
+      }
+      .bib-item:hover {
+        border-left-color: var(--or);
+      }
+      .bib-item strong {
+        color: var(--sable);
+        font-style: italic;
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: #0a0804;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+      .footer-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.15rem;
+      }
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      .footer-nav a:hover {
+        opacity: 1;
+      }
+
+      strong {
+        color: var(--or-clair);
+        font-weight: 600;
+      }
+
+      @media (max-width: 700px) {
+        .intro-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .intro-divider-v {
+          display: none;
+        }
+        nav.main-nav .nav-links {
+          display: none;
+        }
+        .hiero-deco {
+          display: none;
+        }
+        .god-card {
+          flex-direction: column;
+        }
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .sphere-glyph {
+          font-size: 3.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ════════════ HERO ════════════ -->
+    <section class="hero" id="accueil">
+      <div class="hero-background">
+        <img
+          src="images/images/Gemini_Generated_Image_yuq26yyuq26yyuq2.png"
+          alt="Le Panthéon Divin de l'Égypte Éternelle"
+          loading="eager"
+        />
+      </div>
+      <div class="stars" id="stars"></div>
+
+      <svg
+        class="hero-arc"
+        viewBox="0 0 1100 280"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Celestial boat of Ra -->
+        <ellipse
+          cx="550"
+          cy="240"
+          rx="520"
+          ry="30"
+          fill="none"
+          stroke="rgba(200,151,58,0.15)"
+          stroke-width="1"
+        />
+        <!-- Sun disk -->
+        <circle
+          cx="550"
+          cy="120"
+          r="40"
+          fill="none"
+          stroke="rgba(200,151,58,0.3)"
+          stroke-width="1.5"
+        />
+        <circle cx="550" cy="120" r="30" fill="rgba(200,151,58,0.05)" />
+        <!-- Rays -->
+        <g stroke="rgba(200,151,58,0.18)" stroke-width="1">
+          <line x1="550" y1="70" x2="550" y2="50" />
+          <line x1="550" y1="170" x2="550" y2="190" />
+          <line x1="500" y1="120" x2="480" y2="120" />
+          <line x1="600" y1="120" x2="620" y2="120" />
+          <line x1="514" y1="84" x2="500" y2="70" />
+          <line x1="586" y1="84" x2="600" y2="70" />
+          <line x1="514" y1="156" x2="500" y2="170" />
+          <line x1="586" y1="156" x2="600" y2="170" />
+        </g>
+        <!-- Serpent Apophis below -->
+        <path
+          d="M50 240 Q200 210 350 235 Q500 260 650 235 Q800 210 950 240 Q1020 255 1050 248"
+          fill="none"
+          stroke="rgba(139,46,26,0.2)"
+          stroke-width="3"
+        />
+        <!-- Ankh symbols -->
+        <g fill="none" stroke="rgba(200,151,58,0.22)" stroke-width="1.2">
+          <circle cx="150" cy="180" r="12" />
+          <line x1="150" y1="192" x2="150" y2="220" />
+          <line x1="135" y1="205" x2="165" y2="205" />
+          <circle cx="950" cy="175" r="12" />
+          <line x1="950" y1="187" x2="950" y2="215" />
+          <line x1="935" y1="200" x2="965" y2="200" />
+        </g>
+        <!-- Djed pillars -->
+        <g stroke="rgba(200,151,58,0.15)" stroke-width="1.5" fill="none">
+          <rect x="270" y="185" width="20" height="45" rx="2" />
+          <line x1="265" y1="195" x2="295" y2="195" />
+          <line x1="265" y1="205" x2="295" y2="205" />
+          <line x1="265" y1="215" x2="295" y2="215" />
+          <rect x="810" y="185" width="20" height="45" rx="2" />
+          <line x1="805" y1="195" x2="835" y2="195" />
+          <line x1="805" y1="205" x2="835" y2="205" />
+          <line x1="805" y1="215" x2="835" y2="215" />
+        </g>
+        <!-- Horizon ground -->
+        <line
+          x1="0"
+          y1="250"
+          x2="1100"
+          y2="250"
+          stroke="rgba(200,151,58,0.1)"
+          stroke-width="1"
+        />
+      </svg>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Égypte Éternelle · Dossier Thématique</p>
+        <h1 class="hero-title">
+          Le Panthéon Divin
+          <span>Des dieux, des mythes et de l'éternité</span>
+        </h1>
+        <p class="hero-subtitle">
+          Portrait des grandes divinités de l'Égypte ancienne — leurs natures,
+          leurs mythes fondateurs et leur emprise sur une civilisation de trois
+          millénaires
+        </p>
+        <div class="hero-divider"></div>
+      </div>
+      <div class="scroll-hint">Défiler</div>
+    </section>
+
+    <!-- ════════════ NAV ════════════ -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="#accueil" class="nav-logo">𓂀 Égypte Éternelle</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#cosmogonie">Cosmogonie</a></li>
+          <li><a href="#solaires">Dieux solaires</a></li>
+          <li><a href="#osirien">Cycle osirien</a></li>
+          <li><a href="#savoir">Savoir/arts</a></li>
+          <li><a href="#nature">Nature/cosmos</a></li>
+          <li><a href="#gardiens">Gardiens</a></li>
+          <li><a href="#bibliographie">Sources</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ════════════ STATS ════════════ -->
+    <div class="intro-band">
+      <div class="container-wide">
+        <div class="intro-grid">
+          <div class="intro-stat">
+            <span class="stat-number">2 000+</span>
+            <span class="stat-label">Divinités recensées</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">3 000</span>
+            <span class="stat-label">Ans de culte continu</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">42</span>
+            <span class="stat-label">Juges de l'au-delà</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">9</span>
+            <span class="stat-label">Dieux de l'Ennéade d'Héliopolis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════ TABLE OF CONTENTS ════════════ -->
+    <section class="toc-section" id="toc">
+      <div class="container">
+        <p class="toc-header">𓂀 Navigation</p>
+        <h2 class="toc-title">Table des matières</h2>
+        <div class="toc-grid">
+          <div class="toc-era">
+            <p class="toc-era-title">Cosmogonie · L'origine du monde</p>
+            <a href="#atoum" class="toc-link"
+              ><span class="toc-glyph">𓇳</span
+              ><span class="toc-name">Atoum — Le Dieu primordial</span
+              ><span class="toc-role">Créateur</span></a
+            >
+            <a href="#nout-geb" class="toc-link"
+              ><span class="toc-glyph">𓇾</span
+              ><span class="toc-name">Nout & Geb — Ciel et Terre</span
+              ><span class="toc-role">Cosmos</span></a
+            >
+            <a href="#shou-tefnout" class="toc-link"
+              ><span class="toc-glyph">𓄿</span
+              ><span class="toc-name">Chou & Tefnout — Air et Humidité</span
+              ><span class="toc-role">Éléments</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Dieux Solaires · La lumière divine</p>
+            <a href="#re" class="toc-link"
+              ><span class="toc-glyph">𓇳</span
+              ><span class="toc-name">Rê — Le Soleil souverain</span
+              ><span class="toc-role">Soleil</span></a
+            >
+            <a href="#amon" class="toc-link"
+              ><span class="toc-glyph">𓊹</span
+              ><span class="toc-name">Amon — Le Roi des dieux</span
+              ><span class="toc-role">Vent caché</span></a
+            >
+            <a href="#atonisme" class="toc-link"
+              ><span class="toc-glyph">☀</span
+              ><span class="toc-name">Aton — Le disque solaire</span
+              ><span class="toc-role">Monothéisme</span></a
+            >
+            <a href="#khepri" class="toc-link"
+              ><span class="toc-glyph">𓆣</span
+              ><span class="toc-name">Khépri — L'aurore sacrée</span
+              ><span class="toc-role">Renaissance</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Le Cycle Osirien · Mort & résurrection</p>
+            <a href="#osiris" class="toc-link"
+              ><span class="toc-glyph">𓁹</span
+              ><span class="toc-name">Osiris — Seigneur des morts</span
+              ><span class="toc-role">Résurrection</span></a
+            >
+            <a href="#isis" class="toc-link"
+              ><span class="toc-glyph">𓁹</span
+              ><span class="toc-name">Isis — La Grande Magicienne</span
+              ><span class="toc-role">Magie</span></a
+            >
+            <a href="#horus" class="toc-link"
+              ><span class="toc-glyph">𓅃</span
+              ><span class="toc-name">Horus — Le dieu faucon</span
+              ><span class="toc-role">Royauté</span></a
+            >
+            <a href="#seth" class="toc-link"
+              ><span class="toc-glyph">𓃱</span
+              ><span class="toc-name">Seth — Le dieu du chaos</span
+              ><span class="toc-role">Désordre</span></a
+            >
+            <a href="#nephtys" class="toc-link"
+              ><span class="toc-glyph">𓇳</span
+              ><span class="toc-name">Nephtys — La dame du château</span
+              ><span class="toc-role">Deuil</span></a
+            >
+            <a href="#anubis" class="toc-link"
+              ><span class="toc-glyph">𓀭</span
+              ><span class="toc-name">Anubis — Guide des âmes</span
+              ><span class="toc-role">Momification</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Savoir, Écriture & Arts</p>
+            <a href="#thot" class="toc-link"
+              ><span class="toc-glyph">𓁹</span
+              ><span class="toc-name">Thot — Dieu de la sagesse</span
+              ><span class="toc-role">Écriture</span></a
+            >
+            <a href="#maat" class="toc-link"
+              ><span class="toc-glyph">𓆓</span
+              ><span class="toc-name">Maât — La vérité cosmique</span
+              ><span class="toc-role">Justice</span></a
+            >
+            <a href="#ptah" class="toc-link"
+              ><span class="toc-glyph">𓌀</span
+              ><span class="toc-name">Ptah — Le dieu artisan</span
+              ><span class="toc-role">Création</span></a
+            >
+            <a href="#seshat" class="toc-link"
+              ><span class="toc-glyph">𓇋</span
+              ><span class="toc-name">Séchat — La dame des étoiles</span
+              ><span class="toc-role">Archives</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Nature, Cosmos & Fertilité</p>
+            <a href="#hathor" class="toc-link"
+              ><span class="toc-glyph">𓄿</span
+              ><span class="toc-name">Hathor — La vache céleste</span
+              ><span class="toc-role">Amour</span></a
+            >
+            <a href="#khnoum" class="toc-link"
+              ><span class="toc-glyph">𓃬</span
+              ><span class="toc-name">Khnoum — Le potier divin</span
+              ><span class="toc-role">Création</span></a
+            >
+            <a href="#sobek" class="toc-link"
+              ><span class="toc-glyph">𓆊</span
+              ><span class="toc-name">Sobek — Le dieu crocodile</span
+              ><span class="toc-role">Nil</span></a
+            >
+            <a href="#min" class="toc-link"
+              ><span class="toc-glyph">𓏤</span
+              ><span class="toc-name">Min — Dieu de la fertilité</span
+              ><span class="toc-role">Fertilité</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Gardiens & Protecteurs</p>
+            <a href="#sekhmet" class="toc-link"
+              ><span class="toc-glyph">𓁹</span
+              ><span class="toc-name">Sekhmet — La lionne de feu</span
+              ><span class="toc-role">Guerre</span></a
+            >
+            <a href="#bastet" class="toc-link"
+              ><span class="toc-glyph">𓃠</span
+              ><span class="toc-name">Bastet — La déesse chatte</span
+              ><span class="toc-role">Foyer</span></a
+            >
+            <a href="#taweret" class="toc-link"
+              ><span class="toc-glyph">𓇾</span
+              ><span class="toc-name">Taweret & Bès — Protecteurs</span
+              ><span class="toc-role">Naissance</span></a
+            >
+            <a href="#apophis" class="toc-link"
+              ><span class="toc-glyph">𓆙</span
+              ><span class="toc-name">Apophis — Le serpent du chaos</span
+              ><span class="toc-role">Ennemi</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     SPHÈRE 0 : INTRODUCTION — LA PENSÉE DIVINE
+════════════════════════════════════════ -->
+    <section class="article-section" id="intro-pantheon">
+      <div class="hiero-deco">𓂀𓊃𓐍𓌀𓎛𓇳𓆑</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">𓂀</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Introduction · Le monde divin égyptien</p>
+            <h2 class="marker-title">
+              Comprendre les dieux de l'Égypte ancienne
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          Le panthéon égyptien est l'un des plus vastes et des plus complexes de
+          l'histoire humaine : plus de <strong>2 000 divinités</strong> ont été
+          recensées sur l'ensemble de la période pharaonique, certaines vénérées
+          dans tout le pays, d'autres confinées à une seule ville ou à un seul
+          temple. Mais comprendre ces dieux exige d'abord de se débarrasser de
+          nos catégories modernes.
+        </p>
+
+        <p>
+          Les dieux égyptiens ne sont pas des personnes. Ce sont des
+          <strong>forces cosmiques dotées de formes</strong> — ou plutôt de
+          formes multiples, car un même dieu peut prendre des dizaines
+          d'apparences différentes selon le contexte rituel, l'heure du jour ou
+          la région du pays. <a href="#re" class="internal-link">Rê</a> est
+          scarabée à l'aube, disque solaire à midi, vieillard au coucher du
+          soleil. <a href="#horus" class="internal-link">Horus</a> est faucon,
+          enfant, homme à tête de faucon, œil, et parfois soleil. Ce phénomène,
+          que l'égyptologue Erik Hornung appelle <em>Vielgestaltigkeit</em> («
+          multiplicité des formes »), est l'une des caractéristiques
+          fondamentales de la pensée religieuse égyptienne.
+        </p>
+
+        <p>
+          Un autre trait essentiel est la <strong>syncrétisation</strong> : deux
+          dieux peuvent se fusionner en un seul être composite pour en réunir
+          les puissances — Amon-Rê, Ptah-Sokar-Osiris, Rê-Horakhty. Ces fusions
+          ne font pas disparaître les dieux individuels ; elles ajoutent une
+          couche supplémentaire à leur complexité. La religion égyptienne est
+          <em>additive</em> plutôt qu'exclusive : elle accumule les formes
+          divines sans en nier aucune.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Les Égyptiens ne croyaient pas en leurs dieux comme nous croyons à
+            quelque chose. Ils <em>vivaient</em> dans un monde où les dieux
+            étaient aussi réels que le soleil, le Nil et le désert — car ils
+            étaient le soleil, le Nil et le désert.
+          </p>
+          <cite
+            >— Erik Hornung,
+            <em>Conceptions of God in Ancient Egypt: The One and the Many</em>,
+            Cornell University Press, 1982</cite
+          >
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Système cosmologique</th>
+              <th>Ville</th>
+              <th>Divinité centrale</th>
+              <th>Spécificité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ennéade d'Héliopolis</strong></td>
+              <td>Iounou (Héliopolis)</td>
+              <td>Atoum / Rê</td>
+              <td>
+                Création par masturbation ou crachement ; 9 dieux primordiaux
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Ogdoade d'Hermopolis</strong></td>
+              <td>Khemenu</td>
+              <td>Thot / Amon</td>
+              <td>8 dieux primordiaux du chaos (couples mâle-femelle)</td>
+            </tr>
+            <tr>
+              <td><strong>Théologie memphite</strong></td>
+              <td>Ineb-Hedj (Memphis)</td>
+              <td>Ptah</td>
+              <td>Création par la pensée et la parole (logos divin)</td>
+            </tr>
+            <tr>
+              <td><strong>Théologie thébaine</strong></td>
+              <td>Ouaset (Thèbes)</td>
+              <td>Amon</td>
+              <td>
+                Amon comme dieu caché, créateur et roi des dieux au Nouvel
+                Empire
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     SPHÈRE 1 : COSMOGONIE
+════════════════════════════════════════ -->
+    <div class="sphere-header" id="cosmogonie">
+      <div class="sphere-header-inner">
+        <span class="sphere-glyph">𓇳</span>
+        <div>
+          <p class="sphere-label">Première sphère · L'origine</p>
+          <h2 class="sphere-name">Cosmogonie — La création du monde</h2>
+          <p class="sphere-desc">
+            Avant le monde, il y avait Noun — l'océan primordial infini, obscur
+            et immobile. De lui surgirent les premiers dieux.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ATOUM -->
+    <section class="article-section" id="atoum">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">I</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Cosmogonie · Dieu créateur</p>
+            <h2 class="marker-title">
+              Atoum — Le Tout et l'Un, maître du chaos primordial
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓇳</div>
+          <div class="god-meta">
+            <h3 class="god-name">Atoum (Itm)</h3>
+            <p class="god-epithet">
+              « Le Tout », « Celui qui est complet » · Premier dieu de l'Ennéade
+              d'Héliopolis
+            </p>
+            <div class="god-tags">
+              <span class="tag">Dieu créateur</span>
+              <span class="tag tag-green">Héliopolis</span>
+              <span class="tag tag-violet">Ennéade</span>
+              <span class="tag">Forme : homme couronné ou serpent</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Atoum est le <strong>dieu auto-créé</strong> — le premier être qui
+          surgit spontanément des eaux primordiales du <em>Noun</em>, l'océan
+          infini préexistant au monde. Son nom signifie à la fois « le Tout » et
+          « le Rien » — paradoxe délibéré qui exprime une idée profonde : avant
+          la création, Atoum contenait en lui-même toutes les potentialités sans
+          qu'aucune soit encore actualisée.
+        </p>
+
+        <p>
+          Selon la cosmogonie héliopolitaine — la plus ancienne et la plus
+          influente du monde égyptien — Atoum se crée lui-même par un acte de
+          volonté sur la <strong>colline primordiale</strong> (<em>benben</em>),
+          premier promontoire surgissant des eaux du chaos. Seul au monde, il
+          engendre les deux premiers dieux-enfants
+          <a href="#shou-tefnout" class="internal-link">Chou et Tefnout</a>
+          (l'air et l'humidité) par masturbation ou en les crachant de sa bouche
+          — les textes varient selon la pudeur de leurs rédacteurs. De Chou et
+          Tefnout naissent
+          <a href="#nout-geb" class="internal-link">Nout et Geb</a> (le ciel et
+          la terre), et de ceux-ci les quatre grands dieux du cycle osirien :
+          <a href="#osiris" class="internal-link">Osiris</a>,
+          <a href="#isis" class="internal-link">Isis</a>,
+          <a href="#seth" class="internal-link">Seth</a> et
+          <a href="#nephtys" class="internal-link">Nephtys</a>. L'Ennéade — les
+          « Neuf » — est complète.
+        </p>
+
+        <div class="info-box info-box-violet">
+          <p class="info-box-title">𓇳 L'Ennéade d'Héliopolis</p>
+          <p>
+            L'Ennéade (du grec <em>ennéa</em>, « neuf ») est le conseil divin
+            fondamental de la théologie héliopolitaine. Elle groupe : Atoum,
+            Chou, Tefnout, Geb, Nout, Osiris, Isis, Seth, Nephtys. Ces neuf
+            dieux représentent les forces cosmiques qui ont bâti l'univers, du
+            chaos primordial jusqu'à l'ordre humain. Ils siègent comme tribunal
+            lors du jugement des pharaons défunts et des affaires divines
+            majeures.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOUT & GEB -->
+    <section class="article-section" id="nout-geb">
+      <div class="hiero-deco">𓇾𓏤𓌀𓎛𓇋𓐍𓆑</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">II</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Cosmogonie · Ciel et Terre</p>
+            <h2 class="marker-title">
+              Nout & Geb — La voûte céleste et le corps de la Terre
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓇾</div>
+          <div class="god-meta">
+            <h3 class="god-name">Nout (Nut) & Geb</h3>
+            <p class="god-epithet">
+              Nout : « La déesse céleste » · Geb : « La Terre fertile »
+            </p>
+            <div class="god-tags">
+              <span class="tag">Ciel & Terre</span>
+              <span class="tag tag-green">Cosmologie</span>
+              <span class="tag">Ennéade, génération II</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          <strong>Nout</strong> est la déesse du ciel — non le ciel abstrait,
+          mais le corps même du ciel. Elle est représentée comme une femme au
+          corps arqué, bras et jambes tendus vers les quatre points cardinaux,
+          dont le ventre étoilé forme la voûte nocturne. Chaque soir, le soleil
+          entre dans sa bouche, traverse son corps pendant la nuit, et renaît de
+          son ventre à l'aube — métaphore puissante du cycle de la mort et de la
+          résurrection.
+        </p>
+
+        <p>
+          <strong>Geb</strong>, son époux et frère, est le dieu de la terre. Il
+          est allongé sous Nout, son corps formant le sol sur lequel vivent les
+          hommes. Les tremblements de terre sont ses rires. Il est souvent
+          représenté avec une oie sur la tête — l'oie est son animal sacré — et
+          sa peau est parfois verte, couleur de la végétation et de la
+          renaissance. Le couple Nout-Geb, séparé par leur père
+          <a href="#shou-tefnout" class="internal-link">Chou</a> (l'air),
+          représente la structure fondamentale de l'univers : le ciel au-dessus,
+          la terre en dessous, l'air entre les deux — espace vital où les êtres
+          vivent et respirent.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Nout n'est pas une déesse <em>du</em> ciel — elle <em>est</em> le
+            ciel. Cette distinction est fondamentale : en Égypte, les dieux ne
+            gouvernent pas la nature, ils la sont.
+          </p>
+          <cite
+            >— Frankfort, H., <em>Ancient Egyptian Religion</em>, Columbia
+            University Press, 1948</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     SPHÈRE 2 : DIEUX SOLAIRES
+════════════════════════════════════════ -->
+    <div class="sphere-header" id="solaires">
+      <div class="sphere-header-inner">
+        <span class="sphere-glyph">☀</span>
+        <div>
+          <p class="sphere-label">Deuxième sphère · La lumière</p>
+          <h2 class="sphere-name">Les Dieux Solaires</h2>
+          <p class="sphere-desc">
+            Le soleil est la métaphore centrale de toute la théologie égyptienne
+            — mort et résurrection, ordre et chaos, visibilité et mystère.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RE -->
+    <section class="article-section" id="re">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">III</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Dieux solaires · Souverain du ciel</p>
+            <h2 class="marker-title">
+              Rê — Le Soleil souverain, père des pharaons
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓇳</div>
+          <div class="god-meta">
+            <h3 class="god-name">Rê (Rˁ)</h3>
+            <p class="god-epithet">
+              « Le Soleil » · Dieu solaire par excellence, roi des dieux à
+              l'Ancien Empire
+            </p>
+            <div class="god-tags">
+              <span class="tag">Dieu solaire</span>
+              <span class="tag tag-green">Héliopolis</span>
+              <span class="tag tag-violet">Ennéade</span>
+              <span class="tag"
+                >Forme : homme à tête de faucon couronné du disque solaire</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Rê est le dieu le plus fondamental de la religion égyptienne — non pas
+          le plus populaire, mais le plus central, le pivot autour duquel
+          tournent toutes les autres théologies. Il est
+          <strong>le soleil lui-même</strong>, dans toute sa puissance vitale.
+          Son nom est le mot égyptien pour « soleil ». Dès l'Ancien Empire, le
+          pharaon est appelé <em>Sa-Rê</em>, « fils de Rê » — titre qui souligne
+          la nature divine de la royauté et la filiation cosmique entre le roi
+          terrestre et le soleil céleste.
+        </p>
+
+        <p>
+          Le voyage quotidien de Rê structure le temps et l'espace égyptiens. Il
+          traverse le ciel de l'est à l'ouest à bord de la
+          <strong>barque solaire</strong> (<em>Mandjet</em> le jour,
+          <em>Mesektet</em> la nuit), accompagné d'un équipage de dieux. La
+          nuit, il emprunte le monde souterrain (<em>Douat</em>), affrontant le
+          serpent géant <a href="#apophis" class="internal-link">Apophis</a> qui
+          cherche à le dévorer — et chaque aube représente la victoire de
+          l'ordre sur le chaos, de la vie sur la mort. Cette bataille est
+          éternelle et recommence chaque nuit sans trêve.
+        </p>
+
+        <h3>Les trois formes du soleil</h3>
+        <p>
+          Rê n'est jamais une forme unique. À l'aube, il est
+          <a href="#khepri" class="internal-link"><strong>Khépri</strong></a
+          >, le scarabée qui roule la boule du soleil levant — métaphore du
+          bousier roulant ses œufs dans une boule d'excréments, analogie
+          cosmique de la régénération. À midi, il est
+          <strong>Rê-Horakhty</strong> (Rê-Horus de l'horizon), à son apogée de
+          puissance. Au coucher, il est <strong>Atoum</strong>, le vieillard
+          épuisé qui s'apprête à mourir et renaître. Cette trinité solaire
+          exprime le cycle complet d'une vie — naissance, maturité, mort — dans
+          une seule journée.
+        </p>
+
+        <div class="info-box info-box-or">
+          <p class="info-box-title">𓇳 La Litanie de Rê</p>
+          <p>
+            La <em>Litanie de Rê</em> est un texte funéraire du Nouvel Empire
+            gravé à l'entrée des tombes royales de la Vallée des Rois. Elle
+            invoque les 75 formes différentes de Rê, chacune portant un nom et
+            une image distincts. Ce texte révèle la richesse stupéfiante de la
+            pensée religieuse égyptienne : un dieu unique qui est simultanément
+            75 êtres différents, sans contradiction.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMON -->
+    <section class="article-section" id="amon">
+      <div class="hiero-deco">𓊹𓌀𓎛𓁹𓅓𓏏𓆣</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">IV</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Dieux solaires · Roi des dieux</p>
+            <h2 class="marker-title">
+              Amon — Le Caché, roi des dieux du Nouvel Empire
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓊹</div>
+          <div class="god-meta">
+            <h3 class="god-name">Amon (Jmn)</h3>
+            <p class="god-epithet">
+              « Le Caché », « L'Invisible » · Dieu principal du Nouvel Empire
+              sous la forme Amon-Rê
+            </p>
+            <div class="god-tags">
+              <span class="tag">Vent · Soleil caché</span>
+              <span class="tag tag-green">Thèbes · Karnak</span>
+              <span class="tag tag-violet">Ogdoade puis Ennéade</span>
+              <span class="tag">Forme : homme à double plume ou bélier</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Amon est, paradoxalement, le plus puissant des dieux égyptiens tout en
+          étant le plus insaisissable. Son nom signifie
+          <strong>« le Caché »</strong> — il est le vent invisible qui fait
+          bouger les feuilles, le souffle vital qui anime toute chair, la
+          puissance divine qui échappe à toute représentation définitive. Dieu
+          mineur à l'Ancien Empire, il émerge comme divinité locale de Thèbes
+          avant de devenir, sous le Nouvel Empire, le
+          <em>roi des dieux</em> dans sa forme syncrétisée
+          <strong>Amon-Rê</strong> — fusion qui réunit la puissance cachée
+          d'Amon et l'énergie lumineuse de
+          <a href="#re" class="internal-link">Rê</a>.
+        </p>
+
+        <p>
+          Le <strong>complexe de Karnak</strong>, agrandi pendant deux mille ans
+          par pratiquement tous les pharaons du Nouvel Empire, est sa demeure
+          terrestre. L'immensité de ce site — le plus grand complexe religieux
+          jamais construit — témoigne de la richesse fantastique accumulée par
+          le clergé d'Amon. Sous
+          <a href="#thoutmosis3" class="internal-link">Thoutmôsis III</a>, le
+          grand prêtre d'Amon contrôle plus du tiers des terres arables
+          d'Égypte. Cette accumulation de pouvoir économique et politique
+          explique la réforme radicale d'<a
+            href="#akhenaton"
+            class="internal-link"
+            >Akhénaton</a
+          >, qui ferme les temples d'Amon et confisque leurs richesses.
+        </p>
+
+        <p>
+          La <strong>fête d'Opet</strong>, célébrée chaque année à Louxor, est
+          la grande fête nationale d'Amon : pendant 11 à 27 jours, la statue du
+          dieu voyage en barque sacrée depuis Karnak jusqu'au temple de Louxor,
+          renouvelant la puissance divine du pharaon régnant. Cette procession à
+          laquelle participait tout le peuple était l'événement le plus
+          populaire du calendrier religieux thébain.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Amon est un mystère voulu : il est le dieu dont la nature même est
+            d'être inconnaissable. Le décrire serait le réduire. Son
+            invisibilité est sa puissance.
+          </p>
+          <cite
+            >— Assmann, J., <em>Egyptian Solar Religion in the New Kingdom</em>,
+            Kegan Paul, 1995</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- KHEPRI -->
+    <section class="article-section" id="khepri">
+      <div class="hiero-deco">𓆣𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">V</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Dieux solaires · Aurore</p>
+            <h2 class="marker-title">
+              Khépri — Le scarabée de l'aube, symbole de renaissance
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓆣</div>
+          <div class="god-meta">
+            <h3 class="god-name">Khépri (Ḫprj)</h3>
+            <p class="god-epithet">
+              « Celui qui vient à l'être » · Dieu de l'aube et de la
+              régénération
+            </p>
+            <div class="god-tags">
+              <span class="tag">Aurore · Renaissance</span>
+              <span class="tag tag-green">Héliopolis</span>
+              <span class="tag"
+                >Forme : scarabée ou homme à tête de scarabée</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Khépri est la manifestation matinale du soleil — Rê au moment de sa
+          naissance quotidienne. Il est représenté comme un
+          <strong>scarabée</strong> (<em>Scarabaeus sacer</em>), l'insecte dont
+          les Égyptiens observaient le comportement avec fascination : le
+          bousier roule une boule de fumier contenant ses œufs, les enterre, et
+          des larves en sortent spontanément — image parfaite de la vie
+          surgissant de la matière morte, de l'être naissant du néant.
+        </p>
+
+        <p>
+          Son nom vient du verbe <em>kheper</em>, « venir à l'existence, se
+          transformer ». L'<strong>amulette scarabée</strong> est l'amulette
+          protectrice la plus répandue de tout l'art égyptien : on en a retrouvé
+          des millions, en faïence, en stéatite, en lapis-lazuli, des plus
+          humbles aux plus exquises. Le <strong>cœur-scarabée</strong> (grand
+          scarabée en pierre placé sur la poitrine de la momie) portait une
+          inscription de la formule magique empêchant le cœur de témoigner
+          contre son propriétaire lors du jugement de l'âme.
+        </p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     SPHÈRE 3 : CYCLE OSIRIEN
+════════════════════════════════════════ -->
+    <div class="sphere-header" id="osirien">
+      <div class="sphere-header-inner">
+        <span class="sphere-glyph">𓁹</span>
+        <div>
+          <p class="sphere-label">Troisième sphère · Mort et renaissance</p>
+          <h2 class="sphere-name">Le Cycle Osirien</h2>
+          <p class="sphere-desc">
+            Le mythe fondateur de l'Égypte — meurtre, deuil, magie, vengeance et
+            résurrection éternelle.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OSIRIS -->
+    <section class="article-section" id="osiris">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">VI</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Cycle osirien · Seigneur de l'au-delà</p>
+            <h2 class="marker-title">
+              Osiris — Le dieu mort et ressuscité, roi de l'au-delà
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓁹</div>
+          <div class="god-meta">
+            <h3 class="god-name">Osiris (Wsjr)</h3>
+            <p class="god-epithet">
+              « Le Puissant » · Dieu des morts, de la résurrection et de la
+              végétation
+            </p>
+            <div class="god-tags">
+              <span class="tag">Mort · Résurrection</span>
+              <span class="tag tag-green">Abydos · Bousiris</span>
+              <span class="tag tag-violet">Ennéade</span>
+              <span class="tag"
+                >Forme : momie verte tenant flail et sceptre</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Osiris est le dieu central de la religion égyptienne — celui dont le
+          mythe structure la conception de la mort, de la justice et de la vie
+          éternelle pour toute la civilisation pharaonique. Fils de
+          <a href="#nout-geb" class="internal-link">Geb et Nout</a>, il règne
+          d'abord sur la terre comme roi civilisateur, enseignant aux hommes
+          l'agriculture, la loi et les rites religieux. Sa peau verte ou noire
+          évoque à la fois la végétation du Nil et le limon noir de la crue — la
+          fertilité rendue possible par la mort et le pourrissement.
+        </p>
+
+        <h3>Le mythe d'Osiris — la trame fondatrice</h3>
+        <div class="myth-flow">
+          <div class="myth-step">
+            <p class="myth-step-title">1. Le meurtre par Seth</p>
+            <p>
+              Jaloux du règne d'Osiris, son frère
+              <a href="#seth" class="internal-link">Seth</a> l'attire dans un
+              piège : il fait construire un sarcophage à la mesure exacte du
+              corps d'Osiris, l'invite à s'y allonger lors d'un banquet, puis le
+              referme et le jette dans le Nil. Osiris se noie.
+            </p>
+          </div>
+          <div class="myth-step">
+            <p class="myth-step-title">2. La quête d'Isis</p>
+            <p>
+              <a href="#isis" class="internal-link">Isis</a>, son épouse,
+              parcourt toute la terre à la recherche du corps. Elle le retrouve
+              à Byblos (Liban), caché dans un arbre. Elle le ramène en Égypte.
+            </p>
+          </div>
+          <div class="myth-step">
+            <p class="myth-step-title">3. La démembration</p>
+            <p>
+              Seth, furieux, s'empare à nouveau du corps et le démembre en 14
+              (ou 42 selon les sources) morceaux dispersés dans tout le pays.
+              Chaque sanctuaire osirien du pays prétendra détenir l'un de ces
+              fragments.
+            </p>
+          </div>
+          <div class="myth-step">
+            <p class="myth-step-title">4. La reconstitution magique</p>
+            <p>
+              Isis, aidée de sa sœur
+              <a href="#nephtys" class="internal-link">Nephtys</a>, retrouve
+              tous les fragments sauf le phallus (avalé par un poisson du Nil).
+              Elle reconstitue le corps et fabrique un phallus d'or. Elle se
+              transforme en milan, survole le corps et conçoit miraculeusement
+              <a href="#horus" class="internal-link">Horus</a>.
+            </p>
+          </div>
+          <div class="myth-step">
+            <p class="myth-step-title">5. La première momification</p>
+            <p>
+              <a href="#anubis" class="internal-link">Anubis</a> embaume le
+              corps d'Osiris — premier mort à être momifié, premier être à
+              ressusciter. Osiris devient roi de l'au-delà, et toute
+              momification rituelle renouvelle ce premier embaumement.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <p class="info-box-title">
+            𓁹 Le jugement d'Osiris — La Pesée du cœur
+          </p>
+          <p>
+            Dans la Salle des Deux Vérités, Osiris préside le tribunal des
+            morts. Le cœur du défunt est pesé sur une balance contre la plume de
+            <a href="#maat" class="internal-link">Maât</a>.
+            <a href="#thot" class="internal-link">Thot</a> note le résultat, 42
+            juges assesseurs interrogent l'âme. Si le cœur est pur, le défunt
+            rejoint le champ des roseaux (<em>Aaru</em>), paradis fertile. Si le
+            cœur est alourdi par les fautes, la chimère
+            <strong>Ammout</strong> — corps d'hippopotame, tête de crocodile,
+            arrière-train de lion — le dévore. Cette seconde mort est la seule
+            vraiment définitive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ISIS -->
+    <section class="article-section" id="isis">
+      <div class="hiero-deco">𓂀𓊃𓐍𓌀𓎛𓏤𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">VII</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Cycle osirien · Grande Magicienne</p>
+            <h2 class="marker-title">
+              Isis — La Toute-Puissante, mère divine et archétype de l'épouse
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓁹</div>
+          <div class="god-meta">
+            <h3 class="god-name">Isis (Ȝst)</h3>
+            <p class="god-epithet">
+              « Le trône » · Grande Magicienne, Mère divine, protectrice
+              universelle
+            </p>
+            <div class="god-tags">
+              <span class="tag">Magie · Maternité</span>
+              <span class="tag tag-green">Philae · tout l'empire</span>
+              <span class="tag tag-violet">Ennéade</span>
+              <span class="tag"
+                >Forme : femme au trône sur la tête ou ailes déployées</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Isis est la divinité féminine la plus puissante et la plus universelle
+          de l'Égypte ancienne — et l'une des déesses dont le culte a eu le
+          rayonnement le plus vaste dans l'Antiquité, se répandant jusqu'en
+          Rome, en Gaule et en Grande-Bretagne. Elle est à la fois
+          <strong>l'épouse parfaite</strong> (fidèle à
+          <a href="#osiris" class="internal-link">Osiris</a> jusque dans la
+          mort), la <strong>mère idéale</strong> (elle protège l'enfant
+          <a href="#horus" class="internal-link">Horus</a> dans les marais), et
+          la <strong>magicienne suprême</strong> — la seule à posséder la magie
+          assez puissante pour ressusciter les morts.
+        </p>
+
+        <p>
+          Son symbole est le <strong>trône</strong> (<em>ȝst</em> en égyptien) :
+          son nom signifie littéralement « trône », et sa coiffe représente ce
+          siège royal. Cette association profonde entre la déesse et le trône
+          exprime l'idée que la légitimité royale elle-même est une émanation
+          divine — le pharaon assis sur son trône est l'enfant d'Isis.
+        </p>
+
+        <p>
+          Le mythe de la <strong>ruse d'Isis contre Rê</strong> est l'une des
+          histoires les plus savoureuses du panthéon égyptien : Isis
+          confectionne un serpent avec de la terre et de la salive de Rê
+          lui-même, et le pose sur le chemin du dieu solaire. Mordu, Rê souffre
+          d'une douleur inexplicable. Isis lui propose de le guérir, mais à une
+          condition : qu'il lui révèle son <em>nom secret</em>. Dans la
+          conception égyptienne, connaître le vrai nom d'un être, c'est avoir
+          pouvoir sur lui. Rê cède et murmure son nom à Isis — lui transférant
+          ainsi une part de sa puissance cosmique.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Isis est la seule divinité égyptienne dont le culte ait survécu à la
+            chute du paganisme romain. Son temple de Philae, en Haute Égypte,
+            fut le dernier fermé par l'édit de Justinien — en 535 après J.-C.
+            Trois mille ans de culte ininterrompu.
+          </p>
+          <cite
+            >— Dunand, F. &amp; Zivie-Coche, C.,
+            <em>Dieux et Hommes en Égypte</em>, Armand Colin, 2006</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- HORUS -->
+    <section class="article-section" id="horus">
+      <div class="hiero-deco">𓅃𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">VIII</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Cycle osirien · Dieu de la royauté</p>
+            <h2 class="marker-title">
+              Horus — Le faucon céleste, dieu vivant des pharaons
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓅃</div>
+          <div class="god-meta">
+            <h3 class="god-name">Horus (Ḥrw)</h3>
+            <p class="god-epithet">
+              « Le Lointain », « Celui qui est au-dessus » · Dieu faucon de la
+              royauté
+            </p>
+            <div class="god-tags">
+              <span class="tag">Royauté · Ciel</span>
+              <span class="tag tag-green">Edfou · Hiérakonpolis</span>
+              <span class="tag tag-violet">Ennéade</span>
+              <span class="tag">Forme : faucon ou homme à tête de faucon</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Horus est <strong>le dieu vivant du pharaon</strong> — chaque roi
+          d'Égypte est Horus incarné sur terre. C'est le fondement théologique
+          de la royauté égyptienne : le pharaon n'est pas un homme qui gouverne
+          au nom des dieux, il est lui-même un dieu en chair, fils d'<a
+            href="#osiris"
+            class="internal-link"
+            >Osiris</a
+          >
+          et d'<a href="#isis" class="internal-link">Isis</a>, héritier du trône
+          cosmique. À sa mort, il devient Osiris et son successeur devient à son
+          tour Horus — chaîne ininterrompue de dieux incarnés depuis Narmer
+          jusqu'à Cléopâtre.
+        </p>
+
+        <h3>La guerre entre Horus et Seth</h3>
+        <p>
+          Le conflit entre Horus et
+          <a href="#seth" class="internal-link">Seth</a> pour le trône d'Égypte
+          est l'un des mythes les plus longs et les plus riches du monde antique
+          — le Papyrus Chester Beatty I (Nouvel Empire) en donne une version qui
+          mêle combats épiques, procès divins, ruses et épisodes franchement
+          comiques. Le combat dure 80 ans selon les textes, à travers des
+          épreuves multiples : courses nautiques, combats d'hippopotames, joutes
+          de métamorphoses. Le tribunal des dieux (Ennéade) hésite longtemps
+          avant de trancher en faveur d'Horus — la légitimité filiale contre la
+          force brute de Seth.
+        </p>
+
+        <p>
+          L'<strong>œil d'Horus</strong> (<em>oudjat</em>) — arraché par Seth
+          durant le combat et restauré par
+          <a href="#thot" class="internal-link">Thot</a> — est l'amulette la
+          plus puissante et la plus répandue d'Égypte ancienne : symbole de
+          guérison, de plénitude et de protection, il orne les pectoraux royaux,
+          les proues des barques funéraires et les bandages des momies.
+        </p>
+
+        <div class="info-box info-box-green">
+          <p class="info-box-title">𓅃 Les formes multiples d'Horus</p>
+          <p>
+            Horus se décline en de nombreuses formes : Horus l'Ancien (grand
+            dieu céleste prédynastique), Horus l'enfant (<em>Harpocrate</em>,
+            représenté suçant son doigt), Horus-de-l'Horizon (<em>Horakhty</em>,
+            assimilé à Rê), Horus vengeur (jeune guerrier combattant Seth),
+            Horus à la tête de faucon (dieu tutélaire des rois). Cette
+            multiplicité n'est pas une confusion — c'est la richesse même du
+            concept divin, qui peut se manifester sous toutes ses facettes selon
+            le contexte.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETH -->
+    <section class="article-section" id="seth">
+      <div class="hiero-deco">𓃱𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">IX</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Cycle osirien · Dieu du chaos</p>
+            <h2 class="marker-title">
+              Seth — Le dieu du désordre, des orages et du désert
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓃱</div>
+          <div class="god-meta">
+            <h3 class="god-name">Seth (Stẖ)</h3>
+            <p class="god-epithet">
+              « Le confuseur » · Dieu du chaos, du désert, des orages et de
+              l'étrange
+            </p>
+            <div class="god-tags">
+              <span class="tag tag-red">Chaos · Désert</span>
+              <span class="tag tag-green">Nagada · Ombos</span>
+              <span class="tag tag-violet">Ennéade</span>
+              <span class="tag"
+                >Forme : animal mythique inconnu (oreilles carrées, queue
+                fourchue)</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Seth est le dieu le plus ambigu, le plus mal compris et le plus
+          fascinant du panthéon égyptien. Souvent réduit à un simple dieu du mal
+          par les vulgarisations modernes, il est en réalité bien plus nuancé :
+          Seth est le dieu de tout ce qui est
+          <strong>incontrôlable, étranger et désordonné</strong> — le désert
+          rouge (<em>désert</em> = Seth ; terre noire fertile =
+          <a href="#osiris" class="internal-link">Osiris</a>), les orages, la
+          mer, les terres étrangères, mais aussi la force brute nécessaire pour
+          défendre l'ordre contre ses ennemis.
+        </p>
+
+        <p>
+          Son animal emblématique est une créature hybride non identifiable dans
+          la nature — seul dieu égyptien dont l'animal sacré n'existe pas
+          réellement. Cette étrangeté est intentionnelle : Seth est l'<em
+            >Autre</em
+          >
+          absolu, ce qui ne rentre dans aucune catégorie. Les Égyptiens avaient
+          pourtant besoin de lui : sur la barque solaire de
+          <a href="#re" class="internal-link">Rê</a> traversant le monde
+          souterrain la nuit, c'est Seth qui brandit sa lance pour repousser le
+          serpent <a href="#apophis" class="internal-link">Apophis</a> — son
+          chaos contre le chaos ennemi, sa violence au service de l'ordre
+          cosmique. Sans Seth, le soleil ne se lèverait pas.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓃱 Seth et les Hyksos</p>
+          <p>
+            Les Hyksos, envahisseurs du Delta à la deuxième période
+            intermédiaire, adoptèrent Seth comme leur dieu principal,
+            l'assimilant à leur dieu Baal. Ce choix contribua à la diabolisation
+            définitive de Seth dans la tradition religieuse égyptienne
+            postérieure : associé à la fois aux envahisseurs détestés et à leur
+            dieu étranger, il devient progressivement au Nouvel Empire la figure
+            du Mal absolu — perdant peu à peu ses nuances pour ne garder que ses
+            aspects négatifs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANUBIS -->
+    <section class="article-section" id="anubis">
+      <div class="hiero-deco">𓀭𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">X</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Cycle osirien · Guide des morts</p>
+            <h2 class="marker-title">
+              Anubis — Le chacal noir, gardien des nécropoles
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓀭</div>
+          <div class="god-meta">
+            <h3 class="god-name">Anubis (Jnpw)</h3>
+            <p class="god-epithet">
+              « Seigneur de la nécropole » · Dieu de la momification, guide des
+              âmes
+            </p>
+            <div class="god-tags">
+              <span class="tag">Momification · Mort</span>
+              <span class="tag tag-green">Lycopolis · nécropoles</span>
+              <span class="tag"
+                >Forme : chacal noir ou homme à tête de chacal</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Anubis est le dieu de la
+          <strong>momification et de la protection des morts</strong> — l'un des
+          plus anciens du panthéon égyptien, déjà présent dans les nécropoles
+          prédynastiques. Avant qu'<a href="#osiris" class="internal-link"
+            >Osiris</a
+          >
+          ne devienne le roi de l'au-delà au Moyen Empire, c'était Anubis qui
+          régnait sur les morts. Son association avec le chacal est directe et
+          pratique : les chacals rôdent la nuit autour des cimetières en quête
+          de charogne. Plutôt que de craindre cette présence, les Égyptiens
+          l'ont sacralisée — Anubis protège les tombes en y rôdant, gardien qui
+          effraye les intrus et guide les âmes.
+        </p>
+
+        <p>
+          Sa couleur noire est essentielle : elle évoque à la fois la pourriture
+          des corps (<em>khmt</em>, le noir de la décomposition) et la
+          renaissance (la terre noire du Nil, fertile). Anubis est le premier
+          <strong>embaumeur</strong> — c'est lui qui, selon le mythe, a momifié
+          <a href="#osiris" class="internal-link">Osiris</a> le premier,
+          inventant ainsi la technique qui permettra à tous les Égyptiens
+          d'espérer la résurrection. Durant les soixante-dix jours
+          d'embaumement, un prêtre portant le masque d'Anubis présidait aux
+          rites funéraires.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Anubis est venu à moi vêtu de ses bandelettes, tenant la balance.
+            Son œil d'or pesait mon cœur dans la nuit du jugement, et il était
+            léger comme la plume du vent.
+          </p>
+          <cite
+            >— Adaptation du Livre des Morts, Chapitre 125, ~1550 av.
+            J.-C.</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ BAND QUOTE ════════════ -->
+    <div class="band-quote">
+      <blockquote>
+        « Je suis hier et je connais demain. Qui est-il, ce Hier ? C'est Osiris.
+        Qui est Demain ? C'est Rê. »
+      </blockquote>
+      <footer>— Livre des Morts, Chapitre 17, ~1550 av. J.-C.</footer>
+    </div>
+
+    <!-- ════════════════════════════════════════
+     SPHÈRE 4 : SAVOIR, ÉCRITURE & JUSTICE
+════════════════════════════════════════ -->
+    <div class="sphere-header" id="savoir">
+      <div class="sphere-header-inner">
+        <span class="sphere-glyph">𓁹</span>
+        <div>
+          <p class="sphere-label">Quatrième sphère · La pensée</p>
+          <h2 class="sphere-name">Savoir, Écriture & Justice</h2>
+          <p class="sphere-desc">
+            Les dieux qui ordonnent l'univers par la parole, la loi et la
+            connaissance.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- THOT -->
+    <section class="article-section" id="thot">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XI</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Savoir & écriture · Dieu de la lune</p>
+            <h2 class="marker-title">
+              Thot — L'ibis divin, inventeur de l'écriture et de la sagesse
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓁹</div>
+          <div class="god-meta">
+            <h3 class="god-name">Thot (Ḏḥwtj)</h3>
+            <p class="god-epithet">
+              « Seigneur des mots divins » · Dieu de la lune, de l'écriture, de
+              la sagesse et du temps
+            </p>
+            <div class="god-tags">
+              <span class="tag">Écriture · Lune</span>
+              <span class="tag tag-green">Hermopolis · Khemenu</span>
+              <span class="tag tag-violet">Ogdoade</span>
+              <span class="tag"
+                >Forme : ibis ou babouin, ou homme à tête d'ibis</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Thot est le dieu de la
+          <strong
+            >connaissance, de l'écriture, des mathématiques, de la lune et du
+            temps</strong
+          >
+          — le scribe cosmique qui note tout ce qui arrive dans l'univers. C'est
+          lui qui a inventé l'écriture hiéroglyphique (<em>medu netjer</em>, «
+          les paroles des dieux »), les sciences, les arts et les lois. Son nom
+          grec — Hermès Trismégiste (« Hermès trois fois grand ») — témoigne de
+          la fascination que les Grecs avaient pour ce dieu égyptien, qu'ils
+          assimilèrent à leur propre Hermès.
+        </p>
+
+        <p>
+          Thot joue des rôles cruciaux dans plusieurs mythes fondamentaux :
+          c'est lui qui restaure l'<strong>œil d'Horus</strong> blessé par Seth
+          (symbole de restauration et de guérison) ; c'est lui qui calcule les
+          jours épagomènes (les cinq jours supplémentaires hors calendrier) en
+          gagnant aux dés contre la Lune, permettant à
+          <a href="#nout-geb" class="internal-link">Nout</a> d'accoucher de ses
+          enfants divins ; c'est lui qui, lors du jugement des morts, note le
+          verdict de la pesée du cœur et lit la liste des 42 péchés au défunt.
+        </p>
+
+        <p>
+          Ses deux animaux sacrés — l'<strong>ibis</strong> et le
+          <strong>babouin</strong> — ont des significations complémentaires :
+          l'ibis, avec son long bec courbé qui ressemble à un calame plongeant
+          dans l'eau, évoque le scribe en train d'écrire ; le babouin, qui
+          pousse des cris caractéristiques au lever du soleil, était associé à
+          l'accueil quotidien de la lumière et à la sagesse méditante.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓁹 Les Livres de Thot</p>
+          <p>
+            Selon la tradition hermétique tardive, Thot aurait rédigé 42 livres
+            sacrés contenant toute la connaissance universelle — astronomie,
+            médecine, rites funéraires, magie, géographie, lois. Ces « Livres de
+            Thot » ont nourri l'imaginaire ésotérique occidental pendant deux
+            millénaires. La tradition hermétique (corpus Hermeticum, IIe-IIIe
+            siècles apr. J.-C.) et la kabbale médiévale s'en réclamèrent.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAAT -->
+    <section class="article-section" id="maat">
+      <div class="hiero-deco">𓆓𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XII</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Justice & cosmos · Principe fondamental
+            </p>
+            <h2 class="marker-title">
+              Maât — L'ordre cosmique, la vérité et la justice absolue
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓆓</div>
+          <div class="god-meta">
+            <h3 class="god-name">Maât (Mȝˁt)</h3>
+            <p class="god-epithet">
+              « La Juste », « La Vraie » · Déesse de la vérité, de la justice,
+              de l'harmonie et de l'ordre cosmique
+            </p>
+            <div class="god-tags">
+              <span class="tag">Justice · Vérité</span>
+              <span class="tag tag-green">Tous les temples</span>
+              <span class="tag tag-violet">Fille de Rê</span>
+              <span class="tag"
+                >Forme : femme à la plume d'autruche · plume seule</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Maât n'est pas seulement une déesse — elle est un
+          <strong>principe cosmique fondamental</strong>, la force qui maintient
+          l'univers en ordre depuis le premier matin de la création. Son nom
+          désigne à la fois la vérité, la justice, l'harmonie, l'équilibre, la
+          droiture et l'ordre naturel. Elle est la réponse égyptienne à la
+          question : qu'est-ce qui distingue le bien du mal, le juste de
+          l'injuste, l'ordre du chaos ?
+        </p>
+
+        <p>
+          Sa plume d'autruche — symbole et attribut — est la mesure de toute
+          chose. Lors du jugement de l'âme, c'est contre cette plume que le cœur
+          du défunt est pesé : si le cœur est <em>vrai</em> (pur, juste), il est
+          aussi léger que la plume. La formule rituelle que récitait le défunt
+          devant le tribunal d'<a href="#osiris" class="internal-link"
+            >Osiris</a
+          >
+          est la célèbre <strong>confession négative</strong> (<em
+            >Chapitre 125 du Livre des Morts</em
+          >) : une liste de 42 péchés que le défunt affirme n'avoir pas commis —
+          « Je n'ai pas volé, je n'ai pas tué, je n'ai pas menti, je n'ai pas
+          fait pleurer, je n'ai pas pollué les eaux… »
+        </p>
+
+        <p>
+          Chaque pharaon, lors de son couronnement, est dit « offrir Maât » aux
+          dieux — une statuette de la déesse qu'il présente au temple symbolise
+          son engagement à gouverner justement. C'est le contrat fondamental
+          entre le roi et l'univers : en échange de la justice du pharaon, les
+          dieux maintiennent la crue du Nil, la rotation des saisons et la
+          victoire militaire.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Maât est le concept le plus important de la pensée égyptienne. Elle
+            est ce que l'Égypte a de plus proprement original à offrir à
+            l'histoire morale de l'humanité.
+          </p>
+          <cite
+            >— Jan Assmann,
+            <em>Ma'at: Gerechtigkeit und Unsterblichkeit im alten Ägypten</em>,
+            C.H. Beck, 1990</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- PTAH -->
+    <section class="article-section" id="ptah">
+      <div class="hiero-deco">𓌀𓎛𓇋𓐍𓆑𓀭𓏤</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XIII</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Savoir & arts · Dieu artisan</p>
+            <h2 class="marker-title">
+              Ptah — Le dieu-potier, créateur par la pensée et la parole
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓌀</div>
+          <div class="god-meta">
+            <h3 class="god-name">Ptah (Ptḥ)</h3>
+            <p class="god-epithet">
+              « Le Beau Visage » · Dieu artisan, patron des architectes, des
+              sculpteurs et des orfèvres
+            </p>
+            <div class="god-tags">
+              <span class="tag">Création · Arts</span>
+              <span class="tag tag-green">Memphis</span>
+              <span class="tag"
+                >Forme : momie droite tenant un sceptre was composé · tête
+                rasée</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Ptah est le dieu de <strong>Memphis</strong>, ancienne capitale de
+          l'Égypte unifiée, et l'un des dieux les plus anciens du panthéon. Sa
+          théologie est d'une modernité intellectuelle saisissante : selon le
+          <em>Texte memphite</em> gravé sous Chabaka (XXVe Dynastie, mais copie
+          d'un original de l'Ancien Empire), Ptah a créé l'univers
+          <strong
+            >par la pensée (<em>sia</em>) et la parole (<em>hu</em>)</strong
+          >
+          — le cœur qui conçoit et la langue qui énonce. Cette conception du
+          logos créateur préfigure de manière troublante l'évangile de Jean («
+          Au commencement était le Verbe ») et la philosophie grecque.
+        </p>
+
+        <p>
+          Ptah est représenté de façon unique dans le panthéon : il est debout,
+          emmailloté comme une momie, tenant un sceptre composite combinant le
+          sceptre was (pouvoir), le djed (stabilité) et l'ânkh (vie). Sa tête
+          est rasée, sa peau verte comme
+          <a href="#osiris" class="internal-link">Osiris</a> — couleur de la
+          renaissance et de la création. Le <strong>taureau Apis</strong>,
+          animal sacré abrité dans son temple de Memphis, était son incarnation
+          vivante : un taureau noir aux marques blanches particulières
+          sélectionné par les prêtres, traité comme un dieu et momifié à sa mort
+          dans le Sérapéum de Saqqarah.
+        </p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     SPHÈRE 5 : NATURE & COSMOS
+════════════════════════════════════════ -->
+    <div class="sphere-header" id="nature">
+      <div class="sphere-header-inner">
+        <span class="sphere-glyph">𓃬</span>
+        <div>
+          <p class="sphere-label">Cinquième sphère · Le vivant</p>
+          <h2 class="sphere-name">Nature, Nil & Fertilité</h2>
+          <p class="sphere-desc">
+            Les dieux qui animent le monde naturel — le fleuve, les animaux, la
+            germination et la sensualité.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HATHOR -->
+    <section class="article-section" id="hathor">
+      <div class="hiero-deco">𓄿𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XIV</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Amour & beauté · Déesse de la joie</p>
+            <h2 class="marker-title">
+              Hathor — La vache céleste, déesse de l'amour, de la musique et de
+              l'ivresse
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓄿</div>
+          <div class="god-meta">
+            <h3 class="god-name">Hathor (Ḥwt-Ḥrw)</h3>
+            <p class="god-epithet">
+              « Demeure d'Horus » · Déesse de l'amour, de la beauté, de la
+              musique, de la danse et de l'ivresse
+            </p>
+            <div class="god-tags">
+              <span class="tag">Amour · Musique</span>
+              <span class="tag tag-green">Dendera · Deir el-Bahari</span>
+              <span class="tag"
+                >Forme : vache, femme à cornes de vache, sistrum</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Hathor est l'une des divinités les plus aimées et les plus célébrées
+          d'Égypte — celle qui préside aux <strong>plaisirs de la vie</strong> :
+          l'amour, la beauté, la musique, la danse, l'ivresse et la fertilité.
+          Son nom signifie « Demeure d'Horus » — elle est à la fois la mère,
+          l'épouse et la fille d'<a href="#horus" class="internal-link">Horus</a
+          >, selon les aspects qu'on lui prête. En tant que vache céleste, elle
+          nourrit le roi de son lait divin, lui conférant force et légitimité
+          divine.
+        </p>
+
+        <p>
+          Hathor a une face sombre que les textes n'occultent pas : le mythe de
+          <strong>la destruction de l'humanité</strong> la voit se transformer
+          en <a href="#sekhmet" class="internal-link">Sekhmet</a>, lionne
+          dévastatrice, envoyée par
+          <a href="#re" class="internal-link">Rê</a> pour punir les hommes de
+          leurs rébellions. Elle commence à les massacrer jusqu'à ce que Rê
+          lui-même s'alarme de l'extermination totale. Pour l'arrêter, les dieux
+          inondent les champs de bière rouge (teintée d'ocre pour ressembler au
+          sang) — Hathor/Sekhmet boit tout, s'enivre, et reprend sa forme douce
+          d'Hathor. Ce mythe explique rituellement la consommation d'alcool lors
+          des fêtes d'Hathor, notamment à Dendera.
+        </p>
+
+        <div class="two-col">
+          <div class="col-card">
+            <span class="col-card-icon">𓄿</span>
+            <h3 class="col-card-title">Hathor à Dendera</h3>
+            <p>
+              Le grand temple de Dendera (époque ptolémaïque) est entièrement
+              consacré à Hathor. Son toit porte le célèbre
+              <em>zodiaque de Dendera</em> — la plus ancienne représentation
+              circulaire du zodiaque au monde, aujourd'hui au Louvre.
+            </p>
+          </div>
+          <div class="col-card">
+            <span class="col-card-icon">𓆱</span>
+            <h3 class="col-card-title">Le sistrum sacré</h3>
+            <p>
+              L'instrument de musique favori d'Hathor est le sistrum — hochet
+              sacré dont le son était censé chasser les mauvais esprits et
+              réjouir les dieux. Les prêtresses d'Hathor le brandissaient lors
+              des processions pour attirer la bienveillance divine.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBEK -->
+    <section class="article-section" id="sobek">
+      <div class="hiero-deco">𓆊𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XV</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Nature & Nil · Dieu crocodile</p>
+            <h2 class="marker-title">
+              Sobek — Le crocodile sacré, maître du Nil et de la puissance
+              royale
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓆊</div>
+          <div class="god-meta">
+            <h3 class="god-name">Sobek (Sbk)</h3>
+            <p class="god-epithet">
+              « Le puissant » · Dieu crocodile du Nil, de la fertilité et de la
+              puissance royale
+            </p>
+            <div class="god-tags">
+              <span class="tag">Nil · Fertilité</span>
+              <span class="tag tag-green">Crocodilopolis · Kom Ombo</span>
+              <span class="tag"
+                >Forme : crocodile ou homme à tête de crocodile couronné</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Sobek est le dieu du Nil dans sa dimension la plus puissante et la
+          plus dangereuse : le <strong>crocodile</strong>, animal que les
+          Égyptiens révéraient et craignaient à la fois. Sa vénération est
+          directement proportionnelle à la présence des crocodiles dans les bras
+          du Nil — abondante dans le Fayoum et en Haute Égypte, plus rare dans
+          le delta. À <strong>Crocodilopolis</strong> (ville du Fayoum), des
+          crocodiles sacrés vivaient dans des bassins du temple, nourris de
+          viande et de vin, parés de bijoux en or, vénérés comme des dieux
+          vivants.
+        </p>
+
+        <p>
+          Sobek est aussi associé à la <strong>puissance royale</strong> — sa
+          force brutale, sa domination sur l'eau (source de vie) et son œil
+          perçant (les crocodiles observent sans trahir leur présence) en font
+          un symbole parfait de la souveraineté. De nombreux pharaons portèrent
+          son nom : Sobeknéfrou (première reine régnante attestée), Sobekhotep
+          I-VIII (Moyen Empire). Son grand temple de
+          <strong>Kom Ombo</strong> (partagé avec Haroeris, forme d'Horus) est
+          l'un des mieux conservés d'Égypte.
+        </p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+     SPHÈRE 6 : GARDIENS & PROTECTEURS
+════════════════════════════════════════ -->
+    <div class="sphere-header" id="gardiens">
+      <div class="sphere-header-inner">
+        <span class="sphere-glyph">𓁹</span>
+        <div>
+          <p class="sphere-label">Sixième sphère · La protection</p>
+          <h2 class="sphere-name">Gardiens & Protecteurs</h2>
+          <p class="sphere-desc">
+            Les divinités qui veillent sur les vivants et les morts — contre la
+            maladie, le chaos et les puissances ténébreuses.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEKHMET -->
+    <section class="article-section" id="sekhmet">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XVI</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Gardiens · Déesse lionne</p>
+            <h2 class="marker-title">
+              Sekhmet — La lionne de feu, déesse de la guerre et des épidémies
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓁹</div>
+          <div class="god-meta">
+            <h3 class="god-name">Sekhmet (Sḫmt)</h3>
+            <p class="god-epithet">
+              « La Puissante » · Déesse lionne de la guerre, de la médecine et
+              de la destruction nécessaire
+            </p>
+            <div class="god-tags">
+              <span class="tag tag-red">Guerre · Epidémies</span>
+              <span class="tag tag-green">Memphis</span>
+              <span class="tag"
+                >Forme : femme à tête de lionne couronnée du disque
+                solaire</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Sekhmet est la force dévastatrice du soleil — le feu brûlant de
+          <a href="#re" class="internal-link">Rê</a> dans sa dimension
+          destructrice. Elle est la <strong>Puissante</strong>, celle dont le
+          souffle est le vent chaud du désert, dont le regard lance des flammes
+          et dont la colère déclenche les épidémies. Paradoxe fondamental de la
+          religion égyptienne : la même déesse qui répand les maladies est aussi
+          celle qui les guérit. Les médecins, les chirurgiens et les exorcistes
+          étaient tous des prêtres de Sekhmet — seule la déesse capable de
+          causer un mal peut le défaire.
+        </p>
+
+        <p>
+          À Memphis, des milliers de statues de Sekhmet — en granit noir,
+          impassibles et majestueuses — peuplaient le temple de Ptah. Pour
+          chaque jour de l'année et chaque heure du jour et de la nuit, une
+          statue différente était vénérée, apaisée par des rites et des
+          offrandes — manière systématique de calmer la colère divine à chaque
+          instant du temps.
+        </p>
+
+        <div class="info-box info-box-violet">
+          <p class="info-box-title">𓁹 La triade memphite</p>
+          <p>
+            À Memphis, les trois grandes divinités formaient une
+            <em>triade</em> familiale :
+            <a href="#ptah" class="internal-link">Ptah</a> le père, Sekhmet la
+            mère, et Nefertoum le fils (dieu du lotus, symbole de l'aube et de
+            la beauté). Ce modèle de la triade divine — père, mère, enfant — se
+            retrouve dans de nombreux temples égyptiens : Amon, Mout et Khonsou
+            à Thèbes ; Osiris, Isis et Horus à Abydos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BASTET -->
+    <section class="article-section" id="bastet">
+      <div class="hiero-deco">𓃠𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XVII</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Gardiens · Déesse chatte</p>
+            <h2 class="marker-title">
+              Bastet — La déesse chatte, gardienne du foyer et de la joie
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓃠</div>
+          <div class="god-meta">
+            <h3 class="god-name">Bastet (Bȝstt)</h3>
+            <p class="god-epithet">
+              « Celle de Boubastis » · Déesse chatte, protectrice du foyer, de
+              la santé et de la maternité
+            </p>
+            <div class="god-tags">
+              <span class="tag">Foyer · Santé</span>
+              <span class="tag tag-green">Boubastis (Bubastis)</span>
+              <span class="tag">Forme : chat ou femme à tête de chat</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Bastet est la face douce et protectrice du soleil — comme
+          <a href="#sekhmet" class="internal-link">Sekhmet</a> en est la face
+          brûlante. Dans la théologie de la <em>déesse lointaine</em>, Bastet et
+          Sekhmet sont deux aspects d'une même divinité : l'une furieuse,
+          l'autre apaisée. Les rites d'apaisement de Sekhmet transforment la
+          déesse colérique en Bastet bienveillante — déesse du foyer, de la
+          joie, de la danse, de la fertilité et de la protection des femmes
+          enceintes.
+        </p>
+
+        <p>
+          Le culte de Bastet à <strong>Boubastis</strong> (delta du Nil) était
+          l'occasion d'une fête annuelle que l'historien Hérodote décrit comme
+          la plus joyeuse d'Égypte : des bateaux chargés de pèlerins remontaient
+          le Nil en musique, chantant, dansant, consommant d'énormes quantités
+          de vin. Des centaines de milliers de personnes se retrouvaient à
+          Boubastis pour festoyer en l'honneur de la déesse. Des millions de
+          chats momifiés ont été retrouvés dans les nécropoles de son
+          sanctuaire.
+        </p>
+      </div>
+    </section>
+
+    <!-- APOPHIS -->
+    <section class="article-section" id="apophis">
+      <div class="hiero-deco">𓆙𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XVIII</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Gardiens · Ennemi cosmique</p>
+            <h2 class="marker-title">
+              Apophis — Le grand serpent du chaos, ennemi éternel de la lumière
+            </h2>
+          </div>
+        </div>
+
+        <div class="god-card">
+          <div class="god-glyph">𓆙</div>
+          <div class="god-meta">
+            <h3 class="god-name">Apophis (Ȝpp)</h3>
+            <p class="god-epithet">
+              « Le Destructeur » · Serpent primordial du chaos, ennemi de Rê
+            </p>
+            <div class="god-tags">
+              <span class="tag tag-red">Chaos · Ténèbres</span>
+              <span class="tag">Monde souterrain</span>
+              <span class="tag"
+                >Forme : serpent géant · parfois à plusieurs têtes</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Apophis n'est pas un dieu — il est l'<strong>anti-dieu</strong>, la
+          personnification du chaos absolu, du néant qui cherche à avaler le
+          soleil et à replonger l'univers dans l'obscurité primordiale du
+          <em>Noun</em>. Il n'a pas de temple, pas de prêtres, pas de culte —
+          mais il a ses propres textes : les
+          <em>Livres de la Destruction d'Apophis</em> (<em>Amdouat</em>,
+          <em>Livre des Portes</em>) décrivent en détail comment le combattre
+          chaque nuit dans le monde souterrain.
+        </p>
+
+        <p>
+          Chaque nuit, <a href="#re" class="internal-link">Rê</a> traverse la
+          <em>Douat</em> en barque et rencontre Apophis dans la douzième heure —
+          la plus dangereuse, juste avant l'aube. Le serpent, long de
+          kilomètres, tente d'avaler la barque solaire. C'est
+          <a href="#seth" class="internal-link">Seth</a> qui le repousse à la
+          lance. <a href="#thot" class="internal-link">Thot</a> prononce les
+          formules magiques qui le repoussent. Chaque aube est une victoire —
+          chaque coucher du soleil, une inquiétude cosmique renouvelée.
+        </p>
+
+        <p>
+          Dans les temples, lors de certains rites nocturnes, les prêtres
+          <strong>brûlaient des figurines en cire d'Apophis</strong>, les
+          maudissaient par son nom, les piétinaient et les crachaient dessus —
+          pratique de magie apotropaïque visant à affaiblir le serpent et à
+          garantir le lever du soleil. Ce rite était accompli dans les temples à
+          intervalles réguliers, surtout lors des tempêtes et des éclipses
+          solaires.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">
+            𓆙 L'ordre contre le chaos — Maât contre Isfet
+          </p>
+          <p>
+            La tension fondamentale de la cosmologie égyptienne oppose
+            <a href="#maat" class="internal-link"><strong>Maât</strong></a>
+            (l'ordre, la vérité, la justice) à <strong>Isfet</strong> (le chaos,
+            le mensonge, le désordre). Apophis est la personnification ultime
+            d'Isfet. Maintenir Maât — en accomplissant les rites, en rendant la
+            justice, en construisant les temples — est le devoir sacré de chaque
+            pharaon. Sans cet effort constant, Apophis triompherait et le soleil
+            ne se lèverait plus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════ BIBLIOGRAPHIE ════════════ -->
+    <section class="bibliography" id="bibliographie">
+      <div class="container">
+        <p class="bib-header">𓂀 Sources &amp; Lectures recommandées</p>
+        <ul class="bib-list">
+          <li class="bib-item">
+            <strong>Hornung, E.</strong> —
+            <em>Conceptions of God in Ancient Egypt: The One and the Many</em>,
+            Cornell University Press, 1982 (trad. fr.
+            <em>Les dieux de l'Égypte</em>, Flammarion, 1986). La référence
+            philosophique incontournable sur la nature des dieux égyptiens et le
+            concept de multiplicité des formes.
+          </li>
+          <li class="bib-item">
+            <strong>Dunand, F. &amp; Zivie-Coche, C.</strong> —
+            <em>Dieux et hommes en Égypte — 3000 av. J.-C. — 395 apr. J.-C.</em
+            >, Armand Colin, 2006. Synthèse accessible et scientifiquement
+            rigoureuse sur les structures du panthéon et des pratiques
+            cultuelles.
+          </li>
+          <li class="bib-item">
+            <strong>Assmann, J.</strong> —
+            <em
+              >Egyptian Solar Religion in the New Kingdom: Re, Amun and the
+              Crisis of Polytheism</em
+            >, Kegan Paul International, 1995. Analyse profonde de la théologie
+            solaire et de la montée en puissance d'Amon-Rê au Nouvel Empire.
+          </li>
+          <li class="bib-item">
+            <strong>Frankfort, H.</strong> —
+            <em>Ancient Egyptian Religion: An Interpretation</em>, Columbia
+            University Press, 1948. Classique fondateur de l'étude de la pensée
+            religieuse égyptienne — une phénoménologie de l'expérience divine en
+            Égypte.
+          </li>
+          <li class="bib-item">
+            <strong>Allen, J.P.</strong> —
+            <em>The Ancient Egyptian Pyramid Texts</em>, Society of Biblical
+            Literature, 2005. Traduction annotée des Textes des Pyramides,
+            corpus religieux le plus ancien au monde, source primaire des mythes
+            cosmogoniques.
+          </li>
+          <li class="bib-item">
+            <strong>Faulkner, R.O.</strong> —
+            <em
+              >The Egyptian Book of the Dead: The Book of Going Forth by Day</em
+            >, Chronicle Books, 1994. Traduction de référence du Livre des Morts
+            — principale source sur le jugement de l'âme, les dieux funéraires
+            et la géographie de l'au-delà.
+          </li>
+          <li class="bib-item">
+            <strong>Hart, G.</strong> —
+            <em>A Dictionary of Egyptian Gods and Goddesses</em>, Routledge,
+            1986 (rééd. 2005). Dictionnaire de référence sur plus de 200
+            divinités égyptiennes, avec iconographie et bibliographie par
+            entrée.
+          </li>
+          <li class="bib-item">
+            <strong>Pinch, G.</strong> —
+            <em
+              >Egyptian Mythology: A Guide to the Gods, Goddesses, and
+              Traditions of Ancient Egypt</em
+            >, Oxford University Press, 2002. Introduction académique et
+            accessible aux grands mythes et aux principales divinités, idéale
+            pour la vulgarisation.
+          </li>
+          <li class="bib-item">
+            <strong>Wilkinson, R.H.</strong> —
+            <em>The Complete Gods and Goddesses of Ancient Egypt</em>, Thames &
+            Hudson, 2003. Encyclopédie illustrée exhaustive couvrant l'ensemble
+            du panthéon, avec attributs, animaux sacrés, lieux de culte et
+            chronologie de chaque dieu.
+          </li>
+          <li class="bib-item">
+            <strong>Quirke, S.</strong> —
+            <em>The Cult of Ra: Sun Worship in Ancient Egypt</em>, Thames &
+            Hudson, 2001. Étude monographique sur la théologie solaire, de
+            l'Ancien Empire à la période ptolémaïque — la lumière comme
+            métaphore divine.
+          </li>
+          <li class="bib-item">
+            <strong>Meeks, D. &amp; Favard-Meeks, C.</strong> —
+            <em>La vie quotidienne des dieux égyptiens</em>, Hachette, 1993.
+            Approche originale et fascinante : comment les dieux « vivaient-ils
+            » selon les Égyptiens ? Leur alimentation, leurs vêtements, leurs
+            voyages rituels.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ════════════ FOOTER ════════════ -->
+    <footer>
+      <p class="footer-logo">𓂀 Égypte Éternelle</p>
+      <p class="footer-tagline">« Je suis hier et je connais demain. »</p>
+      <nav class="footer-nav">
+        <a href="#">Histoire</a>
+        <a href="#">Dieux &amp; Mythes</a>
+        <a href="#">Pyramides</a>
+        <a href="#">Vie quotidienne</a>
+        <a href="#">Dynasties</a>
+        <a href="#">Glossaire</a>
+      </nav>
+      <p
+        style="
+          font-size: 0.95rem;
+          opacity: 0.35;
+          font-family: &quot;Cinzel&quot;, serif;
+          letter-spacing: 0.2em;
+        "
+      >
+        DOSSIER THÉMATIQUE · ÉGYPTE ÉTERNELLE
+      </p>
+    </footer>
+
+    <script>
+      // Stars
+      const sc = document.getElementById("stars");
+      for (let i = 0; i < 130; i++) {
+        const s = document.createElement("div");
+        s.className = "star";
+        const sz = Math.random() * 2.5 + 0.5;
+        s.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random() * 100}%;top:${Math.random() * 100}%;--dur:${Math.random() * 4 + 2}s;--op:${Math.random() * 0.6 + 0.3};animation-delay:${Math.random() * 6}s;`;
+        sc.appendChild(s);
+      }
+
+      // Reveal observer
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }, i * 70);
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+
+      document
+        .querySelectorAll(
+          ".god-card,.pull-quote,.info-box,.col-card,.myth-step",
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(14px)";
+          el.style.transition = "opacity 0.55s ease,transform 0.55s ease";
+          obs.observe(el);
+        });
+
+      // TOC active link on scroll
+      const allSections = document.querySelectorAll("[id]");
+      const tocLinks = document.querySelectorAll(".toc-link");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        allSections.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 130) current = s.id;
+        });
+        tocLinks.forEach((link) => {
+          const nameEl = link.querySelector(".toc-name");
+          link.style.borderLeftColor = "transparent";
+          if (nameEl) nameEl.style.color = "";
+          if (link.getAttribute("href") === "#" + current) {
+            link.style.borderLeftColor = "var(--or)";
+            if (nameEl) nameEl.style.color = "var(--or-clair)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+

@@ -1,0 +1,1913 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pyramides & Monuments — Égypte Éternelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #e8bf6a;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --brun-papyrus: #6b4f2a;
+        --rouge-carnelian: #8b2e1a;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+        --turquoise: #2a8b7a;
+        --blanc-ivoire: #fbf5e6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.18) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 50% 0%,
+            rgba(26, 58, 92, 0.4) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            180deg,
+            #0d0b06 0%,
+            #1a1208 40%,
+            #2a1e0a 80%,
+            #3a2810 100%
+          );
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(200, 151, 58, 0.06) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(26, 58, 92, 0.1) 0%,
+            transparent 40%
+          );
+      }
+
+      /* Stars */
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        background: var(--or-clair);
+        border-radius: 50%;
+        animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        opacity: 0;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: var(--op, 0.7);
+        }
+      }
+
+      /* Pyramid silhouette SVG */
+      .hero-pyramid {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 900px;
+        opacity: 0.15;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        animation: fadeUp 1.4s ease forwards;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero Image Adjustment */
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0.35;
+      }
+
+      .hero-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(30%) contrast(110%);
+      }
+
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.5rem;
+        animation: fadeUp 1.4s 0.2s ease both;
+      }
+
+      .hero-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(3rem, calc(8vw + 0.2rem), 7.2rem);
+        font-weight: 900;
+        line-height: 1.05;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 80px rgba(200, 151, 58, 0.4),
+          0 2px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 0.5rem;
+        animation: fadeUp 1.4s 0.4s ease both;
+      }
+
+      .hero-title span {
+        display: block;
+        font-size: 0.45em;
+        color: var(--sable-fonce);
+        letter-spacing: 0.12em;
+        font-weight: 400;
+      }
+
+      .hero-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.2rem, calc(2vw + 0.2rem), 1.5rem);
+        color: var(--sable-fonce);
+        max-width: 600px;
+        margin: 1.5rem auto 2.5rem;
+        animation: fadeUp 1.4s 0.6s ease both;
+      }
+
+      .hero-divider {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 0 auto 2rem;
+        animation: fadeUp 1.4s 0.8s ease both;
+      }
+
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.4em;
+        color: var(--or);
+        opacity: 0.7;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+      .scroll-hint::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--or), transparent);
+      }
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ─── NAVIGATION ─── */
+      nav.main-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        background: rgba(26, 18, 8, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 0 2rem;
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+
+      .nav-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.2rem;
+        color: var(--or);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.4rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        font-family: "Cinzel", serif;
+        font-size: 0.87rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--or-clair);
+      }
+
+      /* ─── LAYOUT ─── */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ─── INTRO BAND ─── */
+      .intro-band {
+        background: linear-gradient(
+          135deg,
+          #1f160a 0%,
+          #2a1e0a 50%,
+          #1a1208 100%
+        );
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+
+      .intro-stat {
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .stat-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 3.7rem;
+        color: var(--or);
+        line-height: 1;
+        display: block;
+      }
+
+      .stat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        margin-top: 0.5rem;
+      }
+
+      .intro-divider-v {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--or),
+          transparent
+        );
+        align-self: stretch;
+      }
+
+      /* ─── SECTION MARKER ─── */
+      .section-marker {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .marker-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 5.2rem;
+        line-height: 1;
+        color: rgba(200, 151, 58, 0.12);
+        font-weight: 900;
+        flex-shrink: 0;
+      }
+
+      .marker-text {
+        flex: 1;
+      }
+
+      .marker-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+
+      .marker-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.6rem, calc(3vw + 0.2rem), 2.4rem);
+        color: var(--or-clair);
+        line-height: 1.2;
+      }
+
+      /* ─── MAIN ARTICLE SECTIONS ─── */
+      .article-section {
+        padding: 6rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        position: relative;
+      }
+
+      .article-section:nth-child(even) {
+        background: rgba(200, 151, 58, 0.02);
+      }
+
+      /* Hieroglyph decoration */
+      .hiero-deco {
+        position: absolute;
+        right: 2rem;
+        top: 4rem;
+        font-size: 4.2rem;
+        opacity: 0.06;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.5rem;
+        color: var(--or);
+        user-select: none;
+        font-family: serif;
+      }
+
+      /* ─── PULL QUOTE ─── */
+      .pull-quote {
+        border-left: 3px solid var(--or);
+        padding: 1.5rem 2rem;
+        margin: 3rem 0;
+        background: rgba(200, 151, 58, 0.04);
+        position: relative;
+      }
+
+      .pull-quote::before {
+        content: "❝";
+        position: absolute;
+        top: -1rem;
+        left: 1.5rem;
+        font-size: 3.2rem;
+        color: var(--or);
+        opacity: 0.4;
+        line-height: 1;
+      }
+
+      .pull-quote p {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: var(--or-clair);
+        line-height: 1.7;
+      }
+
+      .pull-quote cite {
+        display: block;
+        margin-top: 0.8rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+        color: var(--sable-fonce);
+        font-style: normal;
+      }
+
+      /* ─── PARAGRAPH ─── */
+      .article-section p {
+        margin-bottom: 1.5rem;
+        color: var(--sable);
+      }
+
+      .article-section h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.3rem;
+        color: var(--or-clair);
+        letter-spacing: 0.12em;
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+
+      /* ─── INTERNAL LINK ─── */
+      .internal-link {
+        color: var(--or-clair);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--or);
+        transition: all 0.2s;
+        font-style: italic;
+      }
+      .internal-link:hover {
+        color: var(--or);
+        border-bottom-style: solid;
+      }
+
+      /* ─── INFO BOX ─── */
+      .info-box {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 58, 92, 0.15),
+          rgba(26, 58, 92, 0.05)
+        );
+        border: 1px solid rgba(74, 127, 168, 0.25);
+        border-left: 3px solid var(--bleu-clair);
+        padding: 1.5rem 2rem;
+        margin: 2.5rem 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .info-box-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--bleu-clair);
+        margin-bottom: 0.8rem;
+      }
+
+      .info-box p {
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+
+      /* ─── DATA TABLE ─── */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        font-size: 1.1rem;
+      }
+
+      .data-table th {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--or);
+        text-align: left;
+        padding: 0.8rem 1rem;
+        border-bottom: 2px solid rgba(200, 151, 58, 0.3);
+      }
+
+      .data-table td {
+        padding: 0.7rem 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        color: var(--sable);
+        vertical-align: top;
+      }
+
+      .data-table tr:hover td {
+        background: rgba(200, 151, 58, 0.04);
+      }
+
+      /* ─── MONUMENT CARDS ─── */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        margin: 3rem 0;
+      }
+
+      .monument-card {
+        background: linear-gradient(
+          145deg,
+          rgba(42, 30, 10, 0.8),
+          rgba(26, 18, 8, 0.9)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
+        cursor: default;
+      }
+
+      .monument-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .monument-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(200, 151, 58, 0.4);
+      }
+      .monument-card:hover::before {
+        opacity: 1;
+      }
+
+      .card-icon {
+        font-size: 2.7rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .card-name {
+        font-family: "Cinzel", serif;
+        font-size: 1.2rem;
+        color: var(--or-clair);
+        margin-bottom: 0.3rem;
+      }
+
+      .card-period {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        color: var(--or);
+        opacity: 0.7;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .card-desc {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        line-height: 1.7;
+        margin-bottom: 0 !important;
+      }
+
+      /* ─── TIMELINE ─── */
+      .timeline {
+        position: relative;
+        padding: 1rem 0;
+        margin: 3rem 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 90px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--or) 20%,
+          var(--or) 80%,
+          transparent
+        );
+      }
+
+      .timeline-item {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+        align-items: flex-start;
+        animation: fadeInLeft 0.6s ease both;
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .timeline-date {
+        width: 80px;
+        flex-shrink: 0;
+        text-align: right;
+        font-family: "Cinzel", serif;
+        font-size: 0.92rem;
+        color: var(--or);
+        padding-top: 0.2rem;
+        letter-spacing: 0.05em;
+      }
+
+      .timeline-dot {
+        width: 14px;
+        height: 14px;
+        background: var(--or);
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 0.3rem;
+        box-shadow: 0 0 12px rgba(200, 151, 58, 0.5);
+        position: relative;
+        z-index: 1;
+      }
+
+      .timeline-content {
+        flex: 1;
+        padding-bottom: 0.5rem;
+      }
+
+      .timeline-event {
+        font-family: "Cinzel", serif;
+        font-size: 1.15rem;
+        color: var(--or-clair);
+        margin-bottom: 0.3rem;
+      }
+
+      .timeline-detail {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+
+      /* ─── FULL-WIDTH BAND QUOTE ─── */
+      .band-quote {
+        background: linear-gradient(135deg, #0d1a2e 0%, #1a0d08 100%);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .band-quote::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.015) 0px,
+          rgba(200, 151, 58, 0.015) 1px,
+          transparent 1px,
+          transparent 20px
+        );
+      }
+
+      .band-quote blockquote {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.4rem, calc(3vw + 0.2rem), 2.1rem);
+        color: var(--or-clair);
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.5;
+      }
+
+      .band-quote footer {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        color: var(--sable-fonce);
+        text-transform: uppercase;
+      }
+
+      /* ─── BIBLIOGRAPHIE ─── */
+      .bibliography {
+        background: linear-gradient(
+          180deg,
+          rgba(26, 18, 8, 0) 0%,
+          rgba(15, 10, 3, 0.8) 100%
+        );
+        padding: 5rem 0;
+      }
+
+      .bib-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+
+      .bib-list {
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .bib-item {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        padding-left: 1.5rem;
+        position: relative;
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+        padding: 0.5rem 0 0.5rem 1.2rem;
+        transition: border-color 0.2s;
+      }
+      .bib-item:hover {
+        border-left-color: var(--or);
+      }
+
+      .bib-item strong {
+        color: var(--sable);
+        font-style: italic;
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: #0a0804;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+
+      .footer-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.15rem;
+      }
+
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      .footer-nav a:hover {
+        opacity: 1;
+      }
+
+      /* ─── UTILS ─── */
+      /* ─── IMAGES & FIGURES ─── */
+      .article-figure {
+        margin: 3rem 0;
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(200, 151, 58, 0.2);
+      }
+
+      .article-figure img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+
+      .article-figure:hover img {
+        transform: scale(1.03);
+      }
+
+      .image-caption {
+        background: rgba(26, 18, 8, 0.9);
+        padding: 1rem 1.5rem;
+        border-top: 2px solid var(--or);
+        font-family: "EB Garamond", serif;
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+        font-style: italic;
+        line-height: 1.5;
+      }
+
+      .image-caption strong {
+        color: var(--or-clair);
+        font-family: "Cinzel", serif;
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        font-style: normal;
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .image-grid .article-figure {
+        margin: 0;
+      }
+
+      /* Image flottante */
+      .image-float-right {
+        float: right;
+        width: 45%;
+        margin: 0.5rem 0 1.5rem 2rem;
+      }
+
+      .image-float-left {
+        float: left;
+        width: 45%;
+        margin: 0.5rem 2rem 1.5rem 0;
+      }
+
+      @media (max-width: 768px) {
+        .image-float-right,
+        .image-float-left {
+          float: none;
+          width: 100%;
+          margin: 2rem 0;
+        }
+      }
+
+      /* Hero Image Adjustment */
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0.3;
+      }
+
+      .hero-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: sepia(30%) contrast(110%);
+      }
+
+      /* ─── UTILS ─── */
+      .text-or {
+        color: var(--or-clair);
+      }
+      .em {
+        font-style: italic;
+      }
+      strong {
+        color: var(--or-clair);
+        font-weight: 600;
+      }
+
+      /* ─── CARD IMAGE ─── */
+      .card-image {
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(200, 151, 58, 0.3);
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .monument-card:hover .card-image img {
+        transform: scale(1.1);
+      }
+      @media (max-width: 700px) {
+        .intro-grid {
+          grid-template-columns: 1fr;
+        }
+        .intro-divider-v {
+          display: none;
+        }
+        .nav-links {
+          display: none;
+        }
+        .timeline::before {
+          left: 60px;
+        }
+        .timeline-date {
+          width: 60px;
+          font-size: 0.8rem;
+        }
+        .hiero-deco {
+          display: none;
+        }
+      }
+    </style>
+    <style>
+      body { padding-top: 64px; }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+    <section class="hero" id="accueil">
+      <div class="hero-background">
+        <img
+          src="images/images/egypte.jpg"
+          alt="Les Grandes Pyramides au coucher du soleil"
+          loading="eager"
+        />
+      </div>
+      <div class="stars" id="stars"></div>
+
+      <!-- SVG Pyramid silhouette -->
+      <svg
+        class="hero-pyramid"
+        viewBox="0 0 900 320"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polygon
+          points="450,20 820,300 80,300"
+          fill="rgba(200,151,58,0.12)"
+          stroke="rgba(200,151,58,0.25)"
+          stroke-width="1.5"
+        />
+        <polygon
+          points="160,300 250,180 340,300"
+          fill="rgba(200,151,58,0.07)"
+          stroke="rgba(200,151,58,0.15)"
+          stroke-width="1"
+        />
+        <polygon
+          points="600,300 680,200 760,300"
+          fill="rgba(200,151,58,0.05)"
+          stroke="rgba(200,151,58,0.12)"
+          stroke-width="1"
+        />
+        <line
+          x1="80"
+          y1="300"
+          x2="820"
+          y2="300"
+          stroke="rgba(200,151,58,0.2)"
+          stroke-width="1.5"
+        />
+      </svg>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Égypte Éternelle · Dossier Thématique</p>
+        <h1 class="hero-title">
+          Pyramides &amp; Monuments
+          <span>De la pierre à l'éternité</span>
+        </h1>
+        <p class="hero-subtitle">
+          Plongée au cœur des chefs-d'œuvre architecturaux qui ont défié les
+          millénaires et transformé le désert en jardin des dieux
+        </p>
+        <div class="hero-divider"></div>
+      </div>
+
+      <div class="scroll-hint">Défiler</div>
+    </section>
+
+    <!-- ════════════ NAV ════════════ -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="#accueil" class="nav-logo">𓂀 Égypte Éternelle</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#naissance">Naissance</a></li>
+          <li><a href="#gizeh">Gizeh</a></li>
+          <li><a href="#temples">Temples</a></li>
+          <li><a href="#techniques">Techniques</a></li>
+          <li><a href="#chronologie">Chronologie</a></li>
+          <li><a href="#bibliographie">Sources</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+     INTRO STATS
+═══════════════════════════════════════════ -->
+    <div class="intro-band">
+      <div class="container-wide">
+        <div class="intro-grid">
+          <div class="intro-stat">
+            <span class="stat-number">4 500</span>
+            <span class="stat-label">Ans de construction pyramidale</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">138</span>
+            <span class="stat-label">Pyramides recensées en Égypte</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 1 — NAISSANCE
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="naissance">
+      <div class="hiero-deco">𓇳𓏤𓆣𓂀𓊹𓌀𓁹</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">01</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Origines · ~2650 av. J.-C.</p>
+            <h2 class="marker-title">La naissance d'une forme éternelle</h2>
+          </div>
+        </div>
+
+        <figure class="article-figure image-float-right">
+          <img
+            src="images/images/pyramide-à-degret.jpg"
+            alt="Pyramide à degrés de Djéser à Saqqarah"
+          />
+          <figcaption class="image-caption">
+            <strong>Saqqarah : La Première Pyramide</strong>
+            La pyramide à degrés de Djéser, conçue par Imhotep, marque le
+            passage de la brique de terre à la pierre éternelle.
+          </figcaption>
+        </figure>
+
+        <p>
+          Avant la pyramide, il y avait le
+          <a href="#mastaba" class="internal-link">mastaba</a> — ce banc de
+          briques crues, humble et rectangulaire, sous lequel les dignitaires de
+          l'Égypte prédynastique attendaient leur résurrection. C'est d'un
+          empilement de mastabas que jaillit, vers 2650 avant notre ère, la
+          première révolution architecturale de l'humanité : la pyramide à
+          degrés de <strong>Djéser</strong>, à Saqqarah.
+        </p>
+
+        <p>
+          Son architecte, <strong>Imhotep</strong>, est l'un des premiers génies
+          nommément connus de l'histoire. Médecin, astronome, scribe et
+          bâtisseur, il concevra pour le pharaon Djéser une tombe de six gradins
+          atteignant 62 mètres de hauteur — la première grande construction en
+          pierre taillée au monde. Les Égyptiens le déifieront des siècles plus
+          tard : voilà ce que signifie bâtir pour l'éternité.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            La pyramide ne fut jamais seulement une tombe. Elle était une
+            machine cosmique, un vecteur d'élévation reliant la terre au soleil,
+            le roi aux étoiles impérissables.
+          </p>
+          <cite>— Jan Assmann, <em>La mémoire culturelle</em>, 1992</cite>
+        </div>
+
+        <p>
+          La forme pyramidale elle-même est lourde de sens. Elle évoque le
+          <strong>ben-ben</strong>, la pierre primordiale conique sur laquelle,
+          selon la cosmologie héliopolitaine, le dieu Atoum s'était manifesté au
+          matin du premier jour. Construire une pyramide, c'était inscrire dans
+          le paysage la mémoire de la création. C'était aussi aligner le pharaon
+          défunt avec <a href="#osiris" class="internal-link">Osiris</a>, dieu
+          des morts et de la résurrection, dont la justice — la
+          <a href="#maat" class="internal-link">Maât</a> — gouvernait l'univers
+          tout entier.
+        </p>
+
+        <h3>De Meïdoum à Dahchour : les pyramides ratées</h3>
+
+        <div class="image-grid">
+          <figure class="article-figure">
+            <img src="images/images/meidoum.webp" alt="Pyramide de Meïdoum" />
+            <figcaption class="image-caption">
+              <strong>Meïdoum</strong>
+              Une tentative ambitieuse qui s'est soldée par un effondrement
+              partiel, révélant la nécessité d'un angle moins raide.
+            </figcaption>
+          </figure>
+          <figure class="article-figure">
+            <img
+              src="images/images/rhomboidale.webp"
+              alt="Pyramide Rhomboïdale de Dahchour"
+            />
+            <figcaption class="image-caption">
+              <strong>Dahchour : La Rhomboïdale</strong>
+              Son profil cassé unique résulte d'un changement d'angle d'urgence
+              en cours de construction.
+            </figcaption>
+          </figure>
+        </div>
+
+        <p>
+          L'évolution vers la forme canonique ne fut pas sans accidents. La
+          pyramide de <strong>Meïdoum</strong>, attribuée à Snéfrou (père de
+          Khéops), s'effondra partiellement durant l'Antiquité — probablement
+          pendant ou juste après sa construction — faute d'un angle de pente
+          trop ambitieux. À Dahchour, la même leçon fut tirée en direct : la
+          <strong>Pyramide rhomboïdale</strong> de Snéfrou vit son angle corrigé
+          à mi-hauteur, passant de 54° à 43°, donnant à ce monument unique son
+          profil « cassé » caractéristique. Snéfrou aurait ainsi construit,
+          seul, plus de volume de pierre que son fils Khéops — testament d'un
+          règne de recherches architecturales acharnées.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓂀 Le saviez-vous ?</p>
+          <p>
+            Imhotep fut le premier architecte connu de l'histoire à avoir
+            travaillé exclusivement avec de la pierre taillée, abandonnant les
+            briques de boue séchée utilisées jusqu'alors. Son nom signifie
+            littéralement <em>« Celui qui vient en paix »</em>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 2 — GIZEH
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="gizeh">
+      <div class="hiero-deco">𓇋𓅓𓋴𓏏𓇳𓆑𓀭</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">02</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Plateau de Gizeh · ~2560–2510 av. J.-C.
+            </p>
+            <h2 class="marker-title">
+              Le plateau de Gizeh, cœur de pierre du monde
+            </h2>
+          </div>
+        </div>
+
+        <figure class="article-figure">
+          <img
+            src="images/images/vue-pyramides.jpg"
+            alt="Panorama du Plateau de Gizeh"
+          />
+          <figcaption class="image-caption">
+            <strong>L'Horizon de Khéops</strong>
+            Le plateau de Gizeh regroupe les trois plus grandes pyramides de
+            l'Égypte antique, symboles de la puissance de la IVe dynastie.
+          </figcaption>
+        </figure>
+
+        <p>
+          Aucun site dans l'histoire de l'humanité ne porte autant de mythes, de
+          mensonges et de vérités enchevêtrées que le plateau de Gizeh. Dominant
+          la rive occidentale du Nil à la lisière du désert libyque, il abrite
+          trois des monuments les plus photographiés, les plus mesurés, les plus
+          rêvés de notre civilisation : les pyramides de
+          <strong>Khéops</strong>, <strong>Khéphren</strong> et
+          <strong>Mykérinos</strong>.
+        </p>
+
+        <h3>Khéops : la Grande Pyramide</h3>
+
+        <p>
+          Bâtie vers 2560 avant notre ère pour le pharaon
+          <strong>Khéops</strong> (Khnoum-Khoufoui de son vrai nom), la Grande
+          Pyramide est, pour les savants de la période hellénistique, la
+          première des Sept Merveilles du monde — et la seule à avoir survécu.
+          Sa hauteur originelle : <strong>146,6 mètres</strong>. Son emprise au
+          sol : 230 mètres de côté, avec une précision d'orientation au nord
+          magnétique de l'ordre de 3 minutes d'arc. Elle renferme environ
+          <strong>2,3 millions de blocs</strong> de calcaire et de granit pesant
+          en moyenne 2,5 tonnes, certains blocs de granit dans la chambre
+          funéraire atteignant 80 tonnes.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Monument</th>
+              <th>Pharaon</th>
+              <th>Période</th>
+              <th>Hauteur orig.</th>
+              <th>Base</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Grande Pyramide</strong></td>
+              <td>Khéops</td>
+              <td>~2560 av. J.-C.</td>
+              <td>146,6 m</td>
+              <td>230 m</td>
+            </tr>
+            <tr>
+              <td>Pyramide de Khéphren</td>
+              <td>Khéphren</td>
+              <td>~2530 av. J.-C.</td>
+              <td>143,5 m</td>
+              <td>215 m</td>
+            </tr>
+            <tr>
+              <td>Pyramide de Mykérinos</td>
+              <td>Mykérinos</td>
+              <td>~2510 av. J.-C.</td>
+              <td>65 m</td>
+              <td>105 m</td>
+            </tr>
+            <tr>
+              <td><strong>Grand Sphinx</strong></td>
+              <td>Khéphren (?)</td>
+              <td>~2530 av. J.-C.</td>
+              <td>20 m</td>
+              <td>73 m (longueur)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Le Grand Sphinx : gardien de l'horizon</h3>
+
+        <p>
+          Taillé directement dans le roc calcaire, le
+          <strong>Grand Sphinx</strong> (Hor-em-Akhet, « Horus à l'horizon »)
+          mesure 73 mètres de long pour 20 mètres de haut. Il représente un lion
+          au corps massif couronné d'un visage royal — probablement Khéphren,
+          bien que la question reste débattue. Son regard fixe l'est, vers le
+          soleil levant, symbolisant la renaissance quotidienne du pharaon
+          divinisé en <a href="#re" class="internal-link">Rê-Horakhty</a>.
+        </p>
+
+        <p>
+          L'une des énigmes majeures du site est la <em>Stèle du Songe</em>,
+          érigée par <strong>Thoutmôsis IV</strong> entre les pattes du Sphinx.
+          Le jeune prince, endormi à l'ombre du colosse lors d'une chasse,
+          aurait reçu en vision la promesse du trône en échange de la
+          restauration de la statue, ensablée jusqu'au cou. Ce texte est la
+          première mention connue du Sphinx sous le nom d'<em>Hor-em-Akhet</em>.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Les projections en lumière muon de 2023 ont révélé des anomalies de
+            densité dans la chambre de la reine de la Grande Pyramide, laissant
+            entrevoir peut-être une salle inconnue.
+          </p>
+          <cite>— Projet ScanPyramids / Université de Nagoya, 2023</cite>
+        </div>
+
+        <div class="image-grid">
+          <figure class="article-figure">
+            <img
+              src="images/images/sphynx.png"
+              alt="Le Grand Sphinx de Gizeh"
+            />
+            <figcaption class="image-caption">
+              <strong>Le Gardien de l'Horizon</strong>
+              Le Sphinx, taillé dans la roche même du plateau, veille sur les
+              nécropoles royales depuis plus de 4 500 ans.
+            </figcaption>
+          </figure>
+          <figure class="article-figure">
+            <img
+              src="images/images/960px-Pyramid_of_Menkaure_(50035374516).jpg"
+              alt="Pyramide de Mykérinos"
+            />
+            <figcaption class="image-caption">
+              <strong>Mykérinos</strong>
+              La plus petite des trois grandes pyramides de Gizeh,
+              reconnaissable à son revêtement de granit à sa base.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 3 — TEMPLES
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="temples">
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">03</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Temples & Sanctuaires · ~1550–1070 av. J.-C.
+            </p>
+            <h2 class="marker-title">
+              Les temples : demeures des dieux vivants
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          Si les pyramides sont les monuments de la mort et du passage, les
+          <strong>temples</strong> sont ceux de la vie divine permanente.
+          L'Égypte pharaonique a élevé certains des sanctuaires les plus
+          grandiose jamais construits, du delta du Nil jusqu'en Nubie. Ils ne
+          sont pas des lieux de culte collectif au sens moderne — les fidèles
+          n'y pénètrent pas — mais des palais cosmiques où les prêtres, délégués
+          du roi, nourrissent, habillent et divertissent quotidiennement les
+          statues des dieux.
+        </p>
+
+        <div class="cards-grid">
+          <div class="monument-card">
+            <div class="card-image">
+              <img
+                src="images/images/temple-de-Karnak.jpg"
+                alt="Temple de Karnak"
+              />
+            </div>
+            <h3 class="card-name">Karnak (Ipet-Sout)</h3>
+            <p class="card-period">Nouvel Empire · ~1550–1070 av. J.-C.</p>
+            <p class="card-desc">
+              Le plus grand complexe religieux jamais construit, agrandi pendant
+              2 000 ans. La grande salle hypostyle abrite 134 colonnes
+              gigantesques, certaines de 21 mètres de hauteur. Consacré à
+              <a href="#amon" class="internal-link">Amon-Rê</a>, roi des dieux.
+            </p>
+          </div>
+          <div class="monument-card">
+            <div class="card-image">
+              <img
+                src="images/images/carousel-temple.jpg"
+                alt="Temple de Louxor"
+              />
+            </div>
+            <h3 class="card-name">Louxor (Ipet-Resyt)</h3>
+            <p class="card-period">Aménophis III · ~1380 av. J.-C.</p>
+            <p class="card-desc">
+              Relié à Karnak par l'allée des Sphinx longue de 3 km, ce temple
+              fut le cœur de la fête d'Opet, célébration annuelle de la royauté
+              divine et de la fertilité du Nil.
+            </p>
+          </div>
+          <div class="monument-card">
+            <div class="card-image">
+              <img src="images/images/abu-simbel.jpg" alt="Abou Simbel" />
+            </div>
+            <h3 class="card-name">Abou Simbel</h3>
+            <p class="card-period">Ramsès II · ~1264 av. J.-C.</p>
+            <p class="card-desc">
+              Deux temples rupestres creusés dans la falaise nubienne. Deux fois
+              par an — aux équinoxes — un rayon de lumière illumine exactement
+              les statues de Ramsès, Amon et Rê, laissant Ptah (dieu des
+              ténèbres) dans l'ombre.
+            </p>
+          </div>
+          <div class="monument-card">
+            <div class="card-image">
+              <img
+                src="images/images/vue-de-l-ancien-temple-et-de-la-tombe-de-l-epoque-egyptienne.jpg"
+                alt="Deir el-Bahari"
+              />
+            </div>
+            <h3 class="card-name">Deir el-Bahari</h3>
+            <p class="card-period">Hatchepsout · ~1479 av. J.-C.</p>
+            <p class="card-desc">
+              Temple funéraire de la grande pharaonne
+              <strong>Hatchepsout</strong>, niché dans la falaise thébaine. Son
+              architecture en terrasses superposées, aux colonnades élancées,
+              reste unique dans l'art égyptien.
+            </p>
+          </div>
+          <div class="monument-card">
+            <div class="card-image">
+              <img
+                src="images/images/reconstitution_temple_mentouhotep_II.jpg"
+                alt="Temple d'Edfou"
+              />
+            </div>
+            <h3 class="card-name">Edfou</h3>
+            <p class="card-period">Ptolémées · 237–57 av. J.-C.</p>
+            <p class="card-desc">
+              Consacré à <a href="#horus" class="internal-link">Horus</a>, ce
+              temple ptolémaïque est le mieux conservé d'Égypte. Ses murs
+              intacts nous livrent une encyclopédie des rites, des mythes et de
+              l'astronomie sacrée des derniers siècles pharaoniques.
+            </p>
+          </div>
+          <div class="monument-card">
+            <div class="card-image">
+              <img
+                src="images/images/medinet_habu-MAX-w1000h600.jpg"
+                alt="Temple de Philae"
+              />
+            </div>
+            <h3 class="card-name">Philae</h3>
+            <p class="card-period">Ptolémées / époque romaine</p>
+            <p class="card-desc">
+              Sanctuaire d'<a href="#isis" class="internal-link">Isis</a> sur
+              une île du Nil, démonté pierre par pierre entre 1972 et 1980 pour
+              le sauver des eaux du lac Nasser. Chef-d'œuvre de la coopération
+              internationale pour le patrimoine.
+            </p>
+          </div>
+        </div>
+
+        <h3>L'organisation du temple égyptien</h3>
+
+        <p>
+          Tout grand temple obéit à une
+          <strong>topographie symbolique</strong> précise. On y pénètre par un
+          pylône monumental — deux tours trapézoïdales flanquant l'entrée,
+          héritage des forteresses primitives du désert. Devant lui se
+          dressaient des obélisques, paires de doigts de pierre pointés vers le
+          ciel solaire. La cour à ciel ouvert, accessible aux notables, précède
+          la <em>salle hypostyle</em>, forêt de colonnes évoquant les marais
+          primordiaux du delta, avant le saint des saints où reposait la barque
+          sacrée portant la statue divine.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓌀 Architecture sacrée</p>
+          <p>
+            Les temples égyptiens étaient orientés de façon astronomique : l'axe
+            principal pointait souvent vers le lever ou coucher du soleil à une
+            date rituelle précise (solstice, équinoxe, fête principale).
+            L'architecture était ainsi une horloge cosmique autant qu'un lieu de
+            culte.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     BAND QUOTE
+═══════════════════════════════════════════ -->
+    <div class="band-quote">
+      <blockquote>
+        « L'Égypte est un don du Nil — mais ses monuments sont un don à
+        l'éternité. »
+      </blockquote>
+      <footer>
+        — Hérodote, <em>Histoires</em>, Livre II, v. 450 av. J.-C. (paraphrase)
+      </footer>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 4 — TECHNIQUES
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="techniques">
+      <div class="hiero-deco">𓊃𓐍𓌀𓎛𓇋𓅓</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">04</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Ingénierie · Un défi millénaire</p>
+            <h2 class="marker-title">Comment bâtissait-on les pyramides ?</h2>
+          </div>
+        </div>
+
+        <p>
+          <figure class="article-figure image-float-left">
+            <img
+              src="images/images/Gemini_Generated_Image_nl0c4nnl0c4nnl0c.png"
+              alt="Chantier de construction d'une pyramide"
+            />
+            <figcaption class="image-caption">
+              <strong>Chantier Royal</strong>
+              La logistique pharaonique mobilisait des milliers d'ouvriers
+              libres, des carrières au sommet des monuments.
+            </figcaption>
+          </figure>
+        </p>
+
+        <p>
+          C'est la question que tout visiteur se pose devant la Grande Pyramide.
+          Comment, sans roue, sans fer, sans poulie, des hommes ont-ils pu
+          déplacer des millions de blocs pesant chacun plusieurs tonnes ? La
+          réponse, progressive, est moins mystérieuse que les théories
+          pseudoscientifiques voudraient le faire croire — mais bien plus
+          impressionnante.
+        </p>
+
+        <h3>Les bâtisseurs : pas des esclaves</h3>
+
+        <p>
+          Une idée fausse tenace, véhiculée par Hérodote et amplifiée par le
+          cinéma hollywoodien, peint les pyramides comme des œuvres d'un
+          esclavage de masse. Les fouilles menées depuis les années 1990 sur le
+          site de <strong>Heit el-Ghourab</strong> (la « ville des bâtisseurs »)
+          par Mark Lehner et Zahi Hawass ont définitivement réfuté cette vision.
+          Les ouvriers étaient des
+          <strong>travailleurs permanents et temporaires libres</strong>,
+          nourris, soignés, logés et enterrés avec soin. Les papyrus de
+          <strong>Merer</strong> — découverts en 2013 à Ouadi el-Jarf et datant
+          du règne de Khéops — constituent le journal de bord le plus ancien
+          jamais retrouvé : ils décrivent le transport par bateau de blocs de
+          calcaire depuis les carrières de Toura jusqu'au chantier de Gizeh.
+        </p>
+
+        <h3>Rampes, lubrifiants et organisation</h3>
+
+        <p>
+          Le débat sur les rampes de construction n'est pas clos, mais plusieurs
+          hypothèses coexistent avec des arguments solides. La
+          <strong>rampe frontale unique</strong>, étudiée par l'ingénieur Franz
+          Löhner, impliquerait une rampe dont la longueur aurait dépassé un
+          kilomètre pour la Grande Pyramide — logistiquement problématique. La
+          théorie de la <strong>rampe hélicoïdale</strong> (spiralant autour de
+          la pyramide) est défendue par Jean-Pierre Houdin, architecte français
+          qui a modélisé en 3D l'intérieur de la pyramide et identifié une rampe
+          interne pour les derniers étages.
+        </p>
+
+        <p>
+          Un bas-relief de la tombe de <strong>Djehoutihotep</strong> (vers 1880
+          av. J.-C.) montre explicitement des équipes versant du lait ou de
+          l'eau devant un traîneau pour <strong>lubrifier le sol</strong> lors
+          du transport d'une statue colossale. Des simulations modernes ont
+          montré que cette simple technique permettait de réduire de moitié la
+          force de traction nécessaire.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Les papyrus de Merer — découverts en 2013 — constituent le plus
+            ancien journal de chantier de l'humanité. Ils décrivent avec
+            précision la logistique du transport des blocs destinés à Gizeh.
+          </p>
+          <cite
+            >— Pierre Tallet, <em>Les papyrus de la Mer Rouge</em>, 2017</cite
+          >
+        </div>
+
+        <h3>Précision et métrologie</h3>
+
+        <p>
+          <figure class="article-figure image-float-right" style="width: 35%">
+            <img
+              src="images/images/texte-ecriture-pyramide.webp"
+              alt="Hiéroglyphes et mesures"
+            />
+            <figcaption class="image-caption">
+              <strong>L'Esprit des Nombres</strong>
+              La précision des pyramides repose sur une maîtrise exceptionnelle
+              de la géométrie et de l'astronomie.
+            </figcaption>
+          </figure>
+        </p>
+
+        <p>
+          Les Égyptiens utilisaient une unité de mesure fondamentale : la
+          <strong>coudée royale</strong> (environ 52,5 cm), divisée en 7 paumes
+          et 28 doigts. Des niveaux à eau, des équerres, des cordeaux et des
+          plombs permettaient d'obtenir les remarquables précisions relevées à
+          Gizeh : les quatre côtés de la Grande Pyramide diffèrent de moins de
+          <strong>5 centimètres</strong> entre eux, et son orientation cardinale
+          atteint une précision de 3 à 4 minutes d'arc. Comment ? Probablement
+          par l'observation des étoiles circumpolaires — celles qui ne se
+          couchent jamais — pour déterminer le nord vrai avec une précision
+          remarquable.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓇳 Chiffres clés du chantier de Gizeh</p>
+          <p>
+            Selon les estimations actuelles : environ
+            <strong>20 000 à 30 000 ouvriers</strong> sur le site (dont une
+            équipe permanente de 5 000), une durée de construction de 20 à 30
+            ans pour la Grande Pyramide, et un volume total d'environ
+            <strong>2,6 millions de mètres cubes</strong> de pierre taillée.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     SECTION 5 — CHRONOLOGIE
+═══════════════════════════════════════════ -->
+    <section class="article-section" id="chronologie">
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">05</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Frise chronologique</p>
+            <h2 class="marker-title">
+              3 000 ans de pierre : chronologie des grands monuments
+            </h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">~2650<br />av. J.-C.</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="timeline-event">Pyramide de Djéser — Saqqarah</h4>
+              <p class="timeline-detail">
+                Première grande construction en pierre taillée du monde, conçue
+                par Imhotep. Six degrés, 62 m de hauteur.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">~2600<br />av. J.-C.</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="timeline-event">
+                Pyramides de Snéfrou — Meïdoum & Dahchour
+              </h4>
+              <p class="timeline-detail">
+                Transition vers la forme pyramidale lisse. La pyramide
+                rhomboïdale témoigne des tâtonnements audacieux de l'ingénierie
+                pharaonique.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">~2560<br />av. J.-C.</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="timeline-event">Grande Pyramide de Khéops — Gizeh</h4>
+              <p class="timeline-detail">
+                Seule merveille du monde antique encore debout. 146,6 m, 2,3
+                millions de blocs. Apogée de l'architecture pyramidale.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">~1479<br />av. J.-C.</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="timeline-event">
+                Temple funéraire d'Hatchepsout — Deir el-Bahari
+              </h4>
+              <p class="timeline-detail">
+                Chef-d'œuvre architectural de la seule grande pharaonne
+                régnante, délibérément effacée de l'histoire par son successeur
+                Thoutmôsis III.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">~1380<br />av. J.-C.</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="timeline-event">Temple de Louxor — Aménophis III</h4>
+              <p class="timeline-detail">
+                Agrandi par Ramsès II, prolongé par l'allée des sphinges jusqu'à
+                Karnak. Lieu de la fête d'Opet, mystère de la royauté divine.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">~1264<br />av. J.-C.</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="timeline-event">Abou Simbel — Ramsès II</h4>
+              <p class="timeline-detail">
+                Deux temples taillés dans la roche nubienne. Monument de
+                propagande royale et chef-d'œuvre de l'astronomie sacrée.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-date">~237<br />av. J.-C.</span>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="timeline-event">Temple d'Edfou — Ptolémée III</h4>
+              <p class="timeline-detail">
+                Construction sur 180 ans. Le temple le mieux conservé d'Égypte,
+                dédié à Horus. Dernier grand temple de tradition pharaonique.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     BIBLIOGRAPHIE
+═══════════════════════════════════════════ -->
+    <section class="bibliography" id="bibliographie">
+      <div class="container">
+        <p class="bib-header">𓂀 Sources &amp; Lectures recommandées</p>
+        <ul class="bib-list">
+          <li class="bib-item">
+            <strong>Hawass, Z. &amp; Lehner, M.</strong> —
+            <em>Giza and the Pyramids</em>, Thames &amp; Hudson, 2017. Référence
+            absolue, fruit de 30 ans de fouilles sur le site.
+          </li>
+          <li class="bib-item">
+            <strong>Tallet, P.</strong> —
+            <em>Les papyrus de la mer Rouge I. Le « journal de Merer »</em>,
+            MIFAO 136, IFAO, 2017. Découverte majeure du XXIe siècle sur la
+            logistique de Gizeh.
+          </li>
+          <li class="bib-item">
+            <strong>Assmann, J.</strong> —
+            <em>Mort et au-delà dans l'Égypte ancienne</em>, Éditions du Rocher,
+            2003. Analyse des fonctions symboliques et cosmologiques de
+            l'architecture funéraire.
+          </li>
+          <li class="bib-item">
+            <strong>Arnold, D.</strong> —
+            <em>Building in Egypt: Pharaonic Stone Masonry</em>, Oxford
+            University Press, 1991. Étude technique incontournable sur les
+            matériaux, outils et méthodes de construction.
+          </li>
+          <li class="bib-item">
+            <strong>Verner, M.</strong> —
+            <em
+              >The Pyramids: The Mystery, Culture and Science of Egypt's Great
+              Monuments</em
+            >, Grove Press, 2001. Panorama exhaustif de toutes les pyramides
+            d'Égypte.
+          </li>
+          <li class="bib-item">
+            <strong>Barguet, P.</strong> —
+            <em>Le temple d'Amon-Rê à Karnak</em>, IFAO, 1962. Étude classique
+            du complexe de Karnak, toujours fondamentale.
+          </li>
+          <li class="bib-item">
+            <strong>ScanPyramids</strong> — Rapports de la mission
+            internationale de muographie des pyramides, 2016–2023.
+            <em>scanpyramids.org</em> — Résultats des scans par muons révélant
+            des anomalies dans la Grande Pyramide.
+          </li>
+          <li class="bib-item">
+            <strong>Lehner, M.</strong> — <em>The Complete Pyramids</em>, Thames
+            &amp; Hudson, 1997. La bible illustrée de l'architecture pyramidale,
+            site par site.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+    <footer>
+      <p class="footer-logo">𓂀 Égypte Éternelle</p>
+      <p class="footer-tagline">« Le temps a peur des pyramides. »</p>
+      <nav class="footer-nav">
+        <a href="#">Histoire</a>
+        <a href="#">Dieux &amp; Mythes</a>
+        <a href="#">Pyramides</a>
+        <a href="#">Vie quotidienne</a>
+        <a href="#">Hiéroglyphes</a>
+        <a href="#">Glossaire</a>
+      </nav>
+      <p
+        style="
+          font-size: 0.95rem;
+          opacity: 0.35;
+          font-family: &quot;Cinzel&quot;, serif;
+          letter-spacing: 0.2em;
+        "
+      >
+        DOSSIER THÉMATIQUE · ÉGYPTE ÉTERNELLE
+      </p>
+    </footer>
+
+    <script>
+      // Generate stars
+      const starsContainer = document.getElementById("stars");
+      for (let i = 0; i < 120; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        const size = Math.random() * 2.5 + 0.5;
+        star.style.cssText = `
+      width: ${size}px;
+      height: ${size}px;
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      --dur: ${Math.random() * 4 + 2}s;
+      --op: ${Math.random() * 0.6 + 0.3};
+      animation-delay: ${Math.random() * 5}s;
+    `;
+        starsContainer.appendChild(star);
+      }
+
+      // Intersection observer for timeline items
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateX(0)";
+              }, i * 120);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+
+      document.querySelectorAll(".timeline-item").forEach((item) => {
+        item.style.opacity = "0";
+        item.style.transform = "translateX(-20px)";
+        item.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(item);
+      });
+
+      // Card observe
+      const cardObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }, i * 80);
+              cardObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".monument-card").forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+        card.style.transition =
+          "opacity 0.5s ease, transform 0.5s ease, border-color 0.3s";
+        cardObserver.observe(card);
+      });
+    </script>
+    <script>
+      /* ── Téléportation instantanée avec offset nav fixe (64px) ── */
+      const NAV_H = 64;
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const id = this.getAttribute('href').slice(1);
+          const target = document.getElementById(id);
+          if (!target) return;
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - NAV_H;
+          window.scrollTo({ top, behavior: 'instant' });
+        });
+      });
+    </script>
+  </body>
+</html>

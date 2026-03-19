@@ -1,0 +1,2992 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Égypte Éternelle — Portail de la civilisation pharaonique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #e8bf6a;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --brun-papyrus: #6b4f2a;
+        --rouge-carnelian: #8b2e1a;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+        --turquoise: #2a8b7a;
+        --violet: #2a1050;
+        --violet-clair: #7a50b8;
+        --blanc-ivoire: #fbf5e6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      /* ══════════════════════════════════════
+     SITE HEADER — Cartouche royal fixe
+  ══════════════════════════════════════ */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        height: 58px;
+        background: rgba(10, 7, 3, 0.97);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.22);
+        box-shadow:
+          0 4px 24px rgba(0, 0, 0, 0.6),
+          inset 0 1px 0 rgba(200, 151, 58, 0.06);
+      }
+      .site-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(200, 151, 58, 0.15) 5%,
+          var(--or) 20%,
+          var(--or-clair) 50%,
+          var(--or) 80%,
+          rgba(200, 151, 58, 0.15) 95%,
+          transparent 100%
+        );
+      }
+      .site-header-inner {
+        max-width: 1380px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        gap: 0;
+      }
+      .sh-brand {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        text-decoration: none;
+        flex-shrink: 0;
+        margin-right: 1.8rem;
+      }
+      .sh-cartouche {
+        display: flex;
+        align-items: center;
+      }
+      .sh-cartouche-body {
+        border-top: 1.5px solid var(--or);
+        border-bottom: 1.5px solid var(--or);
+        padding: 0 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        height: 30px;
+        background: rgba(200, 151, 58, 0.04);
+        position: relative;
+      }
+      .sh-logo-text {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--or-clair);
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+        line-height: 1;
+      }
+      .sh-logo-glyph {
+        font-size: 1.2rem;
+        color: var(--or);
+        opacity: 0.85;
+      }
+      .sh-cartouche svg.cap {
+        height: 30px;
+        width: 9px;
+        flex-shrink: 0;
+      }
+      .sh-sep {
+        width: 1px;
+        height: 28px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(200, 151, 58, 0.3),
+          transparent
+        );
+        margin: 0 1.5rem;
+        flex-shrink: 0;
+      }
+      .sh-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.1rem;
+        flex: 1;
+        list-style: none;
+      }
+      .sh-nav-item {
+        position: relative;
+      }
+      .sh-nav-link {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.3rem 0.8rem;
+        text-decoration: none;
+        font-family: "Cinzel", serif;
+        font-size: 0.81rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        height: 32px;
+      }
+      .sh-nav-link .sh-glyph {
+        font-size: 1.15rem;
+        opacity: 0.55;
+        transition: opacity 0.2s;
+        line-height: 1;
+      }
+      .sh-nav-link:hover {
+        color: var(--or-clair);
+        border-color: rgba(200, 151, 58, 0.2);
+        background: rgba(200, 151, 58, 0.05);
+      }
+      .sh-nav-link:hover .sh-glyph {
+        opacity: 1;
+      }
+      .sh-nav-link.active {
+        color: var(--or-clair);
+        border-color: rgba(200, 151, 58, 0.28);
+        background: rgba(200, 151, 58, 0.07);
+      }
+      .sh-nav-link.active::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 1.5px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+      }
+      .sh-nav-item.has-drop > .sh-nav-link .drop-arrow {
+        font-size: 0.7rem;
+        opacity: 0.45;
+        font-family: sans-serif;
+        transition: transform 0.2s;
+        display: inline-block;
+      }
+      .sh-nav-item.has-drop:hover > .sh-nav-link .drop-arrow {
+        transform: rotate(180deg);
+      }
+      .sh-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        min-width: 240px;
+        background: rgba(8, 5, 2, 0.99);
+        border: 1px solid rgba(200, 151, 58, 0.2);
+        border-top: 2px solid var(--or);
+        padding: 0.5rem 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-50%) translateY(-8px);
+        transition: all 0.22s ease;
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.75);
+        z-index: 300;
+      }
+      .sh-dropdown::before {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid var(--or);
+      }
+      .sh-nav-item.has-drop:hover .sh-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+      .sh-drop-link {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.55rem 1.2rem;
+        text-decoration: none;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        transition: all 0.18s;
+        border-left: 2px solid transparent;
+      }
+      .sh-drop-link:hover {
+        color: var(--or-clair);
+        background: rgba(200, 151, 58, 0.05);
+        border-left-color: var(--or);
+        padding-left: 1.5rem;
+      }
+      .sh-drop-glyph {
+        font-size: 1.25rem;
+        opacity: 0.5;
+        flex-shrink: 0;
+      }
+      .sh-drop-link:hover .sh-drop-glyph {
+        opacity: 1;
+      }
+      .sh-drop-divider {
+        height: 1px;
+        background: rgba(200, 151, 58, 0.1);
+        margin: 0.35rem 1rem;
+      }
+      .sh-drop-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--or);
+        opacity: 0.45;
+        padding: 0.7rem 1.2rem 0.2rem;
+        display: block;
+      }
+      .sh-right {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-left: auto;
+        flex-shrink: 0;
+      }
+      .sh-home-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0 1rem;
+        text-decoration: none;
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--or);
+        background: rgba(200, 151, 58, 0.05);
+        border: 1px solid rgba(200, 151, 58, 0.4);
+        border-radius: 2px;
+        transition: all 0.25s;
+        white-space: nowrap;
+        height: 32px;
+      }
+      .sh-home-btn:hover {
+        background: rgba(200, 151, 58, 0.15);
+        color: var(--sable);
+      }
+      .sh-burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 6px;
+        margin-left: auto;
+        background: none;
+        border: 1px solid rgba(200, 151, 58, 0.2);
+      }
+      .sh-burger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: var(--or);
+        transition: all 0.28s;
+      }
+      .sh-burger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(4px, 4px);
+      }
+      .sh-burger.open span:nth-child(2) {
+        opacity: 0;
+      }
+      .sh-burger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(4px, -4px);
+      }
+      .sh-mobile-menu {
+        display: none;
+        position: fixed;
+        top: 58px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(6, 4, 2, 0.98);
+        backdrop-filter: blur(20px);
+        z-index: 190;
+        overflow-y: auto;
+        padding: 1.2rem 1.5rem 4rem;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .sh-mobile-menu.open {
+        display: flex;
+      }
+      .sh-mobile-section {
+        font-family: "Cinzel", serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        opacity: 0.45;
+        padding: 1.3rem 0.5rem 0.5rem;
+      }
+      .sh-mobile-link {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.85rem 0.5rem;
+        text-decoration: none;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.07);
+        transition: all 0.2s;
+      }
+      .sh-mobile-link:hover {
+        color: var(--or-clair);
+        padding-left: 1.2rem;
+      }
+      .sh-mobile-link .sh-glyph {
+        font-size: 1.4rem;
+        opacity: 0.55;
+        flex-shrink: 0;
+      }
+
+      body {
+        padding-top: 58px;
+      }
+      .hero {
+        min-height: calc(100vh - 58px);
+      }
+
+      /* ══════════════════════════════════════
+       PORTAILS MYSTIQUES
+      ══════════════════════════════════════ */
+      .portails-section {
+        padding: 6rem 0 5rem;
+        background:
+          radial-gradient(ellipse at 50% 0%, rgba(123,79,166,0.08) 0%, transparent 60%),
+          radial-gradient(ellipse at 0% 100%, rgba(200,151,58,0.06) 0%, transparent 50%),
+          linear-gradient(180deg, var(--noir-nil) 0%, #110c1e 40%, #0e0b06 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      .portails-section::before {
+        content: '✦ ✦ ✦';
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(200,151,58,0.15);
+        font-size: 1.5rem;
+        letter-spacing: 2em;
+      }
+      .portails-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        margin-top: 3rem;
+      }
+      .portail-card {
+        position: relative;
+        border: 1px solid rgba(200,151,58,0.15);
+        background: rgba(12,9,20,0.7);
+        backdrop-filter: blur(12px);
+        text-decoration: none;
+        color: var(--sable);
+        display: block;
+        overflow: hidden;
+        transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      }
+      .portail-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+      }
+      .portail-tarot::before {
+        background: linear-gradient(90deg, transparent, rgba(123,79,166,0.8), rgba(201,168,76,0.8), transparent);
+      }
+      .portail-odyssee::before {
+        background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), rgba(139,122,184,0.6), transparent);
+      }
+      .portail-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      }
+      .portail-tarot:hover {
+        border-color: rgba(123,79,166,0.45);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(123,79,166,0.12);
+      }
+      .portail-odyssee:hover {
+        border-color: rgba(212,175,55,0.4);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 40px rgba(212,175,55,0.1);
+      }
+      .portail-bg-deco {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+      .portail-card:hover .portail-bg-deco { opacity: 1; }
+      .portail-bg-tarot {
+        background: radial-gradient(ellipse at 80% 20%, rgba(123,79,166,0.12) 0%, transparent 60%),
+                    radial-gradient(ellipse at 20% 80%, rgba(61,107,138,0.08) 0%, transparent 50%);
+      }
+      .portail-bg-odyssee {
+        background: radial-gradient(ellipse at 20% 20%, rgba(212,175,55,0.1) 0%, transparent 55%),
+                    radial-gradient(ellipse at 80% 80%, rgba(139,122,184,0.08) 0%, transparent 50%);
+      }
+      .portail-inner {
+        position: relative;
+        z-index: 1;
+        padding: 3rem 2.5rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        height: 100%;
+      }
+      .portail-icon {
+        font-size: 3.5rem;
+        line-height: 1;
+        margin-bottom: 0.3rem;
+        opacity: 0.85;
+      }
+      .portail-label {
+        font-family: 'Cinzel', serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: var(--or);
+        opacity: 0.55;
+      }
+      .portail-title {
+        font-family: 'Cinzel Decorative', serif;
+        font-size: 1.55rem;
+        font-weight: 700;
+        color: var(--or-clair);
+        line-height: 1.25;
+      }
+      .portail-subtitle {
+        font-family: 'EB Garamond', serif;
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--sable-fonce);
+        opacity: 0.75;
+        margin-top: -0.4rem;
+      }
+      .portail-desc {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--sable-fonce);
+        opacity: 0.85;
+        flex: 1;
+      }
+      .portail-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+      .portail-tag {
+        font-family: 'Cinzel', serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.28rem 0.75rem;
+        border: 1px solid rgba(200,151,58,0.25);
+        color: var(--sable-fonce);
+        background: rgba(200,151,58,0.04);
+        opacity: 0.8;
+      }
+      .portail-cta {
+        font-family: 'Cinzel', serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-top: 1rem;
+        display: inline-block;
+        transition: letter-spacing 0.25s, color 0.25s;
+      }
+      .portail-card:hover .portail-cta {
+        letter-spacing: 0.32em;
+        color: var(--or-clair);
+      }
+      @media (max-width: 800px) {
+        .portails-grid { grid-template-columns: 1fr; }
+      }
+
+      /* ══════════════════════════════════════
+     HERO
+  ══════════════════════════════════════ */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.22) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse at 15% 35%,
+            rgba(26, 58, 92, 0.25) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 85% 35%,
+            rgba(42, 16, 80, 0.2) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 55%,
+            rgba(200, 151, 58, 0.06) 0%,
+            transparent 45%
+          ),
+          linear-gradient(
+            180deg,
+            #080604 0%,
+            #0e0b06 20%,
+            #1a1208 55%,
+            #251a08 100%
+          );
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          70deg,
+          rgba(200, 151, 58, 0.012) 0px,
+          rgba(200, 151, 58, 0.012) 1px,
+          transparent 1px,
+          transparent 55px
+        );
+      }
+
+      /* Stars */
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 65%;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        border-radius: 50%;
+        animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        opacity: 0;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: var(--op, 0.7);
+        }
+      }
+
+      /* Hero SVG — full panorama */
+      .hero-panorama {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1400px;
+        opacity: 0.13;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        max-width: 900px;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Hero Image Adjustment */
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        opacity: 0.35;
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-background img {
+        width: 90vw;
+        height: 85vh;
+        object-fit: cover;
+        filter: sepia(30%) contrast(110%);
+        animation: heroZoom 25s ease-in-out infinite alternate;
+      
+        border-radius: 12px;
+      }
+      @keyframes heroZoom {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.15);
+        }
+      }
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.92rem;
+        letter-spacing: 0.55em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.8rem;
+        animation: fadeUp 1.4s 0.2s ease both;
+      }
+      .hero-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(3.2rem, calc(10vw + 0.2rem), 8.7rem);
+        font-weight: 900;
+        line-height: 0.95;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 120px rgba(200, 151, 58, 0.5),
+          0 0 40px rgba(200, 151, 58, 0.25),
+          0 3px 8px rgba(0, 0, 0, 0.9);
+        margin-bottom: 0.4rem;
+        animation: fadeUp 1.4s 0.35s ease both;
+      }
+      .hero-logo-sub {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.2rem, calc(3vw + 0.2rem), 2.2rem);
+        font-weight: 400;
+        color: var(--or);
+        letter-spacing: 0.25em;
+        display: block;
+        margin-bottom: 2rem;
+        animation: fadeUp 1.4s 0.5s ease both;
+      }
+      .hero-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.2rem, calc(2.2vw + 0.2rem), 1.6rem);
+        color: var(--sable-fonce);
+        max-width: 680px;
+        margin: 0 auto 1rem;
+        animation: fadeUp 1.4s 0.65s ease both;
+        line-height: 1.6;
+      }
+      .hero-hieroglyphs {
+        font-size: 1.8rem;
+        letter-spacing: 0.5em;
+        color: var(--or);
+        opacity: 0.5;
+        margin: 1.5rem auto;
+        animation: fadeUp 1.4s 0.8s ease both;
+      }
+      .hero-divider {
+        width: 240px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 1rem auto 2.5rem;
+        animation: fadeUp 1.4s 0.95s ease both;
+      }
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--noir-nil);
+        background: linear-gradient(135deg, var(--or-clair), var(--or));
+        padding: 1rem 2.5rem;
+        text-decoration: none;
+        border: none;
+        transition: all 0.3s;
+        animation: fadeUp 1.4s 1.1s ease both;
+        cursor: pointer;
+      }
+      .hero-cta:hover {
+        background: linear-gradient(135deg, #f0d080, var(--or-clair));
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(200, 151, 58, 0.35);
+      }
+
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.4em;
+        color: var(--or);
+        opacity: 0.65;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+      .scroll-hint::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--or), transparent);
+      }
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ══════════════════════════════════════
+     TABLE DES MATIÈRES
+  ══════════════════════════════════════ */
+      .toc-section {
+        background: linear-gradient(180deg, #100b06 0%, #1a1208 100%);
+        padding: 4rem 2rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .toc-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        background: rgba(200, 151, 58, 0.03);
+        border: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 2.5rem 3rem;
+        border-radius: 2px;
+      }
+      .toc-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or-clair);
+        margin-bottom: 1.5rem;
+        text-align: center;
+        letter-spacing: 0.1em;
+      }
+      .toc-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+        list-style: none;
+      }
+      .toc-list li a {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: all 0.2s;
+        padding: 0.5rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.05);
+      }
+      .toc-list li a::before {
+        content: "𓂀";
+        color: var(--or);
+        font-size: 1.1rem;
+        opacity: 0.7;
+      }
+      .toc-list li a:hover {
+        color: var(--or-clair);
+        background: rgba(200, 151, 58, 0.08);
+        padding-left: 1rem;
+      }
+
+      /* ══════════════════════════════════════
+     LAYOUT HELPERS
+  ══════════════════════════════════════ */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      strong {
+        color: var(--or-clair);
+        font-weight: 600;
+      }
+
+      /* ══════════════════════════════════════
+     CHIFFRES CLÉ
+  ══════════════════════════════════════ */
+      .stats-band {
+        background: linear-gradient(
+          135deg,
+          #1c1408 0%,
+          #241a08 50%,
+          #1a1208 100%
+        );
+        padding: 4.5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr 2px 1fr 2px 1fr 2px 1fr;
+        gap: 0;
+        align-items: center;
+      }
+      .stat-item {
+        text-align: center;
+        padding: 1rem 1.5rem;
+      }
+      .stat-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 2.7rem;
+        color: var(--or);
+        line-height: 1;
+        display: block;
+      }
+      .stat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        margin-top: 0.5rem;
+        line-height: 1.4;
+      }
+      .stat-div {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--or),
+          transparent
+        );
+        height: 60px;
+        width: 1px;
+        margin: auto;
+      }
+
+      /* ══════════════════════════════════════
+     INTRO ÉDITO
+  ══════════════════════════════════════ */
+      .intro-section {
+        padding: 7rem 0 5rem;
+        background: linear-gradient(180deg, #1a1208 0%, #1e1508 100%);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      .intro-section::before {
+        content: "𓂀";
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+        font-size: 12.2rem;
+        color: rgba(200, 151, 58, 0.04);
+        line-height: 1;
+        user-select: none;
+      }
+      .intro-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+      .intro-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.8rem, calc(3.5vw + 0.2rem), 3rem);
+        color: var(--or-clair);
+        line-height: 1.2;
+        margin-bottom: 2rem;
+      }
+      .intro-text {
+        font-size: 1.3rem;
+        color: var(--sable);
+        margin-bottom: 1.5rem;
+        max-width: 720px;
+      }
+      .intro-divider {
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--or), transparent);
+        margin: 2.5rem 0;
+      }
+      .intro-quote {
+        border-left: 3px solid var(--or);
+        padding: 1.2rem 2rem;
+        background: rgba(200, 151, 58, 0.04);
+        position: relative;
+        margin-top: 2rem;
+      }
+      .intro-quote::before {
+        content: "❝";
+        position: absolute;
+        top: -0.8rem;
+        left: 1.5rem;
+        font-size: 2.7rem;
+        color: var(--or);
+        opacity: 0.4;
+        line-height: 1;
+      }
+      .intro-quote p {
+        font-style: italic;
+        font-size: 1.35rem;
+        color: var(--or-clair);
+        line-height: 1.7;
+      }
+      .intro-quote cite {
+        display: block;
+        margin-top: 0.6rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.25em;
+        color: var(--sable-fonce);
+        font-style: normal;
+      }
+
+      /* ══════════════════════════════════════
+     DOSSIERS — SECTION TITRE
+  ══════════════════════════════════════ */
+      .section-head {
+        padding: 5rem 0 2.5rem;
+      }
+      .section-head-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.55em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.6rem;
+      }
+      .section-head-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.6rem, calc(3vw + 0.2rem), 2.4rem);
+        color: var(--or-clair);
+        margin-bottom: 0.8rem;
+      }
+      .section-head-desc {
+        font-style: italic;
+        font-size: 1.18rem;
+        color: var(--sable-fonce);
+        max-width: 650px;
+      }
+
+      /* ══════════════════════════════════════
+     DOSSIERS GRID — GRANDES CARTES
+  ══════════════════════════════════════ */
+      .dossiers-section {
+        padding: 0 0 6rem;
+        background: linear-gradient(180deg, #1a1208 0%, #141008 100%);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+      }
+      .dossiers-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .dossier-card {
+        background: linear-gradient(
+          160deg,
+          rgba(36, 24, 8, 0.95),
+          rgba(20, 14, 4, 0.98)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.13);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.35s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+      }
+      .dossier-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .dossier-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(
+          circle at bottom right,
+          rgba(200, 151, 58, 0.06),
+          transparent 70%
+        );
+        transition: all 0.35s;
+      }
+      .dossier-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(200, 151, 58, 0.35);
+        box-shadow:
+          0 16px 50px rgba(0, 0, 0, 0.5),
+          0 4px 20px rgba(200, 151, 58, 0.08);
+      }
+      .dossier-card:hover::before {
+        opacity: 1;
+      }
+      .dossier-card:hover::after {
+        width: 180px;
+        height: 180px;
+      }
+
+      /* Featured card — spans 2 cols */
+      .dossier-card.featured {
+        grid-column: span 2;
+        flex-direction: row;
+      }
+      .dossier-card.featured .card-visual {
+        width: 220px;
+        flex-shrink: 0;
+      }
+      .dossier-card.featured .card-body {
+        flex: 1;
+      }
+
+      .card-visual {
+        background: linear-gradient(
+          160deg,
+          rgba(200, 151, 58, 0.06),
+          rgba(200, 151, 58, 0.02)
+        );
+        border-bottom: 1px solid rgba(200, 151, 58, 0.08);
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 130px;
+        position: relative;
+        overflow: hidden;
+      }
+      .dossier-card.featured .card-visual {
+        border-bottom: none;
+        border-right: 1px solid rgba(200, 151, 58, 0.08);
+        min-height: auto;
+      }
+      .card-glyph {
+        font-size: 4.7rem;
+        line-height: 1;
+        color: rgba(200, 151, 58, 0.55);
+        transition: all 0.3s;
+        position: relative;
+        z-index: 1;
+      }
+      .dossier-card.featured .card-glyph {
+        font-size: 6.2rem;
+      }
+      .dossier-card:hover .card-glyph {
+        color: rgba(200, 151, 58, 0.85);
+        transform: scale(1.08);
+      }
+
+      .card-visual-bg {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8.2rem;
+        line-height: 1;
+        color: rgba(200, 151, 58, 0.04);
+        user-select: none;
+      }
+
+      .card-body {
+        padding: 1.8rem 2rem 2rem;
+        flex: 1;
+      }
+      .card-tag {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: var(--or);
+        opacity: 0.75;
+        margin-bottom: 0.6rem;
+        display: block;
+      }
+      .card-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.2rem, calc(2vw + 0.2rem), 1.5rem);
+        color: var(--or-clair);
+        line-height: 1.25;
+        margin-bottom: 0.7rem;
+      }
+      .dossier-card.featured .card-title {
+        font-size: clamp(1.3rem, calc(2.2vw + 0.2rem), 1.8rem);
+      }
+      .card-desc {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        line-height: 1.65;
+        margin-bottom: 1.2rem;
+      }
+      .card-topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 1.2rem;
+      }
+      .card-topic {
+        font-family: "Cinzel", serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.2rem 0.6rem;
+        border: 1px solid rgba(200, 151, 58, 0.2);
+        color: var(--sable-fonce);
+      }
+      .card-link {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--or);
+        opacity: 0.8;
+        transition: opacity 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .card-link::after {
+        content: "→";
+        transition: transform 0.2s;
+      }
+      .dossier-card:hover .card-link {
+        opacity: 1;
+      }
+      .dossier-card:hover .card-link::after {
+        transform: translateX(4px);
+      }
+
+      /* ══════════════════════════════════════
+     BAND QUOTE
+  ══════════════════════════════════════ */
+      .band-quote {
+        background: linear-gradient(
+          135deg,
+          #060408 0%,
+          #100804 50%,
+          #060408 100%
+        );
+        padding: 5.5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .band-quote::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.016) 0px,
+          rgba(200, 151, 58, 0.016) 1px,
+          transparent 1px,
+          transparent 20px
+        );
+      }
+      .band-quote blockquote {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.3rem, calc(2.5vw + 0.2rem), 1.9rem);
+        color: var(--or-clair);
+        max-width: 820px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.55;
+      }
+      .band-quote footer {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.4em;
+        color: var(--sable-fonce);
+        text-transform: uppercase;
+      }
+
+      /* ══════════════════════════════════════
+     CHRONOLOGIE RAPIDE
+  ══════════════════════════════════════ */
+      .chrono-section {
+        padding: 6rem 0;
+        background: linear-gradient(180deg, #141008 0%, #1a1208 100%);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+      }
+      .chrono-line {
+        position: relative;
+        margin: 3rem 0;
+        padding: 0 1rem;
+      }
+      .chrono-line::before {
+        content: "";
+        position: absolute;
+        top: 28px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+      }
+      .chrono-items {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0;
+        position: relative;
+      }
+      .chrono-item {
+        padding: 0 0.8rem;
+        text-align: center;
+        position: relative;
+      }
+      .chrono-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--or);
+        border: 2px solid var(--noir-nil);
+        margin: 0 auto 1.2rem;
+        box-shadow: 0 0 10px rgba(200, 151, 58, 0.5);
+        position: relative;
+        z-index: 1;
+        transition: transform 0.2s;
+      }
+      .chrono-item:hover .chrono-dot {
+        transform: scale(1.4);
+      }
+      .chrono-date {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 0.95rem;
+        color: var(--or);
+        display: block;
+        margin-bottom: 0.4rem;
+      }
+      .chrono-name {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        color: var(--or-clair);
+        display: block;
+        margin-bottom: 0.4rem;
+        line-height: 1.3;
+      }
+      .chrono-desc {
+        font-size: 0.95rem;
+        color: var(--sable-fonce);
+        line-height: 1.45;
+      }
+
+      /* ══════════════════════════════════════
+     SECTION ARTICLES RÉCENTS / THÈMES
+  ══════════════════════════════════════ */
+      .themes-section {
+        padding: 6rem 0;
+        background: linear-gradient(180deg, #1a1208 0%, #1e1608 100%);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+      }
+      .themes-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+        margin-top: 3rem;
+      }
+      .theme-card {
+        border: 1px solid rgba(200, 151, 58, 0.1);
+        border-top: 3px solid rgba(200, 151, 58, 0.25);
+        padding: 1.6rem;
+        background: linear-gradient(
+          160deg,
+          rgba(30, 20, 8, 0.9),
+          rgba(18, 12, 4, 0.95)
+        );
+        transition: all 0.3s;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+      }
+      .theme-card:hover {
+        border-top-color: var(--or-clair);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+      .theme-icon {
+        font-size: 2.4rem;
+        display: block;
+        margin-bottom: 0.8rem;
+      }
+      .theme-name {
+        font-family: "Cinzel", serif;
+        font-size: 1.02rem;
+        letter-spacing: 0.1em;
+        color: var(--or-clair);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .theme-count {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--or);
+        opacity: 0.6;
+        display: block;
+        margin-bottom: 0.6rem;
+      }
+      .theme-desc {
+        font-size: 1.03rem;
+        color: var(--sable-fonce);
+        line-height: 1.55;
+      }
+
+      /* ══════════════════════════════════════
+     SECTION MISE EN AVANT TEXTE SACRÉS
+  ══════════════════════════════════════ */
+      .feature-section {
+        padding: 7rem 0;
+        background: linear-gradient(135deg, #0c0808 0%, #181008 100%);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      .feature-section::after {
+        content: "𓁹";
+        position: absolute;
+        right: -1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22.2rem;
+        color: rgba(200, 151, 58, 0.025);
+        line-height: 1;
+        user-select: none;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .feature-text .eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+      .feature-text h2 {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.6rem, calc(2.8vw + 0.2rem), 2.4rem);
+        color: var(--or-clair);
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+      }
+      .feature-text p {
+        font-size: 1.18rem;
+        color: var(--sable);
+        margin-bottom: 1.2rem;
+        line-height: 1.8;
+      }
+      .feature-list {
+        margin: 1.5rem 0 2rem;
+      }
+      .feature-list-item {
+        display: flex;
+        align-items: baseline;
+        gap: 0.8rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.08);
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+      }
+      .feature-list-item::before {
+        content: "𓂀";
+        font-size: 1.1rem;
+        color: var(--or);
+        flex-shrink: 0;
+      }
+      .feature-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .feature-mini-card {
+        background: linear-gradient(
+          145deg,
+          rgba(30, 20, 10, 0.9),
+          rgba(20, 12, 4, 0.95)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.12);
+        padding: 1.3rem;
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .feature-mini-card:hover {
+        border-color: rgba(200, 151, 58, 0.3);
+        transform: translateY(-3px);
+      }
+      .fmc-icon {
+        font-size: 2.4rem;
+        display: block;
+        margin-bottom: 0.6rem;
+      }
+      .fmc-name {
+        font-family: "Cinzel", serif;
+        font-size: 0.92rem;
+        color: var(--or-clair);
+        letter-spacing: 0.08em;
+        display: block;
+        margin-bottom: 0.3rem;
+      }
+      .fmc-date {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        color: var(--or);
+        opacity: 0.6;
+        display: block;
+      }
+
+      /* ══════════════════════════════════════
+     SECTION PHARAONS / DYNASTIES TEASER
+  ══════════════════════════════════════ */
+      .pharaons-section {
+        padding: 6rem 0;
+        background: linear-gradient(180deg, #1e1608 0%, #1a1208 100%);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+      }
+      .pharaons-row {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+      .pharaon-card {
+        border: 1px solid rgba(200, 151, 58, 0.1);
+        padding: 1.5rem 1rem;
+        text-align: center;
+        background: linear-gradient(
+          160deg,
+          rgba(28, 18, 6, 0.9),
+          rgba(18, 12, 4, 0.95)
+        );
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: block;
+      }
+      .pharaon-card::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .pharaon-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(200, 151, 58, 0.3);
+      }
+      .pharaon-card:hover::before {
+        opacity: 1;
+      }
+      .pharaon-glyph {
+        font-size: 2.7rem;
+        display: block;
+        margin-bottom: 0.6rem;
+        opacity: 0.7;
+      }
+      .pharaon-name {
+        font-family: "Cinzel", serif;
+        font-size: 0.98rem;
+        color: var(--or-clair);
+        display: block;
+        margin-bottom: 0.2rem;
+        line-height: 1.3;
+      }
+      .pharaon-period {
+        font-family: "Cinzel", serif;
+        font-size: 0.76rem;
+        color: var(--or);
+        opacity: 0.6;
+        display: block;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      .pharaon-desc {
+        font-size: 0.98rem;
+        color: var(--sable-fonce);
+        line-height: 1.45;
+      }
+
+      /* ══════════════════════════════════════
+     NEWSLETTER / CTA FINAL
+  ══════════════════════════════════════ */
+      .cta-section {
+        padding: 7rem 0;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.12) 0%,
+            transparent 60%
+          ),
+          linear-gradient(135deg, #0c0808 0%, #180e04 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          60deg,
+          rgba(200, 151, 58, 0.012) 0px,
+          rgba(200, 151, 58, 0.012) 1px,
+          transparent 1px,
+          transparent 50px
+        );
+      }
+      .cta-hieroglyphs {
+        font-size: 2.2rem;
+        letter-spacing: 0.6em;
+        color: var(--or);
+        opacity: 0.35;
+        margin-bottom: 2rem;
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
+      .cta-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.7rem, calc(3vw + 0.2rem), 2.7rem);
+        color: var(--or-clair);
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+        line-height: 1.2;
+      }
+      .cta-desc {
+        font-style: italic;
+        font-size: 1.3rem;
+        color: var(--sable-fonce);
+        max-width: 580px;
+        margin: 0 auto 3rem;
+        position: relative;
+        z-index: 1;
+        line-height: 1.7;
+      }
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        position: relative;
+        z-index: 1;
+      }
+      .btn-primary {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--noir-nil);
+        background: linear-gradient(135deg, var(--or-clair), var(--or));
+        padding: 1rem 2.2rem;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #f0d080, var(--or-clair));
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(200, 151, 58, 0.3);
+      }
+      .btn-secondary {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--or);
+        background: transparent;
+        border: 1px solid rgba(200, 151, 58, 0.4);
+        padding: 1rem 2.2rem;
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .btn-secondary:hover {
+        border-color: var(--or);
+        background: rgba(200, 151, 58, 0.06);
+        transform: translateY(-2px);
+      }
+
+      /* ══════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════ */
+      footer {
+        background: #080604;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3.5rem 2rem;
+        text-align: center;
+      }
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.7rem;
+        color: var(--or);
+        margin-bottom: 0.8rem;
+      }
+      .footer-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.2rem;
+        margin-bottom: 1.8rem;
+      }
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.55;
+        transition: opacity 0.2s;
+      }
+      .footer-nav a:hover {
+        opacity: 1;
+      }
+      .footer-copy {
+        font-size: 0.95rem;
+        opacity: 0.3;
+        font-family: "Cinzel", serif;
+        letter-spacing: 0.2em;
+      }
+
+      /* ══════════════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════════════ */
+      @media (max-width: 1100px) {
+        .sh-nav-link .sh-glyph {
+          display: none;
+        }
+        .sh-nav-link {
+          padding: 0.3rem 0.6rem;
+          font-size: 0.77rem;
+        }
+        .sh-logo-text {
+          font-size: 0.92rem;
+        }
+      }
+      @media (max-width: 860px) {
+        .sh-nav {
+          display: none;
+        }
+        .sh-sep {
+          display: none;
+        }
+        .sh-right {
+          display: none;
+        }
+        .sh-burger {
+          display: flex;
+        }
+      }
+      @media (max-width: 900px) {
+        .dossiers-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .dossier-card.featured {
+          grid-column: span 2;
+          flex-direction: column;
+        }
+        .dossier-card.featured .card-visual {
+          width: 100%;
+          min-height: 110px;
+          border-right: none;
+          border-bottom: 1px solid rgba(200, 151, 58, 0.08);
+        }
+        .themes-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .pharaons-row {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .feature-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .feature-section::after {
+          display: none;
+        }
+        .chrono-items {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        .stat-div:nth-child(4),
+        .stat-div:nth-child(8) {
+          display: none;
+        }
+      }
+      @media (max-width: 600px) {
+        .toc-list {
+          grid-template-columns: 1fr;
+        }
+        .dossiers-grid {
+          grid-template-columns: 1fr;
+        }
+        .dossier-card.featured {
+          grid-column: span 1;
+        }
+        .themes-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .pharaons-row {
+          grid-template-columns: 1fr 1fr;
+        }
+        .chrono-items {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .feature-cards {
+          grid-template-columns: 1fr 1fr;
+        }
+        .hero-logo {
+          font-size: clamp(2.7rem, calc(12vw + 0.2rem), 4.2rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+
+    <!-- ══════════════════════════════════════
+     SITE HEADER — Cartouche royal fixe
+══════════════════════════════════════ -->
+    <header class="site-header" id="site-header">
+      <div class="site-header-inner">
+        <!-- Marque / Logo cartouche -->
+        <a href="index.html#accueil" class="sh-brand">
+          <div class="sh-cartouche">
+            <!-- Cap gauche du cartouche -->
+            <svg
+              class="cap"
+              viewBox="0 0 9 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 1 Q1 15 8 29"
+                stroke="rgba(200,151,58,0.85)"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <line
+                x1="1"
+                y1="1"
+                x2="8"
+                y2="1"
+                stroke="rgba(200,151,58,0.85)"
+                stroke-width="1.5"
+              />
+              <line
+                x1="1"
+                y1="29"
+                x2="8"
+                y2="29"
+                stroke="rgba(200,151,58,0.85)"
+                stroke-width="1.5"
+              />
+            </svg>
+            <div class="sh-cartouche-body">
+              <span class="sh-logo-glyph">𓂀</span>
+              <span class="sh-logo-text">Égypte Éternelle</span>
+            </div>
+            <!-- Cap droit du cartouche -->
+            <svg
+              class="cap"
+              viewBox="0 0 9 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1 Q8 15 1 29"
+                stroke="rgba(200,151,58,0.85)"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <line
+                x1="8"
+                y1="1"
+                x2="1"
+                y2="1"
+                stroke="rgba(200,151,58,0.85)"
+                stroke-width="1.5"
+              />
+              <line
+                x1="8"
+                y1="29"
+                x2="1"
+                y2="29"
+                stroke="rgba(200,151,58,0.85)"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+        </a>
+
+        <div class="sh-sep"></div>
+
+        <!-- Navigation principale -->
+        <ul class="sh-nav" id="sh-nav">
+      
+
+
+          <!-- Pyramides -->
+          <li class="sh-nav-item">
+            <a href="egypte-pyramides.html" class="sh-nav-link">
+              <span class="sh-glyph">△</span> Pyramides
+            </a>
+          </li>
+
+          <!-- Panthéon -->
+          <li class="sh-nav-item">
+            <a href="egypte-pantheon.html" class="sh-nav-link">
+              <span class="sh-glyph">𓁹</span> Dieux
+            </a>
+          </li>
+
+
+
+          <!-- Magie & Douat -->
+          <li class="sh-nav-item">
+            <a href="egypte-magie-rituels.html" class="sh-nav-link">
+              <span class="sh-glyph">𓆣</span> Douat
+            </a>
+          </li>
+
+          <!-- Symboles -->
+          <li class="sh-nav-item">
+            <a href="egypte-mythes-objets.html" class="sh-nav-link">
+              <span class="sh-glyph">☥</span> Symboles
+            </a>
+          </li>
+        </ul>
+        <!-- /sh-nav -->
+
+        <!-- Côté droit -->
+        <div class="sh-right">
+          <a href="tarot.html" class="sh-home-btn" style="border-color:rgba(123,79,166,0.5);color:#c9a84c;">🂠 Tarot</a>
+          <a href="odyssee_des_guides_fusion.html" class="sh-home-btn" style="border-color:rgba(212,175,55,0.5);color:#d4af37;">✦ Guides</a>
+        </div>
+
+        <!-- Burger mobile -->
+        <button class="sh-burger" id="sh-burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <!-- /site-header-inner -->
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="sh-mobile-menu" id="sh-mobile-menu">
+      <span class="sh-mobile-section">Navigation</span>
+      <a href="egypte-accueil.html" class="sh-mobile-link"
+        ><span class="sh-glyph">𓇳</span> Accueil — Portail</a
+      >
+
+      <span class="sh-mobile-section">Les six dossiers</span>
+      <a href="egypte-pyramides.html" class="sh-mobile-link"
+        ><span class="sh-glyph">𓇳</span> Pyramides &amp; Monuments</a
+      >
+      <a href="egypte-societe.html" class="sh-mobile-link"
+        ><span class="sh-glyph">𓀀</span> Société &amp; Vie quotidienne</a
+      >
+      <a href="egypte-dynasties.html" class="sh-mobile-link"
+        ><span class="sh-glyph">𓋹</span> Dynasties &amp; Pharaons</a
+      >
+      <a href="egypte-pantheon.html" class="sh-mobile-link"
+        ><span class="sh-glyph">𓁹</span> Le Panthéon Divin</a
+      >
+      <a href="egypte-mythes-objets.html" class="sh-mobile-link"
+        ><span class="sh-glyph">☥</span> Mythes &amp; Objets Sacrés</a
+      >
+      <a href="egypte-magie-rituels.html" class="sh-mobile-link"
+        ><span class="sh-glyph">𓆣</span> Magie, Rituels &amp; La Douat</a
+      >
+
+      <span class="sh-mobile-section">Portails Mystiques</span>
+      <a href="tarot.html" class="sh-mobile-link"
+        ><span class="sh-glyph">🂠</span> L'Art du Tarot</a
+      >
+      <a href="odyssee_des_guides_fusion.html" class="sh-mobile-link"
+        ><span class="sh-glyph">✦</span> L'Odyssée des Guides</a
+      >
+
+      <span class="sh-mobile-section">Sections de la page</span>
+      <a href="#chronologie" class="sh-mobile-link"
+        ><span class="sh-glyph">𓏤</span> Chronologie</a
+      >
+      <a href="#pharaons" class="sh-mobile-link"
+        ><span class="sh-glyph">𓋹</span> Pharaons en vedette</a
+      >
+      <a href="#textes" class="sh-mobile-link"
+        ><span class="sh-glyph">𓂋</span> Textes sacrés</a
+      >
+    </div>
+
+    <!-- ════════════ HERO ════════════ -->
+    <section class="hero" id="accueil">
+      <div class="hero-background">
+        <img
+          src="images/images/vue-pyramides.jpg"
+          alt="Les Grandes Pyramides au coucher du soleil"
+          loading="eager"
+        />
+      </div>
+      <div class="stars" id="stars"></div>
+
+      <!-- SVG Grand Panorama Gizeh -->
+      <svg
+        class="hero-panorama"
+        viewBox="0 0 1400 320"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Desert floor -->
+        <line
+          x1="0"
+          y1="295"
+          x2="1400"
+          y2="295"
+          stroke="rgba(200,151,58,0.12)"
+          stroke-width="1"
+        />
+        <!-- Grande Pyramide -->
+        <polygon
+          points="560,40 820,295 300,295"
+          fill="rgba(200,151,58,0.09)"
+          stroke="rgba(200,151,58,0.22)"
+          stroke-width="1.5"
+        />
+        <!-- Ligne de face éclairée -->
+        <line
+          x1="560"
+          y1="40"
+          x2="820"
+          y2="295"
+          stroke="rgba(200,151,58,0.18)"
+          stroke-width="2"
+        />
+        <!-- Pyramide Khéphren -->
+        <polygon
+          points="960,75 1160,295 760,295"
+          fill="rgba(200,151,58,0.07)"
+          stroke="rgba(200,151,58,0.18)"
+          stroke-width="1.2"
+        />
+        <!-- Pyramide Mykérinos -->
+        <polygon
+          points="1210,160 1330,295 1090,295"
+          fill="rgba(200,151,58,0.05)"
+          stroke="rgba(200,151,58,0.14)"
+          stroke-width="1"
+        />
+        <!-- Sphinx corps -->
+        <ellipse
+          cx="280"
+          cy="270"
+          rx="110"
+          ry="28"
+          fill="rgba(200,151,58,0.05)"
+          stroke="rgba(200,151,58,0.15)"
+          stroke-width="1"
+        />
+        <!-- Sphinx tête -->
+        <circle
+          cx="185"
+          cy="245"
+          r="30"
+          fill="rgba(200,151,58,0.05)"
+          stroke="rgba(200,151,58,0.18)"
+          stroke-width="1.2"
+        />
+        <!-- Sphinx nez/profil -->
+        <path
+          d="M175 240 Q165 243 168 250 Q172 255 180 253"
+          fill="none"
+          stroke="rgba(200,151,58,0.2)"
+          stroke-width="1"
+        />
+        <!-- Nemes coiffe -->
+        <path
+          d="M167 240 Q160 260 168 275 M203 240 Q210 260 202 275"
+          fill="none"
+          stroke="rgba(200,151,58,0.15)"
+          stroke-width="1"
+        />
+        <!-- Étoiles -->
+        <g fill="rgba(200,151,58,0.4)">
+          <circle cx="80" cy="30" r="1.5" />
+          <circle cx="200" cy="15" r="2" />
+          <circle cx="420" cy="25" r="1.5" />
+          <circle cx="680" cy="12" r="2" />
+          <circle cx="900" cy="22" r="1.5" />
+          <circle cx="1100" cy="10" r="2" />
+          <circle cx="1280" cy="28" r="1.5" />
+          <circle cx="50" cy="60" r="1" />
+          <circle cx="350" cy="55" r="1" />
+          <circle cx="750" cy="50" r="1" />
+          <circle cx="1050" cy="45" r="1" />
+          <circle cx="1350" cy="60" r="1" />
+        </g>
+        <!-- Soleil levant rayon -->
+        <g stroke="rgba(200,151,58,0.1)" stroke-width="1">
+          <line x1="560" y1="40" x2="560" y2="0" />
+          <line x1="560" y1="40" x2="520" y2="5" />
+          <line x1="560" y1="40" x2="600" y2="5" />
+        </g>
+        <!-- Disque solaire au sommet -->
+        <circle
+          cx="560"
+          cy="35"
+          r="14"
+          fill="rgba(200,151,58,0.06)"
+          stroke="rgba(200,151,58,0.2)"
+          stroke-width="1"
+        />
+        <!-- Ânkh -->
+        <g stroke="rgba(200,151,58,0.2)" stroke-width="1.2" fill="none">
+          <circle cx="100" cy="200" r="10" />
+          <line x1="100" y1="210" x2="100" y2="230" />
+          <line x1="88" y1="220" x2="112" y2="220" />
+        </g>
+        <!-- Scarabée -->
+        <g
+          stroke="rgba(200,151,58,0.18)"
+          stroke-width="1"
+          fill="rgba(200,151,58,0.03)"
+        >
+          <ellipse cx="1320" cy="220" rx="14" ry="9" />
+          <line x1="1312" y1="215" x2="1304" y2="208" />
+          <line x1="1308" y1="220" x2="1298" y2="220" />
+          <line x1="1312" y1="225" x2="1304" y2="232" />
+          <line x1="1328" y1="215" x2="1336" y2="208" />
+          <line x1="1332" y1="220" x2="1342" y2="220" />
+          <line x1="1328" y1="225" x2="1336" y2="232" />
+        </g>
+      </svg>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">𓂀 Portail de la Civilisation Pharaonique</p>
+        <h1 class="hero-logo">Égypte<br />Éternelle</h1>
+        <span class="hero-logo-sub">𓇳 · La mémoire des pharaons · 𓇳</span>
+        <p class="hero-tagline">
+          Six dossiers thématiques pour explorer trois mille ans de civilisation
+          — des pyramides de Gizeh aux mystères de la Douat, des dieux de
+          l'Ennéade aux rituels qui maintenaient l'ordre cosmique
+        </p>
+        <div class="hero-hieroglyphs">𓂀 𓆣 𓇳 𓁹 𓅃 𓊹 𓌀</div>
+        <br />
+
+      <div class="scroll-hint">Découvrir</div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     TABLE DES MATIÈRES
+══════════════════════════════════════ -->
+    <section class="toc-section" id="sommaire">
+      <div class="toc-inner">
+        <h2 class="toc-title">Sommaire de la page</h2>
+        <ul class="toc-list">
+          <li><a href="#dossiers">Dossiers Thématiques</a></li>
+          <li><a href="#chronologie">Chronologie Pharaonique</a></li>
+          <li><a href="#themes">Thèmes Transversaux</a></li>
+          <li><a href="#textes">Textes Sacrés</a></li>
+          <li><a href="#pharaons">Pharaons en vedette</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CHIFFRES CLÉ
+══════════════════════════════════════ -->
+    <div class="stats-band">
+      <div class="container-wide">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">3 000</span>
+            <span class="stat-label">Ans de civilisation pharaonique</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat-item">
+            <span class="stat-number">2 000+</span>
+            <span class="stat-label">Divinités dans le panthéon égyptien</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat-item">
+            <span class="stat-number">138</span>
+            <span class="stat-label">Pyramides recensées en Égypte</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat-item">
+            <span class="stat-number">6</span>
+            <span class="stat-label">Dossiers thématiques de fond</span>
+          </div>
+          <div class="stat-div"></div>
+          <div class="stat-item">
+            <span class="stat-number">189</span>
+            <span class="stat-label">Chapitres du Livre des Morts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+     INTRO ÉDITO
+══════════════════════════════════════ -->
+    <section class="intro-section" id="intro">
+      <div class="container">
+        <p class="intro-eyebrow">𓂀 Éditorial</p>
+        <h2 class="intro-title">
+          « Le temps a peur des pyramides. »<br />Entrer dans la civilisation
+          qui a défié l'éternité
+        </h2>
+        <div class="intro-divider"></div>
+        <p class="intro-text">
+          L'Égypte ancienne n'est pas une civilisation disparue — c'est une
+          civilisation en attente. Ses temples respirent encore sous le sable du
+          désert. Ses textes parlent encore, gravés dans le granit ou écrits à
+          l'encre sur des papyrus que trois mille ans n'ont pas effacés. Ses
+          dieux n'ont jamais tout à fait cessé d'être invoqués.
+        </p>
+        <p class="intro-text">
+          Ce site est une tentative de restituer, avec la rigueur de la
+          recherche académique et la clarté de la vulgarisation,
+          l'extraordinaire richesse d'une civilisation qui a mis trente siècles
+          à s'édifier et dont les fondations intellectuelles — la quête de
+          l'éternité, la justice comme valeur cosmique, la beauté comme
+          obligation morale — résonnent encore dans notre monde contemporain.
+        </p>
+        <p class="intro-text">
+          Six dossiers thématiques de fond : pyramides et monuments, société et
+          vie quotidienne, dynasties et pharaons, panthéon divin, mythes
+          cosmiques et objets sacrés, magie et rituels. Chaque page, illustrée
+          par les textes originaux et les sources archéologiques les plus
+          récentes.
+        </p>
+        <div class="intro-quote">
+          <p>
+            L'Égypte ancienne n'a pas inventé l'éternité. Elle a inventé la
+            façon d'y croire — et de l'architecturer en pierre, en hiéroglyphes
+            et en or.
+          </p>
+          <cite>— Jan Assmann, <em>La mémoire culturelle</em>, 1992</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     DOSSIERS THÉMATIQUES
+══════════════════════════════════════ -->
+    <section class="dossiers-section" id="dossiers">
+      <div class="container-wide">
+        <div class="section-head">
+          <p class="section-head-eyebrow">𓇳 Dossiers thématiques</p>
+          <h2 class="section-head-title">
+            Six portes d'entrée dans la civilisation pharaonique
+          </h2>
+          <p class="section-head-desc">
+            Des articles de fond — entre 3 000 et 5 000 mots — fondés sur les
+            sources primaires et les recherches académiques les plus récentes.
+          </p>
+        </div>
+
+        <div class="dossiers-grid">
+          <!-- CARTE FEATURED : Pyramides -->
+          <a href="egypte-pyramides.html" class="dossier-card featured">
+            <div class="card-visual">
+              <div class="card-visual-bg">△</div>
+              <span class="card-glyph">𓇳</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Dossier I · Architecture sacrée</span>
+              <h3 class="card-title">Pyramides, Temples & Grand Sphinx</h3>
+              <p class="card-desc">
+                De la pyramide à degrés d'Imhotep aux colosses de Gizeh —
+                l'histoire complète de l'architecture funéraire et sacrée, la
+                génie des bâtisseurs, les mystères du Grand Sphinx et la
+                technologie monumentale qui a défié les siècles.
+              </p>
+              <div class="card-topics">
+                <span class="card-topic">Grande Pyramide</span>
+                <span class="card-topic">Grand Sphinx</span>
+                <span class="card-topic">Karnak</span>
+                <span class="card-topic">Abou Simbel</span>
+                <span class="card-topic">Techniques de construction</span>
+                <span class="card-topic">Chronologie</span>
+              </div>
+              <span class="card-link">Lire le dossier</span>
+            </div>
+          </a>
+
+          <!-- CARTE : Société -->
+          <a href="egypte-societe.html" class="dossier-card">
+            <div class="card-visual">
+              <div class="card-visual-bg">𓀀</div>
+              <span class="card-glyph">𓀀</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Dossier II · Vie quotidienne</span>
+              <h3 class="card-title">La Société Égyptienne</h3>
+              <p class="card-desc">
+                La vie au bord du Nil — hiérarchie sociale, famille, nourriture,
+                médecine, éducation et le monde des artisans de Deir el-Médineh.
+              </p>
+              <div class="card-topics">
+                <span class="card-topic">Hiérarchie sociale</span>
+                <span class="card-topic">Femmes</span>
+                <span class="card-topic">Médecine</span>
+                <span class="card-topic">Artisans</span>
+              </div>
+              <span class="card-link">Lire le dossier</span>
+            </div>
+          </a>
+
+          <!-- CARTE : Dynasties -->
+          <a href="egypte-dynasties.html" class="dossier-card">
+            <div class="card-visual">
+              <div class="card-visual-bg">𓋹</div>
+              <span class="card-glyph">𓋹</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Dossier III · Histoire dynastique</span>
+              <h3 class="card-title">Dynasties & Pharaons</h3>
+              <p class="card-desc">
+                Trente dynasties sur trois mille ans — Narmer l'unificateur,
+                Hatchepsout la grande reine, Ramsès II le conquérant, Cléopâtre
+                la dernière.
+              </p>
+              <div class="card-topics">
+                <span class="card-topic">16 biographies</span>
+                <span class="card-topic">Toutankhamon</span>
+                <span class="card-topic">Akhenaton</span>
+                <span class="card-topic">Hatchepsout</span>
+              </div>
+              <span class="card-link">Lire le dossier</span>
+            </div>
+          </a>
+
+          <!-- CARTE : Panthéon -->
+          <a href="egypte-pantheon.html" class="dossier-card">
+            <div class="card-visual">
+              <div class="card-visual-bg">𓁹</div>
+              <span class="card-glyph">𓁹</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Dossier IV · Théologie</span>
+              <h3 class="card-title">Le Panthéon Divin</h3>
+              <p class="card-desc">
+                Dix-huit divinités majeures — Rê, Osiris, Isis, Horus, Thot,
+                Maât, Anubis — à travers les six grandes sphères de la théologie
+                égyptienne.
+              </p>
+              <div class="card-topics">
+                <span class="card-topic">18 dieux</span>
+                <span class="card-topic">Ennéade</span>
+                <span class="card-topic">Osiris</span>
+                <span class="card-topic">Cycle osirien</span>
+              </div>
+              <span class="card-link">Lire le dossier</span>
+            </div>
+          </a>
+
+          <!-- CARTE : Mythes & Objets -->
+          <a href="egypte-mythes-objets.html" class="dossier-card">
+            <div class="card-visual">
+              <div class="card-visual-bg">☥</div>
+              <span class="card-glyph">☥</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Dossier V · Symboles sacrés</span>
+              <h3 class="card-title">Mythes Cosmiques & Objets Sacrés</h3>
+              <p class="card-desc">
+                L'ânkh, le scarabée, l'oudjat, le pilier djed — les symboles
+                divins et les grands mythes de création qui structurent la
+                vision du monde égyptienne.
+              </p>
+              <div class="card-topics">
+                <span class="card-topic">Ânkh</span>
+                <span class="card-topic">Scarabée</span>
+                <span class="card-topic">Oudjat</span>
+                <span class="card-topic">Livre des Morts</span>
+              </div>
+              <span class="card-link">Lire le dossier</span>
+            </div>
+          </a>
+
+          <!-- CARTE FEATURED : Magie & Douat -->
+          <a href="egypte-magie-rituels.html" class="dossier-card featured">
+            <div class="card-visual">
+              <div class="card-visual-bg">𓆣</div>
+              <span class="card-glyph" style="color: rgba(122, 80, 184, 0.7)"
+                >𓆣</span
+              >
+            </div>
+            <div class="card-body">
+              <span class="card-tag" style="color: #a87ed4"
+                >Dossier VI · Monde de l'au-delà</span
+              >
+              <h3 class="card-title">Magie, Rituels & La Douat</h3>
+              <p class="card-desc">
+                La force magique d'Héka, le voyage nocturne de l'âme dans les
+                douze heures du monde souterrain, le jugement d'Osiris, les cinq
+                composantes de l'être et les rites qui maintenaient l'ordre
+                cosmique — une plongée dans les ténèbres sacrées de l'Égypte
+                ancienne.
+              </p>
+              <div class="card-topics">
+                <span class="card-topic">Héka · Magie divine</span>
+                <span class="card-topic">Douat · 12 heures</span>
+                <span class="card-topic">Jugement d'Osiris</span>
+                <span class="card-topic">Ka · Ba · Akh</span>
+                <span class="card-topic">Rituel du temple</span>
+                <span class="card-topic">Rites contre Apophis</span>
+              </div>
+              <span class="card-link" style="color: #a87ed4"
+                >Lire le dossier</span
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     BAND QUOTE
+══════════════════════════════════════ -->
+    <div class="band-quote">
+      <blockquote>« Je suis hier, je connais demain. »</blockquote>
+      <footer>— Livre des Morts, Chapitre 17, ~1550 av. J.-C.</footer>
+    </div>
+
+    <!-- ══════════════════════════════════════
+     CHRONOLOGIE RAPIDE
+══════════════════════════════════════ -->
+    <section class="chrono-section" id="chronologie">
+      <div class="container-wide">
+        <div class="section-head">
+          <p class="section-head-eyebrow">𓇳 Chronologie</p>
+          <h2 class="section-head-title">Trois millénaires en six jalons</h2>
+          <p class="section-head-desc">
+            Les grandes périodes de la civilisation pharaonique — de la palette
+            de Narmer aux derniers hiéroglyphes de Philae.
+          </p>
+        </div>
+        <div class="chrono-line">
+          <div class="chrono-items">
+            <div class="chrono-item">
+              <div class="chrono-dot"></div>
+              <span class="chrono-date">~3100</span>
+              <span class="chrono-name">Unification</span>
+              <p class="chrono-desc">
+                Narmer unit la Haute et la Basse Égypte. Naissance de l'État
+                pharaonique. Invention de l'écriture hiéroglyphique.
+              </p>
+            </div>
+            <div class="chrono-item">
+              <div class="chrono-dot"></div>
+              <span class="chrono-date">~2650</span>
+              <span class="chrono-name">Ancien Empire</span>
+              <p class="chrono-desc">
+                Imhotep et la pyramide à degrés. Les grandes pyramides de Gizeh.
+                Apogée du pouvoir royal absolu.
+              </p>
+            </div>
+            <div class="chrono-item">
+              <div class="chrono-dot"></div>
+              <span class="chrono-date">~2055</span>
+              <span class="chrono-name">Moyen Empire</span>
+              <p class="chrono-desc">
+                Réunification après la Première Période intermédiaire. Expansion
+                en Nubie. Apogée de la littérature égyptienne.
+              </p>
+            </div>
+            <div class="chrono-item">
+              <div class="chrono-dot"></div>
+              <span class="chrono-date">~1550</span>
+              <span class="chrono-name">Nouvel Empire</span>
+              <p class="chrono-desc">
+                Hatchepsout, Toutankhamon, Ramsès II. Expansion maximale.
+                Karnak. Vallée des Rois. Livre des Morts.
+              </p>
+            </div>
+            <div class="chrono-item">
+              <div class="chrono-dot"></div>
+              <span class="chrono-date">~664</span>
+              <span class="chrono-name">Basse Époque</span>
+              <p class="chrono-desc">
+                Dominations assyriennes, perses, macédoniennes. Renaissance
+                saïte. Diffusion mondiale de la culture égyptienne.
+              </p>
+            </div>
+            <div class="chrono-item">
+              <div class="chrono-dot"></div>
+              <span class="chrono-date">30 av. J.-C.</span>
+              <span class="chrono-name">Fin de l'Égypte</span>
+              <p class="chrono-desc">
+                Mort de Cléopâtre VII. Annexion par Rome. Dernier hiéroglyphe
+                gravé à Philae en 394 apr. J.-C.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 2.5rem">
+          <a href="egypte-dynasties.html" class="btn-secondary"
+            >Voir la chronologie complète des dynasties →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     THÈMES EXPLORÉS
+══════════════════════════════════════ -->
+    <section class="themes-section" id="themes">
+      <div class="container-wide">
+        <div class="section-head">
+          <p class="section-head-eyebrow">𓂀 Thèmes transversaux</p>
+          <h2 class="section-head-title">Ce que vous allez découvrir</h2>
+          <p class="section-head-desc">
+            Les grandes questions que le site explore, à travers les dossiers
+            thématiques et les sources primaires.
+          </p>
+        </div>
+        <div class="themes-grid">
+          <a href="egypte-pyramides.html" class="theme-card">
+            <span class="theme-icon">🏛️</span>
+            <span class="theme-name">Architecture & Ingénierie</span>
+            <span class="theme-count">Dossier Pyramides</span>
+            <p class="theme-desc">
+              Comment 2,3 millions de blocs de pierre ont été déplacés sans fer
+              ni poulie, et pourquoi la pyramide est une machine cosmique.
+            </p>
+          </a>
+          <a href="egypte-pantheon.html" class="theme-card">
+            <span class="theme-icon">𓁹</span>
+            <span class="theme-name">Théologie & Cosmologie</span>
+            <span class="theme-count">Dossiers Panthéon · Mythes</span>
+            <p class="theme-desc">
+              Quatre cosmogonies simultanées, deux mille dieux, et une pensée
+              religieuse d'une sophistication que les Grecs eux-mêmes
+              admiraient.
+            </p>
+          </a>
+          <a href="egypte-magie-rituels.html" class="theme-card">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-name">Magie & Au-delà</span>
+            <span class="theme-count">Dossier Magie & Rituels</span>
+            <p class="theme-desc">
+              Héka, la force cosmique primordiale. Les douze heures de la Douat.
+              Le jugement des morts — une eschatologie morale unique dans
+              l'Antiquité.
+            </p>
+          </a>
+          <a href="egypte-societe.html" class="theme-card">
+            <span class="theme-icon">𓀀</span>
+            <span class="theme-name">Société & Quotidien</span>
+            <span class="theme-count">Dossier Société</span>
+            <p class="theme-desc">
+              Les artisans royaux de Deir el-Médineh, la place des femmes, la
+              médecine empirique et la vie au bord du Nil — l'Égypte humaine.
+            </p>
+          </a>
+          <a href="egypte-dynasties.html" class="theme-card">
+            <span class="theme-icon">👑</span>
+            <span class="theme-name">Histoire & Politique</span>
+            <span class="theme-count">Dossier Dynasties</span>
+            <p class="theme-desc">
+              Trente dynasties, seize biographies de pharaons — de Narmer à
+              Cléopâtre. La naissance, l'apogée et la chute d'un empire
+              millénaire.
+            </p>
+          </a>
+          <a href="egypte-mythes-objets.html" class="theme-card">
+            <span class="theme-icon">☥</span>
+            <span class="theme-name">Symboles & Objets sacrés</span>
+            <span class="theme-count">Dossier Mythes & Objets</span>
+            <p class="theme-desc">
+              L'ânkh, le scarabée, l'oudjat — des millions d'amulettes ont
+              traversé les siècles. Le sens profond de chaque signe et de chaque
+              objet rituel.
+            </p>
+          </a>
+          <a href="egypte-pyramides.html#sphinx" class="theme-card">
+            <span class="theme-icon">🦁</span>
+            <span class="theme-name">Mystères & Controverses</span>
+            <span class="theme-count">Grand Sphinx · Akhénaton</span>
+            <p class="theme-desc">
+              L'érosion hydrique du Sphinx, l'hérésie d'Akhénaton, les chambres
+              secrètes des pyramides — les grands débats archéologiques non
+              résolus.
+            </p>
+          </a>
+          <a href="egypte-mythes-objets.html#livre-morts" class="theme-card">
+            <span class="theme-icon">📜</span>
+            <span class="theme-name">Textes & Littérature</span>
+            <span class="theme-count"
+              >Textes des Pyramides · Livre des Morts</span
+            >
+            <p class="theme-desc">
+              Des Textes des Pyramides (~2350 av. J.-C.) au Livre des Morts —
+              les plus anciens corpus religieux écrits de l'humanité, décryptés
+              et commentés.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     MISE EN AVANT TEXTES SACRÉS
+══════════════════════════════════════ -->
+    <section class="feature-section" id="textes">
+      <div class="container-wide">
+        <div class="feature-grid">
+          <div class="feature-text">
+            <p class="eyebrow">𓁹 Textes fondateurs</p>
+            <h2>Les livres qui ont promis l'éternité</h2>
+            <p>
+              L'Égypte ancienne a produit les premiers grands corpus religieux
+              écrits de l'humanité. Des incantations gravées dans les pyramides
+              de l'Ancien Empire aux papyrus illustrés du Livre des Morts, ces
+              textes ne sont pas de simples prières — ce sont des
+              <strong>technologies de résurrection</strong>, des opérations
+              magiques dont la récitation exacte modifie la réalité cosmique.
+            </p>
+            <p>
+              La démocratisation de ces textes sur trois millénaires est l'un
+              des phénomènes les plus remarquables de l'histoire religieuse :
+              réservée au seul pharaon à l'Ancien Empire, la promesse de
+              l'immortalité devient accessible à tous au Nouvel Empire — à
+              condition d'en payer la copie.
+            </p>
+            <div class="feature-list">
+              <div class="feature-list-item">
+                Textes des Pyramides (~2350 av. J.-C.) — 800+ formules royales,
+                le plus vieux corpus religieux écrit au monde
+              </div>
+              <div class="feature-list-item">
+                Textes des Sarcophages (~2055) — démocratisation aux nobles et
+                hauts fonctionnaires
+              </div>
+              <div class="feature-list-item">
+                Livre des Morts (~1550) — 189 chapitres, illustrés, accessibles
+                à tous les niveaux sociaux
+              </div>
+              <div class="feature-list-item">
+                L'Amdouat — cartographie des douze heures du monde souterrain,
+                peinte dans les tombes royales
+              </div>
+            </div>
+            <a href="egypte-mythes-objets.html#livre-morts" class="btn-primary"
+              >Découvrir les textes sacrés</a
+            >
+          </div>
+          <div class="feature-cards">
+            <div class="feature-mini-card">
+              <span class="fmc-icon">𓇋</span>
+              <span class="fmc-name">Textes des Pyramides</span>
+              <span class="fmc-date">~2350 av. J.-C.</span>
+            </div>
+            <div class="feature-mini-card">
+              <span class="fmc-icon">𓌀</span>
+              <span class="fmc-name">Textes des Sarcophages</span>
+              <span class="fmc-date">~2055 av. J.-C.</span>
+            </div>
+            <div class="feature-mini-card">
+              <span class="fmc-icon">𓁹</span>
+              <span class="fmc-name">Livre des Morts</span>
+              <span class="fmc-date">~1550 av. J.-C.</span>
+            </div>
+            <div class="feature-mini-card">
+              <span class="fmc-icon">𓆣</span>
+              <span class="fmc-name">L'Amdouat</span>
+              <span class="fmc-date">Nouvel Empire</span>
+            </div>
+            <div class="feature-mini-card">
+              <span class="fmc-icon">𓎛</span>
+              <span class="fmc-name">Papyrus Bremner-Rhind</span>
+              <span class="fmc-date">~380 av. J.-C.</span>
+            </div>
+            <div class="feature-mini-card">
+              <span class="fmc-icon">𓂋</span>
+              <span class="fmc-name">Texte memphite de Ptah</span>
+              <span class="fmc-date">Stèle de Chabaka</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     PHARAONS EN VEDETTE
+══════════════════════════════════════ -->
+    <section class="pharaons-section" id="pharaons">
+      <div class="container-wide">
+        <div class="section-head">
+          <p class="section-head-eyebrow">𓋹 Grands pharaons</p>
+          <h2 class="section-head-title">Les bâtisseurs d'éternité</h2>
+          <p class="section-head-desc">
+            Cinq règnes qui ont changé l'histoire — retrouvez leurs biographies
+            complètes dans le dossier Dynasties & Pharaons.
+          </p>
+        </div>
+        <div class="pharaons-row">
+          <a href="egypte-dynasties.html" class="pharaon-card">
+            <span class="pharaon-glyph">𓇳</span>
+            <span class="pharaon-name">Khéops</span>
+            <span class="pharaon-period">IVe Dyn. · ~2589–2566</span>
+            <p class="pharaon-desc">
+              Commanditaire de la Grande Pyramide — le monument le plus précis
+              jamais construit. Sa statue, retrouvée à Abydos, ne mesure que 7,5
+              cm.
+            </p>
+          </a>
+          <a href="egypte-dynasties.html" class="pharaon-card">
+            <span class="pharaon-glyph">𓋹</span>
+            <span class="pharaon-name">Hatchepsout</span>
+            <span class="pharaon-period">XVIIIe Dyn. · ~1479–1458</span>
+            <p class="pharaon-desc">
+              La plus grande des pharaonnes. Vingt ans de règne prospère,
+              effacés par son successeur. Redécouverte au XIXe siècle après
+              trois mille ans d'oubli.
+            </p>
+          </a>
+          <a href="egypte-dynasties.html" class="pharaon-card">
+            <span class="pharaon-glyph">𓁹</span>
+            <span class="pharaon-name">Akhenaton</span>
+            <span class="pharaon-period">XVIIIe Dyn. · ~1353–1336</span>
+            <p class="pharaon-desc">
+              Le pharaon hérétique qui imposa le culte unique d'Aton, ferma les
+              temples et déplaça la capitale. La révolution religieuse la plus
+              radicale de l'Antiquité.
+            </p>
+          </a>
+          <a href="egypte-dynasties.html" class="pharaon-card">
+            <span class="pharaon-glyph">𓆣</span>
+            <span class="pharaon-name">Ramsès II</span>
+            <span class="pharaon-period">XIXe Dyn. · ~1279–1213</span>
+            <p class="pharaon-desc">
+              Soixante-six ans de règne, deux cents enfants, Abou Simbel. Le
+              pharaon qui signa avec les Hittites le premier traité de paix
+              écrit de l'histoire.
+            </p>
+          </a>
+          <a href="egypte-dynasties.html" class="pharaon-card">
+            <span class="pharaon-glyph">𓅃</span>
+            <span class="pharaon-name">Cléopâtre VII</span>
+            <span class="pharaon-period">Dyn. ptolémaïque · ~51–30</span>
+            <p class="pharaon-desc">
+              La dernière pharaonne. Seule des Lagides à parler l'égyptien. Sa
+              mort marque la fin de trois mille ans de civilisation pharaonique.
+            </p>
+          </a>
+        </div>
+        <div style="text-align: center; margin-top: 3rem">
+          <a href="egypte-dynasties.html" class="btn-secondary"
+            >Lire toutes les biographies →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     PORTAILS MYSTIQUES
+══════════════════════════════════════ -->
+    <section class="portails-section" id="portails">
+      <div class="container-wide">
+        <div class="section-head">
+          <p class="section-head-eyebrow">✦ Univers ésotériques</p>
+          <h2 class="section-head-title">Portails Mystiques</h2>
+          <p class="section-head-desc">
+            Au-delà des sables du Nil, d'autres voies s'ouvrent vers l'invisible — 
+            explorez le symbolisme des arcanes et le monde des guides spirituels.
+          </p>
+        </div>
+        <div class="portails-grid">
+
+          <!-- Tarot -->
+          <a href="tarot.html" class="portail-card portail-tarot">
+            <div class="portail-bg-deco portail-bg-tarot"></div>
+            <div class="portail-inner">
+              <div class="portail-icon">🂠</div>
+              <div class="portail-label">Portail I</div>
+              <h3 class="portail-title">L'Art du Tarot</h3>
+              <p class="portail-subtitle">Significations &amp; Symbolisme</p>
+              <p class="portail-desc">
+                Plongez dans les 78 arcanes — de l'insouciance du Mat à la complétude 
+                du Monde. Significations, symboles cachés, inversions et tirages 
+                commentés pour chaque carte.
+              </p>
+              <div class="portail-tags">
+                <span class="portail-tag">22 Arcanes Majeurs</span>
+                <span class="portail-tag">56 Arcanes Mineurs</span>
+                <span class="portail-tag">Symbolisme</span>
+              </div>
+              <span class="portail-cta">Explorer le Tarot →</span>
+            </div>
+          </a>
+
+          <!-- Odyssée des Guides -->
+          <a href="odyssee.html" class="portail-card portail-odyssee">
+            <div class="portail-bg-deco portail-bg-odyssee"></div>
+            <div class="portail-inner">
+              <div class="portail-icon">✦</div>
+              <div class="portail-label">Portail II</div>
+              <h3 class="portail-title">L'Odyssée des Guides</h3>
+              <p class="portail-subtitle">Naviguer dans les Mondes Invisibles</p>
+              <p class="portail-desc">
+                Un voyage au cœur des traditions spirituelles — guides célestes, 
+                anges gardiens, esprits ancestraux et entités de lumière qui 
+                accompagnent l'âme dans son chemin d'éveil.
+              </p>
+              <div class="portail-tags">
+                <span class="portail-tag">Guides Spirituels</span>
+                <span class="portail-tag">Mondes Invisibles</span>
+                <span class="portail-tag">Éveil</span>
+              </div>
+              <span class="portail-cta">Commencer l'Odyssée →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     CTA FINAL
+══════════════════════════════════════ -->
+    <section class="cta-section">
+      <span class="cta-hieroglyphs">𓂀 𓆣 𓇳 𓁹 𓅃 𓊹 𓌀 𓎛 𓇾</span>
+      <h2 class="cta-title">
+        Prêt à traverser les portes<br />de l'éternité ?
+      </h2>
+      <p class="cta-desc">
+        Six dossiers thématiques vous attendent — des pyramides aux profondeurs
+        de la Douat, de la cour royale aux secrets des rituels magiques.
+      </p>
+      <div class="cta-buttons">
+        <a href="egypte-pyramides.html" class="btn-primary"
+          >Commencer par les Pyramides</a
+        >
+        <a href="egypte-pantheon.html" class="btn-secondary"
+          >Ou explorer les Dieux</a
+        >
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+    <footer>
+      <p class="footer-logo">𓂀 Égypte Éternelle</p>
+      <p class="footer-tagline">« Le temps a peur des pyramides. »</p>
+      <nav class="footer-nav">
+        <a href="egypte-pyramides.html">Pyramides & Monuments</a>
+        <a href="egypte-societe.html">Société & Quotidien</a>
+        <a href="egypte-dynasties.html">Dynasties & Pharaons</a>
+        <a href="egypte-pantheon.html">Panthéon Divin</a>
+        <a href="egypte-mythes-objets.html">Mythes & Objets Sacrés</a>
+        <a href="egypte-magie-rituels.html">Magie & La Douat</a>
+        <a href="tarot.html" style="color:rgba(201,168,76,0.8);">🂠 L'Art du Tarot</a>
+        <a href="odyssee.html" style="color:rgba(212,175,55,0.8);">✦ L'Odyssée des Guides</a>
+      </nav>
+      <p class="footer-copy">
+        ÉGYPTE ÉTERNELLE · PORTAIL DE LA CIVILISATION PHARAONIQUE
+      </p>
+    </footer>
+
+    <script>
+      /* ── Stars ── */
+      const sc = document.getElementById("stars");
+      for (let i = 0; i < 150; i++) {
+        const s = document.createElement("div");
+        s.className = "star";
+        const sz = Math.random() * 2.5 + 0.4;
+        s.style.cssText = `
+      width:${sz}px; height:${sz}px;
+      left:${Math.random() * 100}%; top:${Math.random() * 100}%;
+      background:rgba(232,191,106,0.9);
+      --dur:${Math.random() * 4 + 2}s;
+      --op:${Math.random() * 0.65 + 0.25};
+      animation-delay:${Math.random() * 7}s;
+    `;
+        sc.appendChild(s);
+      }
+
+      /* ── Reveal on scroll ── */
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }, i * 80);
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.07 },
+      );
+
+      document
+        .querySelectorAll(
+          ".dossier-card, .theme-card, .pharaon-card, .feature-mini-card, .chrono-item, .stat-item",
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(18px)";
+          el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+          obs.observe(el);
+        });
+
+      /* ── Smooth scroll for CTA ── */
+      document.querySelector(".hero-cta").addEventListener("click", (e) => {
+        e.preventDefault();
+        document
+          .querySelector("#dossiers")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+
+      /* ── Site header burger menu ── */
+      const burger = document.getElementById("sh-burger");
+      const mobileMenu = document.getElementById("sh-mobile-menu");
+      if (burger && mobileMenu) {
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("open");
+          mobileMenu.classList.toggle("open");
+          document.body.style.overflow = mobileMenu.classList.contains("open")
+            ? "hidden"
+            : "";
+        });
+        // Close on link click
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            burger.classList.remove("open");
+            mobileMenu.classList.remove("open");
+            document.body.style.overflow = "";
+          });
+        });
+      }
+
+      /* ── Header scroll shadow ── */
+      const siteHeader = document.getElementById("site-header");
+      if (siteHeader) {
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (window.scrollY > 20) {
+              siteHeader.style.boxShadow =
+                "0 4px 32px rgba(0,0,0,0.8), 0 1px 0 rgba(200,151,58,0.15)";
+            } else {
+              siteHeader.style.boxShadow = "0 4px 24px rgba(0,0,0,0.6)";
+            }
+          },
+          { passive: true },
+        );
+      }
+    </script>
+  </body>
+</html>
+
+

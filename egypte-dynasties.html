@@ -1,0 +1,3183 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynasties & Pharaons — Égypte Éternelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #e8bf6a;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --brun-papyrus: #6b4f2a;
+        --rouge-carnelian: #8b2e1a;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+        --turquoise: #2a8b7a;
+        --blanc-ivoire: #fbf5e6;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.2) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse at 20% 50%,
+            rgba(139, 46, 26, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 80% 50%,
+            rgba(26, 58, 92, 0.12) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            180deg,
+            #080604 0%,
+            #1a1208 40%,
+            #251a08 80%,
+            #3a2810 100%
+          );
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          90deg,
+          rgba(200, 151, 58, 0.012) 0px,
+          rgba(200, 151, 58, 0.012) 1px,
+          transparent 1px,
+          transparent 60px
+        );
+      }
+      .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 55%;
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        background: var(--or-clair);
+        border-radius: 50%;
+        animation: twinkle var(--dur, 3s) ease-in-out infinite;
+        opacity: 0;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0;
+        }
+        50% {
+          opacity: var(--op, 0.7);
+        }
+      }
+
+      /* Cartouche hero decoration */
+      .hero-cartouche {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 1000px;
+        opacity: 0.1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+  /* Hero Image Adjustment */
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.3;
+  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+  .hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(30%) contrast(110%);
+  
+        border-radius: 12px;
+      }
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.5rem;
+        animation: fadeUp 1.4s 0.2s ease both;
+      }
+      .hero-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(2.8rem, calc(7.5vw + 0.2rem), 6.7rem);
+        font-weight: 900;
+        line-height: 1.05;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 80px rgba(200, 151, 58, 0.4),
+          0 2px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 0.5rem;
+        animation: fadeUp 1.4s 0.4s ease both;
+      }
+      .hero-title span {
+        display: block;
+        font-size: 0.42em;
+        color: var(--sable-fonce);
+        letter-spacing: 0.14em;
+        font-weight: 400;
+      }
+      .hero-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: clamp(1.2rem, calc(2vw + 0.2rem), 1.5rem);
+        color: var(--sable-fonce);
+        max-width: 640px;
+        margin: 1.5rem auto 2.5rem;
+        animation: fadeUp 1.4s 0.6s ease both;
+      }
+      .hero-divider {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 0 auto 2rem;
+        animation: fadeUp 1.4s 0.8s ease both;
+      }
+      .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.4em;
+        color: var(--or);
+        opacity: 0.7;
+        animation: scrollBounce 2s ease-in-out infinite;
+      }
+      .scroll-hint::after {
+        content: "";
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--or), transparent);
+      }
+      @keyframes scrollBounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(6px);
+        }
+      }
+
+      /* ─── NAV ─── */
+      nav.main-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        background: rgba(26, 18, 8, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 0 2rem;
+      }
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .nav-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.2rem;
+        color: var(--or);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.6rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--or-clair);
+      }
+
+      /* ─── LAYOUT ─── */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* ─── INTRO BAND ─── */
+      .intro-band {
+        background: linear-gradient(
+          135deg,
+          #1f160a 0%,
+          #2a1e0a 50%,
+          #1a1208 100%
+        );
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr 2px 1fr 2px 1fr;
+        gap: 1.5rem;
+        align-items: start;
+      }
+      .intro-stat {
+        text-align: center;
+        padding: 0.8rem;
+      }
+      .stat-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 3rem;
+        color: var(--or);
+        line-height: 1;
+        display: block;
+      }
+      .stat-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        margin-top: 0.5rem;
+      }
+      .intro-divider-v {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--or),
+          transparent
+        );
+        align-self: stretch;
+        min-height: 70px;
+      }
+
+      /* ─── TABLE OF CONTENTS ─── */
+      .toc-section {
+        background: linear-gradient(135deg, #1a1208 0%, #1e1a0c 100%);
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
+      }
+      .toc-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.55em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.5rem;
+      }
+      .toc-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.7rem, calc(3vw + 0.2rem), 2.4rem);
+        color: var(--or-clair);
+        margin-bottom: 2.5rem;
+      }
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 0.6rem;
+      }
+      .toc-era {
+        margin-bottom: 1.5rem;
+      }
+      .toc-era-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.88rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--or);
+        padding: 0.6rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        margin-bottom: 0.6rem;
+      }
+      .toc-link {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        padding: 0.35rem 0.5rem;
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        transition: all 0.2s;
+        border-radius: 0 2px 2px 0;
+      }
+      .toc-link:hover {
+        border-left-color: var(--or);
+        background: rgba(200, 151, 58, 0.04);
+        padding-left: 1rem;
+      }
+      .toc-num {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        color: var(--or);
+        opacity: 0.6;
+        flex-shrink: 0;
+        min-width: 2rem;
+      }
+      .toc-name {
+        font-family: "EB Garamond", serif;
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+      }
+      .toc-dates {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        color: var(--or);
+        opacity: 0.5;
+        margin-left: auto;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+
+      /* ─── PERIOD HEADER (era separator) ─── */
+      .era-header {
+        background: linear-gradient(
+          135deg,
+          #0d0b06 0%,
+          #1a1208 50%,
+          #0d0b06 100%
+        );
+        padding: 4rem 0 3rem;
+        border-top: 1px solid rgba(200, 151, 58, 0.2);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .era-header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.012) 0px,
+          rgba(200, 151, 58, 0.012) 1px,
+          transparent 1px,
+          transparent 25px
+        );
+      }
+      .era-header-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+      .era-roman {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 5.2rem;
+        color: rgba(200, 151, 58, 0.08);
+        line-height: 1;
+        flex-shrink: 0;
+        font-weight: 900;
+      }
+      .era-info {
+        flex: 1;
+      }
+      .era-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+      .era-name {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.8rem, calc(4vw + 0.2rem), 3rem);
+        color: var(--or-clair);
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+      }
+      .era-dates {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.2rem;
+      }
+
+      /* ─── SECTION MARKER ─── */
+      .section-marker {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .marker-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 4.7rem;
+        line-height: 1;
+        color: rgba(200, 151, 58, 0.1);
+        font-weight: 900;
+        flex-shrink: 0;
+      }
+      .marker-text {
+        flex: 1;
+      }
+      .marker-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+      .marker-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.5rem, calc(3vw + 0.2rem), 2.2rem);
+        color: var(--or-clair);
+        line-height: 1.2;
+      }
+
+      /* ─── PHARAON ARTICLE ─── */
+      .article-section {
+        padding: 5rem 0;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.08);
+        position: relative;
+      }
+      .article-section:nth-child(even) {
+        background: rgba(200, 151, 58, 0.015);
+      }
+
+      .hiero-deco {
+        position: absolute;
+        right: 2rem;
+        top: 4rem;
+        font-size: 3.7rem;
+        opacity: 0.055;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.5rem;
+        color: var(--or);
+        user-select: none;
+        font-family: serif;
+      }
+
+      /* ─── PHARAON CARD (mini fiche en-tête) ─── */
+      .pharaon-card {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: linear-gradient(
+          135deg,
+          rgba(42, 30, 10, 0.8),
+          rgba(26, 18, 8, 0.9)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.18);
+        border-left: 4px solid var(--or);
+        position: relative;
+        overflow: hidden;
+      }
+      .pharaon-card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(200, 151, 58, 0.2),
+          transparent
+        );
+      }
+      .pharaon-glyph {
+        font-size: 3.7rem;
+        flex-shrink: 0;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(200, 151, 58, 0.06);
+        border: 1px solid rgba(200, 151, 58, 0.15);
+        border-radius: 2px;
+      }
+      .pharaon-meta {
+        flex: 1;
+      }
+      .pharaon-name {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.3rem, calc(2.5vw + 0.2rem), 1.7rem);
+        color: var(--or-clair);
+        margin-bottom: 0.3rem;
+      }
+      .pharaon-name-eg {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+        opacity: 0.8;
+        margin-bottom: 0.6rem;
+      }
+      .pharaon-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        font-family: "Cinzel", serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.7rem;
+        border: 1px solid rgba(200, 151, 58, 0.25);
+        color: var(--or);
+      }
+      .tag-blue {
+        border-color: rgba(74, 127, 168, 0.3);
+        color: var(--bleu-clair);
+      }
+      .tag-green {
+        border-color: rgba(42, 139, 122, 0.3);
+        color: var(--turquoise);
+      }
+
+      /* ─── ARTICLE CONTENT ─── */
+      .article-section p {
+        margin-bottom: 1.5rem;
+        color: var(--sable);
+      }
+      .article-section h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.25rem;
+        color: var(--or-clair);
+        letter-spacing: 0.12em;
+        margin: 2.5rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+
+      .internal-link {
+        color: var(--or-clair);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--or);
+        transition: all 0.2s;
+        font-style: italic;
+      }
+      .internal-link:hover {
+        color: var(--or);
+        border-bottom-style: solid;
+      }
+
+      /* ─── PULL QUOTE ─── */
+      .pull-quote {
+        border-left: 3px solid var(--or);
+        padding: 1.5rem 2rem;
+        margin: 3rem 0;
+        background: rgba(200, 151, 58, 0.04);
+        position: relative;
+      }
+      .pull-quote::before {
+        content: "❝";
+        position: absolute;
+        top: -1rem;
+        left: 1.5rem;
+        font-size: 3.2rem;
+        color: var(--or);
+        opacity: 0.4;
+        line-height: 1;
+      }
+      .pull-quote p {
+        font-style: italic;
+        font-size: 1.4rem;
+        color: var(--or-clair);
+        line-height: 1.7;
+      }
+      .pull-quote cite {
+        display: block;
+        margin-top: 0.8rem;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.25em;
+        color: var(--sable-fonce);
+        font-style: normal;
+      }
+
+      /* ─── INFO BOX ─── */
+      .info-box {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 58, 92, 0.15),
+          rgba(26, 58, 92, 0.05)
+        );
+        border: 1px solid rgba(74, 127, 168, 0.25);
+        border-left: 3px solid var(--bleu-clair);
+        padding: 1.5rem 2rem;
+        margin: 2.5rem 0;
+        border-radius: 0 4px 4px 0;
+      }
+      .info-box-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--bleu-clair);
+        margin-bottom: 0.8rem;
+      }
+      .info-box p {
+        font-size: 1.15rem;
+        color: var(--sable-fonce);
+        margin-bottom: 0 !important;
+      }
+      .info-box-or {
+        background: linear-gradient(
+          135deg,
+          rgba(200, 151, 58, 0.08),
+          rgba(200, 151, 58, 0.02)
+        );
+        border-color: rgba(200, 151, 58, 0.3);
+        border-left-color: var(--or);
+      }
+      .info-box-or .info-box-title {
+        color: var(--or);
+      }
+
+      /* ─── DATA TABLE ─── */
+      .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2.5rem 0;
+        font-size: 1.08rem;
+      }
+      .data-table th {
+        font-family: "Cinzel", serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--or);
+        text-align: left;
+        padding: 0.8rem 1rem;
+        border-bottom: 2px solid rgba(200, 151, 58, 0.3);
+      }
+      .data-table td {
+        padding: 0.65rem 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        color: var(--sable);
+        vertical-align: top;
+      }
+      .data-table tr:hover td {
+        background: rgba(200, 151, 58, 0.03);
+      }
+
+      /* ─── BAND QUOTE ─── */
+      .band-quote {
+        background: linear-gradient(135deg, #0a1020 0%, #1a0d08 100%);
+        padding: 5rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .band-quote::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          rgba(200, 151, 58, 0.015) 0px,
+          rgba(200, 151, 58, 0.015) 1px,
+          transparent 1px,
+          transparent 20px
+        );
+      }
+      .band-quote blockquote {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(1.3rem, calc(2.5vw + 0.2rem), 1.9rem);
+        color: var(--or-clair);
+        max-width: 840px;
+        margin: 0 auto 1.5rem;
+        line-height: 1.5;
+      }
+      .band-quote footer {
+        position: relative;
+        z-index: 1;
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.4em;
+        color: var(--sable-fonce);
+        text-transform: uppercase;
+      }
+
+      /* ─── BIBLIOGRAPHIE ─── */
+      .bibliography {
+        background: linear-gradient(
+          180deg,
+          rgba(26, 18, 8, 0) 0%,
+          rgba(15, 10, 3, 0.8) 100%
+        );
+        padding: 5rem 0;
+      }
+      .bib-header {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+      }
+      .bib-list {
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+      }
+      .bib-item {
+        font-size: 1.1rem;
+        color: var(--sable-fonce);
+        border-left: 2px solid rgba(200, 151, 58, 0.2);
+        padding: 0.5rem 0 0.5rem 1.2rem;
+        transition: border-color 0.2s;
+      }
+      .bib-item:hover {
+        border-left-color: var(--or);
+      }
+      .bib-item strong {
+        color: var(--sable);
+        font-style: italic;
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: #0a0804;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+      .footer-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.15rem;
+      }
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+      }
+      .footer-nav a:hover {
+        opacity: 1;
+      }
+
+      .article-image {
+        width: 100%;
+        margin: 2.5rem 0;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(200, 151, 58, 0.2);
+        position: relative;
+        background: var(--noir-nil);
+      }
+      .article-image img {
+        width: 100%;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+      .article-image:hover img {
+        transform: scale(1.02);
+      }
+      .image-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem 1.5rem;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        color: var(--or-clair);
+        font-size: 1.05rem;
+        font-family: "Cinzel", serif;
+        letter-spacing: 0.05em;
+        text-shadow: 1px 1px 2px black;
+      }
+
+      strong {
+        color: var(--or-clair);
+        font-weight: 600;
+      }
+
+      @media (max-width: 700px) {
+        .intro-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .intro-divider-v {
+          display: none;
+        }
+        nav.main-nav .nav-links {
+          display: none;
+        }
+        .hiero-deco {
+          display: none;
+        }
+        .pharaon-card {
+          flex-direction: column;
+        }
+        .era-roman {
+          font-size: 3.2rem;
+        }
+        .toc-dates {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero" id="accueil">
+  <div class="hero-background">
+    <img src="images/images/Gemini_Generated_Image_ldjk9rldjk9rldjk.png" alt="Souverains de l'Égypte Éternelle" loading="eager">
+  </div>
+      <div class="stars" id="stars"></div>
+
+      <svg
+        class="hero-cartouche"
+        viewBox="0 0 1000 200"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Row of cartouches -->
+        <rect
+          x="80"
+          y="40"
+          width="120"
+          height="60"
+          rx="30"
+          fill="none"
+          stroke="rgba(200,151,58,0.4)"
+          stroke-width="1.5"
+        />
+        <line
+          x1="80"
+          y1="90"
+          x2="200"
+          y2="90"
+          stroke="rgba(200,151,58,0.3)"
+          stroke-width="3"
+        />
+        <text
+          x="140"
+          y="75"
+          text-anchor="middle"
+          fill="rgba(200,151,58,0.35)"
+          font-size="16"
+          font-family="serif"
+        >
+          𓇳𓆑
+        </text>
+
+        <rect
+          x="280"
+          y="30"
+          width="140"
+          height="70"
+          rx="35"
+          fill="none"
+          stroke="rgba(200,151,58,0.35)"
+          stroke-width="1.5"
+        />
+        <line
+          x1="280"
+          y1="85"
+          x2="420"
+          y2="85"
+          stroke="rgba(200,151,58,0.25)"
+          stroke-width="3"
+        />
+        <text
+          x="350"
+          y="68"
+          text-anchor="middle"
+          fill="rgba(200,151,58,0.3)"
+          font-size="16"
+          font-family="serif"
+        >
+          𓂀𓊹𓌀
+        </text>
+
+        <rect
+          x="500"
+          y="35"
+          width="130"
+          height="65"
+          rx="32"
+          fill="none"
+          stroke="rgba(200,151,58,0.4)"
+          stroke-width="1.5"
+        />
+        <line
+          x1="500"
+          y1="85"
+          x2="630"
+          y2="85"
+          stroke="rgba(200,151,58,0.3)"
+          stroke-width="3"
+        />
+        <text
+          x="565"
+          y="70"
+          text-anchor="middle"
+          fill="rgba(200,151,58,0.32)"
+          font-size="16"
+          font-family="serif"
+        >
+          𓁹𓅓𓏏
+        </text>
+
+        <rect
+          x="720"
+          y="40"
+          width="120"
+          height="60"
+          rx="30"
+          fill="none"
+          stroke="rgba(200,151,58,0.35)"
+          stroke-width="1.5"
+        />
+        <line
+          x1="720"
+          y1="88"
+          x2="840"
+          y2="88"
+          stroke="rgba(200,151,58,0.25)"
+          stroke-width="3"
+        />
+        <text
+          x="780"
+          y="74"
+          text-anchor="middle"
+          fill="rgba(200,151,58,0.28)"
+          font-size="16"
+          font-family="serif"
+        >
+          𓆣𓎛𓇋
+        </text>
+
+        <!-- Ground line -->
+        <line
+          x1="0"
+          y1="160"
+          x2="1000"
+          y2="160"
+          stroke="rgba(200,151,58,0.12)"
+          stroke-width="1"
+        />
+        <!-- Crowd of tiny figures -->
+        <g fill="rgba(200,151,58,0.15)">
+          <circle cx="150" cy="150" r="5" />
+          <line
+            x1="150"
+            y1="155"
+            x2="150"
+            y2="160"
+            stroke="rgba(200,151,58,0.15)"
+            stroke-width="2"
+          />
+          <circle cx="200" cy="148" r="5" />
+          <line
+            x1="200"
+            y1="153"
+            x2="200"
+            y2="160"
+            stroke="rgba(200,151,58,0.15)"
+            stroke-width="2"
+          />
+          <circle cx="350" cy="150" r="5" />
+          <line
+            x1="350"
+            y1="155"
+            x2="350"
+            y2="160"
+            stroke="rgba(200,151,58,0.15)"
+            stroke-width="2"
+          />
+          <circle cx="500" cy="149" r="5" />
+          <line
+            x1="500"
+            y1="154"
+            x2="500"
+            y2="160"
+            stroke="rgba(200,151,58,0.15)"
+            stroke-width="2"
+          />
+          <circle cx="650" cy="150" r="5" />
+          <line
+            x1="650"
+            y1="155"
+            x2="650"
+            y2="160"
+            stroke="rgba(200,151,58,0.15)"
+            stroke-width="2"
+          />
+          <circle cx="800" cy="148" r="5" />
+          <line
+            x1="800"
+            y1="153"
+            x2="800"
+            y2="160"
+            stroke="rgba(200,151,58,0.15)"
+            stroke-width="2"
+          />
+        </g>
+      </svg>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Égypte Éternelle · Dossier Thématique</p>
+        <h1 class="hero-title">
+          Dynasties &amp; Pharaons
+          <span>De Narmer à Cléopâtre — 3 000 ans de royauté divine</span>
+        </h1>
+        <p class="hero-subtitle">
+          De l'unification des Deux Terres au crépuscule des pharaons, le
+          portrait de trente dynasties et des souverains qui ont façonné
+          l'éternité
+        </p>
+        <div class="hero-divider"></div>
+      </div>
+      <div class="scroll-hint">Défiler</div>
+    </section>
+
+    <!-- ═══════════════ NAV ═══════════════ -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="#accueil" class="nav-logo">𓂀 Égypte Éternelle</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="#toc">Table des matières</a></li>
+          <li><a href="#thinite">Époque thinite</a></li>
+          <li><a href="#ancien">Ancien Empire</a></li>
+          <li><a href="#moyen">Moyen Empire</a></li>
+          <li><a href="#nouvel">Nouvel Empire</a></li>
+          <li><a href="#tardif">Basse Époque</a></li>
+          <li><a href="#bibliographie">Sources</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ═══════════════ STATS ═══════════════ -->
+    <div class="intro-band">
+      <div class="container-wide">
+        <div class="intro-grid">
+          <div class="intro-stat">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Dynasties répertoriées</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">170+</span>
+            <span class="stat-label">Pharaons connus</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">~3100</span>
+            <span class="stat-label">Av. J.-C. — début</span>
+          </div>
+          <div class="intro-divider-v"></div>
+          <div class="intro-stat">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Av. J.-C. — fin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ TABLE OF CONTENTS ═══════════════ -->
+    <section class="toc-section" id="toc">
+      <div class="container">
+        <div class="article-image">
+          <img src="images/images/dynasties-pharaons-5deb5c52-e92e-43d9-99e8-801336e5dc0a.png" alt="Dynasties Égyptiennes" loading="lazy">
+          <div class="image-caption">L'Égypte des Pharaons — 3 000 ans de rayonnement et de continuité</div>
+        </div>
+        <p class="toc-header">𓂀 Navigation</p>
+        <h2 class="toc-title">Table des matières</h2>
+        <div class="toc-grid">
+          <div class="toc-era">
+            <p class="toc-era-title">Époque thinite · Dynasties I–II</p>
+            <a href="#narmer" class="toc-link"
+              ><span class="toc-num">I.1</span
+              ><span class="toc-name">Narmer — L'unificateur</span
+              ><span class="toc-dates">~3100</span></a
+            >
+            <a href="#djer" class="toc-link"
+              ><span class="toc-num">I.2</span
+              ><span class="toc-name">Djer & la Dyn. I</span
+              ><span class="toc-dates">~3050</span></a
+            >
+            <a href="#dyn2" class="toc-link"
+              ><span class="toc-num">II</span
+              ><span class="toc-name">Deuxième Dynastie</span
+              ><span class="toc-dates">~2890</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Ancien Empire · Dynasties III–VI</p>
+            <a href="#djoser" class="toc-link"
+              ><span class="toc-num">III.1</span
+              ><span class="toc-name">Djéser & Imhotep</span
+              ><span class="toc-dates">~2650</span></a
+            >
+            <a href="#snefrou" class="toc-link"
+              ><span class="toc-num">IV.1</span
+              ><span class="toc-name">Snéfrou — Le bâtisseur</span
+              ><span class="toc-dates">~2613</span></a
+            >
+            <a href="#kheops" class="toc-link"
+              ><span class="toc-num">IV.2</span
+              ><span class="toc-name">Khéops — Grande Pyramide</span
+              ><span class="toc-dates">~2589</span></a
+            >
+            <a href="#khephren" class="toc-link"
+              ><span class="toc-num">IV.3</span
+              ><span class="toc-name">Khéphren & le Sphinx</span
+              ><span class="toc-dates">~2558</span></a
+            >
+            <a href="#pepi" class="toc-link"
+              ><span class="toc-num">VI.1</span
+              ><span class="toc-name">Pépi II — Le plus long règne</span
+              ><span class="toc-dates">~2278</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Première Période intermédiaire · VII–XI</p>
+            <a href="#pi1" class="toc-link"
+              ><span class="toc-num">VII–X</span
+              ><span class="toc-name">Fragmentation & chaos</span
+              ><span class="toc-dates">~2160</span></a
+            >
+            <a href="#mentuhotep" class="toc-link"
+              ><span class="toc-num">XI</span
+              ><span class="toc-name">Montouhotep II — Réunificateur</span
+              ><span class="toc-dates">~2055</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Moyen Empire · Dynasties XI–XIII</p>
+            <a href="#amenemhat1" class="toc-link"
+              ><span class="toc-num">XII.1</span
+              ><span class="toc-name">Amenemhat Ier — Fondateur</span
+              ><span class="toc-dates">~1985</span></a
+            >
+            <a href="#senusret" class="toc-link"
+              ><span class="toc-num">XII.2</span
+              ><span class="toc-name">Sésostris III — Le guerrier</span
+              ><span class="toc-dates">~1878</span></a
+            >
+            <a href="#amenemhat3" class="toc-link"
+              ><span class="toc-num">XII.3</span
+              ><span class="toc-name">Amenemhat III — L'âge d'or</span
+              ><span class="toc-dates">~1859</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">
+              Deuxième Période intermédiaire · XIV–XVII
+            </p>
+            <a href="#hyksos" class="toc-link"
+              ><span class="toc-num">XV–XVI</span
+              ><span class="toc-name">Les Hyksos — L'invasion</span
+              ><span class="toc-dates">~1650</span></a
+            >
+            <a href="#ahmose" class="toc-link"
+              ><span class="toc-num">XVII–XVIII</span
+              ><span class="toc-name">Ahmôsis Ier — La libération</span
+              ><span class="toc-dates">~1550</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Nouvel Empire · Dynasties XVIII–XX</p>
+            <a href="#hatchepsout" class="toc-link"
+              ><span class="toc-num">XVIII.1</span
+              ><span class="toc-name">Hatchepsout — La pharaonne</span
+              ><span class="toc-dates">~1479</span></a
+            >
+            <a href="#thoutmosis3" class="toc-link"
+              ><span class="toc-num">XVIII.2</span
+              ><span class="toc-name">Thoutmôsis III — Napoléon</span
+              ><span class="toc-dates">~1457</span></a
+            >
+            <a href="#akhenaton" class="toc-link"
+              ><span class="toc-num">XVIII.3</span
+              ><span class="toc-name">Akhénaton — Le hérétique</span
+              ><span class="toc-dates">~1353</span></a
+            >
+            <a href="#toutankhamon" class="toc-link"
+              ><span class="toc-num">XVIII.4</span
+              ><span class="toc-name">Toutankhamon — L'enfant-roi</span
+              ><span class="toc-dates">~1332</span></a
+            >
+            <a href="#ramses2" class="toc-link"
+              ><span class="toc-num">XIX.1</span
+              ><span class="toc-name">Ramsès II — Le Grand</span
+              ><span class="toc-dates">~1279</span></a
+            >
+            <a href="#ramses3" class="toc-link"
+              ><span class="toc-num">XX.1</span
+              ><span class="toc-name">Ramsès III — Le dernier grand</span
+              ><span class="toc-dates">~1187</span></a
+            >
+          </div>
+
+          <div class="toc-era">
+            <p class="toc-era-title">Basse Époque · Dynasties XXI–XXX</p>
+            <a href="#pi2" class="toc-link"
+              ><span class="toc-num">XXI–XXIV</span
+              ><span class="toc-name">Troisième Période intermédiaire</span
+              ><span class="toc-dates">~1070</span></a
+            >
+            <a href="#taharqa" class="toc-link"
+              ><span class="toc-num">XXV</span
+              ><span class="toc-name">Taharqa — Pharaon nubien</span
+              ><span class="toc-dates">~690</span></a
+            >
+            <a href="#nectanebo" class="toc-link"
+              ><span class="toc-num">XXX</span
+              ><span class="toc-name">Nectanébo II — Le dernier</span
+              ><span class="toc-dates">~360</span></a
+            >
+            <a href="#cleopatre" class="toc-link"
+              ><span class="toc-num">Prol.</span
+              ><span class="toc-name">Cléopâtre VII — Le crépuscule</span
+              ><span class="toc-dates">~51</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     ÈRE 1 : ÉPOQUE THINITE
+═══════════════════════════════════════════ -->
+    <div class="era-header" id="thinite">
+      <div class="era-header-inner">
+        <span class="era-roman">I–II</span>
+        <div class="era-info">
+          <p class="era-label">Époque thinite · ~3100–2686 av. J.-C.</p>
+          <h2 class="era-name">L'aube de l'Égypte unifiée</h2>
+          <p class="era-dates">
+            Dynasties I et II — Capitale : This puis Memphis
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NARMER -->
+    <section class="article-section" id="narmer">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">I.1</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Dynasties I · ~3100 av. J.-C.</p>
+            <h2 class="marker-title">Narmer — L'unificateur des Deux Terres</h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓇳</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Narmer (Mn)</h3>
+            <p class="pharaon-name-eg">
+              Nom égyptien : <em>Nm.r</em> — « Poisson-silure »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~3100 av. J.-C.</span>
+              <span class="tag">Dyn. I</span>
+              <span class="tag tag-green">Unificateur</span>
+              <span class="tag">This / Memphis</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Narmer — ou peut-être Ménès, selon qu'on distingue ou non ces deux
+          personnages — est le roi qui unifie la
+          <strong>Haute et la Basse Égypte</strong> aux alentours de 3100 avant
+          notre ère, fondant la première des trente dynasties pharaoniques. Son
+          nom signifie « Poisson-silure » (nar = silure, mer = burin),
+          association animale qui évoque puissance et souplesse.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/Egypte_louvre_249_palette.jpg"
+            alt="Palette de Narmer"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            La Palette de Narmer — Symbole de l'unification des Deux Terres
+          </div>
+        </div>
+
+        <p>
+          La <strong>Palette de Narmer</strong>, découverte à Hiérakonpolis en
+          1898 et conservée au Musée égyptien du Caire, est le document
+          fondateur de l'histoire égyptienne. Ce bouclier cosmétique en
+          grauwacke de 63 cm représente sur sa face principale le roi coiffé de
+          la couronne blanche de Haute Égypte, brandissant sa masse d'armes
+          au-dessus d'un ennemi vaincu — probablement un chef du Delta. Au
+          revers, il porte la couronne rouge de Basse Égypte et inspecte des
+          corps décapités. Ces deux scènes encodent le mythe fondateur : l'union
+          des Deux Terres sous l'autorité d'un seul roi.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            La Palette de Narmer est le premier «monument» de propagande royale
+            connu. En deux faces, elle condense toute la théologie politique qui
+            gouvernera l'Égypte pendant trois millénaires.
+          </p>
+          <cite
+            >— Nicolas Grimal, <em>Histoire de l'Égypte ancienne</em>, Fayard,
+            1988</cite
+          >
+        </div>
+
+        <p>
+          L'identification de Narmer avec le légendaire
+          <strong>Ménès</strong> (premier roi mentionné par Manéthon, prêtre
+          égyptien du IIIe siècle av. J.-C. dont la <em>liste royale</em> est
+          notre principale source dynastique) reste débattue. Certains
+          égyptologues pensent qu'ils sont la même personne, d'autres que Ménès
+          est son successeur immédiat <strong>Aha</strong>. Quoi qu'il en soit,
+          l'acte d'unification est indissociable de la fondation de
+          <strong>Memphis</strong> (Ineb-Hedj, « le Mur blanc »), ville
+          carrefour bâtie à la jonction des deux pays, qui sera la capitale de
+          l'Ancien Empire.
+        </p>
+
+        <h3>La Première Période thinite : construction de l'État</h3>
+        <p>
+          Les pharaons des <strong>dynasties I et II</strong> règnent depuis
+          <em>This</em> (Abydos), ville sainte de Haute Égypte. Ces deux cents
+          ans d'histoire sont une période d'intense construction
+          institutionnelle : mise en place de l'administration centralisée,
+          invention du
+          <a href="#hieroglyphes" class="internal-link">hiéroglyphe</a> comme
+          écriture d'État, consolidation de l'idéologie royale. Les tombes
+          royales d'Abydos — de grandes fosses rectangulaires en briques,
+          précurseurs des mastabas — sont entourées de centaines de serviteurs
+          sacrifiés pour accompagner le roi dans la mort : pratique barbare qui
+          disparaîtra sous la IIe Dynastie, remplacée par des figurines
+          funéraires (<a href="#chaouabtis" class="internal-link">chaouabtis</a
+          >).
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     ÈRE 2 : ANCIEN EMPIRE
+═══════════════════════════════════════════ -->
+    <div class="era-header" id="ancien">
+      <div class="era-header-inner">
+        <span class="era-roman">III–VI</span>
+        <div class="era-info">
+          <p class="era-label">Ancien Empire · ~2686–2181 av. J.-C.</p>
+          <h2 class="era-name">L'Âge des Pyramides</h2>
+          <p class="era-dates">Dynasties III à VI — Capitale : Memphis</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DJOSER -->
+    <section class="article-section" id="djoser">
+      <div class="hiero-deco">𓌀𓎛𓇋𓐍𓆑𓀭𓏤</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">III.1</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Troisième Dynastie · ~2650 av. J.-C.</p>
+            <h2 class="marker-title">
+              Djéser — Le premier bâtisseur de pierre
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓌀</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Djéser (Nétjérikhét)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Nṯr.j-ḫt</em> — « Le corps divin »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~2650–2610 av. J.-C.</span>
+              <span class="tag">Dyn. III</span>
+              <span class="tag tag-green">Pyramide à degrés</span>
+              <span class="tag">Saqqarah</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Djéser est l'auteur de la révolution architecturale la plus importante
+          de l'Antiquité : sous son règne, son grand vizir et architecte
+          <strong>Imhotep</strong> conçoit et bâtit à Saqqarah la première
+          <a href="#pyramides" class="internal-link">pyramide à degrés</a> du
+          monde — et la première grande construction en pierre taillée de
+          l'histoire humaine. Imhotep empile six mastabas de taille décroissante
+          pour obtenir une tour de 62 mètres en calcaire blanc, entourée d'un
+          complexe funéraire de 15 hectares comprenant cours, chapelles et
+          temples fictifs en pierre.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/pyramide-à-degret.jpg"
+            alt="Pyramide à degrés de Djéser"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            Le complexe funéraire de Djéser à Saqqarah — La première pyramide de
+            l'histoire
+          </div>
+        </div>
+
+        <p>
+          La statue de Djéser retrouvée dans le <em>serdab</em> (chambre
+          aveugle) au nord de la pyramide est la
+          <strong>plus ancienne statue grandeur nature</strong> retrouvée en
+          Égypte. Elle représente le roi assis, vêtu du manteau sed (manteau du
+          jubilé), les yeux percés de petits trous autrefois incrustés de
+          cristal — pour que le ka royal puisse surveiller éternellement son
+          territoire.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">
+            𓂀 Imhotep — Premier génie nommé de l'histoire
+          </p>
+          <p>
+            Imhotep cumule les titres de vizir, grand prêtre d'Héliopolis,
+            médecin et architecte. Il sera déifié deux millénaires après sa
+            mort, assimilé au dieu de la médecine. Les Grecs l'identifieront à
+            Asclépios. Son nom signifie <em>« Celui qui vient en paix »</em>. Il
+            est l'un des rarissimes non-royaux à recevoir des honneurs divins en
+            Égypte ancienne.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SNEFROU -->
+    <section class="article-section" id="snefrou">
+      <div class="hiero-deco">𓊹𓌀𓎛𓁹𓅓𓏏𓆑</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">IV.1</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Quatrième Dynastie · ~2613–2589 av. J.-C.
+            </p>
+            <h2 class="marker-title">Snéfrou — Le maître bâtisseur</h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓊹</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Snéfrou (Snéférou)</h3>
+            <p class="pharaon-name-eg">
+              Nom égyptien : <em>Snfrw</em> — « Celui qui fait la beauté »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~2613–2589 av. J.-C.</span>
+              <span class="tag">Dyn. IV</span>
+              <span class="tag tag-green">3 pyramides</span>
+              <span class="tag">Dahchour · Meïdoum</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Snéfrou est l'un des pharaons les plus sous-estimés de l'histoire
+          égyptienne. Fondateur de la IVe Dynastie, père de Khéops et premier
+          roi du véritable « Âge des Pyramides », il fait construire non pas une
+          mais <strong>trois pyramides</strong> — et peut-être quatre —
+          représentant un volume total de pierre supérieur à celui de son fils
+          Khéops. C'est le plus grand bâtisseur individuel de l'histoire de
+          l'humanité en termes de mètres cubes érigés.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/pyramide-rouge.jpg"
+            alt="Pyramide Rouge de Snéfrou"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            La Pyramide Rouge de Dahchour — Première pyramide lisse parfaite
+          </div>
+        </div>
+
+        <div class="article-image">
+          <img
+            src="images/images/nl0c4nnl0c4nnl0c.png"
+            alt="Chantier d'une pyramide"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            L'effort colossal : des milliers d'ouvriers mobilisés pour l'éternité du Pharaon
+          </div>
+        </div>
+
+        <p>
+          Sa première pyramide à <strong>Meïdoum</strong> fut d'abord conçue à
+          degrés (comme celle de Djéser), puis convertie en pyramide lisse à
+          parements de calcaire — qui s'effondra partiellement, faute d'une
+          inclinaison trop forte des assises internes. À
+          <strong>Dahchour</strong>, la <em>Pyramide rhomboïdale</em> trahit en
+          direct l'erreur de calcul : l'angle passe de 54° à 43° à mi-hauteur,
+          donnant ce profil « brisé » unique dans l'architecture égyptienne.
+          Snéfrou en tire la leçon et fait bâtir à côté la
+          <em>Pyramide rouge</em>, première pyramide parfaitement lisse de
+          l'histoire, avec l'angle plus sûr de 43°.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Snéfrou construisit plus de pierre que son fils Khéops, et pourtant
+            son nom reste dans l'ombre. L'histoire retient les monuments,
+            rarement les apprentissages qui les ont rendus possibles.
+          </p>
+          <cite
+            >— Mark Lehner, <em>The Complete Pyramids</em>, Thames & Hudson,
+            1997</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- KHEOPS -->
+    <section class="article-section" id="kheops">
+      <div class="hiero-deco">𓂀𓊃𓐍𓌀𓎛𓏤𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">IV.2</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Quatrième Dynastie · ~2589–2566 av. J.-C.
+            </p>
+            <h2 class="marker-title">Khéops — L'architecte de l'infini</h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓇳</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Khéops (Khoufoui)</h3>
+            <p class="pharaon-name-eg">
+              Nom égyptien : <em>Ḫnm.w-ḫw.f.wj</em> — « Khnoum me protège »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~2589–2566 av. J.-C.</span>
+              <span class="tag">Dyn. IV</span>
+              <span class="tag tag-green">Grande Pyramide</span>
+              <span class="tag">Gizeh</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          De Khéops, nous savons peu. Paradoxalement, le pharaon qui a
+          commandité la plus colossale construction humaine de l'Antiquité nous
+          a laissé un seul portrait certain : une statuette d'ivoire de
+          <strong>9 centimètres</strong>, découverte à Abydos en 1903 et
+          conservée au Musée égyptien du Caire. Ce minuscule chef-d'œuvre
+          représente le roi assis sur son trône, coiffé de la couronne rouge —
+          ironie sublime de l'histoire : le maître de la plus grande pyramide du
+          monde ne nous a laissé que le plus petit de ses portraits.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/pyramide-de-kheops.webp"
+            alt="Grande Pyramide de Khéops"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            La Grande Pyramide de Gizeh — Seule merveille du monde antique
+            encore debout
+          </div>
+        </div>
+
+        <p>
+          Sa pyramide de Gizeh, baptisée <em>Akhet Khoufoui</em> (« L'horizon de
+          Khoufoui »), est l'unique survivante des Sept Merveilles du monde
+          antique. Haute de <strong>146,6 mètres</strong> à l'origine, elle
+          contient environ 2,3 millions de blocs de calcaire et de granit. Son
+          intérieur recèle trois chambres reliées par des galeries ascendantes —
+          dont la mystérieuse <em>Grande Galerie</em>, voûtée en encorbellement
+          sur 47 mètres, dont la fonction reste discutée. Les scans
+          muographiques du projet <em>ScanPyramids</em> (2016–2023) ont détecté
+          des anomalies de densité inexpliquées, suggérant l'existence de vides
+          inconnus.
+        </p>
+
+        <div class="info-box info-box-or">
+          <p class="info-box-title">𓇳 Les papyrus de Merer (2013)</p>
+          <p>
+            Découverts à Ouadi el-Jarf sur les rives de la mer Rouge, ces
+            papyrus datant du règne de Khéops constituent le plus ancien journal
+            de chantier de l'humanité. Rédigés par un certain Merer, inspecteur
+            d'une équipe de 40 hommes, ils décrivent le transport de blocs de
+            calcaire de Toura à Gizeh par voie fluviale — confirmant
+            définitivement que les ouvriers des pyramides étaient des
+            travailleurs libres nourris et organisés par l'État.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KHEPHREN + MYKERINOS -->
+    <section class="article-section" id="khephren">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">IV.3</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Quatrième Dynastie · ~2558–2532 av. J.-C.
+            </p>
+            <h2 class="marker-title">
+              Khéphren & Mykérinos — Les gardiens de Gizeh
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓁹</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Khéphren (Khâefrê)</h3>
+            <p class="pharaon-name-eg">
+              Nom égyptien : <em>Ḫˁ.f-Rˁ</em> — « Rê apparaît »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~2558–2532 av. J.-C.</span>
+              <span class="tag">Dyn. IV</span>
+              <span class="tag tag-green">Grand Sphinx</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Fils de Khéops, <strong>Khéphren</strong> fait ériger la deuxième
+          pyramide de Gizeh — haute de 143,5 mètres, légèrement plus petite que
+          celle de son père mais perchée sur un socle rocheux plus élevé, ce qui
+          la fait paraître plus imposante. Son complexe funéraire comprend le
+          <strong>Grand Sphinx</strong>, colosse de 73 mètres taillé dans la
+          roche en place, qui porte vraisemblablement son visage.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/pyramide-de-khephren.jpg"
+            alt="Pyramide de Khéphren"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            La Pyramide de Khéphren et son sommet encore paré de calcaire
+          </div>
+        </div>
+
+        <p>
+          <strong>Mykérinos</strong> (Menkaourê), son successeur, bâtit la
+          troisième pyramide de Gizeh — beaucoup plus modeste (65 mètres),
+          partiellement revêtue de granit rose d'Assouan. Sa mort prématurée
+          interrompit peut-être les travaux : les parements supérieurs furent
+          terminés à la hâte en briques crues par son fils Chepseskaf. La triade
+          de Gizeh est alors complète — trois étoiles de la ceinture d'Orion
+          selon certains archéoastronomes, bien que cette théorie reste
+          controversée.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Pharaon</th>
+              <th>Règne</th>
+              <th>Monument principal</th>
+              <th>Hauteur orig.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Snéfrou</strong></td>
+              <td>~2613–2589</td>
+              <td>Pyramide rouge (Dahchour)</td>
+              <td>105 m</td>
+            </tr>
+            <tr>
+              <td><strong>Khéops</strong></td>
+              <td>~2589–2566</td>
+              <td>Grande Pyramide (Gizeh)</td>
+              <td>146,6 m</td>
+            </tr>
+            <tr>
+              <td><strong>Khéphren</strong></td>
+              <td>~2558–2532</td>
+              <td>Pyramide de Khéphren + Sphinx</td>
+              <td>143,5 m</td>
+            </tr>
+            <tr>
+              <td><strong>Mykérinos</strong></td>
+              <td>~2532–2504</td>
+              <td>Troisième pyramide de Gizeh</td>
+              <td>65 m</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PEPI II -->
+    <section class="article-section" id="pepi">
+      <div class="hiero-deco">𓆣𓎛𓇋𓐍𓌀𓎛𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">VI.1</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Sixième Dynastie · ~2278–2184 av. J.-C.
+            </p>
+            <h2 class="marker-title">
+              Pépi II — Le règne le plus long de l'histoire
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓆣</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Pépi II (Néferkarê)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Nfr-kȝ-Rˁ</em> — « Beau est le ka de Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~2278–2184 av. J.-C.</span>
+              <span class="tag">Dyn. VI</span>
+              <span class="tag tag-blue">~94 ans de règne</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Pépi II monte sur le trône à l'âge de six ans et règne pendant
+          <strong>environ 94 ans</strong> — le plus long règne certifié de
+          l'histoire humaine. Une lettre touchante, conservée sur papyrus,
+          montre le jeune roi demandant avec enthousiasme à son général Horhuf
+          de lui ramener un <em>nain dansant</em> des lointaines terres
+          africaines, promettant une récompense supérieure à tous les trésors.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/pepil.png"
+            alt="Pépi II"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            Pépi II sur les genoux de sa mère — Témoignage d'un règne record
+            débuté dès l'enfance
+          </div>
+        </div>
+
+        <p>
+          Mais ce règne interminable sera aussi le chant du cygne de l'Ancien
+          Empire. Les longues années de règne de Pépi II permettent aux
+          <strong>nomarques</strong> (gouverneurs de provinces) d'accumuler
+          pouvoirs et richesses, affaiblissant progressivement l'autorité
+          royale. À sa mort, l'Égypte se fragmente : c'est le début de la
+          <strong>Première Période intermédiaire</strong>, une ère de désunion,
+          de famines et de guerres civiles qui durera 130 ans. Les
+          <em>Textes des Pyramides</em>, corpus de formules magiques funéraires
+          gravées dans les pyramides de la VIe Dynastie, constituent l'une des
+          plus anciennes collections de textes religieux au monde.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     PERIODE INTERM. 1
+═══════════════════════════════════════════ -->
+    <div class="era-header" id="pi1">
+      <div class="era-header-inner">
+        <span class="era-roman">VII–X</span>
+        <div class="era-info">
+          <p class="era-label">
+            Première Période intermédiaire · ~2181–2055 av. J.-C.
+          </p>
+          <h2 class="era-name">Le temps du chaos</h2>
+          <p class="era-dates">Dynasties VII à X — Capitales multiples</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="article-section" id="pi1">
+      <div class="container">
+        <div class="article-image">
+          <img src="images/images/The Ninth Dynasty of Ancient Egypt History-webp.webp" alt="Neuvième Dynastie" loading="lazy">
+          <div class="image-caption">Fragmentation du pouvoir — L'Égypte divisée entre le Nord et le Sud</div>
+        </div>
+      </div>
+    </section>
+    <section class="article-section" id="mentuhotep">
+      <div class="hiero-deco">𓊹𓌀𓎛𓁹𓅓𓏏𓆣</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XI</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Onzième Dynastie · ~2055 av. J.-C.</p>
+            <h2 class="marker-title">Montouhotep II — Le second unificateur</h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓂀</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Montouhotep II (Nebhépetrê)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Nb-ḥpt-Rˁ</em> — « Le Seigneur du
+              gouvernail de Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~2055–2004 av. J.-C.</span>
+              <span class="tag">Dyn. XI</span>
+              <span class="tag tag-green">Réunificateur</span>
+              <span class="tag">Thèbes</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Après un siècle de fragmentation, c'est un prince thébain,
+          <strong>Montouhotep II</strong>, qui réunifie l'Égypte en écrasant les
+          rivaux hérakléopolitains du Nord vers 2055 av. J.-C. Son règne de 51
+          ans marque la fondation du <strong>Moyen Empire</strong> — nouvelle
+          ère de stabilité, de prospérité et d'expansion culturelle.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/montouhotep_ii_hd.png"
+            alt="Montouhotep II"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            Statue de Montouhotep II — Le pharaon à la peau sombre, unificateur
+            du Moyen Empire (Portrait HD)
+          </div>
+        </div>
+
+        <p>
+          Son temple funéraire de <strong>Deir el-Bahari</strong>, niché dans la
+          falaise thébaine, préfigure avec ses terrasses étagées le chef-d'œuvre
+          architectural qu'y bâtira cinq siècles plus tard
+          <a href="#hatchepsout" class="internal-link">Hatchepsout</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     ÈRE 3 : MOYEN EMPIRE
+═══════════════════════════════════════════ -->
+    <div class="era-header" id="moyen">
+      <div class="era-header-inner">
+        <span class="era-roman">XI–XIII</span>
+        <div class="era-info">
+          <p class="era-label">Moyen Empire · ~2055–1650 av. J.-C.</p>
+          <h2 class="era-name">
+            L'Âge classique de la littérature et des arts
+          </h2>
+          <p class="era-dates">
+            Dynasties XI à XIII — Capitales : Thèbes puis Licht
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- AMENEMHAT I -->
+    <section class="article-section" id="amenemhat1">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XII.1</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Douzième Dynastie · ~1985–1956 av. J.-C.
+            </p>
+            <h2 class="marker-title">
+              Amenemhat Ier — Fondateur de la XIIe Dynastie
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓌀</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Amenemhat Ier (Sehetepibrê)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Sḥtp.j-jb-Rˁ</em> — « Celui qui apaise le
+              cœur de Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1985–1956 av. J.-C.</span>
+              <span class="tag">Dyn. XII</span>
+              <span class="tag tag-blue">Co-régence</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Amenemhat Ier inaugure la <strong>XIIe Dynastie</strong> — peut-être
+          la plus brillante de toutes — en fondant une nouvelle capitale,
+          <em>Itjtaouy</em> (« Celle qui prend les Deux Terres »), près de Licht
+          en Moyenne Égypte. Vizir sous son prédécesseur Montouhotep IV, il
+          accède au trône dans des circonstances floues — peut-être par un coup
+          d'État — et institutionnalise la <strong>co-régence</strong> : la
+          pratique de désigner un co-souverain du vivant du roi pour éviter les
+          guerres de succession.
+        </p>
+        <p>
+          Les <em>Instructions d'Amenemhat</em>, texte littéraire de haute
+          qualité rédigé en son nom (mais probablement par ses scribes après sa
+          mort), montrent un roi amer et lucide nous avertissant de ne pas faire
+          confiance à son entourage proche — réflexion qui prend toute sa portée
+          sachant qu'il fut probablement
+          <strong>assassiné dans son palais</strong> durant la nuit, au cours
+          d'un complot de harem.
+        </p>
+      </div>
+    </section>
+
+    <!-- SESOSTRIS III -->
+    <section class="article-section" id="senusret">
+      <div class="hiero-deco">𓂀𓊃𓐍𓌀𓎛𓏤𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XII.2</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Douzième Dynastie · ~1878–1839 av. J.-C.
+            </p>
+            <h2 class="marker-title">Sésostris III — Le conquérant de Nubie</h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓁹</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Sésostris III (Sénousret III)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Ḫˁ-kˁw-Rˁ</em> — « Les kas de Rê
+              apparaissent »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1878–1839 av. J.-C.</span>
+              <span class="tag">Dyn. XII</span>
+              <span class="tag tag-green">Expansion nubienne</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Sésostris III est le pharaon le plus guerrier et le plus réformateur
+          du Moyen Empire. Il mène <strong>quatre campagnes en Nubie</strong>,
+          repoussant la frontière jusqu'à Semna, où il fait ériger des
+          forteresses colossales et des stèles comminatoires interdisant aux
+          Nubiens de franchir la limite sous peine de mort. Ses portraits
+          sculptés — visage sévère, pommettes saillantes, paupières lourdes —
+          tranchent radicalement avec l'idéalisation des portraits royaux
+          précédents : c'est la première fois qu'un pharaon se fait représenter
+          avec les traits du vieillissement, peut-être pour signifier le poids
+          du pouvoir et de la responsabilité royale.
+        </p>
+        <p>
+          Sur le plan intérieur, il démantèle le système des
+          <strong>nomarques héréditaires</strong> — ces gouverneurs locaux dont
+          l'accumulation de pouvoir avait causé l'effondrement de l'Ancien
+          Empire — en créant une administration centralisée de fonctionnaires
+          nommés par la couronne. Réforme structurelle majeure qui consolidera
+          l'État pour des siècles.
+        </p>
+      </div>
+    </section>
+
+    <!-- AMENEMHAT III -->
+    <section class="article-section" id="amenemhat3">
+      <div class="hiero-deco">𓆑𓀭𓏤𓊃𓐍𓌀𓎛</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XII.3</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Douzième Dynastie · ~1859–1813 av. J.-C.
+            </p>
+            <h2 class="marker-title">
+              Amenemhat III — L'apogée du Moyen Empire
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓆑</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Amenemhat III (Nimaâtrê)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Nj-mȝˁt-Rˁ</em> — « Juste est Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1859–1813 av. J.-C.</span>
+              <span class="tag">Dyn. XII</span>
+              <span class="tag tag-blue">Labyrinthe du Fayoum</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Le règne de 46 ans d'Amenemhat III représente
+          <strong>l'apogée culturel et économique du Moyen Empire</strong>.
+          Grand développeur du Fayoum — cette oasis naturelle à l'ouest du Nil —
+          il y fait creuser des canaux d'irrigation transformant des milliers
+          d'hectares de marécages en terres agricoles productives.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/amenemhat_iii_hd.png"
+            alt="Amenemhat III"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            Tête colossale d'Amenemhat III — Le visage de la maturité et du
+            pouvoir consolidé (Rendu HD)
+          </div>
+        </div>
+
+        <p>
+          Son complexe funéraire de <strong>Hawara</strong>, adjacent à une
+          pyramide en briques, est décrit par Hérodote comme un « labyrinthe »
+          composé de 3 000 salles réparties sur deux niveaux, rivalisant selon
+          lui en magnificence avec toutes les constructions grecques réunies. Ce
+          complexe, aujourd'hui détruit, a peut-être inspiré le mythe crétois du
+          Labyrinthe.
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">
+            𓌀 Le Papyrus Westcar et la littérature du Moyen Empire
+          </p>
+          <p>
+            Le Moyen Empire est l'âge d'or de la littérature égyptienne. Le
+            <em>Conte du Naufragé</em>, <em>Sinouhé</em>, les
+            <em>Enseignements d'Amenemhat</em> et les
+            <em>Lamentations d'Ipou-our</em> constituent un corpus littéraire
+            d'une richesse et d'une subtilité psychologique qui sera la
+            référence stylistique des scribes pendant deux millénaires. La
+            langue du Moyen Empire sera ensuite traitée comme le « latin » de
+            l'Égypte ancienne.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     HYKSOS & LIBERATION
+═══════════════════════════════════════════ -->
+    <div class="era-header" id="hyksos">
+      <div class="era-header-inner">
+        <span class="era-roman">XIV–XVII</span>
+        <div class="era-info">
+          <p class="era-label">
+            Deuxième Période intermédiaire · ~1650–1550 av. J.-C.
+          </p>
+          <h2 class="era-name">L'invasion des Hyksos</h2>
+          <p class="era-dates">
+            Dynasties XIV à XVII — Double pouvoir : Avaris & Thèbes
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="article-section" id="ahmose">
+      <div class="hiero-deco">𓊹𓌀𓎛𓁹𓅓𓏏𓆣</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XVIII.0</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              XVIIe–XVIIIe Dynasties · ~1550 av. J.-C.
+            </p>
+            <h2 class="marker-title">
+              Ahmôsis Ier — La reconquête et la naissance du Nouvel Empire
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓊹</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Ahmôsis Ier (Iâhmes)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Nb-pḥtj-Rˁ</em> — « Seigneur de la force
+              de Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1550–1525 av. J.-C.</span>
+              <span class="tag">Dyn. XVIII</span>
+              <span class="tag tag-green">Fondateur du Nouvel Empire</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Les <strong>Hyksos</strong> (du terme égyptien <em>Heqa-khasewet</em>,
+          « chefs des pays étrangers ») sont des populations d'origine levantine
+          qui s'installent progressivement dans le delta du Nil à partir du
+          XVIIIe siècle av. J.-C. Vers 1650, ils s'emparent de
+          <strong>Memphis</strong> et fondent leur propre dynastie, la XVe, avec
+          pour capitale <strong>Avaris</strong> dans le delta oriental.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/The-Hyksos-Invasion-of-Ancient-Egypt.webp"
+            alt="Invasion Hyksos"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            Représentation des Hyksos — L'introduction du char de guerre en
+            Égypte
+          </div>
+        </div>
+
+        <p>
+          Si leur règne fut longtemps présenté comme une occupation brutale, les
+          recherches archéologiques récentes menées par Manfred Bietak à Tell
+          el-Dab'a montrent une réalité plus nuancée : les Hyksos adoptent
+          largement la culture égyptienne tout en introduisant des innovations
+          décisives — char de guerre tiré par des chevaux, arc composite,
+          nouvelle métallurgie du bronze.
+        </p>
+        <p>
+          C'est Ahmôsis Ier, prince thébain héritier de la XVIIe Dynastie, qui
+          achève la libération de l'Égypte en prenant d'assaut
+          <strong>Avaris</strong> vers 1550 av. J.-C., puis en poussant les
+          Hyksos jusqu'en Canaan. Il fonde ainsi la
+          <strong>XVIIIe Dynastie</strong> et le <em>Nouvel Empire</em> —
+          l'époque la plus brillante et la plus documentée de l'histoire
+          pharaonique. Son règne inaugure également la politique d'expansion
+          militaire qui fera de l'Égypte la première puissance du Proche-Orient
+          ancien.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Ahmôsis ne se contenta pas de chasser les Hyksos : il retourna
+            contre eux leurs propres inventions militaires — le char et l'arc
+            composite — et les utilisa pour bâtir le plus grand empire que
+            l'Égypte ait jamais connu.
+          </p>
+          <cite
+            >— Ian Shaw, <em>The Oxford History of Ancient Egypt</em>, Oxford
+            University Press, 2000</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     ÈRE 4 : NOUVEL EMPIRE
+═══════════════════════════════════════════ -->
+    <div class="era-header" id="nouvel">
+      <div class="era-header-inner">
+        <span class="era-roman">XVIII–XX</span>
+        <div class="era-info">
+          <p class="era-label">Nouvel Empire · ~1550–1070 av. J.-C.</p>
+          <h2 class="era-name">L'Apogée — Guerriers, Dieux et Bâtisseurs</h2>
+          <p class="era-dates">
+            Dynasties XVIII à XX — Capitale : Thèbes (Ouaset)
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 3rem;">
+        <div class="article-image">
+          <img
+            src="images/images/ldjk9rldjk9rldjk.png"
+            alt="Généalogie du Nouvel Empire"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            L'Arbre des Rois — La 18ème dynastie et la lignée des Thoutmossides et Ramessides
+          </div>
+        </div>
+    </div>
+
+    <!-- HATCHEPSOUT -->
+    <section class="article-section" id="hatchepsout">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XVIII.1</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">XVIIIe Dynastie · ~1479–1458 av. J.-C.</p>
+            <h2 class="marker-title">
+              Hatchepsout — La grande pharaonne régnante
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓁹</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Hatchepsout (Maâtkâré)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Mȝˁt-kȝ-Rˁ</em> — « La vérité est le ka
+              de Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1479–1458 av. J.-C.</span>
+              <span class="tag">Dyn. XVIII</span>
+              <span class="tag tag-green">Pharaonne</span>
+              <span class="tag">Expédition Pount</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Hatchepsout est l'une des figures les plus fascinantes et les plus
+          subversives de l'histoire égyptienne. Fille de Thoutmôsis Ier, épouse
+          de Thoutmôsis II, elle exerce d'abord la régence au nom du jeune
+          Thoutmôsis III — son beau-fils — avant de se proclamer elle-même
+          <strong>pharaon à part entière</strong> vers 1473 av. J.-C., se
+          faisant représenter dans les temples avec la barbe postiche, le kilt
+          et la couronne double des pharaons masculins. Elle règne ainsi environ
+          vingt ans, l'une des périodes les plus prospères de la XVIIIe
+          Dynastie.
+        </p>
+
+        <div class="article-image">
+          <img
+            src="images/images/hatchepsout_hd.png"
+            alt="Hatchepsout"
+            loading="lazy"
+          />
+          <div class="image-caption">
+            Hatchepsout — La reine devenue pharaon, portant les
+            attributs de la royauté (Portrait HD)
+          </div>
+        </div>
+
+        <p>
+          Son chef-d'œuvre architectural, le
+          <strong>temple de Deir el-Bahari</strong>, est une merveille
+          d'élégance avec ses terrasses à colonnades adossées à la falaise
+          thébaine. Ses reliefs décrivent en détail l'expédition commerciale
+          qu'elle envoie vers le mystérieux pays de
+          <strong>Pount</strong> (probablement sur la côte érythréenne),
+          rapportant myrrhe, ébène, or, ivoire et animaux exotiques. Après sa
+          mort, son successeur Thoutmôsis III fit marteler ses noms et effacer
+          ses représentations dans les temples — tentative de
+          <em>damnatio memoriae</em> qui ne fut découverte et comprise qu'au
+          XIXe siècle.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Hatchepsout n'usurpa pas le trône : elle accomplit ce que les
+            circonstances lui imposaient, avec une maîtrise politique et une
+            vision architecturale que peu de pharaons masculins ont égalées.
+          </p>
+          <cite
+            >— Christiane Desroches Noblecourt,
+            <em>La Reine mystérieuse, Hatchepsout</em>, Pygmalion, 2002</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- THOUTMOSIS III -->
+    <section class="article-section" id="thoutmosis3">
+      <div class="hiero-deco">𓆣𓎛𓇋𓐍𓌀𓎛𓇋</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XVIII.2</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">XVIIIe Dynastie · ~1457–1425 av. J.-C.</p>
+            <h2 class="marker-title">
+              Thoutmôsis III — Le Napoléon de l'Égypte ancienne
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓆣</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Thoutmôsis III (Menkhéperrê)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Mn-ḫpr-Rˁ</em> — « Durable est la
+              manifestation de Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1479–1425 av. J.-C.</span>
+              <span class="tag">Dyn. XVIII</span>
+              <span class="tag tag-green">17 campagnes militaires</span>
+              <span class="tag">Megiddo</span>
+            </div>
+          </div>
+        </div>
+
+        <p>Souvent qualifié de « <strong>Napoléon de l'Égypte ancienne</strong> » par l'égyptologue James Henry Breasted, Thoutmôsis III est le plus grand conquérant de l'histoire pharaonique. </p>
+
+    <div class="article-image">
+      <img src="images/images/Karnak.jpg" alt="Temple de Karnak" loading="lazy">
+      <div class="image-caption">Le temple de Karnak — Thoutmôsis III y fit graver ses annales de conquêtes</div>
+    </div>
+
+    <p>Après avoir co-régné dans l'ombre d'Hatchepsout pendant vingt ans, il mène, dès l'accession solitaire au trône, <strong>dix-sept campagnes militaires</strong> en moins de vingt ans, étendant l'empire égyptien de la quatrième cataracte du Nil en Nubie jusqu'à l'Euphrate en Syrie.</p>
+        <p>
+          Sa campagne la plus célébrée est la
+          <strong>Bataille de Megiddo</strong> (~1457 av. J.-C.), première
+          bataille historique décrite avec des détails tactiques précis.
+          Thoutmôsis choisit audacieusement de passer par un défilé étroit que
+          ses généraux jugent suicidaire, surprend la coalition cananéenne et
+          remporte une victoire décisive. Les Annales de Thoutmôsis III, gravées
+          sur les murs du temple de Karnak, constituent l'un des plus anciens
+          documents de stratégie militaire.
+        </p>
+
+        <div class="info-box info-box-or">
+          <p class="info-box-title">𓇳 L'empire à son apogée</p>
+          <p>
+            Sous Thoutmôsis III, l'Égypte devient la première superpuissance
+            mondiale. Elle entretient des relations diplomatiques avec le
+            Mitanni, l'Assyrie, Babylone et le pays de Hatti (Hittites). Les
+            tributs affluent de Canaan, de Syrie, de Nubie et de Pount. Les
+            obelisques que Thoutmôsis fait ériger à Karnak seront plus tard
+            exportés à Rome, Constantinople, Paris et New York.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AKHENATON -->
+    <section class="article-section" id="akhenaton">
+      <div class="hiero-deco">𓂀𓊃𓐍𓇋𓅓𓏏𓆑</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XVIII.3</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">XVIIIe Dynastie · ~1353–1336 av. J.-C.</p>
+            <h2 class="marker-title">Akhénaton — Le pharaon hérétique</h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓂀</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Akhénaton (Aménophis IV)</h3>
+            <p class="pharaon-name-eg">
+              Nom personnel : <em>Ȝḫ-n-jtn</em> — « Celui qui est utile à Aton »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1353–1336 av. J.-C.</span>
+              <span class="tag">Dyn. XVIII</span>
+              <span class="tag tag-blue">Révolution atoniste</span>
+              <span class="tag">Amarna</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Aménophis IV — qui se rebaptise <strong>Akhénaton</strong> (« Celui
+          qui est utile à Aton ») — déclenche l'une des révolutions religieuses
+          les plus radicales de l'histoire antique. Dès la cinquième année de
+          son règne, il ferme les temples d'<a
+            href="#amon"
+            class="internal-link"
+            >Amon</a
+          >, proscrit le culte des autres dieux, confisque les richesses
+          immenses des prêtres de Karnak et fait de l'<strong>Aton</strong> — le
+          disque solaire — la seule divinité autorisée, dont lui-même est
+          l'unique intermédiaire.
+        </p>
+        <p>
+          <p>Il fonde ex nihilo une nouvelle capitale, <strong>Akhetaton</strong> (« Horizon d'Aton »), aujourd'hui Tell el-Amarna, en un lieu vierge de toute trace divine antérieure.</p>
+
+        <div class="article-image">
+          <img src="images/images/akhenaton_hd.png" alt="Akhénaton" loading="lazy">
+          <div class="image-caption">Akhénaton — La révolution spirituelle et artistique du règne d'Aton (HD)</div>
+        </div>
+
+    <p>L'art de la période amarnienne rompt spectaculairement avec le canon millénaire : les corps sont représentés avec des hanches larges, des ventres proéminents, des crânes allongés — naturalisme exacerbé que certains chercheurs attribuent à une pathologie réelle (syndrome de Marfan ?) et d'autres à un style délibérément anti-conventionnel.</p>
+        </p>
+        <p>
+          Sa grande épouse <strong>Néfertiti</strong> — dont le buste peint
+          conservé à Berlin est l'une des œuvres d'art les plus célèbres du
+          monde — semble avoir joué un rôle politique de premier plan, peut-être
+          co-souveraine ou régente. À la mort d'Akhénaton, la réforme est
+          rapidement abandonnée : Amarna est rasée, les noms d'Akhénaton et de
+          Néfertiti effacés, les temples d'Amon rouverts.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Akhénaton fut le premier monothéiste de l'histoire — ou le premier
+            tyran religieux, selon qu'on l'admire ou qu'on le condamne. Son
+            <em>Hymne à Aton</em> présente de troublantes similitudes avec le
+            Psaume 104 de la Bible hébraïque.
+          </p>
+          <cite
+            >— Jan Assmann, <em>Moses der Ägypter</em>, Carl Hanser Verlag,
+            1998</cite
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- TOUTANKHAMON -->
+    <section class="article-section" id="toutankhamon">
+      <div class="hiero-deco">𓊹𓌀𓎛𓁹𓅓𓏏𓆑</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XVIII.4</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">XVIIIe Dynastie · ~1332–1323 av. J.-C.</p>
+            <h2 class="marker-title">
+              Toutankhamon — L'enfant-roi de la découverte du siècle
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓊹</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Toutankhamon (Nébkhéperrê)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Nb-ḫpr-Rˁ</em> — « Seigneur des
+              manifestations de Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1332–1323 av. J.-C.</span>
+              <span class="tag">Dyn. XVIII</span>
+              <span class="tag tag-blue">Tombeau KV62</span>
+              <span class="tag">Restauration</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Toutankhamon monte sur le trône à l'âge d'environ
+          <strong>huit ou neuf ans</strong>, probablement fils d'Akhénaton (les
+          analyses ADN de 2010 le confirment). Son règne de dix ans est celui de
+          la <strong>restauration</strong> : le jeune roi, guidé par le général
+          Horemheb et le vizir Aÿ, abandonne Amarna, rouvre les temples d'Amon,
+          restaure les clergés et les cultes traditionnels — changement
+          symbolisé par sa propre transformation nominale d'<em
+            >Toutankhaton</em
+          >
+          (« Image vivante d'Aton ») en <em>Toutankhamon</em> (« Image vivante
+          d'Amon »).
+        </p>
+        <p>
+          <p>Il meurt vers dix-neuf ans dans des circonstances encore debattues — accident de chasse, maladie génétique ou meurtre ? — et est enterré en hâte dans une petite tombe de la <strong>Vallée des Rois</strong> (KV62), probablement destinée à un noble plutôt qu'à un roi.</p>
+
+        <div class="article-image">
+          <img src="images/images/toutankhamon_hd.png" alt="Masque de Toutankhamon" loading="lazy">
+          <div class="image-caption">Le masque funéraire de Toutankhamon — Un chef-d'œuvre d'orfèvrerie en or massif (HD)</div>
+        </div>
+
+    <p>Cette précipitation sera paradoxalement sa chance : sa tombe échappe aux pilleurs pendant trois millénaires, jusqu'à ce que l'égyptologue <strong>Howard Carter</strong> la découvre en novembre 1922. Le trésor de Toutankhamon — plus de 5 000 objets dont le masque funéraire en or massif de 11 kilos — est la découverte archéologique la plus spectaculaire du XXe siècle.</p>
+        </p>
+
+        <div class="info-box">
+          <p class="info-box-title">𓂀 La découverte de 1922</p>
+          <p>
+            Le 26 novembre 1922, Howard Carter perce un trou dans la porte
+            scellée de l'antichambre. Lord Carnarvon lui demande :
+            <em>« Vous voyez quelque chose ? »</em> Carter répond :
+            <em>« Oui, des choses merveilleuses. »</em> Cette phrase est devenue
+            l'une des plus célèbres de l'archéologie mondiale. Il faudra dix ans
+            à Carter pour inventorier et documenter le contenu de la tombe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAND QUOTE -->
+    <div class="band-quote">
+      <blockquote>
+        « Je suis Rê dans ses ascensions, je suis l'infini dans son éternité.
+        Mon nom vivra aussi longtemps que les étoiles du nord ne mourront pas. »
+      </blockquote>
+      <footer>— Textes des Pyramides, Utterance 600, ~2300 av. J.-C.</footer>
+    </div>
+
+    <!-- RAMSES II -->
+    <section class="article-section" id="ramses2">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XIX.1</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">XIXe Dynastie · ~1279–1213 av. J.-C.</p>
+            <h2 class="marker-title">
+              Ramsès II — Le Grand, l'Éternel, l'Inégalé
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓇳</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Ramsès II (Ousirmaâtrê Sétepenrê)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Wsr-mȝˁt-Rˁ Stp-n-Rˁ</em> — « Puissante
+              est la vérité de Rê, élu de Rê »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1279–1213 av. J.-C.</span>
+              <span class="tag">Dyn. XIX</span>
+              <span class="tag tag-green">66 ans de règne</span>
+              <span class="tag">Abou Simbel · Qadesh</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          <p>Ramsès II — dit « le Grand » par la postérité — est sans doute le pharaon le plus célèbre de l'histoire, celui dont le nom résonne le plus loin dans la mémoire collective. Son règne de <strong>66 ans</strong> (it meurt vers 90 ans) est une démonstration de puissance politique, militaire, architecturale et propagandiste sans équivalent. </p>
+
+    <div class="article-image">
+      <img src="images/images/Ramses2-statue.jpg" alt="Statue de Ramsès II" loading="lazy">
+      <div class="image-caption">Colosse de Ramsès II — Le pharaon bâtisseur par excellence</div>
+    </div>
+
+    <p>Il fait couvrir l'Égypte entière de ses représentations et de ses noms — les cartouches de Ramsès sont si omniprésents que les archéologues du XIXe siècle pensaient d'abord qu'il avait régné sur toute l'histoire égyptienne.</p>
+        </p>
+
+        <h3>La Bataille de Qadesh — victoire ou match nul ?</h3>
+        <p>
+          En ~1274 av. J.-C., Ramsès affronte les Hittites de
+          <strong>Mouwatalli II</strong> à Qadesh (sur l'Oronte, en Syrie
+          actuelle) dans la plus grande bataille de chars de l'Antiquité —
+          environ 5 000 chars des deux côtés. Encerclé par une manœuvre
+          surprise, Ramsès engage lui-même le combat, repoussant les Hittites au
+          corps à corps. Sur les murs de tous ses temples, il se fait
+          représenter seul contre tous, divin et invincible. La réalité est plus
+          nuancée : ni l'une ni l'autre armée ne remporte de victoire décisive.
+          Les deux puissances signent finalement le
+          <strong>premier traité de paix international de l'histoire</strong>
+          (~1258 av. J.-C.) — une copie en argile en cunéiforme est conservée à
+          Istanbul, une autre en hiéroglyphes sur les murs de Karnak et du
+          Ramesseum.
+        </p>
+
+        <h3>Le bâtisseur compulsif</h3>
+    <p>La liste des monuments de Ramsès II est vertigineuse : <a href="#abousimbel" class="internal-link">Abou Simbel</a> (deux temples creusés dans la roche nubienne), l'agrandissement de <a href="#karnak" class="internal-link">Karnak</a> et de <a href="#louxor" class="internal-link">Louxor</a>, le <strong>Ramesseum</strong> (son temple funéraire thébain), la ville de <strong>Pi-Ramsès</strong> dans le Delta (capitale coûteuse construite ex nihilo), des dizaines d'autres temples en Nubie et en Égypte.</p>
+
+    <div class="article-image">
+      <img src="images/images/abou_simbel.jpg" alt="Abou Simbel" loading="lazy">
+      <div class="image-caption">Le temple d'Abou Simbel — Monumentalité Ramsesside en terre nubienne</div>
+    </div>
+
+    <p>Il eut <strong>plus de 100 enfants</strong> de ses nombreuses épouses, dont la grande épouse royale <strong>Néfertari</strong>, dont la tombe (QV66) abrite les fresques funéraires les plus belles jamais conservées.</p>
+        </p>
+
+        <div class="info-box info-box-or">
+          <p class="info-box-title">𓇳 Ramsès et Moïse — mythe et histoire</p>
+          <p>
+            Le règne de Ramsès II a longtemps été associé à l'Exode biblique —
+            hypothèse populaire mais non prouvée archéologiquement. Si des
+            populations sémitiques travaillaient bien dans le Delta sous Ramsès
+            II (les Apiru des textes égyptiens), aucune source égyptienne ne
+            mentionne dix plaies, une fuite massive, ni un naufrage de l'armée
+            pharaonique. L'identification reste un sujet vif de débat entre
+            historiens et théologiens.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RAMSES III -->
+    <section class="article-section" id="ramses3">
+      <div class="hiero-deco">𓂀𓊃𓐍𓌀𓎛𓏤𓇳</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XX.1</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">XXe Dynastie · ~1187–1156 av. J.-C.</p>
+            <h2 class="marker-title">Ramsès III — Le dernier grand pharaon</h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓆣</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Ramsès III (Ousirmaâtrê Méryamon)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Wsr-mȝˁt-Rˁ Mrj-Jmn</em>
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~1187–1156 av. J.-C.</span>
+              <span class="tag">Dyn. XX</span>
+              <span class="tag tag-blue">Peuples de la Mer</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          <p>Ramsès III est le dernier pharaon à exercer réellement la plénitude du pouvoir royal. Son règne de 31 ans est marqué par deux crises existentielles pour l'Égypte. La première : l'invasion des <strong>Peuples de la Mer</strong> (~1177 av. J.-C.), coalition de peuples migratoires venus de la mer Égée et d'Anatolie qui ont déjà détruit les empires hittite et mycénien. </p>
+
+    <div class="article-image">
+      <img src="images/images/medinet_habu.jpg" alt="Médinet Habou" loading="lazy">
+      <div class="image-caption">Le temple de Médinet Habou — Forteresse funéraire de Ramsès III</div>
+    </div>
+
+    <p>Ramsès les repousse dans deux batailles décisives — terrestre et navale — dont les reliefs monumentaux de son temple funéraire de <strong>Médinet Habou</strong> sont la seule représentation d'une bataille navale antique.</p>
+        </p>
+        <p>
+          La seconde crise est intérieure : la
+          <strong>Conspiration du Harem</strong>, complot ourdi par une épouse
+          secondaire, Tiyi, pour assassiner Ramsès et placer son fils sur le
+          trône. Le papyrus judiciaire (Papyrus Lee, Papyrus Rollin) documente
+          le procès de 38 conspirateurs. Les analyses paléopathologiques de la
+          momie de Ramsès III, publiées en 2012, ont révélé une plaie profonde à
+          la gorge : il fut effectivement assassiné.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     ÈRE 5 : BASSE ÉPOQUE
+═══════════════════════════════════════════ -->
+    <div class="era-header" id="tardif">
+      <div class="era-header-inner">
+        <span class="era-roman">XXI–XXX</span>
+        <div class="era-info">
+          <p class="era-label">
+            Troisième Période intermédiaire & Basse Époque · ~1070–332 av. J.-C.
+          </p>
+          <h2 class="era-name">Le crépuscule des pharaons indigènes</h2>
+          <p class="era-dates">Dynasties XXI à XXX — Capitales multiples</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="article-section" id="pi2">
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XXI–XXIV</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">
+              Troisième Période intermédiaire · ~1070–715 av. J.-C.
+            </p>
+            <h2 class="marker-title">
+              La fragmentation — Prêtres-rois et pharaons libyen
+            </h2>
+          </div>
+        </div>
+
+        <p>
+          À la mort des derniers Ramsessides, l'Égypte se fragmente à nouveau.
+          Le pays est partagé entre deux pouvoirs : au Nord, les pharaons de la
+          <strong>XXIe Dynastie</strong> règnent depuis
+          <strong>Tanis</strong> (delta oriental) ; au Sud, les grands prêtres
+          d'Amon à Thèbes exercent un pouvoir quasi royal, légitimé par des
+          oracles divins plutôt que par la naissance. Cette théocratie thébaine
+          est une nouveauté : pour la première fois, c'est le dieu — et non le
+          roi — qui est censé gouverner directement.
+        </p>
+        <p>
+          Les <strong>XXIIe, XXIIIe et XXIVe Dynasties</strong> sont d'origine
+          libyenne — descendants des mercenaires que les rois avaient installés
+          dans le Delta des siècles auparavant. Ces pharaons
+          <em>Meshwesh</em> adoptent parfaitement la culture égyptienne tout en
+          maintenant des pratiques tribales, divisant parfois le pays entre
+          plusieurs prétendants simultanés. C'est le contexte dans lequel
+          s'imposent des conquérants venus du sud : les Nubiens.
+        </p>
+      </div>
+    </section>
+
+    <!-- TAHARQA -->
+    <section class="article-section" id="taharqa">
+      <div class="hiero-deco">𓊹𓌀𓎛𓁹𓅓𓏏𓆣</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XXV</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">XXVe Dynastie · ~690–664 av. J.-C.</p>
+            <h2 class="marker-title">
+              Taharqa — Le pharaon nubien de la Bible
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓂀</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Taharqa (Khounefertémrê)</h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Ḫw-nfr-tmw-Rˁ</em>
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~690–664 av. J.-C.</span>
+              <span class="tag">Dyn. XXV (koushite)</span>
+              <span class="tag tag-green">Méroé · Napata</span>
+              <span class="tag tag-blue">Mentionné dans la Bible</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-image">
+          <img src="images/images/taharqa_hd.png" alt="Pharaon Taharqa" loading="lazy">
+          <div class="image-caption">Taharqa de la 25ème Dynastie — Le rayonnement des Pharaons Noirs (HD)</div>
+        </div>
+
+        <p>
+          La <strong>XXVe Dynastie</strong>, dite « koushite » ou « éthiopienne
+          », représente l'un des renversements les plus surprenants de
+          l'histoire : l'Égypte est conquise et unifiée par des rois nubiens
+          venus du <strong>royaume de Koush</strong> (capitale Napata, puis
+          Méroé, dans l'actuel Soudan). Ces pharaons africains se considèrent
+          comme les héritiers légitimes de la tradition pharaonique — plus
+          orthodoxes, plus « égyptiens » que les rois libyens qui les précèdent.
+          Ils restaurent les temples, relancent les cultes, et font construire
+          en Nubie une nouvelle génération de pyramides à pentes raides.
+        </p>
+        <p>
+          Taharqa, le plus célèbre d'entre eux, est mentionné dans la Bible (II
+          Rois 19:9) comme allié du roi de Jérusalem
+          <strong>Ézéchias</strong> contre l'Assyrien
+          <strong>Sennachérib</strong>. Ses immenses projets de construction à
+          Karnak, Tanis et en Nubie témoignent d'un règne ambitieux. Mais les
+          assauts répétés de l'Assyrie — Esarhaddon (671 av. J.-C.) puis
+          Assurbanipal (667–664) — le chassent finalement de Memphis et de
+          Thèbes, sonnant le glas de la XXVe Dynastie.
+        </p>
+      </div>
+    </section>
+
+    <!-- NECTANEBO II -->
+    <section class="article-section" id="nectanebo">
+      <div class="hiero-deco">𓇳𓆑𓀭𓏤𓊃𓐍𓌀</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">XXX</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">XXXe Dynastie · ~360–342 av. J.-C.</p>
+            <h2 class="marker-title">
+              Nectanébo II — Le dernier pharaon indigène
+            </h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓆑</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">
+              Nectanébo II (Snedjemanrê Sétepenankhaouy)
+            </h3>
+            <p class="pharaon-name-eg">
+              Nom de Nesout-Bity : <em>Snḏm-jb-Rˁ Stp-n-ˁnḫw.j</em>
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~360–342 av. J.-C.</span>
+              <span class="tag">Dyn. XXX</span>
+              <span class="tag tag-blue">Dernier pharaon natif</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Nectanébo II est le
+          <strong>dernier pharaon d'origine égyptienne</strong> à régner sur
+          l'Égypte. Son règne de dix-huit ans est marqué par une intense
+          activité de construction (de nombreux temples et sanctuaires portent
+          sa marque) et par la résistance acharnée contre les Perses
+          achéménides. En 342 av. J.-C., le Grand Roi
+          <strong>Artaxerxès III</strong> envahit l'Égypte avec une armée de 300
+          000 hommes. Nectanébo II, débordé, fuit vers le sud, puis disparaît
+          dans l'obscurité — certaines sources antiques le font mourir en Nubie
+          ou en Éthiopie. La légende médiévale en fera le père naturel d'<strong
+            >Alexandre le Grand</strong
+          >
+          — fiction mythologique illustrant l'attraction que cet ultime pharaon
+          exerçait sur l'imaginaire.
+        </p>
+        <p>
+          La deuxième occupation perse (342–332 av. J.-C.) sera éphémère : en
+          332, <strong>Alexandre de Macédoine</strong> entre en Égypte sans
+          combat. Les Égyptiens l'accueillent en libérateur. Il se fait
+          couronner pharaon au sanctuaire de <strong>Ptah</strong> à Memphis,
+          puis consulte l'oracle d'Amon à Siouah, d'où il ressort proclamé fils
+          du dieu — héritier légitime de trente dynasties.
+        </p>
+      </div>
+    </section>
+
+    <!-- CLEOPATRE -->
+    <section class="article-section" id="cleopatre">
+      <div class="hiero-deco">𓁹𓅓𓏏𓇋𓆑𓀀𓀁</div>
+      <div class="container">
+        <div class="section-marker">
+          <span class="marker-number">Prol.</span>
+          <div class="marker-text">
+            <p class="marker-eyebrow">Époque ptolémaïque · ~51–30 av. J.-C.</p>
+            <h2 class="marker-title">Cléopâtre VII — Le dernier pharaon</h2>
+          </div>
+        </div>
+
+        <div class="pharaon-card">
+          <div class="pharaon-glyph">𓁹</div>
+          <div class="pharaon-meta">
+            <h3 class="pharaon-name">Cléopâtre VII Philopator</h3>
+            <p class="pharaon-name-eg">
+              Nom grec : Κλεοπάτρα Φιλοπάτωρ — « Gloire à son père »
+            </p>
+            <div class="pharaon-tags">
+              <span class="tag">~51–30 av. J.-C.</span>
+              <span class="tag">Dyn. Ptolémaïque</span>
+              <span class="tag tag-green">César · Antoine</span>
+              <span class="tag tag-blue">Dernier pharaon</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          <p>Cléopâtre VII est la dernière souveraine d'une Égypte indépendante — et la <strong>seule de la dynastie ptolémaïque à parler l'égyptien</strong> (avec peut-être huit autres langues selon Plutarque). Les Ptolémées, descendants du général macédonien Ptolémée Ier Sôter (compagnon d'Alexandre), avaient gouverné l'Égypte pendant près de trois siècles en pharaons hellénistiques, adoptant les titres et les rituels du pharaon tout en maintenant une cour grecque.</p>
+
+    <div class="article-image">
+      <img src="images/images/family-tree-of-the-ptolemaic-dynasty-of-egypt-305-15205 (1).png" alt="Dynastie Ptolémaïque" loading="lazy">
+      <div class="image-caption">La dynastie des Ptolémées — Trois siècles de royauté grecque sur le trône d'Égypte</div>
+    </div>
+
+    <p>Cléopâtre rompt avec cette distance culturelle : elle honore les dieux égyptiens, visite les temples, et se fait représenter à Dendara et à Philae dans le pur style égyptien.</p>
+        </p>
+        <p>
+          Son intelligence politique, sa maîtrise de la diplomatie et ses
+          alliances successives avec <strong>Jules César</strong> puis
+          <strong>Marc Antoine</strong> lui permettent de maintenir
+          l'indépendance égyptienne face à la montée en puissance de Rome
+          pendant vingt ans. Après la défaite navale d'<strong>Actium</strong>
+          (31 av. J.-C.) et la mort d'Antoine, Octave (futur Auguste) entre en
+          Égypte. Cléopâtre se donne la mort le 12 août 30 av. J.-C. —
+          probablement par le venin d'un cobra, animal sacré du cobra royal —
+          refusant d'être exhibée comme trophée dans le triomphe romain. Avec
+          elle s'éteignent trois millénaires de pharaons.
+        </p>
+
+        <div class="pull-quote">
+          <p>
+            Cléopâtre fut la dernière à comprendre ce que signifiait porter la
+            double couronne. Après elle, l'Égypte devint une province. Avant
+            elle, elle était un cosmos.
+          </p>
+          <cite
+            >— Stacy Schiff, <em>Cléopâtre</em>, Little, Brown and Company,
+            2010</cite
+          >
+        </div>
+
+        <div class="info-box">
+          <p class="info-box-title">𓂀 Fin d'une civilisation</p>
+          <p>
+            En 30 av. J.-C., l'Égypte devient la province romaine
+            d'<em>Aegyptus</em>. Les temples continuent d'être construits
+            (Dendara, Philae, Esna) sous les empereurs romains déguisés en
+            pharaons. Le dernier hiéroglyphe daté est gravé en 394 ap. J.-C. à
+            Philae. Le dernier texte en écriture démotique date de 452 ap. J.-C.
+            Puis vient le silence — jusqu'à ce que Jean-François Champollion, en
+            septembre 1822, déchiffre la Pierre de Rosette et redonne la parole
+            à trois mille ans d'éternité.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     BIBLIOGRAPHIE
+═══════════════════════════════════════════ -->
+    <section class="bibliography" id="bibliographie">
+      <div class="container">
+        <p class="bib-header">𓂀 Sources &amp; Lectures recommandées</p>
+        <ul class="bib-list">
+          <li class="bib-item">
+            <strong>Grimal, N.</strong> —
+            <em>Histoire de l'Égypte ancienne</em>, Fayard, 1988. La référence
+            francophone incontournable sur l'ensemble de l'histoire pharaonique,
+            du prédynastique à la conquête arabe.
+          </li>
+          <li class="bib-item">
+            <strong>Shaw, I. (dir.)</strong> —
+            <em>The Oxford History of Ancient Egypt</em>, Oxford University
+            Press, 2000. Synthèse académique par période, rédigée par les
+            meilleurs spécialistes mondiaux de chaque époque.
+          </li>
+          <li class="bib-item">
+            <strong>Clayton, P.</strong> — <em>Chronicle of the Pharaohs</em>,
+            Thames & Hudson, 1994. Fiche biographique de chaque pharaon connu,
+            du prédynastique aux Ptolémées. Outil de référence essentiel.
+          </li>
+          <li class="bib-item">
+            <strong>Desroches Noblecourt, C.</strong> —
+            <em>La Reine mystérieuse, Hatchepsout</em>, Pygmalion, 2002.
+            Biographie de référence de la pharaonne par la grande égyptologue
+            française, mêlant rigueur scientifique et narration accessible.
+          </li>
+          <li class="bib-item">
+            <strong>Aldred, C.</strong> — <em>Akhenaten: King of Egypt</em>,
+            Thames & Hudson, 1988. Analyse exhaustive du pharaon hérétique et de
+            la révolution amarnienne, entre art, religion et politique.
+          </li>
+          <li class="bib-item">
+            <strong>Reeves, N.</strong> — <em>The Complete Tutankhamun</em>,
+            Thames & Hudson, 1990. Catalogue complet du trésor de Toutankhamon,
+            avec l'histoire de la découverte par Howard Carter.
+          </li>
+          <li class="bib-item">
+            <strong>Kitchen, K.A.</strong> —
+            <em>Pharaoh Triumphant: The Life and Times of Ramesses II</em>, Aris
+            & Phillips, 1982. Biographie de référence de Ramsès II, par le plus
+            grand spécialiste de la XIXe Dynastie.
+          </li>
+          <li class="bib-item">
+            <strong>Tallet, P.</strong> —
+            <em>Les papyrus de la Mer Rouge I. Le journal de Merer</em>, IFAO,
+            2017. Publication des papyrus de Ouadi el-Jarf, découverte majeure
+            sur la logistique de la Grande Pyramide.
+          </li>
+          <li class="bib-item">
+            <strong>Schiff, S.</strong> — <em>Cléopâtre — Une vie</em>, Albin
+            Michel, 2011. Biographie rigoureuse démêlant mythe et réalité
+            historique autour de la dernière reine d'Égypte.
+          </li>
+          <li class="bib-item">
+            <strong>Assmann, J.</strong> —
+            <em
+              >La mémoire culturelle — Écriture, souvenir et imaginaire
+              politique dans les civilisations antiques</em
+            >, Aubier, 2010. Pour comprendre comment l'Égypte ancienne a
+            construit et transmis sa propre mémoire dynastique.
+          </li>
+          <li class="bib-item">
+            <strong>Manéthon</strong> (trad. Waddell W.G.) —
+            <em>Aegyptiaca</em>, Loeb Classical Library, 1940. La source antique
+            fondamentale : la liste des 30 dynasties établie par le prêtre
+            égyptien Manéthon vers 280 av. J.-C., base de toute chronologie
+            pharaonique.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+    <footer>
+      <p class="footer-logo">𓂀 Égypte Éternelle</p>
+      <p class="footer-tagline">
+        « Mon nom vivra aussi longtemps que les étoiles du nord ne mourront pas.
+        »
+      </p>
+      <nav class="footer-nav">
+        <a href="#">Histoire</a>
+        <a href="#">Dieux &amp; Mythes</a>
+        <a href="#">Pyramides</a>
+        <a href="#">Vie quotidienne</a>
+        <a href="#">Hiéroglyphes</a>
+        <a href="#">Glossaire</a>
+      </nav>
+      <p
+        style="
+          font-size: 0.95rem;
+          opacity: 0.35;
+          font-family: &quot;Cinzel&quot;, serif;
+          letter-spacing: 0.2em;
+        "
+      >
+        DOSSIER THÉMATIQUE · ÉGYPTE ÉTERNELLE
+      </p>
+    </footer>
+
+    <script>
+      // Stars
+      const starsContainer = document.getElementById("stars");
+      for (let i = 0; i < 120; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        const size = Math.random() * 2.5 + 0.5;
+        star.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random() * 100}%; top:${Math.random() * 100}%;
+      --dur:${Math.random() * 4 + 2}s; --op:${Math.random() * 0.6 + 0.3};
+      animation-delay:${Math.random() * 6}s;
+    `;
+        starsContainer.appendChild(star);
+      }
+
+      // Reveal observer for pharaon cards
+      const revealObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => {
+                e.target.style.opacity = "1";
+                e.target.style.transform = "translateY(0)";
+              }, i * 80);
+              revealObs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(".pharaon-card, .pull-quote, .info-box")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(14px)";
+          el.style.transition = "opacity 0.55s ease, transform 0.55s ease";
+          revealObs.observe(el);
+        });
+
+      // TOC links smooth + active state on scroll
+      const sections = document.querySelectorAll("[id]");
+      const tocLinks = document.querySelectorAll(".toc-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 120) current = s.id;
+        });
+        tocLinks.forEach((link) => {
+          link.style.borderLeftColor = "";
+          link.querySelector(".toc-name").style.color = "";
+          if (link.getAttribute("href") === "#" + current) {
+            link.style.borderLeftColor = "var(--or)";
+            link.querySelector(".toc-name").style.color = "var(--or-clair)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
