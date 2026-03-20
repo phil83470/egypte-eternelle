@@ -146,9 +146,10 @@
       .sh-nav {
         display: flex;
         align-items: center;
-        gap: 0.1rem;
+        gap: 1.5rem;
         flex: 1;
         list-style: none;
+        margin-left: 2rem;
       }
       .sh-nav-item {
         position: relative;
@@ -177,8 +178,10 @@
       }
       .sh-nav-link:hover {
         color: var(--or-clair);
-        border-color: rgba(200, 151, 58, 0.2);
-        background: rgba(200, 151, 58, 0.05);
+        border-color: rgba(200, 151, 58, 0.35);
+        background: rgba(200, 151, 58, 0.08);
+        box-shadow: 0 0 15px rgba(200, 151, 58, 0.15);
+        text-shadow: 0 0 8px rgba(232, 191, 106, 0.4);
       }
       .sh-nav-link:hover .sh-glyph {
         opacity: 1;
@@ -1867,9 +1870,9 @@
       .tabs-nav {
         display: flex;
         justify-content: center;
-        gap: 3rem;
-        margin-bottom: 4rem;
-        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        gap: 6rem;
+        margin-bottom: 5rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.15);
         position: relative;
       }
       .tab-btn {
@@ -1877,8 +1880,8 @@
         border: none;
         color: var(--sable-fonce);
         font-family: "Cinzel", serif;
-        font-size: 1.15rem;
-        letter-spacing: 0.3em;
+        font-size: 1.3rem;
+        letter-spacing: 0.4em;
         text-transform: uppercase;
         cursor: pointer;
         padding: 1rem 1.5rem;
@@ -1893,6 +1896,12 @@
       .tab-btn.active {
         color: var(--or-clair);
         opacity: 1;
+        text-shadow: 0 0 12px rgba(200, 151, 58, 0.4);
+      }
+      .tab-btn:hover {
+        opacity: 1;
+        color: var(--sable);
+        transform: translateY(-2px);
       }
       .tab-btn.active::after {
         content: "";
@@ -1913,8 +1922,8 @@
         display: block;
       }
       @keyframes tabFadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+        from { opacity: 0; transform: translateY(30px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
       }
 
       /* Propos Style */
@@ -2142,6 +2151,20 @@
           <li class="sh-nav-item">
             <a href="egypte-mythes-objets.html" class="sh-nav-link">
               <span class="sh-glyph">☥</span> Symboles
+            </a>
+          </li>
+
+          <!-- À Propos -->
+          <li class="sh-nav-item">
+            <a href="#le-projet" class="sh-nav-link tab-trigger" data-target="propos">
+              <span class="sh-glyph">𓂀</span> À Propos
+            </a>
+          </li>
+
+          <!-- Contact -->
+          <li class="sh-nav-item">
+            <a href="#le-projet" class="sh-nav-link tab-trigger" data-target="contact">
+              <span class="sh-glyph">✉</span> Contact
             </a>
           </li>
         </ul>
@@ -3012,7 +3035,7 @@
           </a>
 
           <!-- Odyssée des Guides -->
-          <a href="odyssee.html" class="portail-card portail-odyssee">
+          <a href="odyssee_des_guides_fusion.html" class="portail-card portail-odyssee">
             <div class="portail-bg-deco portail-bg-odyssee"></div>
             <div class="portail-inner">
               <div class="portail-icon">✦</div>
@@ -3062,11 +3085,11 @@
                   « Le temps a peur des pyramides, et l'âme a soif d'éternité. »
                 </div>
                 <p>
-                  <strong>Le Créateur :</strong> Philippe Jireau, explorateur du web et passionné d'égyptologie, a conçu cet espace pour partager la splendeur d'une civilisation qui a défié les siècles par sa pierre et sa pensée.
+                  <strong>Le Créateur :</strong> Philippe Jireau, explorateur du web et passionné d'égyptologie depuis son enfance, a conçu cet espace pour partager la splendeur d'une civilisation qui a défié les siècles par sa pierre et sa pensée.
                 </p>
-                <p>
-                  <strong>Notre Vision :</strong> Proposer un contenu rigoureux mais vibrant, où l'histoire académique rencontre la poésie des mythes et la profondeur de la spiritualité des anciens.
-                </p>
+                <div class="propos-evolution" style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(200, 151, 58, 0.1); font-size: 0.95rem; opacity: 0.85;">
+                  <p><strong>Éveil Continu :</strong> Ce portail est un temple en constante expansion. De nouveaux dossiers et mystères sont exhumés régulièrement au fil de nos recherches.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -3088,27 +3111,36 @@
               </div>
 
               <div class="contact-form-box">
-                <form id="home-contact-form">
+                <form id="home-contact-form" action="https://formspree.io/f/xayrkvdk" method="POST">
                   <div class="form-group">
-                    <label>Nom ou Cartouche</label>
-                    <input type="text" placeholder="Votre nom" required>
+                    <label>Nom ou Cartouche <span>*</span></label>
+                    <input type="text" name="nom" placeholder="Votre nom ou pseudonyme" required>
                   </div>
                   <div class="form-group">
-                    <label>Email de destination</label>
-                    <input type="email" placeholder="votre@email.com" required>
+                    <label>Email de destination <span>*</span></label>
+                    <input type="email" name="_replyto" placeholder="votre@email.com" required>
                   </div>
                   <div class="form-group">
-                    <label>Sujet de l'offrande</label>
-                    <select>
-                      <option>Question sur l'Histoire</option>
-                      <option>Signaler une erreur</option>
-                      <option>Partenariat</option>
-                      <option>Autre</option>
+                    <label>Sujet de l'offrande <span>*</span></label>
+                    <input type="text" name="sujet" placeholder="Collaboration, question, idée..." required>
+                  </div>
+                  <div class="form-group">
+                    <label>Type de message</label>
+                    <select name="type">
+                      <option value="">Choisis une option…</option>
+                      <option value="question">Question sur un mythe ou un symbole</option>
+                      <option value="collaboration">Proposition de collaboration</option>
+                      <option value="projet-web">Projet web ou créatif</option>
+                      <option value="retour">Retour sur le site Égypte Éternelle</option>
+                      <option value="autre">Autre</option>
                     </select>
                   </div>
                   <div class="form-group">
-                    <label>Votre Message</label>
-                    <textarea rows="4" placeholder="Écrivez ici..."></textarea>
+                    <label>Votre Message <span>*</span></label>
+                    <textarea name="message" rows="4" placeholder="Partage ton message, tes questions..." required></textarea>
+                  </div>
+                  <div class="consent" style="margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--sable-fonce); opacity: 0.8;">
+                    En envoyant ce message, vous acceptez que vos informations soient utilisées pour vous répondre.
                   </div>
                   <button type="submit" class="form-submit-btn">Envoyer le message</button>
                 </form>
@@ -3133,7 +3165,9 @@
         <a href="egypte-mythes-objets.html">Mythes & Objets Sacrés</a>
         <a href="egypte-magie-rituels.html">Magie & La Douat</a>
         <a href="tarot.html" style="color:rgba(201,168,76,0.8);">🂠 L'Art du Tarot</a>
-        <a href="odyssee.html" style="color:rgba(212,175,55,0.8);">✦ L'Odyssée des Guides</a>
+        <a href="odyssee_des_guides_fusion.html" style="color:rgba(212,175,55,0.8);">✦ L'Odyssée des Guides</a>
+        <a href="#propos" class="tab-trigger" data-target="propos">𓂀 À Propos</a>
+        <a href="#contact" class="tab-trigger" data-target="contact">✉ Contact</a>
       </nav>
       <p class="footer-copy">
         ÉGYPTE ÉTERNELLE · PORTAIL DE LA CIVILISATION PHARAONIQUE
@@ -3235,17 +3269,40 @@
       const tabBtns = document.querySelectorAll('.tab-btn');
       const tabPanes = document.querySelectorAll('.tab-pane');
 
+      function switchTab(tabId) {
+        // Reset tab buttons and panes
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanes.forEach(p => p.classList.remove('active'));
+        
+        // Reset header nav triggers
+        document.querySelectorAll('.sh-nav-link').forEach(l => l.classList.remove('active'));
+        
+        // Activate target tab
+        const targetBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        const targetPane = document.getElementById(tabId);
+        const headerTrigger = document.querySelector(`.sh-nav-link[data-target="${tabId}"]`);
+        
+        if (targetBtn) targetBtn.classList.add('active');
+        if (targetPane) targetPane.classList.add('active');
+        if (headerTrigger) headerTrigger.classList.add('active');
+      }
+
       tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-          const tabId = btn.getAttribute('data-tab');
-          
-          // Reset
-          tabBtns.forEach(b => b.classList.remove('active'));
-          tabPanes.forEach(p => p.classList.remove('active'));
-          
-          // Activate
-          btn.classList.add('active');
-          document.getElementById(tabId).classList.add('active');
+          switchTab(btn.getAttribute('data-tab'));
+        });
+      });
+
+      // Header navigation trigger for tabs
+      document.querySelectorAll('.tab-trigger').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+          const tabId = trigger.getAttribute('data-target');
+          switchTab(tabId);
+          // Optional: scroll to section
+          const targetSection = document.querySelector('#le-projet');
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
       });
     </script>
