@@ -1841,6 +1841,191 @@
           font-size: clamp(2.7rem, calc(12vw + 0.2rem), 4.2rem);
         }
       }
+
+      /* ─── PROJECT TABS SECTION ─── */
+      .project-tabs-section {
+        padding: 8rem 0;
+        background: linear-gradient(180deg, var(--noir-nil) 0%, #0d0a06 100%);
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        position: relative;
+        overflow: hidden;
+      }
+      .project-tabs-section::before {
+        content: '𓂀';
+        position: absolute;
+        top: -2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 5rem;
+        color: rgba(200, 151, 58, 0.05);
+      }
+      .tabs-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+      .tabs-nav {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-bottom: 4rem;
+        border-bottom: 1px solid rgba(200, 151, 58, 0.1);
+        position: relative;
+      }
+      .tab-btn {
+        background: none;
+        border: none;
+        color: var(--sable-fonce);
+        font-family: "Cinzel", serif;
+        font-size: 1.15rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 1rem 1.5rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        opacity: 0.6;
+      }
+      .tab-btn:hover {
+        color: var(--or-clair);
+        opacity: 1;
+      }
+      .tab-btn.active {
+        color: var(--or-clair);
+        opacity: 1;
+      }
+      .tab-btn.active::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        box-shadow: 0 0 15px var(--or);
+      }
+      
+      .tab-pane {
+        display: none;
+        animation: tabFadeIn 0.8s ease both;
+      }
+      .tab-pane.active {
+        display: block;
+      }
+      @keyframes tabFadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Propos Style */
+      .propos-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .propos-visual {
+        position: relative;
+        aspect-ratio: 1;
+        background: rgba(200, 151, 58, 0.03);
+        border: 1px solid rgba(200, 151, 58, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8rem;
+        color: rgba(200, 151, 58, 0.1);
+        border-radius: 50%;
+      }
+      .propos-visual::after {
+        content: "";
+        position: absolute;
+        inset: -10px;
+        border: 1px solid rgba(200, 151, 58, 0.05);
+        border-radius: 50%;
+        animation: rotateGlow 20s linear infinite;
+      }
+      @keyframes rotateGlow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      .propos-text-content h3 {
+        font-family: "Cinzel Decorative", serif;
+        color: var(--or-clair);
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+      .propos-text-content p {
+        margin-bottom: 1.5rem;
+        color: var(--sable-fonce);
+        line-height: 1.7;
+      }
+      .propos-highlight {
+        border-left: 2px solid var(--or);
+        padding-left: 1.5rem;
+        font-style: italic;
+        color: var(--or-clair);
+        margin: 2rem 0;
+      }
+
+      /* Contact Style */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+      }
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .info-item {
+        background: rgba(200, 151, 58, 0.04);
+        padding: 2rem;
+        border: 1px solid rgba(200, 151, 58, 0.1);
+        transition: border-color 0.3s;
+      }
+      .info-item:hover { border-color: var(--or); }
+      .info-icon { font-size: 2rem; color: var(--or); margin-bottom: 1rem; }
+      .info-title { font-family: "Cinzel", serif; color: var(--or-clair); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; }
+      .info-val { color: var(--sable-fonce); font-family: "EB Garamond", serif; font-size: 1.1rem; }
+
+      .contact-form-box {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 3rem;
+        border: 1px solid rgba(200, 151, 58, 0.1);
+      }
+      .form-group { margin-bottom: 1.5rem; }
+      .form-group label { display: block; font-family: "Cinzel", serif; font-size: 0.8rem; color: var(--or); margin-bottom: 0.5rem; letter-spacing: 0.1em; }
+      .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        background: rgba(200, 151, 58, 0.05);
+        border: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 1rem;
+        color: var(--sable);
+        font-family: inherit;
+        border-radius: 2px;
+      }
+      .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--or-clair); }
+      .form-submit-btn {
+        width: 100%;
+        background: linear-gradient(90deg, var(--or), var(--or-clair));
+        color: var(--noir-nil);
+        padding: 1rem;
+        border: none;
+        font-family: "Cinzel", serif;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s;
+        letter-spacing: 0.2em;
+      }
+      .form-submit-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(200, 151, 58, 0.3); }
+
+      @media (max-width: 850px) {
+        .propos-grid, .contact-grid { grid-template-columns: 1fr; }
+        .tabs-nav { gap: 1rem; }
+        .tab-btn { font-size: 0.9rem; padding: 0.8rem 1rem; }
+      }
     </style>
   </head>
   <body>
@@ -1957,18 +2142,6 @@
           <li class="sh-nav-item">
             <a href="egypte-mythes-objets.html" class="sh-nav-link">
               <span class="sh-glyph">☥</span> Symboles
-            </a>
-          </li>
-
-          <li class="sh-nav-item">
-            <a href="egypte-a-contact.html" class="sh-nav-link">
-              <span class="sh-glyph"></span> Contact
-            </a>
-          </li>
-
-          <li class="sh-nav-item">
-            <a href="egypte-a-propos.html" class="sh-nav-link">
-              <span class="sh-glyph"></span> À propos
             </a>
           </li>
         </ul>
@@ -2865,24 +3038,84 @@
     </section>
 
     <!-- ══════════════════════════════════════
-     CTA FINAL
+     SECTION LE PROJET (TABS)
 ══════════════════════════════════════ -->
-    <section class="cta-section">
-      <span class="cta-hieroglyphs">𓂀 𓆣 𓇳 𓁹 𓅃 𓊹 𓌀 𓎛 𓇾</span>
-      <h2 class="cta-title">
-        Prêt à traverser les portes<br />de l'éternité ?
-      </h2>
-      <p class="cta-desc">
-        Six dossiers thématiques vous attendent — des pyramides aux profondeurs
-        de la Douat, de la cour royale aux secrets des rituels magiques.
-      </p>
-      <div class="cta-buttons">
-        <a href="egypte-pyramides.html" class="btn-primary"
-          >Commencer par les Pyramides</a
-        >
-        <a href="egypte-pantheon.html" class="btn-secondary"
-          >Ou explorer les Dieux</a
-        >
+    <section class="project-tabs-section" id="le-projet">
+      <div class="tabs-container">
+        
+        <nav class="tabs-nav">
+          <button class="tab-btn active" data-tab="propos">𓂀 L'Âme du Projet</button>
+          <button class="tab-btn" data-tab="contact">✉ Nous Contacter</button>
+        </nav>
+
+        <div class="tabs-content">
+          <!-- ONGLET : À PROPOS -->
+          <div class="tab-pane active" id="propos">
+            <div class="propos-grid">
+              <div class="propos-visual">𓂀</div>
+              <div class="propos-text-content">
+                <h3>À travers le temps et le sable</h3>
+                <p>
+                  <strong>Égypte Éternelle</strong> est né d'une passion dévorante pour la vallée du Nil. Ce portail n'est pas qu'un recueil d'histoire ; c'est un pont jeté entre le passé pharaonique et notre quête contemporaine.
+                </p>
+                <div class="propos-highlight">
+                  « Le temps a peur des pyramides, et l'âme a soif d'éternité. »
+                </div>
+                <p>
+                  <strong>Le Créateur :</strong> Philippe Jireau, explorateur du web et passionné d'égyptologie, a conçu cet espace pour partager la splendeur d'une civilisation qui a défié les siècles par sa pierre et sa pensée.
+                </p>
+                <p>
+                  <strong>Notre Vision :</strong> Proposer un contenu rigoureux mais vibrant, où l'histoire académique rencontre la poésie des mythes et la profondeur de la spiritualité des anciens.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ONGLET : CONTACT -->
+          <div class="tab-pane" id="contact">
+            <div class="contact-grid">
+              <div class="contact-info">
+                <div class="info-item">
+                  <div class="info-icon">✉</div>
+                  <h4 class="info-title">Par la Pensée (ou Email)</h4>
+                  <p class="info-val">contact@egypte-eternelle.com</p>
+                </div>
+                <div class="info-item">
+                  <div class="info-icon">𓂀</div>
+                  <h4 class="info-title">Réseaux Sacrés</h4>
+                  <p class="info-val">Rejoignez nos 10 000 passionnés sur les réseaux sociaux pour ne rien manquer.</p>
+                </div>
+              </div>
+
+              <div class="contact-form-box">
+                <form id="home-contact-form">
+                  <div class="form-group">
+                    <label>Nom ou Cartouche</label>
+                    <input type="text" placeholder="Votre nom" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Email de destination</label>
+                    <input type="email" placeholder="votre@email.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Sujet de l'offrande</label>
+                    <select>
+                      <option>Question sur l'Histoire</option>
+                      <option>Signaler une erreur</option>
+                      <option>Partenariat</option>
+                      <option>Autre</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Votre Message</label>
+                    <textarea rows="4" placeholder="Écrivez ici..."></textarea>
+                  </div>
+                  <button type="submit" class="form-submit-btn">Envoyer le message</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2997,6 +3230,24 @@
           { passive: true },
         );
       }
+
+      /* ── Project Tabs Logic ── */
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabId = btn.getAttribute('data-tab');
+          
+          // Reset
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+          
+          // Activate
+          btn.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
     </script>
   </body>
 </html>

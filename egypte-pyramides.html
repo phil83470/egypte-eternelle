@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -24,17 +25,17 @@
         --turquoise: #2a8b7a;
         --blanc-ivoire: #fbf5e6;
       }
-
+ 
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-
+ 
       html {
         scroll-behavior: auto;
       }
-
+ 
       body {
         background-color: var(--noir-nil);
         color: var(--sable);
@@ -43,7 +44,7 @@
         line-height: 1.8;
         overflow-x: hidden;
       }
-
+ 
       /* ─── HERO ─── */
       .hero {
         position: relative;
@@ -57,23 +58,33 @@
         background:
           radial-gradient(
             ellipse at 50% 100%,
-            rgba(200, 151, 58, 0.18) 0%,
-            transparent 60%
+            rgba(200, 151, 58, 0.22) 0%,
+            transparent 55%
           ),
           radial-gradient(
-            ellipse at 50% 0%,
-            rgba(26, 58, 92, 0.4) 0%,
+            ellipse at 15% 35%,
+            rgba(26, 58, 92, 0.25) 0%,
             transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 85% 35%,
+            rgba(42, 16, 80, 0.2) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at 50% 55%,
+            rgba(200, 151, 58, 0.06) 0%,
+            transparent 45%
           ),
           linear-gradient(
             180deg,
-            #0d0b06 0%,
-            #1a1208 40%,
-            #2a1e0a 80%,
-            #3a2810 100%
+            #080604 0%,
+            #0e0b06 20%,
+            #1a1208 55%,
+            #251a08 100%
           );
       }
-
+ 
       .hero::before {
         content: "";
         position: absolute;
@@ -90,7 +101,7 @@
             transparent 40%
           );
       }
-
+ 
       /* Stars */
       .stars {
         position: absolute;
@@ -116,24 +127,25 @@
           opacity: var(--op, 0.7);
         }
       }
-
+ 
       /* Pyramid silhouette SVG */
       .hero-pyramid {
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-width: 100%;        max-width: 900px;
+        width: 100%;
+        max-width: 900px;
         opacity: 0.15;
       }
-
+ 
       .hero-content {
         position: relative;
         z-index: 2;
         padding: 2rem;
         animation: fadeUp 1.4s ease forwards;
       }
-
+ 
       @keyframes fadeUp {
         from {
           opacity: 0;
@@ -144,22 +156,36 @@ width: 100%;        max-width: 900px;
           transform: translateY(0);
         }
       }
-
+ 
       /* Hero Image Adjustment */
       .hero-background {
         position: absolute;
         inset: 0;
         z-index: 1;
         opacity: 0.35;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-
       .hero-background img {
         width: 90vw;
         height: 85vh;
         object-fit: cover;
         filter: sepia(30%) contrast(110%);
+        animation: heroZoom 25s ease-in-out infinite alternate;
+        border-radius: 12px;
       }
 
+      @keyframes heroZoom {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.15);
+        }
+      }
+      
+ 
       .hero-eyebrow {
         font-family: "Cinzel", serif;
         font-size: 0.95rem;
@@ -169,7 +195,7 @@ width: 100%;        max-width: 900px;
         margin-bottom: 1.5rem;
         animation: fadeUp 1.4s 0.2s ease both;
       }
-
+ 
       .hero-title {
         font-family: "Cinzel Decorative", serif;
         font-size: clamp(3rem, calc(8vw + 0.2rem), 7.2rem);
@@ -182,7 +208,7 @@ width: 100%;        max-width: 900px;
         margin-bottom: 0.5rem;
         animation: fadeUp 1.4s 0.4s ease both;
       }
-
+ 
       .hero-title span {
         display: block;
         font-size: 0.45em;
@@ -190,7 +216,7 @@ width: 100%;        max-width: 900px;
         letter-spacing: 0.12em;
         font-weight: 400;
       }
-
+ 
       .hero-subtitle {
         font-family: "EB Garamond", serif;
         font-style: italic;
@@ -200,7 +226,7 @@ width: 100%;        max-width: 900px;
         margin: 1.5rem auto 2.5rem;
         animation: fadeUp 1.4s 0.6s ease both;
       }
-
+ 
       .hero-divider {
         width: 200px;
         height: 2px;
@@ -208,7 +234,7 @@ width: 100%;        max-width: 900px;
         margin: 0 auto 2rem;
         animation: fadeUp 1.4s 0.8s ease both;
       }
-
+ 
       .scroll-hint {
         position: absolute;
         bottom: 2.5rem;
@@ -240,13 +266,13 @@ width: 100%;        max-width: 900px;
           transform: translateX(-50%) translateY(6px);
         }
       }
-
+ 
       /* ─── NAVIGATION ─── */
       nav.main-nav {
         position: fixed;
         left: 0;
         right: 0;
-        width: 90vw;
+        width: 100%;
         top: 0;
         z-index: 100;
         background: rgba(26, 18, 8, 0.96);
@@ -254,7 +280,7 @@ width: 100%;        max-width: 900px;
         border-bottom: 1px solid rgba(200, 151, 58, 0.2);
         padding: 0 2rem;
       }
-
+ 
       .nav-inner {
         max-width: 1200px;
         margin: 0 auto;
@@ -263,7 +289,7 @@ width: 100%;        max-width: 900px;
         justify-content: space-between;
         height: 64px;
       }
-
+ 
       .nav-logo {
         font-family: "Cinzel Decorative", serif;
         font-size: 1.2rem;
@@ -271,13 +297,13 @@ width: 100%;        max-width: 900px;
         text-decoration: none;
         letter-spacing: 0.08em;
       }
-
+ 
       .nav-links {
         display: flex;
         gap: 1.4rem;
         list-style: none;
       }
-
+ 
       .nav-links a {
         font-family: "Cinzel", serif;
         font-size: 0.87rem;
@@ -290,20 +316,20 @@ width: 100%;        max-width: 900px;
       .nav-links a:hover {
         color: var(--or-clair);
       }
-
+ 
       /* ─── LAYOUT ─── */
       .container {
         max-width: 860px;
         margin: 0 auto;
         padding: 0 2rem;
       }
-
+ 
       .container-wide {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 2rem;
       }
-
+ 
       /* ─── INTRO BAND ─── */
       .intro-band {
         background: linear-gradient(
@@ -315,19 +341,19 @@ width: 100%;        max-width: 900px;
         padding: 5rem 0;
         border-bottom: 1px solid rgba(200, 151, 58, 0.15);
       }
-
+ 
       .intro-grid {
         display: grid;
         grid-template-columns: 1fr 2px 1fr;
         gap: 3rem;
         align-items: start;
       }
-
+ 
       .intro-stat {
         text-align: center;
         padding: 1rem;
       }
-
+ 
       .stat-number {
         font-family: "Cinzel Decorative", serif;
         font-size: 3.7rem;
@@ -335,7 +361,7 @@ width: 100%;        max-width: 900px;
         line-height: 1;
         display: block;
       }
-
+ 
       .stat-label {
         font-family: "Cinzel", serif;
         font-size: 0.88rem;
@@ -344,7 +370,7 @@ width: 100%;        max-width: 900px;
         color: var(--sable-fonce);
         margin-top: 0.5rem;
       }
-
+ 
       .intro-divider-v {
         background: linear-gradient(
           to bottom,
@@ -354,7 +380,7 @@ width: 100%;        max-width: 900px;
         );
         align-self: stretch;
       }
-
+ 
       /* ─── SECTION MARKER ─── */
       .section-marker {
         display: flex;
@@ -362,7 +388,7 @@ width: 100%;        max-width: 900px;
         gap: 1.5rem;
         margin-bottom: 3rem;
       }
-
+ 
       .marker-number {
         font-family: "Cinzel Decorative", serif;
         font-size: 5.2rem;
@@ -371,11 +397,11 @@ width: 100%;        max-width: 900px;
         font-weight: 900;
         flex-shrink: 0;
       }
-
+ 
       .marker-text {
         flex: 1;
       }
-
+ 
       .marker-eyebrow {
         font-family: "Cinzel", serif;
         font-size: 0.85rem;
@@ -384,25 +410,25 @@ width: 100%;        max-width: 900px;
         color: var(--or);
         margin-bottom: 0.4rem;
       }
-
+ 
       .marker-title {
         font-family: "Cinzel", serif;
         font-size: clamp(1.6rem, calc(3vw + 0.2rem), 2.4rem);
         color: var(--or-clair);
         line-height: 1.2;
       }
-
+ 
       /* ─── MAIN ARTICLE SECTIONS ─── */
       .article-section {
         padding: 6rem 0;
         border-bottom: 1px solid rgba(200, 151, 58, 0.1);
         position: relative;
       }
-
+ 
       .article-section:nth-child(even) {
         background: rgba(200, 151, 58, 0.02);
       }
-
+ 
       /* Hieroglyph decoration */
       .hiero-deco {
         position: absolute;
@@ -416,7 +442,7 @@ width: 100%;        max-width: 900px;
         user-select: none;
         font-family: serif;
       }
-
+ 
       /* ─── PULL QUOTE ─── */
       .pull-quote {
         border-left: 3px solid var(--or);
@@ -425,7 +451,7 @@ width: 100%;        max-width: 900px;
         background: rgba(200, 151, 58, 0.04);
         position: relative;
       }
-
+ 
       .pull-quote::before {
         content: "❝";
         position: absolute;
@@ -436,14 +462,14 @@ width: 100%;        max-width: 900px;
         opacity: 0.4;
         line-height: 1;
       }
-
+ 
       .pull-quote p {
         font-style: italic;
         font-size: 1.4rem;
         color: var(--or-clair);
         line-height: 1.7;
       }
-
+ 
       .pull-quote cite {
         display: block;
         margin-top: 0.8rem;
@@ -453,13 +479,13 @@ width: 100%;        max-width: 900px;
         color: var(--sable-fonce);
         font-style: normal;
       }
-
+ 
       /* ─── PARAGRAPH ─── */
       .article-section p {
         margin-bottom: 1.5rem;
         color: var(--sable);
       }
-
+ 
       .article-section h3 {
         font-family: "Cinzel", serif;
         font-size: 1.3rem;
@@ -469,7 +495,7 @@ width: 100%;        max-width: 900px;
         padding-bottom: 0.5rem;
         border-bottom: 1px solid rgba(200, 151, 58, 0.2);
       }
-
+ 
       /* ─── INTERNAL LINK ─── */
       .internal-link {
         color: var(--or-clair);
@@ -482,7 +508,7 @@ width: 100%;        max-width: 900px;
         color: var(--or);
         border-bottom-style: solid;
       }
-
+ 
       /* ─── INFO BOX ─── */
       .info-box {
         background: linear-gradient(
@@ -496,7 +522,7 @@ width: 100%;        max-width: 900px;
         margin: 2.5rem 0;
         border-radius: 0 4px 4px 0;
       }
-
+ 
       .info-box-title {
         font-family: "Cinzel", serif;
         font-size: 0.9rem;
@@ -505,21 +531,21 @@ width: 100%;        max-width: 900px;
         color: var(--bleu-clair);
         margin-bottom: 0.8rem;
       }
-
+ 
       .info-box p {
         font-size: 1.15rem;
         color: var(--sable-fonce);
         margin-bottom: 0 !important;
       }
-
+ 
       /* ─── DATA TABLE ─── */
       .data-table {
-        width: 90vw;
+        width: 100%;
         border-collapse: collapse;
         margin: 2.5rem 0;
         font-size: 1.1rem;
       }
-
+ 
       .data-table th {
         font-family: "Cinzel", serif;
         font-size: 0.85rem;
@@ -530,18 +556,18 @@ width: 100%;        max-width: 900px;
         padding: 0.8rem 1rem;
         border-bottom: 2px solid rgba(200, 151, 58, 0.3);
       }
-
+ 
       .data-table td {
         padding: 0.7rem 1rem;
         border-bottom: 1px solid rgba(200, 151, 58, 0.1);
         color: var(--sable);
         vertical-align: top;
       }
-
+ 
       .data-table tr:hover td {
         background: rgba(200, 151, 58, 0.04);
       }
-
+ 
       /* ─── MONUMENT CARDS ─── */
       .cards-grid {
         display: grid;
@@ -549,7 +575,7 @@ width: 100%;        max-width: 900px;
         gap: 1.5rem;
         margin: 3rem 0;
       }
-
+ 
       .monument-card {
         background: linear-gradient(
           145deg,
@@ -565,7 +591,7 @@ width: 100%;        max-width: 900px;
           border-color 0.3s;
         cursor: default;
       }
-
+ 
       .monument-card::before {
         content: "";
         position: absolute;
@@ -577,7 +603,7 @@ width: 100%;        max-width: 900px;
         opacity: 0;
         transition: opacity 0.3s;
       }
-
+ 
       .monument-card:hover {
         transform: translateY(-4px);
         border-color: rgba(200, 151, 58, 0.4);
@@ -585,20 +611,20 @@ width: 100%;        max-width: 900px;
       .monument-card:hover::before {
         opacity: 1;
       }
-
+ 
       .card-icon {
         font-size: 2.7rem;
         margin-bottom: 1rem;
         display: block;
       }
-
+ 
       .card-name {
         font-family: "Cinzel", serif;
         font-size: 1.2rem;
         color: var(--or-clair);
         margin-bottom: 0.3rem;
       }
-
+ 
       .card-period {
         font-family: "Cinzel", serif;
         font-size: 0.85rem;
@@ -608,21 +634,21 @@ width: 100%;        max-width: 900px;
         margin-bottom: 1rem;
         text-transform: uppercase;
       }
-
+ 
       .card-desc {
         font-size: 1.1rem;
         color: var(--sable-fonce);
         line-height: 1.7;
         margin-bottom: 0 !important;
       }
-
+ 
       /* ─── TIMELINE ─── */
       .timeline {
         position: relative;
         padding: 1rem 0;
         margin: 3rem 0;
       }
-
+ 
       .timeline::before {
         content: "";
         position: absolute;
@@ -638,7 +664,7 @@ width: 100%;        max-width: 900px;
           transparent
         );
       }
-
+ 
       .timeline-item {
         display: flex;
         gap: 2rem;
@@ -646,7 +672,7 @@ width: 100%;        max-width: 900px;
         align-items: flex-start;
         animation: fadeInLeft 0.6s ease both;
       }
-
+ 
       @keyframes fadeInLeft {
         from {
           opacity: 0;
@@ -657,7 +683,7 @@ width: 100%;        max-width: 900px;
           transform: translateX(0);
         }
       }
-
+ 
       .timeline-date {
         width: 80px;
         flex-shrink: 0;
@@ -668,7 +694,7 @@ width: 100%;        max-width: 900px;
         padding-top: 0.2rem;
         letter-spacing: 0.05em;
       }
-
+ 
       .timeline-dot {
         width: 14px;
         height: 14px;
@@ -680,25 +706,25 @@ width: 100%;        max-width: 900px;
         position: relative;
         z-index: 1;
       }
-
+ 
       .timeline-content {
         flex: 1;
         padding-bottom: 0.5rem;
       }
-
+ 
       .timeline-event {
         font-family: "Cinzel", serif;
         font-size: 1.15rem;
         color: var(--or-clair);
         margin-bottom: 0.3rem;
       }
-
+ 
       .timeline-detail {
         font-size: 1.1rem;
         color: var(--sable-fonce);
         margin-bottom: 0 !important;
       }
-
+ 
       /* ─── FULL-WIDTH BAND QUOTE ─── */
       .band-quote {
         background: linear-gradient(135deg, #0d1a2e 0%, #1a0d08 100%);
@@ -707,7 +733,7 @@ width: 100%;        max-width: 900px;
         position: relative;
         overflow: hidden;
       }
-
+ 
       .band-quote::before {
         content: "";
         position: absolute;
@@ -720,7 +746,7 @@ width: 100%;        max-width: 900px;
           transparent 20px
         );
       }
-
+ 
       .band-quote blockquote {
         position: relative;
         z-index: 1;
@@ -731,7 +757,7 @@ width: 100%;        max-width: 900px;
         margin: 0 auto 1.5rem;
         line-height: 1.5;
       }
-
+ 
       .band-quote footer {
         position: relative;
         z-index: 1;
@@ -741,7 +767,7 @@ width: 100%;        max-width: 900px;
         color: var(--sable-fonce);
         text-transform: uppercase;
       }
-
+ 
       /* ─── BIBLIOGRAPHIE ─── */
       .bibliography {
         background: linear-gradient(
@@ -751,7 +777,7 @@ width: 100%;        max-width: 900px;
         );
         padding: 5rem 0;
       }
-
+ 
       .bib-header {
         font-family: "Cinzel", serif;
         font-size: 0.85rem;
@@ -762,13 +788,13 @@ width: 100%;        max-width: 900px;
         padding-bottom: 1rem;
         border-bottom: 1px solid rgba(200, 151, 58, 0.2);
       }
-
+ 
       .bib-list {
         list-style: none;
         display: grid;
         gap: 1rem;
       }
-
+ 
       .bib-item {
         font-size: 1.1rem;
         color: var(--sable-fonce);
@@ -781,12 +807,12 @@ width: 100%;        max-width: 900px;
       .bib-item:hover {
         border-left-color: var(--or);
       }
-
+ 
       .bib-item strong {
         color: var(--sable);
         font-style: italic;
       }
-
+ 
       /* ─── FOOTER ─── */
       footer {
         background: #0a0804;
@@ -794,21 +820,21 @@ width: 100%;        max-width: 900px;
         padding: 3rem 2rem;
         text-align: center;
       }
-
+ 
       .footer-logo {
         font-family: "Cinzel Decorative", serif;
         font-size: 1.6rem;
         color: var(--or);
         margin-bottom: 1rem;
       }
-
+ 
       .footer-tagline {
         font-family: "EB Garamond", serif;
         font-style: italic;
         color: var(--sable-fonce);
         font-size: 1.15rem;
       }
-
+ 
       .footer-nav {
         display: flex;
         justify-content: center;
@@ -816,7 +842,7 @@ width: 100%;        max-width: 900px;
         margin: 1.5rem 0;
         flex-wrap: wrap;
       }
-
+ 
       .footer-nav a {
         font-family: "Cinzel", serif;
         font-size: 0.8rem;
@@ -830,98 +856,159 @@ width: 100%;        max-width: 900px;
       .footer-nav a:hover {
         opacity: 1;
       }
-
+ 
       /* ─── UTILS ─── */
       /* ─── IMAGES & FIGURES ─── */
+      /* ── FIGURES & IMAGES RESPONSIVE ── */
       .article-figure {
-        margin: 3rem 0;
+        margin: 2.5rem 0;
         position: relative;
         overflow: hidden;
-        border-radius: 4px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(200, 151, 58, 0.2);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(200,151,58,0.2);
+        display: block;
       }
-
+ 
       .article-figure img {
-        width: 90vw;
+        width: 100%;
         height: auto;
         display: block;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
         transition: transform 0.6s ease;
       }
-
+ 
       .article-figure:hover img {
         transform: scale(1.03);
       }
-
+ 
       .image-caption {
-        background: rgba(26, 18, 8, 0.9);
-        padding: 1rem 1.5rem;
+        background: rgba(26,18,8,0.9);
+        padding: 0.85rem 1.2rem;
         border-top: 2px solid var(--or);
         font-family: "EB Garamond", serif;
-        font-size: 1.15rem;
+        font-size: 1rem;
         color: var(--sable-fonce);
         font-style: italic;
         line-height: 1.5;
       }
-
+ 
       .image-caption strong {
         color: var(--or-clair);
         font-family: "Cinzel", serif;
-        font-size: 1rem;
+        font-size: 0.85rem;
         letter-spacing: 0.1em;
         font-style: normal;
         display: block;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.25rem;
       }
-
+ 
+      /* Grille 2 colonnes — responsive */
       .image-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin: 3rem 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 2.5rem 0;
       }
-
+ 
       .image-grid .article-figure {
         margin: 0;
       }
-
-      /* Image flottante */
-      .image-float-right {
-        float: right;
-        width: 45%;
-        margin: 0.5rem 0 1.5rem 2rem;
-      }
-
+ 
+      /* Image côte-texte : layout flex au lieu de float */
+      .image-float-right,
       .image-float-left {
-        float: left;
-        width: 45%;
-        margin: 0.5rem 2rem 1.5rem 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        margin: 2.5rem 0;
+        float: none;
+        width: 100%;
       }
-
-      @media (max-width: 768px) {
-        .image-float-right,
-        .image-float-left {
-          float: none;
-          width: 90vw;
-          margin: 2rem 0;
+ 
+      .image-float-right {
+        flex-direction: row-reverse; /* image à droite */
+      }
+ 
+      .image-float-left {
+        flex-direction: row; /* image à gauche */
+      }
+ 
+      .image-float-right .figure-img-wrap,
+      .image-float-left .figure-img-wrap {
+        flex: 0 0 42%;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid rgba(200,151,58,0.2);
+      }
+ 
+      .image-float-right .figure-img-wrap img,
+      .image-float-left .figure-img-wrap img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+ 
+      .image-float-right:hover .figure-img-wrap img,
+      .image-float-left:hover .figure-img-wrap img {
+        transform: scale(1.03);
+      }
+ 
+      .figure-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+ 
+      .figure-caption-inline {
+        margin-top: 0.9rem;
+        padding: 0.75rem 1rem;
+        background: rgba(26,18,8,0.85);
+        border-left: 2px solid var(--or);
+        font-family: "EB Garamond", serif;
+        font-size: 0.95rem;
+        color: var(--sable-fonce);
+        font-style: italic;
+      }
+ 
+      .figure-caption-inline strong {
+        color: var(--or-clair);
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        font-style: normal;
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+ 
+      /* ── RESPONSIVE ── */
+      @media (max-width: 860px) {
+        .image-grid {
+          grid-template-columns: 1fr;
         }
       }
-
-      /* Hero Image Adjustment */
-      .hero-background {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        opacity: 0.3;
+ 
+      @media (max-width: 700px) {
+        .image-float-right,
+        .image-float-left {
+          flex-direction: column;
+        }
+        .image-float-right .figure-img-wrap,
+        .image-float-left .figure-img-wrap {
+          flex: 0 0 auto;
+          width: 100%;
+        }
+        .image-float-right .figure-img-wrap img,
+        .image-float-left .figure-img-wrap img {
+          aspect-ratio: 16 / 9;
+        }
       }
-
-      .hero-background img {
-        width: 90vw;
-        height: 85vh;
-        object-fit: cover;
-        filter: sepia(30%) contrast(110%);
-      }
-
+ 
+ 
       /* ─── UTILS ─── */
       .text-or {
         color: var(--or-clair);
@@ -933,23 +1020,23 @@ width: 100%;        max-width: 900px;
         color: var(--or-clair);
         font-weight: 600;
       }
-
+ 
       /* ─── CARD IMAGE ─── */
       .card-image {
-        width: 90vw;
+        width: 100%;
         height: 180px;
         overflow: hidden;
         margin-bottom: 1.5rem;
         border: 1px solid rgba(200, 151, 58, 0.3);
       }
-
+ 
       .card-image img {
-        width: 90vw;
-        height: 85vh;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
       }
-
+ 
       .monument-card:hover .card-image img {
         transform: scale(1.1);
       }
@@ -992,7 +1079,7 @@ width: 100%;        max-width: 900px;
         />
       </div>
       <div class="stars" id="stars"></div>
-
+ 
       <!-- SVG Pyramid silhouette -->
       <svg
         class="hero-pyramid"
@@ -1027,7 +1114,7 @@ width: 100%;        max-width: 900px;
           stroke-width="1.5"
         />
       </svg>
-
+ 
       <div class="hero-content">
         <p class="hero-eyebrow">Égypte Éternelle · Dossier Thématique</p>
         <h1 class="hero-title">
@@ -1040,10 +1127,10 @@ width: 100%;        max-width: 900px;
         </p>
         <div class="hero-divider"></div>
       </div>
-
+ 
       <div class="scroll-hint">Défiler</div>
     </section>
-
+ 
     <!-- ════════════ NAV ════════════ -->
     <nav class="main-nav">
       <div class="nav-inner">
@@ -1059,7 +1146,7 @@ width: 100%;        max-width: 900px;
         </ul>
       </div>
     </nav>
-
+ 
     <!-- ═══════════════════════════════════════════
      INTRO STATS
 ═══════════════════════════════════════════ -->
@@ -1078,7 +1165,7 @@ width: 100%;        max-width: 900px;
         </div>
       </div>
     </div>
-
+ 
     <!-- ═══════════════════════════════════════════
      SECTION 1 — NAISSANCE
 ═══════════════════════════════════════════ -->
@@ -1092,19 +1179,23 @@ width: 100%;        max-width: 900px;
             <h2 class="marker-title">La naissance d'une forme éternelle</h2>
           </div>
         </div>
-
-        <figure class="article-figure image-float-right">
-          <img
-            src="images/images/pyramide-à-degret.jpg"
-            alt="Pyramide à degrés de Djéser à Saqqarah"
-          />
-          <figcaption class="image-caption">
-            <strong>Saqqarah : La Première Pyramide</strong>
-            La pyramide à degrés de Djéser, conçue par Imhotep, marque le
-            passage de la brique de terre à la pierre éternelle.
-          </figcaption>
-        </figure>
-
+ 
+        <div class="image-float-right">
+          <div class="figure-img-wrap">
+            <img
+              src="images/images/pyramide-à-degret.jpg"
+              alt="Pyramide à degrés de Djéser à Saqqarah"
+            />
+          </div>
+          <div class="figure-text">
+            <div class="figure-caption-inline">
+              <strong>Saqqarah : La Première Pyramide</strong>
+              La pyramide à degrés de Djéser, conçue par Imhotep, marque le
+              passage de la brique de terre à la pierre éternelle.
+            </div>
+          </div>
+        </div>
+ 
         <p>
           Avant la pyramide, il y avait le
           <a href="#mastaba" class="internal-link">mastaba</a> — ce banc de
@@ -1114,7 +1205,7 @@ width: 100%;        max-width: 900px;
           première révolution architecturale de l'humanité : la pyramide à
           degrés de <strong>Djéser</strong>, à Saqqarah.
         </p>
-
+ 
         <p>
           Son architecte, <strong>Imhotep</strong>, est l'un des premiers génies
           nommément connus de l'histoire. Médecin, astronome, scribe et
@@ -1123,7 +1214,7 @@ width: 100%;        max-width: 900px;
           pierre taillée au monde. Les Égyptiens le déifieront des siècles plus
           tard : voilà ce que signifie bâtir pour l'éternité.
         </p>
-
+ 
         <div class="pull-quote">
           <p>
             La pyramide ne fut jamais seulement une tombe. Elle était une
@@ -1132,7 +1223,7 @@ width: 100%;        max-width: 900px;
           </p>
           <cite>— Jan Assmann, <em>La mémoire culturelle</em>, 1992</cite>
         </div>
-
+ 
         <p>
           La forme pyramidale elle-même est lourde de sens. Elle évoque le
           <strong>ben-ben</strong>, la pierre primordiale conique sur laquelle,
@@ -1144,9 +1235,9 @@ width: 100%;        max-width: 900px;
           <a href="#maat" class="internal-link">Maât</a> — gouvernait l'univers
           tout entier.
         </p>
-
+ 
         <h3>De Meïdoum à Dahchour : les pyramides ratées</h3>
-
+ 
         <div class="image-grid">
           <figure class="article-figure">
             <img src="images/images/meidoum.webp" alt="Pyramide de Meïdoum" />
@@ -1168,7 +1259,7 @@ width: 100%;        max-width: 900px;
             </figcaption>
           </figure>
         </div>
-
+ 
         <p>
           L'évolution vers la forme canonique ne fut pas sans accidents. La
           pyramide de <strong>Meïdoum</strong>, attribuée à Snéfrou (père de
@@ -1181,7 +1272,7 @@ width: 100%;        max-width: 900px;
           seul, plus de volume de pierre que son fils Khéops — testament d'un
           règne de recherches architecturales acharnées.
         </p>
-
+ 
         <div class="info-box">
           <p class="info-box-title">𓂀 Le saviez-vous ?</p>
           <p>
@@ -1193,7 +1284,7 @@ width: 100%;        max-width: 900px;
         </div>
       </div>
     </section>
-
+ 
     <!-- ═══════════════════════════════════════════
      SECTION 2 — GIZEH
 ═══════════════════════════════════════════ -->
@@ -1211,7 +1302,7 @@ width: 100%;        max-width: 900px;
             </h2>
           </div>
         </div>
-
+ 
         <figure class="article-figure">
           <img
             src="images/images/vue-pyramides.jpg"
@@ -1223,7 +1314,7 @@ width: 100%;        max-width: 900px;
             l'Égypte antique, symboles de la puissance de la IVe dynastie.
           </figcaption>
         </figure>
-
+ 
         <p>
           Aucun site dans l'histoire de l'humanité ne porte autant de mythes, de
           mensonges et de vérités enchevêtrées que le plateau de Gizeh. Dominant
@@ -1233,9 +1324,9 @@ width: 100%;        max-width: 900px;
           <strong>Khéops</strong>, <strong>Khéphren</strong> et
           <strong>Mykérinos</strong>.
         </p>
-
+ 
         <h3>Khéops : la Grande Pyramide</h3>
-
+ 
         <p>
           Bâtie vers 2560 avant notre ère pour le pharaon
           <strong>Khéops</strong> (Khnoum-Khoufoui de son vrai nom), la Grande
@@ -1248,7 +1339,7 @@ width: 100%;        max-width: 900px;
           en moyenne 2,5 tonnes, certains blocs de granit dans la chambre
           funéraire atteignant 80 tonnes.
         </p>
-
+ 
         <table class="data-table">
           <thead>
             <tr>
@@ -1290,9 +1381,9 @@ width: 100%;        max-width: 900px;
             </tr>
           </tbody>
         </table>
-
+ 
         <h3>Le Grand Sphinx : gardien de l'horizon</h3>
-
+ 
         <p>
           Taillé directement dans le roc calcaire, le
           <strong>Grand Sphinx</strong> (Hor-em-Akhet, « Horus à l'horizon »)
@@ -1302,7 +1393,7 @@ width: 100%;        max-width: 900px;
           soleil levant, symbolisant la renaissance quotidienne du pharaon
           divinisé en <a href="#re" class="internal-link">Rê-Horakhty</a>.
         </p>
-
+ 
         <p>
           L'une des énigmes majeures du site est la <em>Stèle du Songe</em>,
           érigée par <strong>Thoutmôsis IV</strong> entre les pattes du Sphinx.
@@ -1311,7 +1402,7 @@ width: 100%;        max-width: 900px;
           restauration de la statue, ensablée jusqu'au cou. Ce texte est la
           première mention connue du Sphinx sous le nom d'<em>Hor-em-Akhet</em>.
         </p>
-
+ 
         <div class="pull-quote">
           <p>
             Les projections en lumière muon de 2023 ont révélé des anomalies de
@@ -1320,7 +1411,7 @@ width: 100%;        max-width: 900px;
           </p>
           <cite>— Projet ScanPyramids / Université de Nagoya, 2023</cite>
         </div>
-
+ 
         <div class="image-grid">
           <figure class="article-figure">
             <img
@@ -1347,7 +1438,7 @@ width: 100%;        max-width: 900px;
         </div>
       </div>
     </section>
-
+ 
     <!-- ═══════════════════════════════════════════
      SECTION 3 — TEMPLES
 ═══════════════════════════════════════════ -->
@@ -1364,7 +1455,7 @@ width: 100%;        max-width: 900px;
             </h2>
           </div>
         </div>
-
+ 
         <p>
           Si les pyramides sont les monuments de la mort et du passage, les
           <strong>temples</strong> sont ceux de la vie divine permanente.
@@ -1375,7 +1466,7 @@ width: 100%;        max-width: 900px;
           du roi, nourrissent, habillent et divertissent quotidiennement les
           statues des dieux.
         </p>
-
+ 
         <div class="cards-grid">
           <div class="monument-card">
             <div class="card-image">
@@ -1470,9 +1561,9 @@ width: 100%;        max-width: 900px;
             </p>
           </div>
         </div>
-
+ 
         <h3>L'organisation du temple égyptien</h3>
-
+ 
         <p>
           Tout grand temple obéit à une
           <strong>topographie symbolique</strong> précise. On y pénètre par un
@@ -1484,7 +1575,7 @@ width: 100%;        max-width: 900px;
           primordiaux du delta, avant le saint des saints où reposait la barque
           sacrée portant la statue divine.
         </p>
-
+ 
         <div class="info-box">
           <p class="info-box-title">𓌀 Architecture sacrée</p>
           <p>
@@ -1497,7 +1588,7 @@ width: 100%;        max-width: 900px;
         </div>
       </div>
     </section>
-
+ 
     <!-- ═══════════════════════════════════════════
      BAND QUOTE
 ═══════════════════════════════════════════ -->
@@ -1510,7 +1601,7 @@ width: 100%;        max-width: 900px;
         — Hérodote, <em>Histoires</em>, Livre II, v. 450 av. J.-C. (paraphrase)
       </footer>
     </div>
-
+ 
     <!-- ═══════════════════════════════════════════
      SECTION 4 — TECHNIQUES
 ═══════════════════════════════════════════ -->
@@ -1524,21 +1615,23 @@ width: 100%;        max-width: 900px;
             <h2 class="marker-title">Comment bâtissait-on les pyramides ?</h2>
           </div>
         </div>
-
-        <p>
-          <figure class="article-figure image-float-left">
+ 
+        <div class="image-float-left">
+          <div class="figure-img-wrap">
             <img
               src="images/images/Gemini_Generated_Image_nl0c4nnl0c4nnl0c.png"
               alt="Chantier de construction d'une pyramide"
             />
-            <figcaption class="image-caption">
+          </div>
+          <div class="figure-text">
+            <div class="figure-caption-inline">
               <strong>Chantier Royal</strong>
               La logistique pharaonique mobilisait des milliers d'ouvriers
               libres, des carrières au sommet des monuments.
-            </figcaption>
-          </figure>
-        </p>
-
+            </div>
+          </div>
+        </div>
+ 
         <p>
           C'est la question que tout visiteur se pose devant la Grande Pyramide.
           Comment, sans roue, sans fer, sans poulie, des hommes ont-ils pu
@@ -1547,9 +1640,9 @@ width: 100%;        max-width: 900px;
           pseudoscientifiques voudraient le faire croire — mais bien plus
           impressionnante.
         </p>
-
+ 
         <h3>Les bâtisseurs : pas des esclaves</h3>
-
+ 
         <p>
           Une idée fausse tenace, véhiculée par Hérodote et amplifiée par le
           cinéma hollywoodien, peint les pyramides comme des œuvres d'un
@@ -1564,9 +1657,9 @@ width: 100%;        max-width: 900px;
           jamais retrouvé : ils décrivent le transport par bateau de blocs de
           calcaire depuis les carrières de Toura jusqu'au chantier de Gizeh.
         </p>
-
+ 
         <h3>Rampes, lubrifiants et organisation</h3>
-
+ 
         <p>
           Le débat sur les rampes de construction n'est pas clos, mais plusieurs
           hypothèses coexistent avec des arguments solides. La
@@ -1578,7 +1671,7 @@ width: 100%;        max-width: 900px;
           qui a modélisé en 3D l'intérieur de la pyramide et identifié une rampe
           interne pour les derniers étages.
         </p>
-
+ 
         <p>
           Un bas-relief de la tombe de <strong>Djehoutihotep</strong> (vers 1880
           av. J.-C.) montre explicitement des équipes versant du lait ou de
@@ -1587,7 +1680,7 @@ width: 100%;        max-width: 900px;
           montré que cette simple technique permettait de réduire de moitié la
           force de traction nécessaire.
         </p>
-
+ 
         <div class="pull-quote">
           <p>
             Les papyrus de Merer — découverts en 2013 — constituent le plus
@@ -1598,23 +1691,25 @@ width: 100%;        max-width: 900px;
             >— Pierre Tallet, <em>Les papyrus de la Mer Rouge</em>, 2017</cite
           >
         </div>
-
+ 
         <h3>Précision et métrologie</h3>
-
-        <p>
-          <figure class="article-figure image-float-right" style="width: 35%">
+ 
+        <div class="image-float-right">
+          <div class="figure-img-wrap">
             <img
               src="images/images/texte-ecriture-pyramide.webp"
               alt="Hiéroglyphes et mesures"
             />
-            <figcaption class="image-caption">
+          </div>
+          <div class="figure-text">
+            <div class="figure-caption-inline">
               <strong>L'Esprit des Nombres</strong>
               La précision des pyramides repose sur une maîtrise exceptionnelle
               de la géométrie et de l'astronomie.
-            </figcaption>
-          </figure>
-        </p>
-
+            </div>
+          </div>
+        </div>
+ 
         <p>
           Les Égyptiens utilisaient une unité de mesure fondamentale : la
           <strong>coudée royale</strong> (environ 52,5 cm), divisée en 7 paumes
@@ -1627,7 +1722,7 @@ width: 100%;        max-width: 900px;
           couchent jamais — pour déterminer le nord vrai avec une précision
           remarquable.
         </p>
-
+ 
         <div class="info-box">
           <p class="info-box-title">𓇳 Chiffres clés du chantier de Gizeh</p>
           <p>
@@ -1640,7 +1735,7 @@ width: 100%;        max-width: 900px;
         </div>
       </div>
     </section>
-
+ 
     <!-- ═══════════════════════════════════════════
      SECTION 5 — CHRONOLOGIE
 ═══════════════════════════════════════════ -->
@@ -1655,7 +1750,7 @@ width: 100%;        max-width: 900px;
             </h2>
           </div>
         </div>
-
+ 
         <div class="timeline">
           <div class="timeline-item">
             <span class="timeline-date">~2650<br />av. J.-C.</span>
@@ -1743,7 +1838,7 @@ width: 100%;        max-width: 900px;
         </div>
       </div>
     </section>
-
+ 
     <!-- ═══════════════════════════════════════════
      BIBLIOGRAPHIE
 ═══════════════════════════════════════════ -->
@@ -1801,7 +1896,7 @@ width: 100%;        max-width: 900px;
         </ul>
       </div>
     </section>
-
+ 
     <!-- ═══════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════ -->
@@ -1809,12 +1904,16 @@ width: 100%;        max-width: 900px;
       <p class="footer-logo">𓂀 Égypte Éternelle</p>
       <p class="footer-tagline">« Le temps a peur des pyramides. »</p>
       <nav class="footer-nav">
-        <a href="#">Histoire</a>
-        <a href="#">Dieux &amp; Mythes</a>
-        <a href="#">Pyramides</a>
-        <a href="#">Vie quotidienne</a>
-        <a href="#">Hiéroglyphes</a>
-        <a href="#">Glossaire</a>
+        <a href="egypte-dynasties.html">Histoire</a>
+        <a href="egypte-pantheon.html">Dieux &amp; Mythes</a>
+        <a href="egypte-pyramides.html">Pyramides</a>
+        <a href="egypte-societe.html">Vie quotidienne</a>
+        <a href="egypte-mythes-objets.html">Hiéroglyphes</a>
+        
+        <a href="tarot.html">🂠 L'Art du Tarot</a>
+        <a href="odyssee.html">✦ L'Odyssée des Guides</a>
+        <a href="egypte-a-propos.html">À propos</a>
+        <a href="egypte-a-contact.html">Contact</a>
       </nav>
       <p
         style="
@@ -1827,7 +1926,7 @@ width: 100%;        max-width: 900px;
         DOSSIER THÉMATIQUE · ÉGYPTE ÉTERNELLE
       </p>
     </footer>
-
+ 
     <script>
       // Generate stars
       const starsContainer = document.getElementById("stars");
@@ -1846,7 +1945,7 @@ width: 100%;        max-width: 900px;
     `;
         starsContainer.appendChild(star);
       }
-
+ 
       // Intersection observer for timeline items
       const observer = new IntersectionObserver(
         (entries) => {
@@ -1862,14 +1961,14 @@ width: 100%;        max-width: 900px;
         },
         { threshold: 0.15 },
       );
-
+ 
       document.querySelectorAll(".timeline-item").forEach((item) => {
         item.style.opacity = "0";
         item.style.transform = "translateX(-20px)";
         item.style.transition = "opacity 0.6s ease, transform 0.6s ease";
         observer.observe(item);
       });
-
+ 
       // Card observe
       const cardObserver = new IntersectionObserver(
         (entries) => {
@@ -1885,7 +1984,7 @@ width: 100%;        max-width: 900px;
         },
         { threshold: 0.1 },
       );
-
+ 
       document.querySelectorAll(".monument-card").forEach((card) => {
         card.style.opacity = "0";
         card.style.transform = "translateY(20px)";

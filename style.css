@@ -201,3 +201,12 @@
         background-color: var(--accent-color);
         box-shadow: 0 0 10px var(--accent-color);
       }
+      /* =========================================
+           IMAGES
+           ========================================= */
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
