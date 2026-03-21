@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Message envoyé — Égypte Éternelle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Message envoyé au gardien des Archives d'Égypte Éternelle. Merci pour ta traversée dans le désert."
+  >
+
+  <!-- Polices & styles de base (à adapter si tu as déjà un main.css) -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1b222b 0, #050609 55%, #000 100%);
+      color: #f5f0e6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(245, 240, 230, 0.12);
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(5, 6, 9, 0.9), rgba(5, 6, 9, 0.6));
+    }
+
+    .logo {
+      font-family: "Times New Roman", serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .logo span.glyph {
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      color: #f5f0e6;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.8;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .thankyou-wrapper {
+      max-width: 720px;
+      text-align: center;
+      padding: 2.5rem 2rem 2.75rem;
+      border-radius: 18px;
+      border: 1px solid rgba(245, 240, 230, 0.16);
+      background: radial-gradient(circle at top left, rgba(255, 215, 128, 0.08), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(105, 178, 255, 0.04), transparent 55%),
+                  rgba(3, 6, 12, 0.92);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thankyou-wrapper::before {
+      content: "𓂀";
+      position: absolute;
+      top: -1.8rem;
+      right: 8%;
+      font-size: 3.5rem;
+      opacity: 0.08;
+    }
+
+    .thankyou-glyph {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .thankyou-title {
+      font-family: "Times New Roman", serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .thankyou-subtitle {
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #f0d7a0;
+      margin-bottom: 1.5rem;
+    }
+
+    .thankyou-text {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #e4ddcf;
+      margin-bottom: 1.75rem;
+    }
+
+    .thankyou-text span {
+      color: #f0d7a0;
+    }
+
+    .thankyou-note {
+      font-size: 0.85rem;
+      color: #b8b1a3;
+      margin-bottom: 2.25rem;
+    }
+
+    .thankyou-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.6rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(240, 215, 160, 0.6);
+      background: transparent;
+      color: #f5f0e6;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #f0d7a0, #d9b76a);
+      color: #1a1308;
+      border-color: transparent;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.62);
+      border-color: rgba(240, 215, 160, 0.9);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(120deg, #ffe2a8, #e0bf72);
+    }
+
+    .btn span.glyph {
+      font-size: 1.1rem;
+    }
+
+    footer {
+      padding: 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: #a59b8a;
+      border-top: 1px solid rgba(245, 240, 230, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    footer a {
+      color: #d4c7ae;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        padding: 1rem 1.25rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      nav a {
+        margin: 0;
+      }
+
+      main {
+        padding: 2.5rem 1rem 3rem;
+      }
+
+      .thankyou-wrapper {
+        padding: 2rem 1.4rem 2.2rem;
+      }
+
+      footer {
+        padding: 1.2rem 1.25rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="glyph">𓂀</span>
+      <span>Égypte Éternelle</span>
+    </div>
+    <nav>
+      <a href="index.html#accueil">Accueil</a>
+      <a href="egypte-pyramides.html">Pyramides</a>
+      <a href="egypte-pantheon.html">Panthéon</a>
+      <a href="egypte-magie-rituels.html">Douat</a>
+      <a href="egypte-mythes-objets.html">Mythes & Objets</a>
+      <a href="egypte-a-propos.html">À propos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="thankyou-wrapper" aria-labelledby="merci-titre">
+      <div class="thankyou-glyph">𓊵</div>
+      <div class="thankyou-subtitle">Message transmis au désert</div>
+      <h1 id="merci-titre" class="thankyou-title">Merci pour ton message</h1>
+
+      <p class="thankyou-text">
+        Ton message a quitté les rives du monde ordinaire pour rejoindre les <span>Archives d’Égypte Éternelle</span>.  
+        Il sera lu avec attention, comme on déplie un papyrus ancien à la lueur d’une lampe à huile.
+      </p>
+
+      <p class="thankyou-note">
+        Selon la période, le temps de réponse peut varier, mais chaque voix est prise en compte dans la construction de ce sanctuaire numérique.
+      </p>
+
+      <div class="thankyou-actions">
+        <a href="index.html#accueil" class="btn btn-primary">
+          <span class="glyph">𓇯</span>
+          Retourner à l’accueil
+        </a>
+        <a href="egypte-pyramides.html" class="btn">
+          Explorer les pyramides
+        </a>
+        <a href="egypte-pantheon.html" class="btn">
+          Visiter le panthéon
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      𓂀 Égypte Éternelle — Portail de la civilisation pharaonique, entre mémoire, symbolisme et imagination.
+    </div>
+    <div>
+      <a href="egypte-a-contact.html">Me contacter</a>
+    </div>
+  </footer>
+</body>
+</html>

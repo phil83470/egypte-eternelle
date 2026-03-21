@@ -512,104 +512,111 @@
       </div>
 
       <div class="contact-grid">
+       
         <!-- FORMULAIRE -->
-        <div class="contact-card">
-          <span class="glyph-column">𓂀𓆣𓁹𓊹𓇳𓏏𓆑</span>
-          <h2>Envoyer un message</h2>
-          <p>
-            Remplis ce formulaire, et je te répondrai dès que possible.
-            Les champs marqués d’un <span> *</span> sont indispensables pour que ton message trouve sa voie.
-          </p>
+<form
+  class="contact-form"
+  method="POST"
+  action="https://formspree.io/f/xayrkvdk"
+>
+  <input type="hidden" name="_subject" value="Nouveau message - Égypte Éternelle">
+  <input type="hidden" name="_language" value="fr">
+  <input type="hidden" name="_redirect" value="https://phil83470.github.io/egypte-eternelle/merci.html">
 
-          <form
-            class="contact-form"
-            method="POST"
-            action="https://formspree.io/f/xayrkvdk"
-          >
-            <!-- Nom -->
-            <div class="field-group">
-              <label for="name" class="field-label">Nom <span>*</span></label>
-              <input
-                id="name"
-                name="nom"
-                type="text"
-                class="field-control"
-                required
-                autocomplete="name"
-                placeholder="Ton nom ou pseudonyme"
-              >
-            </div>
+  <div class="contact-card">
+    <span class="glyph-column">𓂀𓆣𓁹𓊹𓇳𓏏𓆑</span>
+    <h2>Envoyer un message</h2>
+    <p>
+      Remplis ce formulaire, et je te répondrai dès que possible.
+      Les champs marqués d’un <span> *</span> sont indispensables pour que ton message trouve sa voie.
+    </p>
 
-            <!-- Email -->
-            <div class="field-group">
-              <label for="email" class="field-label">Email <span>*</span></label>
-              <input
-                id="email"
-                name="_replyto"
-                type="email"
-                class="field-control"
-                required
-                autocomplete="email"
-                placeholder="adresse@exemple.com"
-              >
-              <div class="helper-text">
-                Ton adresse ne sera jamais partagée. Elle ne sert qu’à te répondre.
-              </div>
-            </div>
+    <!-- Nom -->
+    <div class="field-group">
+      <label for="name" class="field-label">Nom <span>*</span></label>
+      <input
+        id="name"
+        name="nom"
+        type="text"
+        class="field-control"
+        required
+        autocomplete="name"
+        placeholder="Ton nom ou pseudonyme"
+      >
+    </div>
 
-            <!-- Sujet -->
-            <div class="field-group">
-              <label for="subject" class="field-label">Sujet <span>*</span></label>
-              <input
-                id="subject"
-                name="sujet"
-                type="text"
-                class="field-control"
-                required
-                placeholder="Ex. : Collaboration, question sur un mythe, idée d’article..."
-              >
-            </div>
+    <!-- Email -->
+    <div class="field-group">
+      <label for="email" class="field-label">Email <span>*</span></label>
+      <input
+        id="email"
+        name="_replyto"
+        type="email"
+        class="field-control"
+        required
+        autocomplete="email"
+        placeholder="adresse@exemple.com"
+      >
+      <div class="helper-text">
+        Ton adresse ne sera jamais partagée. Elle ne sert qu’à te répondre.
+      </div>
+    </div>
 
-            <!-- Type de demande -->
-            <div class="field-group">
-              <label for="type" class="field-label">Type de message</label>
-              <select id="type" name="type" class="field-control">
-                <option value="">Choisis une option…</option>
-                <option value="question">Question sur un mythe ou un symbole</option>
-                <option value="collaboration">Proposition de collaboration</option>
-                <option value="projet-web">Projet web ou créatif</option>
-                <option value="retour">Retour sur le site Égypte Éternelle</option>
-                <option value="autre">Autre</option>
-              </select>
-            </div>
+    <!-- Sujet -->
+    <div class="field-group">
+      <label for="subject" class="field-label">Sujet <span>*</span></label>
+      <input
+        id="subject"
+        name="sujet"
+        type="text"
+        class="field-control"
+        required
+        placeholder="Ex. : Collaboration, question sur un mythe, idée d’article..."
+      >
+    </div>
 
-            <!-- Message -->
-            <div class="field-group">
-              <label for="message" class="field-label">Message <span>*</span></label>
-              <textarea
-                id="message"
-                name="message"
-                class="field-control"
-                required
-                placeholder="Partage ton message, tes questions, ou le détail de ton projet..."
-              ></textarea>
-            </div>
+    <!-- Type de demande -->
+    <div class="field-group">
+      <label for="type" class="field-label">Type de message</label>
+      <select id="type" name="type" class="field-control">
+        <option value="">Choisis une option…</option>
+        <option value="question">Question sur un mythe ou un symbole</option>
+        <option value="collaboration">Proposition de collaboration</option>
+        <option value="projet-web">Projet web ou créatif</option>
+        <option value="retour">Retour sur le site Égypte Éternelle</option>
+        <option value="autre">Autre</option>
+      </select>
+    </div>
 
-            <!-- Consentement / RGPD light -->
-            <div class="consent">
-              En envoyant ce message, tu acceptes que les informations fournies soient utilisées
-              uniquement pour te répondre dans le cadre de ta demande.
-            </div>
+    <!-- Message -->
+    <div class="field-group">
+      <label for="message" class="field-label">Message <span>*</span></label>
+      <textarea
+        id="message"
+        name="message"
+        class="field-control"
+        required
+        placeholder="Partage ton message, tes questions, ou le détail de ton projet..."
+      ></textarea>
+    </div>
 
-            <!-- Bouton -->
-            <div class="submit-row">
-              <button type="submit" class="btn-submit">Envoyer</button>
-              <div class="submit-note">
-                Tu seras redirigé vers une page de confirmation après l’envoi.
-              </div>
-            </div>
-          </form>
-        </div>
+    <!-- Consentement / RGPD light -->
+    <div class="consent">
+      En envoyant ce message, tu acceptes que les informations fournies soient utilisées
+      uniquement pour te répondre dans le cadre de ta demande.
+    </div>
+
+    <!-- Bouton -->
+    <div class="submit-row">
+      <button type="submit" class="btn-submit">Envoyer</button>
+      <div class="submit-note">
+        Tu seras redirigé vers une page de confirmation après l’envoi.
+      </div>
+    </div>
+  </div>
+</form>
+
+       
 
         <!-- TEXTE D’ACCOMPAGNEMENT -->
         <aside class="contact-aside">
