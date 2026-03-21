@@ -1,197 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>À Propos — Égypte Éternelle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>À Propos — Égypte Éternelle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    :root {
-      --or: #c8973a;
-      --or-clair: #e8bf6a;
-      --or-profond: #8b6420;
-      --sable: #f2e8c9;
-      --sable-fonce: #d4c49a;
-      --noir-nil: #1a1208;
-      --papyrus-brun: #6b4f2a;
-      --bleu-lapis: #1a3a5c;
-      --bleu-clair: #4a7fa8;
-    }
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #e8bf6a;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --papyrus-brun: #6b4f2a;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+      }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background-color: var(--noir-nil);
-      color: var(--sable);
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: calc(18px + 0.2rem);
-      line-height: 1.8;
-      overflow-x: hidden;
-      padding-top: 64px;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+        padding-top: 64px;
+      }
 
-    /* NAVIGATION */
-    nav.main-nav {
-      position: fixed; left: 0; right: 0; width: 100%; top: 0; z-index: 100;
-      background: rgba(26, 18, 8, 0.96); backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(200, 151, 58, 0.2); padding: 0 2rem;
-    }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { font-family: "Cinzel Decorative", serif; font-size: 1.2rem; color: var(--or); text-decoration: none; letter-spacing: 0.08em; }
-    .nav-links { display: flex; gap: 1.4rem; list-style: none; }
-    .nav-links a { font-family: "Cinzel", serif; font-size: 0.87rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sable-fonce); text-decoration: none; transition: color 0.3s; }
-    .nav-links a:hover { color: var(--or-clair); }
+      /* NAVIGATION */
+      nav.main-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        background: rgba(26, 18, 8, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 0 2rem;
+      }
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .nav-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.2rem;
+        color: var(--or);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1.4rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-family: "Cinzel", serif;
+        font-size: 0.87rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover {
+        color: var(--or-clair);
+      }
 
-    /* HERO */
-    .hero {
-      min-height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center;
-      background: radial-gradient(ellipse at 50% 100%, rgba(200, 151, 58, 0.25) 0%, transparent 55%),
-                  linear-gradient(180deg, #080604 0%, #1a1208 60%, #251a08 100%);
-      position: relative; overflow: hidden; padding: 4rem 2rem;
-    }
-    .hero-eyebrow { font-family: "Cinzel", serif; font-size: 0.95rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--or); margin-bottom: 1.2rem; }
-    .hero-title { font-family: "Cinzel Decorative", serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; color: var(--or-clair); text-shadow: 0 0 40px rgba(200, 151, 58, 0.3), 0 2px 4px rgba(0, 0, 0, 0.8); }
-    .hero-divider { width: 200px; height: 2px; background: linear-gradient(90deg, transparent, var(--or), transparent); margin: 2rem auto 0; }
+      /* HERO */
+      .hero {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.25) 0%,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #080604 0%, #1a1208 60%, #251a08 100%);
+        position: relative;
+        overflow: hidden;
+        padding: 4rem 2rem;
+      }
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.2rem;
+      }
+      .hero-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(2.4rem, 6vw, 4rem);
+        font-weight: 900;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 40px rgba(200, 151, 58, 0.3),
+          0 2px 4px rgba(0, 0, 0, 0.8);
+      }
+      .hero-divider {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 2rem auto 0;
+      }
 
-    /* CONTAINER */
-    .container { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
+      /* CONTAINER */
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
 
-    /* SECTIONS */
-    .propos-section { margin-bottom: 5rem; position: relative; }
-    .section-marker { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; }
-    .marker-number { font-family: "Cinzel Decorative", serif; font-size: 4rem; color: rgba(200, 151, 58, 0.1); font-weight: 900; }
-    .marker-title { font-family: "Cinzel", serif; font-size: 1.8rem; color: var(--or-clair); text-transform: uppercase; letter-spacing: 0.1em; }
-    
-    .propos-content p { margin-bottom: 1.5rem; color: var(--sable-fonce); font-size: 1.2rem; }
-    .propos-highlight { border-left: 3px solid var(--or); padding-left: 1.5rem; font-style: italic; color: var(--or-clair); margin: 2.5rem 0; font-size: 1.4rem; }
+      /* SECTIONS */
+      .propos-section {
+        margin-bottom: 5rem;
+        position: relative;
+      }
+      .section-marker {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .marker-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 4rem;
+        color: rgba(200, 151, 58, 0.1);
+        font-weight: 900;
+      }
+      .marker-title {
+        font-family: "Cinzel", serif;
+        font-size: 1.8rem;
+        color: var(--or-clair);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
 
-    .glyph-deco { position: absolute; right: -2rem; top: 0; font-size: 8rem; color: rgba(200, 151, 58, 0.03); user-select: none; pointer-events: none; }
+      .propos-content p {
+        margin-bottom: 1.5rem;
+        color: var(--sable-fonce);
+        font-size: 1.2rem;
+      }
+      .propos-highlight {
+        border-left: 3px solid var(--or);
+        padding-left: 1.5rem;
+        font-style: italic;
+        color: var(--or-clair);
+        margin: 2.5rem 0;
+        font-size: 1.4rem;
+      }
 
-    /* FOOTER */
-    footer { background: #0a0804; border-top: 1px solid rgba(200, 151, 58, 0.15); padding: 3rem 2rem; text-align: center; }
-    .footer-logo { font-family: "Cinzel Decorative", serif; font-size: 1.6rem; color: var(--or); margin-bottom: 1rem; }
-    .footer-nav { display: flex; justify-content: center; gap: 2rem; margin: 1.5rem 0; flex-wrap: wrap; }
-    .footer-nav a { font-family: "Cinzel", serif; font-size: 0.8rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--sable-fonce); text-decoration: none; opacity: 0.7; }
+      .glyph-deco {
+        position: absolute;
+        right: -2rem;
+        top: 0;
+        font-size: 8rem;
+        color: rgba(200, 151, 58, 0.03);
+        user-select: none;
+        pointer-events: none;
+      }
 
-    @media (max-width: 700px) { .nav-links { display: none; } }
-  </style>
-</head>
-<body>
+      /* FOOTER */
+      footer {
+        background: #0a0804;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.7;
+      }
 
-  <!-- NAV -->
-  <nav class="main-nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">𓂀 Égypte Éternelle</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="egypte-pyramides.html">Pyramides</a></li>
-        <li><a href="egypte-pantheon.html">Dieux</a></li>
-        <li><a href="egypte-magie-rituels.html">Douat</a></li>
-        <li><a href="egypte-mythes-objets.html">Symboles</a></li>
-        <li><a href="tarot.html">Tarot</a></li>
-        <li><a href="egypte-a-contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Aux origines du portail</div>
-      <h1 class="hero-title">L'Âme du Projet</h1>
-      <div class="hero-divider"></div>
-    </div>
-  </section>
-
-  <main class="container">
-    
-    <!-- SECTION 1 : HISTOIRE -->
-    <section class="propos-section" id="histoire">
-      <span class="glyph-deco">𓂀</span>
-      <div class="section-marker">
-        <span class="marker-number">01</span>
-        <h2 class="marker-title">Genèse du site</h2>
+      @media (max-width: 700px) {
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">𓂀 Égypte Éternelle</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="egypte-pyramides.html">Pyramides</a></li>
+          <li><a href="egypte-pantheon.html">Dieux</a></li>
+          <li><a href="egypte-magie-rituels.html">Douat</a></li>
+          <li><a href="egypte-mythes-objets.html">Symboles</a></li>
+          <li><a href="tarot.html">Tarot</a></li>
+          <li><a href="egypte-a-contact.html">Contact</a></li>
+        </ul>
       </div>
-      <div class="propos-content">
-        <p>
-          <strong>Égypte Éternelle</strong> est né d’une passion dévorante pour la vallée du Nil. Ce portail n'est pas qu'un simple recueil d'histoire ; c'est un pont jeté entre le passé pharaonique et notre quête contemporaine d'éveil et de sens.
-        </p>
-        <p>
-          Ici, les pierres racontent des histoires, les hiéroglyphes chantent des mystères et chaque dune de sable cache un secret millénaire. Nous explorons les monuments, mais aussi la spiritualité profonde qui animait les anciens Égyptiens.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECTION 2 : LE CRÉATEUR -->
-    <section class="propos-section" id="createur">
-      <span class="glyph-deco">𓇳</span>
-      <div class="section-marker">
-        <span class="marker-number">02</span>
-        <h2 class="marker-title">L'explorateur</h2>
-      </div>
-      <div class="propos-content">
-        <p>
-          Derrière ce temple numérique se cache <strong>Philippe</strong>, explorateur du web et passionné d'histoire et de spiritualité depuis son enfance.
-        </p>
-        <div class="propos-highlight">
-          « Le temps a peur des pyramides, et l'âme a soif d'éternité. »
-        </div>
-        <p>
-          L'objectif de ce projet est de proposer un contenu accessible, généreux et inspirant, où l'histoire académique rencontre la poésie des mythes et la profondeur symbolique du Tarot et des guides spirituels.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECTION 3 : VISION -->
-    <section class="propos-section" id="vision">
-      <span class="glyph-deco">𓋹</span>
-      <div class="section-marker">
-        <span class="marker-number">03</span>
-        <h2 class="marker-title">Vision & Évolution</h2>
-      </div>
-      <div class="propos-content">
-        <p>
-          Ce site est un organisme vivant, en constante expansion. De nouveaux dossiers, de nouveaux rituels et de nouvelles rubriques sont exhumés régulièrement au fil de nos recherches et de nos intuitions.
-        </p>
-        <p>
-          Nous vous invitons à revenir souvent pour découvrir les dernières découvertes et à utiliser la page de <a href="egypte-a-contact.html" style="color:var(--or-clair);">contact</a> pour partager vos réflexions ou suggestions.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECTION 4 : REMERCIEMENTS -->
-    <section class="propos-section" id="remerciements">
-      <div class="section-marker">
-        <span class="marker-number">04</span>
-        <h2 class="marker-title">Gratitude</h2>
-      </div>
-      <div class="propos-content">
-        <p>
-          Merci de visiter Égypte Éternelle et de prendre part à ce voyage symbolique au cœur de la civilisation pharaonique et des mondes invisibles. Que Maât guide vos pas.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">𓂀 Égypte Éternelle</div>
-    <nav class="footer-nav">
-      <a href="index.html">Accueil</a>
-      <a href="egypte-pyramides.html">Pyramides</a>
-      <a href="egypte-pantheon.html">Panthéon</a>
-      <a href="egypte-magie-rituels.html">Douat</a>
-      <a href="egypte-mythes-objets.html">Symboles</a>
-      <a href="tarot.html">Tarot</a>
-      <a href="egypte-a-contact.html">Contact</a>
     </nav>
-    <p style="font-size:0.9rem; opacity:0.3; letter-spacing:0.1em;">© 2026 — TOUS DROITS RÉSERVÉS</p>
-  </footer>
 
-</body>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Aux origines du portail</div>
+        <h1 class="hero-title">L'Âme du Projet</h1>
+        <div class="hero-divider"></div>
+      </div>
+    </section>
+
+    <main class="container">
+      <!-- SECTION 1 : HISTOIRE -->
+      <section class="propos-section" id="histoire">
+        <span class="glyph-deco">𓂀</span>
+        <div class="section-marker">
+          <span class="marker-number">01</span>
+          <h2 class="marker-title">Genèse du site</h2>
+        </div>
+        <div class="propos-content">
+          <p>
+            <strong>Égypte Éternelle</strong> est né d’une passion dévorante
+            pour la vallée du Nil. Ce portail n'est pas qu'un simple recueil
+            d'histoire ; c'est un pont jeté entre le passé pharaonique et notre
+            quête contemporaine d'éveil et de sens.
+          </p>
+          <p></p>
+        </div>
+      </section>
+
+      <!-- SECTION 2 : LE CRÉATEUR -->
+      <section class="propos-section" id="createur">
+        <span class="glyph-deco">𓇳</span>
+        <div class="section-marker">
+          <span class="marker-number">02</span>
+          <h2 class="marker-title">L'explorateur</h2>
+        </div>
+        <div class="propos-content">
+          <p>
+            Derrière ce temple numérique se cache <strong>Philippe</strong>,
+            explorateur du web et passionné d'histoire et de spiritualité depuis
+            son enfance.
+          </p>
+          <div class="propos-highlight">
+            « Le temps a peur des pyramides, et l'âme a soif d'éternité. »
+          </div>
+          <p>
+            L'objectif de ce projet est de proposer un contenu accessible,
+            généreux et inspirant, où l'histoire académique rencontre la poésie
+            des mythes et la profondeur symbolique du Tarot et des guides
+            spirituels.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 3 : VISION -->
+      <section class="propos-section" id="vision">
+        <span class="glyph-deco">𓋹</span>
+        <div class="section-marker">
+          <span class="marker-number">03</span>
+          <h2 class="marker-title">Vision & Évolution</h2>
+        </div>
+        <div class="propos-content">
+          <p>
+            Ce site est un organisme vivant, en constante expansion. De nouveaux
+            dossiers, de nouveaux rituels et de nouvelles rubriques sont exhumés
+            régulièrement au fil de mes recherches et de mes intuitions.
+          </p>
+          <p>
+            Je vous invite à revenir souvent pour découvrir les dernières
+            découvertes et à utiliser la page de
+            <a href="egypte-a-contact.html" style="color: var(--or-clair)"
+              >contact</a
+            >
+            pour partager vos réflexions ou suggestions.
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 4 : REMERCIEMENTS -->
+      <section class="propos-section" id="remerciements">
+        <div class="section-marker">
+          <span class="marker-number">04</span>
+          <h2 class="marker-title">Gratitude</h2>
+        </div>
+        <div class="propos-content">
+          <p>
+            Merci de visiter Égypte Éternelle et de prendre part à ce voyage
+            symbolique au cœur de la civilisation pharaonique et des mondes
+            invisibles. Que Maât guide vos pas.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">𓂀 Égypte Éternelle</div>
+      <nav class="footer-nav">
+        <a href="index.html">Accueil</a>
+        <a href="egypte-pyramides.html">Pyramides</a>
+        <a href="egypte-pantheon.html">Panthéon</a>
+        <a href="egypte-magie-rituels.html">Douat</a>
+        <a href="egypte-mythes-objets.html">Symboles</a>
+        <a href="tarot.html">Tarot</a>
+        <a href="egypte-a-contact.html">Contact</a>
+      </nav>
+      <p style="font-size: 0.9rem; opacity: 0.3; letter-spacing: 0.1em">
+        © 2026 — TOUS DROITS RÉSERVÉS
+      </p>
+    </footer>
+  </body>
 </html>

@@ -1,660 +1,693 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Contact — Égypte Éternelle</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact — Égypte Éternelle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Styles principaux (copiés de tes autres pages) -->
-  <style>
-    :root {
-      --or: #c8973a;
-      --or-clair: #e8bf6a;
-      --or-profond: #8b6420;
-      --sable: #f2e8c9;
-      --sable-fonce: #d4c49a;
-      --noir-nil: #1a1208;
-      --papyrus-brun: #6b4f2a;
-      --rouge-cornaline: #8b2e1a;
-      --bleu-lapis: #1a3a5c;
-      --bleu-clair: #4a7fa8;
-      --turquoise: #2a8b7a;
-      --blanc-ivoire: #fbf5e6;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--noir-nil);
-      color: var(--sable);
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: calc(18px + 0.2rem);
-      line-height: 1.8;
-      overflow-x: hidden;
-      padding-top: 64px; /* espace pour la nav fixe */
-    }
-
-    /* NAVIGATION */
-    nav.main-nav {
-      position: fixed;
-      left: 0;
-      right: 0;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-      background: rgba(26, 18, 8, 0.96);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(200, 151, 58, 0.2);
-      padding: 0 2rem;
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
-    }
-
-    .nav-logo {
-      font-family: "Cinzel Decorative", serif;
-      font-size: 1.2rem;
-      color: var(--or);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.4rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: "Cinzel", serif;
-      font-size: 0.87rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--sable-fonce);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--or-clair);
-    }
-
-    /* MISE EN PAGE GÉNÉRALE */
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .contact-hero {
-      min-height: 40vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background:
-        radial-gradient(ellipse at 50% 100%, rgba(200, 151, 58, 0.25) 0%, transparent 55%),
-        linear-gradient(180deg, #080604 0%, #1a1208 60%, #251a08 100%);
-      position: relative;
-      overflow: hidden;
-      padding: 4rem 2rem 3rem;
-    }
-
-    .contact-hero-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-eyebrow {
-      font-family: "Cinzel", serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: var(--or);
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-title {
-      font-family: "Cinzel Decorative", serif;
-      font-size: clamp(2.4rem, 6vw, 3.6rem);
-      font-weight: 900;
-      color: var(--or-clair);
-      text-shadow:
-        0 0 40px rgba(200, 151, 58, 0.3),
-        0 2px 4px rgba(0, 0, 0, 0.8);
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-subtitle {
-      font-family: "EB Garamond", serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--sable-fonce);
-      max-width: 580px;
-      margin: 0.5rem auto 0;
-    }
-
-    .hero-divider {
-      width: 200px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--or), transparent);
-      margin: 2rem auto 0;
-    }
-
-    /* SECTION CONTACT */
-    .contact-section {
-      padding: 4rem 0 5rem;
-      border-top: 1px solid rgba(200, 151, 58, 0.15);
-      background: radial-gradient(circle at top, rgba(200,151,58,0.08), transparent 55%);
-    }
-
-    .section-marker {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .marker-number {
-      font-family: "Cinzel Decorative", serif;
-      font-size: 3.5rem;
-      line-height: 1;
-      color: rgba(200, 151, 58, 0.16);
-      font-weight: 900;
-      flex-shrink: 0;
-    }
-
-    .marker-text {
-      flex: 1;
-    }
-
-    .marker-eyebrow {
-      font-family: "Cinzel", serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: var(--or);
-      margin-bottom: 0.4rem;
-    }
-
-    .marker-title {
-      font-family: "Cinzel", serif;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      color: var(--or-clair);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 3rem;
-      align-items: flex-start;
-    }
-
-    /* FORMULAIRE */
-    .contact-card {
-      background: linear-gradient(
-        135deg,
-        rgba(42, 30, 10, 0.9),
-        rgba(26, 18, 8, 0.96)
-      );
-      border: 1px solid rgba(200, 151, 58, 0.25);
-      padding: 2rem 2.2rem;
-      border-radius: 8px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-card::before {
-      content: "𓂀";
-      position: absolute;
-      font-size: 5rem;
-      color: rgba(200, 151, 58, 0.08);
-      right: 1.5rem;
-      top: 0.8rem;
-      pointer-events: none;
-    }
-
-    .contact-card h2 {
-      font-family: "Cinzel", serif;
-      font-size: 1.4rem;
-      color: var(--or-clair);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-card p {
-      color: var(--sable-fonce);
-      font-size: 1.05rem;
-      margin-bottom: 1.5rem;
-    }
-
-    form.contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    .field-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .field-label {
-      font-family: "Cinzel", serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sable-fonce);
-    }
-
-    .field-label span {
-      color: var(--or-clair);
-    }
-
-    .field-control {
-      background: rgba(10, 8, 4, 0.85);
-      border: 1px solid rgba(200, 151, 58, 0.3);
-      border-radius: 4px;
-      padding: 0.65rem 0.8rem;
-      color: var(--sable);
-      font-family: "EB Garamond", serif;
-      font-size: 1.02rem;
-      outline: none;
-      transition:
-        border-color 0.2s,
-        box-shadow 0.2s,
-        background-color 0.2s;
-    }
-
-    .field-control::placeholder {
-      color: rgba(242, 232, 201, 0.55);
-    }
-
-    .field-control:focus {
-      border-color: var(--or-clair);
-      box-shadow: 0 0 0 1px rgba(200, 151, 58, 0.6);
-      background: rgba(10, 8, 4, 0.95);
-    }
-
-    textarea.field-control {
-      min-height: 140px;
-      resize: vertical;
-    }
-
-    select.field-control {
-      cursor: pointer;
-    }
-
-    .helper-text {
-      font-size: 0.9rem;
-      color: var(--sable-fonce);
-      font-style: italic;
-    }
-
-    .consent {
-      font-size: 0.9rem;
-      color: var(--sable-fonce);
-      margin-top: 0.2rem;
-    }
-
-    .consent a {
-      color: var(--or-clair);
-      text-decoration: underline dotted;
-    }
-
-    .submit-row {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .btn-submit {
-      border: none;
-      cursor: pointer;
-      background: linear-gradient(135deg, var(--or-profond), var(--or));
-      color: var(--noir-nil);
-      font-family: "Cinzel", serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      padding: 0.8rem 1.8rem;
-      border-radius: 999px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-      transition:
-        transform 0.15s ease-out,
-        box-shadow 0.15s ease-out,
-        filter 0.15s ease-out;
-    }
-
-    .btn-submit:hover {
-      filter: brightness(1.06);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.8);
-    }
-
-    .btn-submit:active {
-      transform: translateY(0);
-      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
-    }
-
-    .submit-note {
-      font-size: 0.85rem;
-      color: var(--sable-fonce);
-      font-style: italic;
-    }
-
-    /* COLONNE TEXTE */
-    .contact-aside {
-      font-size: 1.02rem;
-      color: var(--sable-fonce);
-    }
-
-    .contact-aside h3 {
-      font-family: "Cinzel", serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--or-clair);
-      margin-bottom: 0.8rem;
-    }
-
-    .contact-aside p {
-      margin-bottom: 1.1rem;
-    }
-
-    .glyph-column {
-      font-size: 1.8rem;
-      line-height: 1.8;
-      color: rgba(200, 151, 58, 0.4);
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      position: absolute;
-      right: 1rem;
-      top: 5rem;
-      opacity: 0.08;
-      pointer-events: none;
-    }
-
-    /* PIED DE PAGE */
-    footer {
-      background: #0a0804;
-      border-top: 1px solid rgba(200, 151, 58, 0.15);
-      padding: 3rem 2rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .footer-logo {
-      font-family: "Cinzel Decorative", serif;
-      font-size: 1.6rem;
-      color: var(--or);
-      margin-bottom: 1rem;
-    }
-
-    .footer-tagline {
-      font-family: "EB Garamond", serif;
-      font-style: italic;
-      color: var(--sable-fonce);
-      font-size: 1.05rem;
-    }
-
-    .footer-nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1.5rem 0;
-      flex-wrap: wrap;
-    }
-
-    .footer-nav a {
-      font-family: "Cinzel", serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--sable-fonce);
-      text-decoration: none;
-      opacity: 0.7;
-      transition: opacity 0.2s;
-    }
-
-    .footer-nav a:hover {
-      opacity: 1;
-    }
-
-    @media (max-width: 860px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
+    <!-- Styles principaux (copiés de tes autres pages) -->
+    <style>
+      :root {
+        --or: #c8973a;
+        --or-clair: #e8bf6a;
+        --or-profond: #8b6420;
+        --sable: #f2e8c9;
+        --sable-fonce: #d4c49a;
+        --noir-nil: #1a1208;
+        --papyrus-brun: #6b4f2a;
+        --rouge-cornaline: #8b2e1a;
+        --bleu-lapis: #1a3a5c;
+        --bleu-clair: #4a7fa8;
+        --turquoise: #2a8b7a;
+        --blanc-ivoire: #fbf5e6;
       }
-      .glyph-column {
-        display: none;
-      }
-    }
 
-    @media (max-width: 700px) {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--noir-nil);
+        color: var(--sable);
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: calc(18px + 0.2rem);
+        line-height: 1.8;
+        overflow-x: hidden;
+        padding-top: 64px; /* espace pour la nav fixe */
+      }
+
+      /* NAVIGATION */
+      nav.main-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        background: rgba(26, 18, 8, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(200, 151, 58, 0.2);
+        padding: 0 2rem;
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+
+      .nav-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.2rem;
+        color: var(--or);
+        text-decoration: none;
+        letter-spacing: 0.08em;
+      }
+
       .nav-links {
-        display: none;
+        display: flex;
+        gap: 1.4rem;
+        list-style: none;
       }
+
+      .nav-links a {
+        font-family: "Cinzel", serif;
+        font-size: 0.87rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--or-clair);
+      }
+
+      /* MISE EN PAGE GÉNÉRALE */
       .container {
-        padding: 0 1.4rem;
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 2rem;
       }
-      .contact-card {
-        padding: 1.6rem 1.4rem;
+
+      .contact-hero {
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background:
+          radial-gradient(
+            ellipse at 50% 100%,
+            rgba(200, 151, 58, 0.25) 0%,
+            transparent 55%
+          ),
+          linear-gradient(180deg, #080604 0%, #1a1208 60%, #251a08 100%);
+        position: relative;
+        overflow: hidden;
+        padding: 4rem 2rem 3rem;
       }
+
+      .contact-hero-inner {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 1.2rem;
+      }
+
+      .hero-title {
+        font-family: "Cinzel Decorative", serif;
+        font-size: clamp(2.4rem, 6vw, 3.6rem);
+        font-weight: 900;
+        color: var(--or-clair);
+        text-shadow:
+          0 0 40px rgba(200, 151, 58, 0.3),
+          0 2px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-subtitle {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        color: var(--sable-fonce);
+        max-width: 580px;
+        margin: 0.5rem auto 0;
+      }
+
+      .hero-divider {
+        width: 200px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--or), transparent);
+        margin: 2rem auto 0;
+      }
+
+      /* SECTION CONTACT */
       .contact-section {
-        padding-top: 3rem;
+        padding: 4rem 0 5rem;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        background: radial-gradient(
+          circle at top,
+          rgba(200, 151, 58, 0.08),
+          transparent 55%
+        );
       }
-    }
-  </style>
-</head>
-<body>
 
-  <!-- NAV -->
-  <nav class="main-nav">
-    <div class="nav-inner">
-      <a href="index.html#accueil" class="nav-logo">𓂀 Égypte Éternelle</a>
-      <ul class="nav-links">
-        <li><a href="index.html#accueil">Accueil</a></li>
-        <li><a href="egypte-pyramides.html">Pyramides</a></li>
-        <li><a href="egypte-pantheon.html">Dieux</a></li>
-        <li><a href="egypte-magie-rituels.html">Douat</a></li>
-        <li><a href="egypte-mythes-objets.html">Symboles</a></li>
-        <li><a href="tarot.html">Tarot</a></li>
-        <li><a href="egypte-a-propos.html">À propos</a></li>
-      </ul>
-    </div>
-  </nav>
+      .section-marker {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
 
-  <!-- HERO -->
-  <section class="contact-hero" id="contact">
-    <div class="contact-hero-inner">
-      <div class="hero-eyebrow">Entrer dans le sanctuaire</div>
-      <h1 class="hero-title">Entrer en résonance</h1>
-      <p class="hero-subtitle">
-        Une question, un projet de collaboration, une idée d’article ou de rituel à explorer&nbsp;?
-        Laisse un message – le désert répond toujours à qui l’interroge avec sincérité.
-      </p>
-      <div class="hero-divider"></div>
-    </div>
-  </section>
+      .marker-number {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 3.5rem;
+        line-height: 1;
+        color: rgba(200, 151, 58, 0.16);
+        font-weight: 900;
+        flex-shrink: 0;
+      }
 
-  <!-- SECTION CONTACT -->
-  <section class="contact-section">
-    <div class="container">
-      <div class="section-marker">
-        <div class="marker-number">𓊵</div>
-        <div class="marker-text">
-          <div class="marker-eyebrow">Contact</div>
-          <div class="marker-title">Écrire au gardien des Archives</div>
+      .marker-text {
+        flex: 1;
+      }
+
+      .marker-eyebrow {
+        font-family: "Cinzel", serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        color: var(--or);
+        margin-bottom: 0.4rem;
+      }
+
+      .marker-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: var(--or-clair);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 3rem;
+        align-items: flex-start;
+      }
+
+      /* FORMULAIRE */
+      .contact-card {
+        background: linear-gradient(
+          135deg,
+          rgba(42, 30, 10, 0.9),
+          rgba(26, 18, 8, 0.96)
+        );
+        border: 1px solid rgba(200, 151, 58, 0.25);
+        padding: 2rem 2.2rem;
+        border-radius: 8px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-card::before {
+        content: "𓂀";
+        position: absolute;
+        font-size: 5rem;
+        color: rgba(200, 151, 58, 0.08);
+        right: 1.5rem;
+        top: 0.8rem;
+        pointer-events: none;
+      }
+
+      .contact-card h2 {
+        font-family: "Cinzel", serif;
+        font-size: 1.4rem;
+        color: var(--or-clair);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-card p {
+        color: var(--sable-fonce);
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+      }
+
+      form.contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .field-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      .field-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+      }
+
+      .field-label span {
+        color: var(--or-clair);
+      }
+
+      .field-control {
+        background: rgba(10, 8, 4, 0.85);
+        border: 1px solid rgba(200, 151, 58, 0.3);
+        border-radius: 4px;
+        padding: 0.65rem 0.8rem;
+        color: var(--sable);
+        font-family: "EB Garamond", serif;
+        font-size: 1.02rem;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s,
+          background-color 0.2s;
+      }
+
+      .field-control::placeholder {
+        color: rgba(242, 232, 201, 0.55);
+      }
+
+      .field-control:focus {
+        border-color: var(--or-clair);
+        box-shadow: 0 0 0 1px rgba(200, 151, 58, 0.6);
+        background: rgba(10, 8, 4, 0.95);
+      }
+
+      textarea.field-control {
+        min-height: 140px;
+        resize: vertical;
+      }
+
+      select.field-control {
+        cursor: pointer;
+      }
+
+      .helper-text {
+        font-size: 0.9rem;
+        color: var(--sable-fonce);
+        font-style: italic;
+      }
+
+      .consent {
+        font-size: 0.9rem;
+        color: var(--sable-fonce);
+        margin-top: 0.2rem;
+      }
+
+      .consent a {
+        color: var(--or-clair);
+        text-decoration: underline dotted;
+      }
+
+      .submit-row {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .btn-submit {
+        border: none;
+        cursor: pointer;
+        background: linear-gradient(135deg, var(--or-profond), var(--or));
+        color: var(--noir-nil);
+        font-family: "Cinzel", serif;
+        font-size: 0.95rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        padding: 0.8rem 1.8rem;
+        border-radius: 999px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        transition:
+          transform 0.15s ease-out,
+          box-shadow 0.15s ease-out,
+          filter 0.15s ease-out;
+      }
+
+      .btn-submit:hover {
+        filter: brightness(1.06);
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.8);
+      }
+
+      .btn-submit:active {
+        transform: translateY(0);
+        box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+      }
+
+      .submit-note {
+        font-size: 0.85rem;
+        color: var(--sable-fonce);
+        font-style: italic;
+      }
+
+      /* COLONNE TEXTE */
+      .contact-aside {
+        font-size: 1.02rem;
+        color: var(--sable-fonce);
+      }
+
+      .contact-aside h3 {
+        font-family: "Cinzel", serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--or-clair);
+        margin-bottom: 0.8rem;
+      }
+
+      .contact-aside p {
+        margin-bottom: 1.1rem;
+      }
+
+      .glyph-column {
+        font-size: 1.8rem;
+        line-height: 1.8;
+        color: rgba(200, 151, 58, 0.4);
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        position: absolute;
+        right: 1rem;
+        top: 5rem;
+        opacity: 0.08;
+        pointer-events: none;
+      }
+
+      /* PIED DE PAGE */
+      footer {
+        background: #0a0804;
+        border-top: 1px solid rgba(200, 151, 58, 0.15);
+        padding: 3rem 2rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .footer-logo {
+        font-family: "Cinzel Decorative", serif;
+        font-size: 1.6rem;
+        color: var(--or);
+        margin-bottom: 1rem;
+      }
+
+      .footer-tagline {
+        font-family: "EB Garamond", serif;
+        font-style: italic;
+        color: var(--sable-fonce);
+        font-size: 1.05rem;
+      }
+
+      .footer-nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+      }
+
+      .footer-nav a {
+        font-family: "Cinzel", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--sable-fonce);
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+
+      .footer-nav a:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 860px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .glyph-column {
+          display: none;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .nav-links {
+          display: none;
+        }
+        .container {
+          padding: 0 1.4rem;
+        }
+        .contact-card {
+          padding: 1.6rem 1.4rem;
+        }
+        .contact-section {
+          padding-top: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="index.html#accueil" class="nav-logo">𓂀 Égypte Éternelle</a>
+        <ul class="nav-links">
+          <li><a href="index.html#accueil">Accueil</a></li>
+          <li><a href="egypte-pyramides.html">Pyramides</a></li>
+          <li><a href="egypte-pantheon.html">Dieux</a></li>
+          <li><a href="egypte-magie-rituels.html">Douat</a></li>
+          <li><a href="egypte-mythes-objets.html">Symboles</a></li>
+          <li><a href="tarot.html">Tarot</a></li>
+          <li><a href="egypte-a-propos.html">À propos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="contact-hero" id="contact">
+      <div class="contact-hero-inner">
+        <div class="hero-eyebrow">Entrer dans le sanctuaire</div>
+        <h1 class="hero-title">Entrer en résonance</h1>
+        <p class="hero-subtitle">
+          Une question, un projet de collaboration, une idée d’article ou de
+          rituel à explorer&nbsp;? Laisse un message – le désert répond toujours
+          à qui l’interroge avec sincérité.
+        </p>
+        <div class="hero-divider"></div>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="section-marker">
+          <div class="marker-number">𓊵</div>
+          <div class="marker-text">
+            <div class="marker-eyebrow">Contact</div>
+            <div class="marker-title">Écrire au gardien des Archives</div>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- FORMULAIRE -->
+          <form
+            class="contact-form"
+            method="POST"
+            action="https://formspree.io/f/xpqynoky"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nouveau message - Égypte Éternelle"
+            />
+            <input type="hidden" name="_language" value="fr" />
+            <input
+              type="hidden"
+              name="_redirect"
+              value="https://phil83470.github.io/egypte-eternelle/merci.html"
+            />
+
+            <div class="contact-card">
+              <span class="glyph-column">𓂀𓆣𓁹𓊹𓇳𓏏𓆑</span>
+              <h2>Envoyer un message</h2>
+              <p>
+                Remplis ce formulaire, et je te répondrai dès que possible. Les
+                champs marqués d’un <span> *</span> sont indispensables pour que
+                ton message trouve sa voie.
+              </p>
+
+              <!-- Nom -->
+              <div class="field-group">
+                <label for="name" class="field-label">Nom <span>*</span></label>
+                <input
+                  id="name"
+                  name="nom"
+                  type="text"
+                  class="field-control"
+                  required
+                  autocomplete="name"
+                  placeholder="Ton nom ou pseudonyme"
+                />
+              </div>
+
+              <!-- Email -->
+              <div class="field-group">
+                <label for="email" class="field-label"
+                  >Email <span>*</span></label
+                >
+                <input
+                  id="email"
+                  name="_replyto"
+                  type="email"
+                  class="field-control"
+                  required
+                  autocomplete="email"
+                  placeholder="adresse@exemple.com"
+                />
+                <div class="helper-text">
+                  Ton adresse ne sera jamais partagée. Elle ne sert qu’à te
+                  répondre.
+                </div>
+              </div>
+
+              <!-- Sujet -->
+              <div class="field-group">
+                <label for="subject" class="field-label"
+                  >Sujet <span>*</span></label
+                >
+                <input
+                  id="subject"
+                  name="sujet"
+                  type="text"
+                  class="field-control"
+                  required
+                  placeholder="Ex. : Collaboration, question sur un mythe, idée d’article..."
+                />
+              </div>
+
+              <!-- Type de demande -->
+              <div class="field-group">
+                <label for="type" class="field-label">Type de message</label>
+                <select id="type" name="type" class="field-control">
+                  <option value="">Choisis une option…</option>
+                  <option value="question">
+                    Question sur un mythe ou un symbole
+                  </option>
+                  <option value="collaboration">
+                    Proposition de collaboration
+                  </option>
+                  <option value="projet-web">Projet web ou créatif</option>
+                  <option value="retour">
+                    Retour sur le site Égypte Éternelle
+                  </option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div class="field-group">
+                <label for="message" class="field-label"
+                  >Message <span>*</span></label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  class="field-control"
+                  required
+                  placeholder="Partage ton message, tes questions, ou le détail de ton projet..."
+                ></textarea>
+              </div>
+
+              <!-- Consentement / RGPD light -->
+              <div class="consent">
+                En envoyant ce message, tu acceptes que les informations
+                fournies soient utilisées uniquement pour te répondre dans le
+                cadre de ta demande.
+              </div>
+
+              <!-- Bouton -->
+              <div class="submit-row">
+                <button type="submit" class="btn-submit">Envoyer</button>
+                <div class="submit-note">
+                  Tu seras redirigé vers une page de confirmation après l’envoi.
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- TEXTE D’ACCOMPAGNEMENT -->
+          <aside class="contact-aside">
+            <h3>Pourquoi me contacter&nbsp;?</h3>
+            <p>
+              Égypte Éternelle est un atelier vivant&nbsp;: un mélange de
+              recherche, de symbolisme, de web créatif et d’expérimentations
+              autour des mythes.
+            </p>
+            <p>
+              Tu peux écrire pour&nbsp;: questions sur les articles, idées de
+              nouvelles rubriques, corrections, ou propositions de projets
+              (contenu, design, expérience interactive, etc.).
+            </p>
+            <p>
+              Je lis chaque message personnellement. Selon la période, le délai
+              de réponse peut varier, mais chaque voix compte dans la
+              construction de ce temple numérique.
+            </p>
+          </aside>
         </div>
       </div>
+    </section>
 
-      <div class="contact-grid">
-       
-        <!-- FORMULAIRE -->
-<form
-  class="contact-form"
-  method="POST"
-  action="https://formspree.io/f/xayrkvdk"
->
-  <input type="hidden" name="_subject" value="Nouveau message - Égypte Éternelle">
-  <input type="hidden" name="_language" value="fr">
-  <input type="hidden" name="_redirect" value="https://phil83470.github.io/egypte-eternelle/merci.html">
-
-  <div class="contact-card">
-    <span class="glyph-column">𓂀𓆣𓁹𓊹𓇳𓏏𓆑</span>
-    <h2>Envoyer un message</h2>
-    <p>
-      Remplis ce formulaire, et je te répondrai dès que possible.
-      Les champs marqués d’un <span> *</span> sont indispensables pour que ton message trouve sa voie.
-    </p>
-
-    <!-- Nom -->
-    <div class="field-group">
-      <label for="name" class="field-label">Nom <span>*</span></label>
-      <input
-        id="name"
-        name="nom"
-        type="text"
-        class="field-control"
-        required
-        autocomplete="name"
-        placeholder="Ton nom ou pseudonyme"
-      >
-    </div>
-
-    <!-- Email -->
-    <div class="field-group">
-      <label for="email" class="field-label">Email <span>*</span></label>
-      <input
-        id="email"
-        name="_replyto"
-        type="email"
-        class="field-control"
-        required
-        autocomplete="email"
-        placeholder="adresse@exemple.com"
-      >
-      <div class="helper-text">
-        Ton adresse ne sera jamais partagée. Elle ne sert qu’à te répondre.
+    <!-- PIED DE PAGE -->
+    <footer>
+      <div class="footer-logo">𓂀 Égypte Éternelle</div>
+      <div class="footer-tagline">
+        Portail de la civilisation pharaonique, entre mémoire, symbolisme et
+        imagination.
       </div>
-    </div>
-
-    <!-- Sujet -->
-    <div class="field-group">
-      <label for="subject" class="field-label">Sujet <span>*</span></label>
-      <input
-        id="subject"
-        name="sujet"
-        type="text"
-        class="field-control"
-        required
-        placeholder="Ex. : Collaboration, question sur un mythe, idée d’article..."
-      >
-    </div>
-
-    <!-- Type de demande -->
-    <div class="field-group">
-      <label for="type" class="field-label">Type de message</label>
-      <select id="type" name="type" class="field-control">
-        <option value="">Choisis une option…</option>
-        <option value="question">Question sur un mythe ou un symbole</option>
-        <option value="collaboration">Proposition de collaboration</option>
-        <option value="projet-web">Projet web ou créatif</option>
-        <option value="retour">Retour sur le site Égypte Éternelle</option>
-        <option value="autre">Autre</option>
-      </select>
-    </div>
-
-    <!-- Message -->
-    <div class="field-group">
-      <label for="message" class="field-label">Message <span>*</span></label>
-      <textarea
-        id="message"
-        name="message"
-        class="field-control"
-        required
-        placeholder="Partage ton message, tes questions, ou le détail de ton projet..."
-      ></textarea>
-    </div>
-
-    <!-- Consentement / RGPD light -->
-    <div class="consent">
-      En envoyant ce message, tu acceptes que les informations fournies soient utilisées
-      uniquement pour te répondre dans le cadre de ta demande.
-    </div>
-
-    <!-- Bouton -->
-    <div class="submit-row">
-      <button type="submit" class="btn-submit">Envoyer</button>
-      <div class="submit-note">
-        Tu seras redirigé vers une page de confirmation après l’envoi.
-      </div>
-    </div>
-  </div>
-</form>
-
-       
-
-        <!-- TEXTE D’ACCOMPAGNEMENT -->
-        <aside class="contact-aside">
-          <h3>Pourquoi me contacter&nbsp;?</h3>
-          <p>
-            Égypte Éternelle est un atelier vivant&nbsp;: un mélange de recherche,
-            de symbolisme, de web créatif et d’expérimentations autour des mythes.
-          </p>
-          <p>
-            Tu peux écrire pour&nbsp;:
-            questions sur les articles, idées de nouvelles rubriques, corrections,
-            ou propositions de projets (contenu, design, expérience interactive, etc.).
-          </p>
-          <p>
-            Je lis chaque message personnellement. Selon la période,
-            le délai de réponse peut varier, mais chaque voix compte dans la construction de ce temple numérique.
-          </p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- PIED DE PAGE -->
-  <footer>
-    <div class="footer-logo">𓂀 Égypte Éternelle</div>
-    <div class="footer-tagline">
-      Portail de la civilisation pharaonique, entre mémoire, symbolisme et imagination.
-    </div>
-    <nav class="footer-nav">
-      <a href="index.html#accueil">Accueil</a>
-      <a href="egypte-pyramides.html">Pyramides</a>
-      <a href="egypte-pantheon.html">Panthéon</a>
-      <a href="egypte-magie-rituels.html">Douat</a>
-      <a href="egypte-mythes-objets.html">Mythes & objets</a>
-      <a href="tarot.html">Tarot</a>
-      <a href="egypte-a-propos.html">À propos</a>
-    </nav>
-  </footer>
-
-</body>
+      <nav class="footer-nav">
+        <a href="index.html#accueil">Accueil</a>
+        <a href="egypte-pyramides.html">Pyramides</a>
+        <a href="egypte-pantheon.html">Panthéon</a>
+        <a href="egypte-magie-rituels.html">Douat</a>
+        <a href="egypte-mythes-objets.html">Mythes & objets</a>
+        <a href="tarot.html">Tarot</a>
+        <a href="egypte-a-propos.html">À propos</a>
+      </nav>
+    </footer>
+  </body>
 </html>
