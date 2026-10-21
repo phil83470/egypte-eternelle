@@ -109,3 +109,171 @@ video {
     max-height: min(46vh, 340px);
   }
 }
+
+/* ============================================================
+   BOUTON WEB & PASSION — STYLE NÉON BLEU ULTRA-VISIBLE
+   ============================================================ */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.2rem auto 2.4rem;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-btn-webetpassion {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.8rem !important;
+  padding: 0.95rem 2.2rem !important;
+  font-family: 'Cinzel', 'Cinzel Decorative', Georgia, serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  color: #00f3ff !important;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.22) 0%, rgba(5, 20, 42, 0.85) 100%) !important;
+  border: 2px solid #00f3ff !important;
+  border-radius: 50px !important;
+  box-shadow: 0 0 18px rgba(0, 243, 255, 0.5),
+              0 0 40px rgba(0, 243, 255, 0.3),
+              inset 0 0 16px rgba(0, 243, 255, 0.25) !important;
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.9),
+               0 0 20px rgba(0, 243, 255, 0.6) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  cursor: pointer !important;
+  animation: neonPulse 3s ease-in-out infinite !important;
+}
+
+.hero-btn-webetpassion:hover {
+  color: #ffffff !important;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.42) 0%, rgba(0, 95, 190, 0.9) 100%) !important;
+  border-color: #a8faff !important;
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.85),
+              0 0 60px rgba(0, 243, 255, 0.55),
+              inset 0 0 22px rgba(0, 243, 255, 0.4) !important;
+  text-shadow: 0 0 12px #00f3ff,
+               0 0 26px #00f3ff,
+               0 0 42px #00f3ff !important;
+}
+
+.hero-btn-webetpassion .neon-icon {
+  font-size: 1.3rem !important;
+  filter: drop-shadow(0 0 8px #00f3ff) !important;
+}
+
+.hero-btn-webetpassion .neon-arrow {
+  font-size: 1.15rem !important;
+  transition: transform 0.3s ease !important;
+  display: inline-block !important;
+}
+
+.hero-btn-webetpassion:hover .neon-arrow {
+  transform: translate(3px, -3px) !important;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(0, 243, 255, 0.45),
+                0 0 35px rgba(0, 243, 255, 0.25),
+                inset 0 0 14px rgba(0, 243, 255, 0.2);
+    border-color: #00f3ff;
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(0, 243, 255, 0.75),
+                0 0 55px rgba(0, 243, 255, 0.45),
+                inset 0 0 22px rgba(0, 243, 255, 0.35);
+    border-color: #7df9ff;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-btn-webetpassion {
+    padding: 0.8rem 1.6rem !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.16em !important;
+  }
+}
+
+/* ============================================================
+   LOGO / CARTOUCHE ROYAL UNIFIÉ ET CLIQUABLE SUR TOUT LE SITE
+   ============================================================ */
+.sh-brand,
+a.sh-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+  transition: transform 0.3s ease, filter 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.sh-brand:hover {
+  transform: translateY(-1px) !important;
+  filter: drop-shadow(0 0 10px rgba(200, 151, 58, 0.6)) !important;
+}
+
+.sh-cartouche {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.sh-cartouche-body {
+  border-top: 1.5px solid #c8973a !important;
+  border-bottom: 1.5px solid #c8973a !important;
+  padding: 0 0.9rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  height: 30px !important;
+  background: rgba(200, 151, 58, 0.08) !important;
+  position: relative !important;
+}
+
+.sh-logo-text {
+  font-family: 'Cinzel Decorative', 'Cinzel', Georgia, serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: #e8c97a !important;
+  letter-spacing: 0.12em !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+
+.sh-logo-glyph {
+  font-size: 1.25rem !important;
+  color: #c8973a !important;
+  opacity: 0.95 !important;
+  line-height: 1 !important;
+}
+
+.sh-cartouche svg.cap,
+svg.cap {
+  height: 30px !important;
+  width: 9px !important;
+  flex-shrink: 0 !important;
+  display: block !important;
+}
+
+@media (max-width: 600px) {
+  .sh-cartouche-body {
+    padding: 0 0.5rem !important;
+    height: 26px !important;
+    gap: 0.35rem !important;
+  }
+  .sh-logo-text {
+    font-size: 0.8rem !important;
+  }
+  .sh-cartouche svg.cap,
+  svg.cap {
+    height: 26px !important;
+    width: 8px !important;
+  }
+}

@@ -6,10 +6,10 @@
     <title>L'Odyssée des Guides - Naviguer dans les Mondes Invisibles</title>
     <meta name="description" content="Embarquez pour l'Odyssée des Guides et apprenez à naviguer dans les mondes invisibles à travers les mystères de l'au-delà égyptien.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="canonical" href="https://phil83470.github.io/egypte-eternelle/odyssee_des_guides_fusion.html" />
+    <link rel="canonical" href="https://phil83470.github.io/egypte-eternelle/odyssee_des_guides_fusion.html">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             margin: 0;
@@ -573,6 +573,10 @@
             box-shadow: 0 12px 60px rgba(212, 175, 55, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.2);
         }
 
+        .hero-illustration {
+            max-height: 500px;
+        }
+
         .illustration-caption {
             text-align: center;
             font-size: 0.85rem;
@@ -726,6 +730,13 @@
             width: 0%;
             transition: width 0.1s ease;
         }
+
+        .conclusion-message {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            margin-top: var(--space-md);
+        }
     </style>
   <link rel="stylesheet" href="responsive-site.css">
 </head>
@@ -734,7 +745,24 @@
 
     <nav>
         <div class="container nav-inner">
-            <a href="index.html#accueil" class="logo nav-logo">L'Odyssée des Guides</a>
+            <a href="index.html#accueil" class="sh-brand nav-logo" title="Retour à l'accueil - Égypte Éternelle" aria-label="Retour à l'accueil Égypte Éternelle">
+              <div class="sh-cartouche">
+                <svg class="cap" viewBox="0 0 9 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M8 1 Q1 15 8 29" stroke="rgba(200,151,58,0.85)" stroke-width="1.5" fill="none"/>
+                  <line x1="1" y1="1" x2="8" y2="1" stroke="rgba(200,151,58,0.85)" stroke-width="1.5"/>
+                  <line x1="1" y1="29" x2="8" y2="29" stroke="rgba(200,151,58,0.85)" stroke-width="1.5"/>
+                </svg>
+                <div class="sh-cartouche-body">
+                  <span class="sh-logo-glyph">𓂀</span>
+                  <span class="sh-logo-text">Égypte Éternelle</span>
+                </div>
+                <svg class="cap" viewBox="0 0 9 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M1 1 Q8 15 1 29" stroke="rgba(200,151,58,0.85)" stroke-width="1.5" fill="none"/>
+                  <line x1="8" y1="1" x2="1" y2="1" stroke="rgba(200,151,58,0.85)" stroke-width="1.5"/>
+                  <line x1="8" y1="29" x2="1" y2="29" stroke="rgba(200,151,58,0.85)" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html#accueil">Accueil</a></li>
                 <li><a href="#eveil">Éveil</a></li>
@@ -752,8 +780,8 @@
         <div class="container">
             <h1>L'Odyssée des Guides</h1>
             <p class="subtitle">Naviguer dans les Mondes Invisibles</p>
-            <div class="section-img-wrap" style="margin-top: var(--space-lg);">
-                <img src="images/images/img_angel_hero.png" alt="Guide spirituel angélique dans le cosmos" class="section-illustration" style="max-height: 500px;">
+            <div class="section-img-wrap">
+                <img src="images/images/img_angel_hero.png" alt="Guide spirituel angélique dans le cosmos" class="section-illustration hero-illustration">
             </div>
         </div>
     </header>
@@ -761,7 +789,6 @@
     <main class="container">
         <section id="eveil">
             <h2>1. L'Éveil à l'Invisible</h2>
-            
             <p class="highlight"><strong>Et si vous n'étiez jamais vraiment seul dans cette aventure qu'on appelle la vie ?</strong></p>
 
             <p>Imaginez un instant que, depuis votre premier souffle, des compagnons bienveillants marchent à vos côtés, invisibles mais présents, comme des phares dans la brume. Ces présences discrètes, qu'on appelle <strong>guides spirituels</strong>, ne sont ni des hallucinations ni des créatures fantastiques sorties d'un conte, mais plutôt des alliés subtils qui nous accompagnent dans notre voyage terrestre.</p>
@@ -1089,7 +1116,7 @@
 
             <ul>
                 <li><strong>Sylvain Didelot</strong> — <em>Channeling : Se connecter à son guide</em></li>
-                <li><strong>Sanaya Roman & Duane Packer</strong> — <em>Voyage vers la lumière</em></li>
+                <li><strong>Sanaya Roman &amp; Duane Packer</strong> — <em>Voyage vers la lumière</em></li>
             </ul>
 
             <p><strong>Pour l'Angéologie</strong> :</p>
@@ -1130,14 +1157,14 @@
 
             <p><strong>Alors, prêt à embarquer dans cette odyssée ?</strong></p>
 
-            <p style="text-align: center; font-size: 1.2rem; color: var(--color-accent); margin-top: var(--space-md);">🌟 <em>Que la lumière de vos guides illumine chaque pas de votre voyage.</em> 🌟</p>
+            <p class="conclusion-message">🌟 <em>Que la lumière de vos guides illumine chaque pas de votre voyage.</em> 🌟</p>
         </section>
     </main>
 
     <!-- Angel Modal -->
     <div class="modal-overlay" id="angelModal" onclick="closeModalOnOverlay(event)">
         <div class="modal-container">
-            <button class="modal-close" onclick="closeAngelModal()">×</button>
+            <button type="button" class="modal-close" onclick="closeAngelModal()" aria-label="Fermer la boîte de dialogue">&times;</button>
             <!-- Visual Angel Illustration -->
             <div class="modal-angel-visual" id="modalAngelVisual">
                 <div class="angel-aura-container">
@@ -1156,19 +1183,19 @@
             </div>
             <div class="modal-body">
                 <div class="modal-section">
-                    <div class="modal-section-title">Description & Mission</div>
+                    <div class="modal-section-title">Description &amp; Mission</div>
                     <p class="modal-text" id="modalDescription"></p>
                 </div>
                 <div class="modal-section">
-                    <div class="modal-section-title">Prière & Affirmation</div>
+                    <div class="modal-section-title">Prière &amp; Affirmation</div>
                     <div class="modal-quote" id="modalPrayer"></div>
                 </div>
                 <div class="modal-section">
-                    <div class="modal-section-title">Vertus & Dons</div>
+                    <div class="modal-section-title">Vertus &amp; Dons</div>
                     <ul class="modal-list" id="modalVirtues"></ul>
                 </div>
                 <div class="modal-section">
-                    <div class="modal-section-title">Symbolisme & Energie</div>
+                    <div class="modal-section-title">Symbolisme &amp; Energie</div>
                     <p class="modal-text" id="modalSymbolism"></p>
                 </div>
                 <div class="modal-section">
@@ -1180,7 +1207,7 @@
                     <ul class="modal-list" id="modalInvocations"></ul>
                 </div>
                 <div class="modal-section">
-                    <div class="modal-section-title">Méditation & Questions</div>
+                    <div class="modal-section-title">Méditation &amp; Questions</div>
                     <ul class="modal-list" id="modalQuestions"></ul>
                 </div>
             </div>
