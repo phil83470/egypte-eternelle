@@ -1,16 +1,25 @@
-/* Réglages communs pour les écrans tactiles */
+/* Réglages communs pour tous les supports (Mobile, Tablette, PC) */
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 img,
-video {
+video,
+svg,
+canvas {
   max-width: 100%;
 }
 
 @media (min-width: 861px) and (max-width: 1180px) {
-  .nav-inner {
+  .nav-inner,
+  nav .container {
     gap: 0.55rem !important;
   }
 
@@ -19,28 +28,35 @@ video {
     white-space: nowrap;
   }
 
-  .nav-links {
+  .nav-links,
+  nav ul {
     gap: 0.55rem !important;
   }
 
-  .nav-links a {
+  .nav-links a,
+  nav ul a,
+  .navbar .nav-link {
     font-size: 0.72rem !important;
     letter-spacing: 0.04em !important;
   }
 }
 
-@media (max-width: 860px) {
+/* Bouton burger sur tablette et mobile (index.html coupe à 1180px) */
+@media (max-width: 1180px) {
   .sh-burger {
     border: 2px solid #e8bf6a !important;
     background: rgba(232, 191, 106, 0.16) !important;
-    width: 48px !important;
-    height: 48px !important;
-    box-shadow: 0 0 12px rgba(232, 191, 106, 0.24);
+    width: 46px !important;
+    height: 46px !important;
+    box-shadow: 0 0 12px rgba(232, 191, 58, 0.24);
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 4px;
   }
 
   .sh-burger span {
-    width: 26px !important;
-    height: 3px !important;
+    width: 24px !important;
+    height: 2.5px !important;
     background-color: #ffd873 !important;
   }
 
@@ -48,7 +64,9 @@ video {
     outline: 3px solid #ffd873;
     outline-offset: 3px;
   }
+}
 
+@media (max-width: 860px) {
   body {
     font-size: 1rem !important;
   }
@@ -63,7 +81,7 @@ video {
 
   h1:not(.hero-logo) {
     font-size: clamp(2rem, 5.2vw, 2.8rem) !important;
-    line-height: 1.1 !important;
+    line-height: 1.15 !important;
   }
 
   h2,
@@ -81,10 +99,16 @@ video {
     object-fit: contain;
   }
 
-  table {
+  table,
+  .corr-table {
     display: block;
     max-width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .toc-inner {
+    padding: 1.5rem 1.2rem !important;
   }
 }
 
@@ -97,16 +121,27 @@ video {
   }
 
   h1:not(.hero-logo) {
-    font-size: clamp(1.8rem, 7vw, 2.35rem) !important;
+    font-size: clamp(1.75rem, 6.8vw, 2.3rem) !important;
   }
 
   .hero-logo {
-    font-size: clamp(2.8rem, 12vw, 4rem) !important;
+    font-size: clamp(2.5rem, 11vw, 3.8rem) !important;
   }
 
   main img,
   .section-illustration {
     max-height: min(46vh, 340px);
+  }
+
+  .container,
+  .container-wide,
+  .wide-container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .modal-overlay {
+    padding: 0.75rem !important;
   }
 }
 

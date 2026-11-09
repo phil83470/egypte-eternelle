@@ -5,8 +5,8 @@
     <title>Contact — Égypte Éternelle</title>
     <meta name="description" content="Contactez l'équipe d'Égypte Éternelle pour toute question, suggestion ou échange autour de l'Égypte ancienne.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="canonical" href="https://phil83470.github.io/egypte-eternelle/egypte-a-contact.html" />
-    <link rel="stylesheet" href="style.css">
 
     <!-- Fonts -->
     <link
@@ -559,6 +559,14 @@
               name="_redirect"
               value="https://phil83470.github.io/egypte-eternelle/merci.html"
             />
+            <input
+              type="text"
+              name="_gotcha"
+              style="display:none"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
 
             <div class="contact-card">
               <span class="glyph-column">𓂀𓆣𓁹𓊹𓇳𓏏𓆑</span>
@@ -578,6 +586,7 @@
                   type="text"
                   class="field-control"
                   required
+                  maxlength="100"
                   autocomplete="name"
                   placeholder="Ton nom ou pseudonyme"
                 />
@@ -594,6 +603,7 @@
                   type="email"
                   class="field-control"
                   required
+                  maxlength="150"
                   autocomplete="email"
                   placeholder="adresse@exemple.com"
                 />
@@ -614,6 +624,7 @@
                   type="text"
                   class="field-control"
                   required
+                  maxlength="150"
                   placeholder="Ex. : Collaboration, question sur un mythe, idée d’article..."
                 />
               </div>
@@ -647,6 +658,7 @@
                   name="message"
                   class="field-control"
                   required
+                  maxlength="3000"
                   placeholder="Partage ton message, tes questions, ou le détail de ton projet..."
                 ></textarea>
               </div>
@@ -701,11 +713,15 @@
       <nav class="footer-nav">
         <a href="index.html#accueil">Accueil</a>
         <a href="egypte-pyramides.html">Pyramides</a>
+        <a href="egypte-societe.html">Société</a>
+        <a href="egypte-dynasties.html">Dynasties</a>
         <a href="egypte-pantheon.html">Panthéon</a>
         <a href="egypte-magie-rituels.html">Douat</a>
-        <a href="egypte-mythes-objets.html">Mythes & objets</a>
+        <a href="egypte-mythes-objets.html">Mythes &amp; objets</a>
         <a href="tarot.html">Tarot</a>
+        <a href="odyssee_des_guides_fusion.html">Odyssée</a>
         <a href="egypte-a-propos.html">À propos</a>
+        <a href="https://webetpassion.fr" target="_blank" rel="noopener noreferrer">Web &amp; Passion ↗</a>
       </nav>
     </footer>
   <script src="mobile-site-nav.js" defer></script>
