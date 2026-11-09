@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /merci.html
+
+Sitemap: https://phil83470.github.io/egypte-eternelle/sitemap.xml
